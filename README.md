@@ -1,10 +1,10 @@
 # KihonEngine
  
-Kihon Engine is a basic 3D video game engine developed in dotnet core and WPF
+Kihon Engine is a basic 3D engine developed in dotnet core and WPF. It can be used for developpinng basic 3D video games.
 
 ## Getting started
 
-Launch a video game based on kihon is very basic.
+Create a video game based on Kihon Engine is very easy.
 
 Just take a look inside the sample project `KihonEngine.SampleGame` . 
 
@@ -48,7 +48,6 @@ And by click Start Game, you will launch one of the few sample maps available in
 
 ![Screenshot - Walkthrough](https://raw.github.com/nico65535/kihonengine/master/doc/kihonEngine-sampleGame-walkthrough-01.png)
 
-
 ## Kihon Engine Studio
 
 Kihon Engine Studio helps for building maps
@@ -76,7 +75,6 @@ Adding 3D models to maps
 
 ![Screenshot - Add 3D models](https://raw.github.com/nico65535/kihonengine/master/doc/kihonEngine-studio-add3dModels-01.png)
 
-
 Possibility to edit the 3D models
 * By dimentions
 * By colors
@@ -89,4 +87,3 @@ Possibility to mode 3D models on the map
 * By translation on axis X, Y and Z
 
 ![Screenshot - Move 3D models](https://raw.github.com/nico65535/kihonengine/master/doc/kihonEngine-studio-move3dModels-01.png)
-
