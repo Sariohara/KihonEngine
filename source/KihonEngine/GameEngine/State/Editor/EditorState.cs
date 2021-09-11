@@ -10,7 +10,7 @@ namespace KihonEngine.GameEngine.State.Editor
             TranslationStep = 1;
             RotationStep = 1;
             ActionSelect = new SelectModelState();
-            ActionMove = new MoveModelState();
+            ActionMove = new MoveModelState { ShowMeterWallWhenMove = true };
         }
 
         public Color CurrentColor { get; set; }
