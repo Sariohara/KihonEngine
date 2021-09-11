@@ -46,3 +46,38 @@ And that's all. When the application starts, you will have basic startup screen.
 
 ![Screenshot - Walkthrough](https://raw.github.com/nico65535/kihonengine/master/doc/kihonEngine-sampleGame-walkthrough-01.png)
 
+
+## Kihon Engine Studio
+
+Kihon Engine Studio helps for building maps
+
+The actual basic features are the following
+
+Adding 3D models to maps
+* Add floor
+* Add ceilings
+* Add walls
+* Add volumes, like cube, rectangles
+* Add lights to make the viewport3D scene visible
+* Add skyboxes. Actually, three predefined skyboxes are availables
+
+Possibility to edit the 3D models
+* By dimentions
+* By colors
+* As proof of concept, actually only four textures are available for floors
+
+Possibility to mode 3D models on the map
+* By moving on axis X, Y and Z
+* By translation on axis X, Y and Z
+
+Possibility to change map global properties
+* map name
+* Player camera respawn position
+* Player camera respawn direction
+
+And some other features 
+* Save and load maps from files from a json format
+* Source viewer for the currently edited map, in order to visualize the json format
+* Game state viewer to analyse game state at any time
+* Possibility to playswitch between edit mode and game mode in order to vizualise how map is rendered at play time
+
