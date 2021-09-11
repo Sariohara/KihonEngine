@@ -52,6 +52,12 @@ And by click Start Game, you will launch one of the few sample maps available in
 
 ![Screenshot - Walkthrough](https://raw.github.com/nico65535/kihonengine/master/doc/kihonEngine-sampleGame-walkthrough-01.png)
 
+## Kihon Engine technical architecture overview
+
+Kihon Engine global architecture is the following
+
+![Screenshot - Move 3D models](https://raw.github.com/nico65535/kihonengine/master/doc/kihonEngine-architecture-overview-01.png)
+
 ## Kihon Engine Studio
 
 Kihon Engine Studio helps for building maps
@@ -93,10 +99,4 @@ Possibility to move 3D models on the map
 * By translation on axis X, Y and Z
 
 ![Screenshot - Move 3D models](https://raw.github.com/nico65535/kihonengine/master/doc/kihonEngine-studio-move3dModels-01.png)
-
-## Kihon Engine technical architecture overview
-
-Kihon Engine global architecture is the following
-
-![Screenshot - Move 3D models](https://raw.github.com/nico65535/kihonengine/master/doc/kihonEngine-architecture-overview-01.png)
 
