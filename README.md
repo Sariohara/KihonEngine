@@ -2,6 +2,10 @@
  
 Kihon Engine is a basic 3D engine developed in dotnet core and WPF. It can be used for developpinng basic 3D video games.
 
+Actually, with Kihon Engine, you can
+* Build maps with Kihon Engine Studio.
+* Run map in a basic FPS game mode and walk around the map in first person view.
+
 ## Getting started
 
 Create a video game based on Kihon Engine is very easy.
