@@ -60,7 +60,7 @@ The actual basic features are the following
 
 Some generic features 
 * Save and load maps from files from a json format
-* ossibility to change map global properties like map name, respawn player camera (position and direction)
+* Possibility to change map global properties like map name, respawn player camera (position and direction)
 * Source viewer for the currently edited map, in order to visualize the json format
 * Game state viewer to analyse game state at any time
 * Possibility to switch between edit mode and game mode in order to vizualise how map is rendered at play time
