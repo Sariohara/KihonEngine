@@ -40,9 +40,11 @@ namespace KihonEngine.SampleGame
 }
 ```
 
-And that's all. When the application starts, you will have basic startup screen. And when click Start Game, you will launch one of the few sample maps available in `KihonEngine.SampleMaps`
+And that's all. When the application starts, you will have basic startup screen. 
 
 ![Screenshot - Splash Screen](https://raw.github.com/nico65535/kihonengine/master/doc/kihonEngine-sampleGame-splashScreen-01.png)
+
+And when click Start Game, you will launch one of the few sample maps available in `KihonEngine.SampleMaps`
 
 ![Screenshot - Walkthrough](https://raw.github.com/nico65535/kihonengine/master/doc/kihonEngine-sampleGame-walkthrough-01.png)
 
