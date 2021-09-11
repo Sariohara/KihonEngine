@@ -61,6 +61,11 @@ Adding 3D models to maps
 * Add lights to make the viewport3D scene visible
 * Add skyboxes. Actually, three predefined skyboxes are availables
 
+![Screenshot - Add 3D models](https://raw.github.com/nico65535/kihonengine/master/doc/kihonEngine-studio-add3dModels-01.png)
+
+
+
+
 Possibility to edit the 3D models
 * By dimentions
 * By colors
