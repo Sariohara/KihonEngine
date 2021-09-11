@@ -1,0 +1,120 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Authors>Nicolas VIEL</Authors>
+    <Company>Nicolas VIEL</Company>
+    <Copyright>Copyright (c) 2021 Nicolas VIEL</Copyright>
+    <Version>2021.09.11</Version>
+    <Product>Kihon Engine</Product>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="GameEngine\Graphics\Output\HeadUpDisplayEditorMode.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="GameEngine\Graphics\Output\HeadUpDisplayPlayMode.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="GameEngine\Graphics\Output\WorldVisualizeFullScreenWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="GameEngine\Graphics\Output\WorldVizualizer.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="GameEngine\Graphics\Images\Skyboxes\sky0-back.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="GameEngine\Graphics\Images\Skyboxes\sky0-bottom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="GameEngine\Graphics\Images\Skyboxes\sky0-front.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="GameEngine\Graphics\Images\Skyboxes\sky0-left.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="GameEngine\Graphics\Images\Skyboxes\sky0-right.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="GameEngine\Graphics\Images\Skyboxes\sky0-top.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="GameEngine\Graphics\Images\Skyboxes\sky1-back.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="GameEngine\Graphics\Images\Skyboxes\sky1-bottom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="GameEngine\Graphics\Images\Skyboxes\sky1-front.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="GameEngine\Graphics\Images\Skyboxes\sky1-left.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="GameEngine\Graphics\Images\Skyboxes\sky1-right.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="GameEngine\Graphics\Images\Skyboxes\sky1-top.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="GameEngine\Graphics\Images\Skyboxes\sky2-back.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="GameEngine\Graphics\Images\Skyboxes\sky2-bottom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="GameEngine\Graphics\Images\Skyboxes\sky2-front.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="GameEngine\Graphics\Images\Skyboxes\sky2-left.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="GameEngine\Graphics\Images\Skyboxes\sky2-right.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="GameEngine\Graphics\Images\Skyboxes\sky2-top.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="GameEngine\Graphics\Images\Textures\default.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="GameEngine\Graphics\Images\Textures\floor0.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="GameEngine\Graphics\Images\Textures\Hon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="GameEngine\Graphics\Images\Textures\Ki.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="GameEngine\Graphics\Output\HeadUpDisplayEditorMode.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GameEngine\Graphics\Output\HeadUpDisplayPlayMode.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GameEngine\Graphics\Output\WorldVisualizeFullScreenWindow.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GameEngine\Graphics\Output\WorldVizualizer.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  
+</Project>

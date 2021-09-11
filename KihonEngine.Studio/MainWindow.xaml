@@ -1,0 +1,100 @@
+﻿<Window
+        x:Class="KihonEngine.Studio.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:controls = "clr-namespace:KihonEngine.Studio.Controls"
+        x:Name="mainWindow"
+        mc:Ignorable="d"
+        Loaded="mainWindow_Loaded"
+        Closing="mainWindow_Closing"
+        Title="Kihon Engine Studio" Height="640" Width="1024">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="23" />
+        </Grid.RowDefinitions>
+        <Menu>
+            <MenuItem Header="File">
+                <MenuItem Header="New" Click="MenuNew_Click" />
+                <MenuItem Header="Open Map">
+                    <MenuItem Header="Demo : Empty" x:Name="menuOpen0" Click="MenuOpen_Click" />
+                    <MenuItem Header="Demo : Empty" x:Name="menuOpen1" Click="MenuOpen_Click" />
+                    <MenuItem Header="Demo : Empty" x:Name="menuOpen2" Click="MenuOpen_Click" />
+                    <MenuItem Header="Demo : Empty" x:Name="menuOpen3" Click="MenuOpen_Click" />
+                    <Separator />
+                    <MenuItem Header="File..." Click="MenuOpenFromFile_Click" />
+                </MenuItem>
+                <Separator />
+                <MenuItem Header="Save Map As..." Click="MenuSaveAs_Click" />
+                <Separator />
+                <MenuItem Header="Exit" Click="MenuExit_Click" />
+            </MenuItem>
+            <MenuItem Header="Edit">
+                <MenuItem Header="Show meter wall when move" IsCheckable="True" x:Name="menuShowMeterWall" Click="MenuShowMeterWall_Click" />
+                <Separator />
+                <MenuItem Header="Map Properties" Click="MenuMapProperties_Click" />
+            </MenuItem>
+            <MenuItem Header="Help">
+                <MenuItem Header="View Help" Click="MenuHelp_Click" />
+                <Separator />
+                <MenuItem Header="About" Click="MenuAbout_Click" />
+            </MenuItem>
+        </Menu>
+        <Grid Grid.Row="1">
+            <DockingManager Name="dockingManager">
+                <!--<DockingManager.Theme>
+                
+            </DockingManager.Theme>-->
+                <LayoutRoot>
+                    <LayoutPanel Orientation="Horizontal">
+                        <LayoutAnchorablePane DockWidth="200">
+                            <LayoutAnchorable Title="Toolbox">
+                                <controls:Toolbox3D x:Name="toolbox3d" />
+                            </LayoutAnchorable>
+                        </LayoutAnchorablePane>
+                        <LayoutPanel Orientation="Vertical">
+                            <LayoutDocumentPane>
+                                <LayoutDocument Title="3D View" >
+                                    <controls:ViewportHost x:Name="viewportHost" />
+                                </LayoutDocument>
+                                <LayoutDocument Title="Source View">
+                                    <controls:SouceCodeViewer x:Name="sourceCodeViewer" />
+                                </LayoutDocument>
+                                <!--<LayoutDocument Title="Sandbox" >
+                                    <controls:DemoDocument x:Name="demoDocument" />
+                                </LayoutDocument>-->
+                            </LayoutDocumentPane>
+                            <LayoutAnchorablePane DockHeight="200">
+                                <LayoutAnchorable Title="Output">
+                                    <controls:OutputControl x:Name="outputWindow"/>
+                                </LayoutAnchorable>
+                                <LayoutAnchorable Title="Model Explorer">
+                                    <controls:ModelExplorer x:Name="modelExplorer" />
+                                </LayoutAnchorable>
+                            </LayoutAnchorablePane>
+                        </LayoutPanel>
+
+                        <LayoutAnchorablePane DockWidth="200">
+                            <LayoutAnchorable Title="Properties">
+                                <controls:ModelEditor x:Name="modelEditor"/>
+                            </LayoutAnchorable>
+                            <LayoutAnchorable Title="Game State">
+                                <controls:StateProperties x:Name="stateProperties" />
+                            </LayoutAnchorable>
+                        </LayoutAnchorablePane>
+                    </LayoutPanel>
+                </LayoutRoot>
+            </DockingManager>
+        </Grid>
+        <DockPanel Grid.Row="2">
+            <StatusBar DockPanel.Dock="Bottom" Background="SeaGreen">
+                <StatusBarItem>
+                    <TextBlock Name="lblNotification" Foreground="White" Text="sdfslmdkjfds"/>
+                </StatusBarItem>
+            </StatusBar>
+        </DockPanel>
+    </Grid>
+</Window>

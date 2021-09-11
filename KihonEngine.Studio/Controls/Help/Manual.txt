@@ -1,0 +1,33 @@
+﻿Minimal help :
+--------------
+This file explains how to start with Game Engine Studio
+
+Global comands
+--------------
+press F11 to swith with full screen mode
+
+Edit mode : 
+-----------
+Move camera :
+	left click, then move mouse
+
+Select a model : 
+	left click, 
+
+Move a model : 
+	left click, then
+		X for move on axis X
+		Y for move on axis Y
+		Z for move on axis Z
+
+Game mode : 
+-----------
+
+E	Move forward
+D	Move backward
+F	Side move to right
+S	Side move to left
+
+Change user view by using mouse, 
+
+ESC quit game and back to edit mode

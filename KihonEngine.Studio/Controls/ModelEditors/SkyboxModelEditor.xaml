@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="KihonEngine.Studio.Controls.ModelEditors.SkyboxModelEditor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:KihonEngine.Studio.Controls.ModelEditors"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid x:Name="propertyGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center">Name</Label>
+        <TextBox Grid.Row="0" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="tbName" KeyUp="tbName_KeyUp"></TextBox>
+
+        <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center">Width</Label>
+        <TextBox Grid.Row="1" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="tbWidth" KeyUp="tbWidth_KeyUp"></TextBox>
+
+        <Label Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center">Normal.X</Label>
+        <TextBox Grid.Row="2" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="tbNormalX" KeyUp="tbNormalX_KeyUp"></TextBox>
+
+        <Label Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center">Normal.Y</Label>
+        <TextBox Grid.Row="3" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="tbNormalY" KeyUp="tbNormalY_KeyUp"></TextBox>
+
+        <Label Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center">Normal.Z</Label>
+        <TextBox Grid.Row="4" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="tbNormalZ" KeyUp="tbNormalZ_KeyUp"></TextBox>
+
+        <Label Grid.Row="5" Grid.Column="0" HorizontalAlignment="Center">UseBackMaterial</Label>
+        <CheckBox Grid.Row="5" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="cbUseBackMaterial" Checked="cbUseBackMaterial_Checked" Unchecked="cbUseBackMaterial_Checked" ></CheckBox>
+    </Grid>
+</UserControl>

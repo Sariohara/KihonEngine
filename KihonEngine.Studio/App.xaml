@@ -1,0 +1,14 @@
+﻿<Application x:Class="KihonEngine.Studio.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:KihonEngine.Studio"
+             Startup="OnStartup">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MLib;component/Themes/DarkTheme.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/KihonEngine.Studio;component/Themes/DarkBrushsExtended.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

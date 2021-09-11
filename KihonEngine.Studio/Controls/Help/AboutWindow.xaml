@@ -1,0 +1,57 @@
+﻿<Window x:Class="KihonEngine.Studio.Controls.AboutWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KihonEngine.Studio.Controls"
+        mc:Ignorable="d"
+        Loaded="Window_Loaded"
+        KeyDown="Window_KeyDown"
+        Title="About" 
+        Style="{DynamicResource ResourceKey=WindowDefaultStyle}"
+        ResizeMode="NoResize" Height="360" Width="660">
+
+    <Grid Margin="5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Canvas Grid.Row="0" Grid.Column="0">
+            <Image Name="imgLogo" Canvas.Left="0" Canvas.Top="0" Height="300" Width="200" Source="/Controls/Help/Logo3.png" Stretch="Fill" />
+        </Canvas>
+        <Grid Grid.Row="0" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+
+            <Canvas Grid.Row="0" Grid.Column="0">
+                <Label x:Name="lblStudioProduct" Canvas.Left="10" Canvas.Top="20" Content="Kihon Engine Studio"/>
+                <Label x:Name="lblStudioVersion" Canvas.Left="10" Canvas.Top="35" Content="Version 1.0.0"/>
+                <Label x:Name="lblStudioCopyright" Canvas.Left="10" Canvas.Top="50" Content="Copyright (c) 2021 Nicolas VIEL"/>
+                <Label Canvas.Left="10" Canvas.Top="65" Content="All rights reserved."/>
+
+                <Label x:Name="lblEngineProduct" Canvas.Left="250" Canvas.Top="20" Content="Kihon Engine"/>
+                <Label x:Name="lblEngineVersion" Canvas.Left="250" Canvas.Top="35" Content="Version 1.0.0"/>
+                <Label x:Name="lblEngineCopyright" Canvas.Left="250" Canvas.Top="50" Content="Copyright (c) 2021 Nicolas VIEL"/>
+                <Label Canvas.Left="250" Canvas.Top="65" Content="All rights reserved."/>
+                
+                <TextBox Canvas.Left="10" Canvas.Top="100" Width="414" Height="160" Name="tbLicense" 
+                 ScrollViewer.HorizontalScrollBarVisibility="Auto" 
+                 ScrollViewer.VerticalScrollBarVisibility="Auto"  
+                 ScrollViewer.CanContentScroll="True"
+                 IsReadOnly="True"
+                 Foreground="LightGray" FontFamily="Consolas" Padding="10"/>
+            </Canvas>
+            <Canvas Grid.Row="1" Grid.Column="0">
+                <Button Canvas.Right="10" Canvas.Bottom="10" x:Name="btClose" Content="OK" Width="100" Click="btClose_Click" />
+            </Canvas>
+        </Grid>
+    </Grid>
+</Window>

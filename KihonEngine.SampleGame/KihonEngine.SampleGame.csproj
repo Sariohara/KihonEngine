@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+    <Authors>Nicolas VIEL</Authors>
+    <Company>Nicolas VIEL</Company>
+    <Copyright>Copyright (c) 2021 Nicolas VIEL</Copyright>
+    <Version>2021.09.11</Version>
+    <Product>Kihon Engine Sample Maps</Product>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\background.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\KihonEngine.SampleMaps\KihonEngine.SampleMaps.csproj" />
+    <ProjectReference Include="..\KihonEngine\KihonEngine.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\sky0-top.png" />
+  </ItemGroup>
+
+</Project>

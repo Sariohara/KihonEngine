@@ -1,0 +1,125 @@
+{
+  "Name": "City",
+  "PlayerPosition": "-60,10,70",
+  "PlayerLookDirection": "1,0,-1",
+  "Ceilings": [],
+  "Floors": [
+    {
+      "Metadata": {
+        "Width": 200.0,
+        "Length": 200.0,
+        "Texture": "default.png",
+        "UseBackMaterial": true
+      },
+      "Index": 3,
+      "Color": "#00FFFFFF",
+      "Position": "-100,0,-100",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    }
+  ],
+  "Lights": [
+    {
+      "Metadata": {
+        "Direction": "-3,-4,-5"
+      },
+      "Index": 0,
+      "Color": "#00FFFFFF",
+      "Position": "0,0,0",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "Direction": "3,4,5"
+      },
+      "Index": 1,
+      "Color": "#00FFFFFF",
+      "Position": "0,0,0",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    }
+  ],
+  "Skyboxes": [
+    {
+      "Metadata": {
+        "Name": "sky1",
+        "Width": 10000,
+        "Normal": "-3,-4,-5",
+        "UseBackMaterial": false
+      },
+      "Index": 2,
+      "Color": "#00FFFFFF",
+      "Position": "-5000,-5000,-5000",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    }
+  ],
+  "Volumes": [
+    {
+      "Metadata": {
+        "Width": 10.0,
+        "Height": 30.0,
+        "Length": 100.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 4,
+      "Color": "#FFEE82EE",
+      "Position": "24,0,0",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "Width": 80.0,
+        "Height": 10.0,
+        "Length": 10.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 5,
+      "Color": "#FF40E0D0",
+      "Position": "0,0,45",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "Width": 30.0,
+        "Height": 20.0,
+        "Length": 30.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 6,
+      "Color": "#FFFFFF00",
+      "Position": "15,0,36",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "Width": 150.0,
+        "Height": 10.0,
+        "Length": 10.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 7,
+      "Color": "#FFFFFFFF",
+      "Position": "-75,0,-4",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    }
+  ],
+  "Walls": []
+}

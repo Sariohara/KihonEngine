@@ -1,0 +1,26 @@
+﻿<Window x:Class="KihonEngine.Studio.Controls.HelpWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KihonEngine.Studio.Controls"
+        mc:Ignorable="d"
+        Loaded="Window_Loaded"
+        KeyDown="Window_KeyDown"
+        Title="Help" 
+        Style="{DynamicResource ResourceKey=WindowDefaultStyle}"
+        ResizeMode="NoResize" Height="450" Width="480">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <WebBrowser Grid.Row="0" Grid.Column="0" Name="webBrowser"/>
+        <Canvas Grid.Row="1" Grid.Column="0">
+            <Button Canvas.Right="10" Canvas.Bottom="10" x:Name="btClose" Content="Close" Width="100"  Click="btClose_Click" />
+        </Canvas>
+    </Grid>
+</Window>
