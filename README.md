@@ -44,7 +44,7 @@ And that's all. When the application starts, you will have basic startup screen.
 
 ![Screenshot - Splash Screen](https://raw.github.com/nico65535/kihonengine/master/doc/kihonEngine-sampleGame-splashScreen-01.png)
 
-And when click Start Game, you will launch one of the few sample maps available in `KihonEngine.SampleMaps`
+And by click Start Game, you will launch one of the few sample maps available in `KihonEngine.SampleMaps`
 
 ![Screenshot - Walkthrough](https://raw.github.com/nico65535/kihonengine/master/doc/kihonEngine-sampleGame-walkthrough-01.png)
 
@@ -54,6 +54,17 @@ And when click Start Game, you will launch one of the few sample maps available 
 Kihon Engine Studio helps for building maps
 
 The actual basic features are the following
+
+Some generic features 
+* Save and load maps from files from a json format
+* ossibility to change map global properties like map name, respawn player camera (position and direction)
+* Source viewer for the currently edited map, in order to visualize the json format
+* Game state viewer to analyse game state at any time
+* Possibility to playswitch between edit mode and game mode in order to vizualise how map is rendered at play time
+
+![Screenshot - Edit 3D map](https://raw.github.com/nico65535/kihonengine/master/doc/kihonEngine-studio-editMap-01.png)
+
+![Screenshot - Playt on 3D map](https://raw.github.com/nico65535/kihonengine/master/doc/kihonEngine-studio-playMap-01.png)
 
 Adding 3D models to maps
 * Add floor
@@ -71,22 +82,11 @@ Possibility to edit the 3D models
 * By colors
 * As proof of concept, actually only four textures are available for floors
 
-![Screenshot - Add 3D models](https://raw.github.com/nico65535/kihonengine/master/doc/kihonEngine-studio-edit3dModels-01.png)
+![Screenshot - Edit 3D models](https://raw.github.com/nico65535/kihonengine/master/doc/kihonEngine-studio-edit3dModels-01.png)
 
 Possibility to mode 3D models on the map
 * By moving on axis X, Y and Z
 * By translation on axis X, Y and Z
 
-![Screenshot - Add 3D models](https://raw.github.com/nico65535/kihonengine/master/doc/kihonEngine-studio-;ove3dModels-01.png)
-
-Possibility to change map global properties
-* map name
-* Player camera respawn position
-* Player camera respawn direction
-
-And some other features 
-* Save and load maps from files from a json format
-* Source viewer for the currently edited map, in order to visualize the json format
-* Game state viewer to analyse game state at any time
-* Possibility to playswitch between edit mode and game mode in order to vizualise how map is rendered at play time
+![Screenshot - Move 3D models](https://raw.github.com/nico65535/kihonengine/master/doc/kihonEngine-studio-move3dModels-01.png)
 
