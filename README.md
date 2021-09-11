@@ -59,7 +59,7 @@ Kihon Engine Studio helps for building maps
 The actual basic features are the following
 
 Some generic features 
-* Save and load maps from files from a json format
+* Save and load maps from files based on a json format
 * Possibility to change map global properties like map name, respawn player camera (position and direction)
 * Source viewer for the currently edited map, in order to visualize the json format
 * Game state viewer to analyse game state at any time
@@ -88,8 +88,8 @@ Possibility to edit the 3D models
 
 ![Screenshot - Edit 3D models](https://raw.github.com/nico65535/kihonengine/master/doc/kihonEngine-studio-edit3dModels-01.png)
 
-Possibility to mode 3D models on the map
-* By moving on axis X, Y and Z
+Possibility to move 3D models on the map
+* By rotation on axis X, Y and Z
 * By translation on axis X, Y and Z
 
 ![Screenshot - Move 3D models](https://raw.github.com/nico65535/kihonengine/master/doc/kihonEngine-studio-move3dModels-01.png)
