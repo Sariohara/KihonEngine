@@ -61,8 +61,10 @@ Some generic features
 * Game state viewer to analyse game state at any time
 * Possibility to switch between edit mode and game mode in order to vizualise how map is rendered at play time
 
+Edit mode
 ![Screenshot - Edit 3D map](https://raw.github.com/nico65535/kihonengine/master/doc/kihonEngine-studio-editMap-01.png)
 
+Play mode
 ![Screenshot - Playt on 3D map](https://raw.github.com/nico65535/kihonengine/master/doc/kihonEngine-studio-playMap-01.png)
 
 Adding 3D models to maps
