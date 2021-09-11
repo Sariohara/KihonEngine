@@ -59,7 +59,7 @@ Some generic features
 * ossibility to change map global properties like map name, respawn player camera (position and direction)
 * Source viewer for the currently edited map, in order to visualize the json format
 * Game state viewer to analyse game state at any time
-* Possibility to playswitch between edit mode and game mode in order to vizualise how map is rendered at play time
+* Possibility to switch between edit mode and game mode in order to vizualise how map is rendered at play time
 
 ![Screenshot - Edit 3D map](https://raw.github.com/nico65535/kihonengine/master/doc/kihonEngine-studio-editMap-01.png)
 
