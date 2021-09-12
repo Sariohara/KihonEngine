@@ -8,10 +8,25 @@
     <Copyright>Copyright (c) 2021 Nicolas VIEL</Copyright>
     <Version>2021.09.11</Version>
     <Product>Kihon Engine Sample Maps</Product>
+    <Title>Kihon Engine Sample Maps</Title>
+    <PackageIcon>packageIcon.png</PackageIcon>
+    <PackageProjectUrl>https://github.com/nico65535/KihonEngine</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/nico65535/KihonEngine</RepositoryUrl>
+    <Description>Sample maps for Kihon Engine 3D engine.</Description>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>csharp game-engine dotnetcore wpf video-game 3d</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\KihonEngine\KihonEngine.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\LICENSE.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

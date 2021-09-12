@@ -7,6 +7,7 @@
     <Copyright>Copyright (c) 2021 Nicolas VIEL</Copyright>
     <Version>2021.09.11</Version>
     <Product>Kihon Engine</Product>
+    <Title>Kihon Engine</Title>
     <PackageIcon>packageIcon.png</PackageIcon>
     <PackageProjectUrl>https://github.com/nico65535/KihonEngine</PackageProjectUrl>
     <RepositoryUrl>https://github.com/nico65535/KihonEngine</RepositoryUrl>
