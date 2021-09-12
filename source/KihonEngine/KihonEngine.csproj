@@ -13,6 +13,7 @@
     <Description>Kihon Engine is a basic 3D engine developed in dotnet core and WPF. It can be used for developpinng basic 3D video games.</Description>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
     <RepositoryType>git</RepositoryType>
+    <PackageTags>csharp game-engine dotnetcore wpf video-game 3d</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
