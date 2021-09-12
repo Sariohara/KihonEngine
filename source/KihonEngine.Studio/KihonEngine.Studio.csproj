@@ -71,13 +71,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Controls\Help\Manual.html">
+    <None Update="Content\Help\Manual.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Controls\Help\Manual.txt">
+    <None Update="Content\Help\Manual.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="LICENSE.TXT">
+    <None Update="Content\LICENSE.TXT">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

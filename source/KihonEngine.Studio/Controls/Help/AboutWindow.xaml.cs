@@ -42,7 +42,7 @@ Copyright (c) 2021 Nicolas VIEL\r\n";
 
             var filepath = System.IO.Path.Combine(
                 System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
-                @"LICENSE.TXT");
+                @"Content\LICENSE.TXT");
 
             if (System.IO.File.Exists(filepath))
             {

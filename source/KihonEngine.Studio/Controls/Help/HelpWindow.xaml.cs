@@ -52,7 +52,7 @@ ESC for quit and back to edit mode\r\n";
 
             var filepath = System.IO.Path.Combine(
                 System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
-                @"Controls\Help\Manual.html");
+                @"Content\Help\Manual.html");
 
             if (System.IO.File.Exists(filepath))
             {
