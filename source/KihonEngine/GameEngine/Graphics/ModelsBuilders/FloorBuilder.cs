@@ -46,7 +46,8 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
 
             if (!string.IsNullOrEmpty(filename))
             {
-                var brush = new ImageBrush(new BitmapImage(new Uri(@$"GameEngine\Graphics\Images\Textures\{filename}", UriKind.Relative)));
+                var imageSource = ImageHelper.Get($"Textures.{filename}");
+                var brush = new ImageBrush(imageSource);
                 brush.TileMode = TileMode.Tile;
                 brush.Stretch = Stretch.Uniform;
                 brush.Viewport = new Rect(new Point(0, 0), new Point(0.05, 0.05));

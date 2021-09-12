@@ -67,7 +67,8 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
 
             if (!string.IsNullOrEmpty(filepath))
             {
-                var brush = new ImageBrush(new BitmapImage(new Uri(@$"GameEngine\Graphics\Images\Skyboxes\{filepath}-{face}.png", UriKind.Relative)));
+                var imageSource = ImageHelper.Get($"Skyboxes.{filepath}-{face}.png");
+                var brush = new ImageBrush(imageSource);
                 materiaGroup.Children.Add(new DiffuseMaterial(brush));
             }
             else

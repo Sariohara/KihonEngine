@@ -8,7 +8,7 @@
     <Authors>Nicolas VIEL</Authors>
     <Company>Nicolas VIEL</Company>
     <Copyright>Copyright (c) 2021 Nicolas VIEL</Copyright>
-    <Version>2021.09.11</Version>
+    <Version>2021.09.12</Version>
     <Product>Kihon Engine Sample Maps</Product>
   </PropertyGroup>
 
@@ -17,8 +17,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\KihonEngine.SampleMaps\KihonEngine.SampleMaps.csproj" />
-    <ProjectReference Include="..\KihonEngine\KihonEngine.csproj" />
+    <PackageReference Include="KihonEngine" Version="2021.9.12" />
+    <PackageReference Include="KihonEngine.SampleMaps" Version="2021.9.12" />
   </ItemGroup>
 
   <ItemGroup>
