@@ -10,7 +10,7 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
             var bitmap = new BitmapImage();
 
             var assemblyName = typeof(ImageHelper).Assembly.GetName().Name;
-            using (var stream = assembly.GetManifestResourceStream($"{assemblyName}.GameEngine.Graphics.Images.{shortResourceName}"))
+            using (var stream = assembly.GetManifestResourceStream($"{assemblyName}.Content.Images.{shortResourceName}"))
             {
                 bitmap.BeginInit();
                 bitmap.StreamSource = stream;
