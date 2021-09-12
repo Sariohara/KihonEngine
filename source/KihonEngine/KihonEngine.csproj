@@ -7,10 +7,15 @@
     <Copyright>Copyright (c) 2021 Nicolas VIEL</Copyright>
     <Version>2021.09.11</Version>
     <Product>Kihon Engine</Product>
+    <PackageIcon>packageIcon.png</PackageIcon>
+    <PackageProjectUrl>https://github.com/nico65535/KihonEngine</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/nico65535/KihonEngine</RepositoryUrl>
+    <Description>Kihon Engine is a basic 3D engine developed in dotnet core and WPF. It can be used for developpinng basic 3D video games.</Description>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 
@@ -95,6 +100,17 @@
     </None>
     <None Update="GameEngine\Graphics\Images\Textures\Ki.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LICENSE.TXT">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="LICENSE.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="packageIcon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
     </None>
   </ItemGroup>
 
