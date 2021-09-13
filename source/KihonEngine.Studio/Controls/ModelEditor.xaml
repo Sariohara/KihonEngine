@@ -98,7 +98,7 @@
 
         <Label Grid.Row="6" Grid.Column="1" Background="LightGray" Margin="5">
             <StackPanel Orientation="Horizontal">
-                <Label>Model</Label>
+                <Label Content="Model "/>
                 <Label x:Name="lblModelType"></Label>
             </StackPanel>
         </Label>

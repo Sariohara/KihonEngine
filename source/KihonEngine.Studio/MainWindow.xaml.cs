@@ -173,7 +173,7 @@ namespace KihonEngine.Studio
 
             WorldEngine.RegisterMap<RoofTopMapBuilder>();
             WorldEngine.RegisterMap<DarkCastleMapBuilder>();
-            WorldEngine.RegisterMap<SpaceStationMapBuilder>();
+            WorldEngine.RegisterMap<ArenaMapBuilder>();
             WorldEngine.RegisterMap<LogoMapBuilder>();
 
             GameEngineController.RegisterIO(this);

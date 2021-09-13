@@ -19,7 +19,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="AbstractCity.json" />
+    <None Remove="arena.json" />
     <None Remove="packageIcon.png" />
+    <EmbeddedResource Include="Arena.json" />
+    <EmbeddedResource Include="AbstractCity.json" />
     <None Include="packageIcon.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
@@ -35,6 +39,10 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 
 </Project>
