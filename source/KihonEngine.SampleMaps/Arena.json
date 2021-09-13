@@ -1322,7 +1322,7 @@
     },
     {
       "Metadata": {
-        "Width": 12.0,
+        "Width": 100.0,
         "Height": 115.0,
         "Length": 1.0,
         "UseBackMaterial": true,
@@ -2192,7 +2192,7 @@
     },
     {
       "Metadata": {
-        "Width": 230.0,
+        "Width": 48.0,
         "Height": 1.0,
         "Length": 30.0,
         "UseBackMaterial": true,
