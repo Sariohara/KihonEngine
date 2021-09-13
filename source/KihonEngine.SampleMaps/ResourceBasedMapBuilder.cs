@@ -21,7 +21,7 @@ namespace KihonEngine.SampleMaps
         public ResourceBasedMapBuilder(string resourceName)
         {
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();
-            var assemblyName = typeof(ResourceBasedMapBuilder).Assembly.GetName().Name;
+            var assemblyName = assembly.GetName().Name;
             var stream = assembly.GetManifestResourceStream($"{assemblyName}.{resourceName}");
             using (StreamReader reader = new StreamReader(stream))
             {
