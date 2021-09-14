@@ -35,6 +35,18 @@ namespace KihonEngine.GameEngine.Graphics
             LogCameraPositionChanged();
         }
 
+        public void MoveVertical(double d)
+        {
+            double u = 0.05;
+            PerspectiveCamera camera = State.Graphics.PlayerCamera.Camera;
+
+            Vector3D direction = camera.UpDirection;
+            direction.Normalize();
+
+            camera.Position = camera.Position + u * direction * d;
+            LogCameraPositionChanged();
+        }
+
         public void MoveLateral(double d)
         {
             double u = 0.05;

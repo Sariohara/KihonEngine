@@ -334,7 +334,7 @@ namespace KihonEngine.GameEngine
             }
         }
 
-        public void SwitchCameraPosition(MouseEvent mouseEvent, List<Action> graphicUpdates)
+        public void SwitchCameraPosition(KeyboardSettings keyboardSettings, Key[] keys, MouseEvent mouseEvent, List<Action> graphicUpdates)
         {
             if (State.Editor.ActionMove.Mode != MoveModelMode.NotActive)
             {
@@ -345,20 +345,32 @@ namespace KihonEngine.GameEngine
             {
                 if (mouseEvent.LeftButton == System.Windows.Input.MouseButtonState.Pressed)
                 {
-                    graphicUpdates.Add(() =>
+                    if (keys.Contains(Key.Space))
                     {
-                        CameraController.DeltaRotateFromOriginOnAxisY(-mouseEvent.DX);
-                        CameraController.DeltaRotateFromOriginOnAxisX(-mouseEvent.DY);
-                    });
+                        graphicUpdates.Add(() =>
+                        {
+                            CameraController.RotateHorizontal(-mouseEvent.DX * 10);
+                            CameraController.RotateVertical(mouseEvent.DY * 10);
+                        });
+                    }
+                    else
+                    {
+                        graphicUpdates.Add(() =>
+                        {
+                            CameraController.DeltaRotateFromOriginOnAxisY(-mouseEvent.DX);
+                            CameraController.DeltaRotateFromOriginOnAxisX(-mouseEvent.DY);
+                        });
+                    }
                 }
                 else if (mouseEvent.RightButton == System.Windows.Input.MouseButtonState.Pressed)
                 {
                     graphicUpdates.Add(() => CameraController.MoveLateral(mouseEvent.DX * 10));
+                    graphicUpdates.Add(() => CameraController.MoveVertical(mouseEvent.DY * 10));
                 }
             }
             else if (mouseEvent.Type == MouseEventType.Wheel)
             {
-                graphicUpdates.Add(() => CameraController.DeltaZoomFromOrigin(-mouseEvent.Delta));
+                graphicUpdates.Add(() => CameraController.MoveLongitudinal(mouseEvent.Delta));
             }
         }
 
@@ -377,7 +389,7 @@ namespace KihonEngine.GameEngine
                     MoveModel(keyboardSettings, keys, mouseEvent, graphicUpdates);
                 });
 
-                SwitchCameraPosition(mouseEvent, graphicUpdates);
+                SwitchCameraPosition(keyboardSettings, keys, mouseEvent, graphicUpdates);
             }
         }
 

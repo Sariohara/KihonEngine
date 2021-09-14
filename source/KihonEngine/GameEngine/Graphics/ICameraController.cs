@@ -5,6 +5,7 @@ namespace KihonEngine.GameEngine.Graphics
     {
         void Respawn();
         void MoveLongitudinal(double d);
+        void MoveVertical(double d);
         void MoveLateral(double d);
         public void RotateHorizontal(double d);
         public void RotateVertical(double d);
