@@ -1,5 +1,6 @@
 ﻿using KihonEngine.GameEngine;
 using KihonEngine.GameEngine.State;
+using KihonEngine.GameEngine.State.FpsGame;
 using KihonEngine.Services;
 using System;
 using System.Collections.Generic;
@@ -72,6 +73,13 @@ namespace KihonEngine.Studio.Controls
             AddProperty(properties, "EngineMode", state.EngineMode.ToString());
             AddProperty(properties, "CurrentLogicName", state.CurrentLogicName.ToString());
             AddProperty(properties, "CanHandleMouseMoves", state.CanHandleMouseMoves.ToString());
+            AddProperty(properties, "State.Game.FallState.IsFalling", state.Game.Get<FallState>().IsFalling.ToString());
+            AddProperty(properties, "State.Game.FallState.FallHeigh", state.Game.Get<FallState>().FallHeigh.ToString());
+            AddProperty(properties, "State.Game.FallState.CanMoveWhenFall", state.Game.Get<FallState>().CanMoveWhenFall.ToString());
+            AddProperty(properties, "State.Game.FallState.DeadFall", state.Game.Get<FallState>().DeadFall.ToString());
+            AddProperty(properties, "State.Game.JumpState.IsJumping", state.Game.Get<JumpState>().IsJumping.ToString());
+            AddProperty(properties, "State.Game.JumpState.YSpeed", state.Game.Get<JumpState>().YSpeed.ToString());
+            AddProperty(properties, "State.Game.JumpState.Gravity", state.Game.Get<JumpState>().Gravity.ToString());
             AddProperty(properties, "Editor.CurrentColor", state.Editor.CurrentColor.ToString());
             AddProperty(properties, "Editor.RotationStep", state.Editor.RotationStep.ToString());
             AddProperty(properties, "Editor.TranslationStep", state.Editor.TranslationStep.ToString());

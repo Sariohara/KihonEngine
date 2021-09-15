@@ -18,11 +18,12 @@ namespace KihonEngine.GameEngine.InputControls
         public Key LookDown { get; set; }
         public Key[] LookKeys => new[] { LookRight, LookLeft, LookUp, LookDown };
 
+        public Key Jump { get; set; }
         public Key MoveForward { get; set; }
         public Key MoveBackward { get; set; }
         public Key MoveRight { get; set; }
         public Key MoveLeft { get; set; }
-        public Key[] MoveKeys => new[] { MoveRight, MoveLeft, MoveForward, MoveBackward };
+        public Key[] MoveKeys => new[] { Jump, MoveRight, MoveLeft, MoveForward, MoveBackward };
 
         public double MoveSpeed { get; set; }
     }

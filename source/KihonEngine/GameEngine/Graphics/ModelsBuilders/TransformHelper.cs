@@ -112,7 +112,7 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
             {
                 var geometryModel = (GeometryModel3D)model;
                 var mesh = geometryModel.Geometry as MeshGeometry3D;
-
+                
                 foreach (var indice in mesh.TriangleIndices)
                 {
                     points.Add(mesh.Positions[indice]);

@@ -34,6 +34,7 @@ namespace KihonEngine.GameEngine.Configuration
                 LookUp = Key.R,
                 LookDown = Key.V,
 
+                Jump = Key.Space,
                 MoveForward = Key.E,
                 MoveBackward = Key.D,
                 MoveRight = Key.F,

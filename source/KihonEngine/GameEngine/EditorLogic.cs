@@ -49,14 +49,23 @@ namespace KihonEngine.GameEngine
 
                 if (selectedModel != null)
                 {
+                    Rect3D bb = selectedModel.GetModel().Content.Bounds;
+                    Rect3D rect = new Rect3D();
+                    bool isIntersecting = rect.IntersectsWith(bb);
+
+                    LogService.Log($"bounds:{bb.X},{bb.Y},{bb.Z}, {bb.SizeX}, {bb.SizeY}, {bb.SizeZ}");
+
                     State.Editor.ActionSelect.SelectedModel = selectedModel;
                     //_moveModelState.SelectedModel = selectedModel;
                     var points = TransformHelper.GetPoints(selectedModel.Children);
 
                     var initialPosition = new Point3D(
-                        selectedModel.Translation.Value.OffsetX,
+                         selectedModel.Translation.Value.OffsetX,
                         selectedModel.Translation.Value.OffsetY,
                         selectedModel.Translation.Value.OffsetZ);
+                        //bb.X,
+                        //bb.Y,
+                        //bb.Z);
 
                     State.Editor.ActionSelect.InitialModelPosition = initialPosition;
                     State.Editor.ActionSelect.MinX = points.Min(x => x.X);
@@ -65,6 +74,12 @@ namespace KihonEngine.GameEngine
                     State.Editor.ActionSelect.MaxX = points.Max(x => x.X);
                     State.Editor.ActionSelect.MaxY = points.Max(x => x.Y);
                     State.Editor.ActionSelect.MaxZ = points.Max(x => x.Z);
+                    //State.Editor.ActionSelect.MinX = bb.X;
+                    //State.Editor.ActionSelect.MinY = bb.Y;
+                    //State.Editor.ActionSelect.MinZ = bb.Z;
+                    //State.Editor.ActionSelect.MaxX = bb.SizeX;
+                    //State.Editor.ActionSelect.MaxY = bb.SizeY;
+                    //State.Editor.ActionSelect.MaxZ = bb.SizeZ;
 
                     var modelBuilder = new ModelBuilderFromDefinition();
 
@@ -87,6 +102,9 @@ namespace KihonEngine.GameEngine
                     };
 
                     var selectBoxModel = modelBuilder.Build(selectionBoxDefinition);
+                    //selectBoxModel.RotateByAxisX(selectedModel.AxisXRotationAngle);
+                    //selectBoxModel.RotateByAxisY(selectedModel.AxisYRotationAngle);
+                    //selectBoxModel.RotateByAxisZ(selectedModel.AxisZRotationAngle);
                     State.Editor.ActionSelect.SelectionBoxModel = selectBoxModel;
                     WorldEngine.AddModel(selectBoxModel);
                     needRefresh = true;
@@ -364,13 +382,13 @@ namespace KihonEngine.GameEngine
                 }
                 else if (mouseEvent.RightButton == System.Windows.Input.MouseButtonState.Pressed)
                 {
-                    graphicUpdates.Add(() => CameraController.MoveLateral(mouseEvent.DX * 10));
-                    graphicUpdates.Add(() => CameraController.MoveVertical(mouseEvent.DY * 10));
+                    graphicUpdates.Add(() => CameraController.MoveLateral(mouseEvent.DX * 10, false));
+                    graphicUpdates.Add(() => CameraController.MoveVertical(mouseEvent.DY * 10, false));
                 }
             }
             else if (mouseEvent.Type == MouseEventType.Wheel)
             {
-                graphicUpdates.Add(() => CameraController.MoveLongitudinal(mouseEvent.Delta));
+                graphicUpdates.Add(() => CameraController.MoveLongitudinal(mouseEvent.Delta, false));
             }
         }
 

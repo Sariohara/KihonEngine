@@ -1,5 +1,6 @@
 ﻿using KihonEngine.GameEngine.State;
 using KihonEngine.Services;
+using System.Collections.Generic;
 using System.Windows.Media.Media3D;
 
 namespace KihonEngine.GameEngine.Graphics
@@ -10,6 +11,107 @@ namespace KihonEngine.GameEngine.Graphics
             => Container.Get<ILogService>();
         private IGameEngineState State
             => Container.Get<IGameEngineState>();
+
+        private Rect3D GetPlayerBox(Point3D cameraPosition)
+        {
+            var points = new List<Point3D>();
+
+            var playerSizeX = 6;
+            var playerSizeY = 12;
+            var playerSizeZ = 6;
+            var gridSize = .5;
+            var originX = cameraPosition.X - playerSizeX / 2;
+            var originY = cameraPosition.Y - 10;
+            var originZ = cameraPosition.Z - playerSizeZ / 2;
+
+            return new Rect3D(originX, originY, originZ, playerSizeX, playerSizeY, playerSizeZ);
+        }
+        //private List<Point3D> GetPlayerPoints(Point3D fromPosition)
+        //{
+        //    var points = new List<Point3D>();
+
+        //    var playerSizeX = 6;
+        //    var playerSizeY = 12;
+        //    var playerSizeZ = 6;
+        //    var gridSize = .5;
+        //    var originX = fromPosition.X - playerSizeX / 2;
+        //    var originY = fromPosition.Y - playerSizeY / 2;
+        //    var originZ = fromPosition.Z - playerSizeZ / 2;
+
+        //    for (double x = 0; x <= playerSizeX; x = x + gridSize)
+        //    {
+        //        for (double y = 0; y <= playerSizeY; y = y + gridSize)
+        //        {
+        //            for (double z = 0; z <= playerSizeZ; z = z + gridSize)
+        //            {
+        //                points.Add(new Point3D(originX + x, originY + y, originZ + z));
+        //            }
+        //        }
+        //    }
+
+        //    return points;
+        //}
+
+        public bool HasCollisions(bool useClipping, Point3D position, out double adjustmentY)
+        {
+            adjustmentY = 0;
+
+            if (!useClipping)
+            {
+                return false;
+            }
+
+            var playerBox = GetPlayerBox(position);
+            
+            bool walkOnSomething = false;
+            foreach (var model in State.Graphics.Level)
+            {
+                var box = new Rect3D(playerBox.Location, playerBox.Size);
+                if (model.Type == ModelsBuilders.ModelType.Skybox || model.Type == ModelsBuilders.ModelType.Light)
+                {
+                    continue;
+                }
+
+                Rect3D boundBox = model.GetModel().Content.Bounds;
+                if (box.IntersectsWith(boundBox))
+                {
+                    box.Intersect(boundBox);
+
+                    if (box.Y == playerBox.Y && box.SizeY == 0)
+                    {
+                        LogService.Log($"collision:walk with {model.Type}:{box.X},{box.Y},{box.Z}:{box.SizeX},{box.SizeY},{box.SizeZ}");
+                        // Walk on something
+                        walkOnSomething = true;
+                        adjustmentY = box.SizeY;
+                    }
+                    else if (box.Y <= playerBox.Y + 2 && box.Y + box.SizeY <= playerBox.Y + 2)
+                    {
+                        LogService.Log($"collision:y-change with {model.Type}:{box.X},{box.Y},{box.Z}:{box.SizeX},{box.SizeY},{box.SizeZ}");
+                        // possible stairs
+                        walkOnSomething = true;
+
+                        if (box.SizeY > adjustmentY)
+                        {
+                            adjustmentY = box.SizeY;
+                        }
+                    }
+                    else
+                    {
+                        LogService.Log($"collision:real with {model.Type}:{box.X},{box.Y},{box.Z}:{box.SizeX},{box.SizeY},{box.SizeZ}");
+                        return true;
+                    }
+                }
+            }
+
+            if (!walkOnSomething)
+            {
+                adjustmentY = -1;
+            }
+
+            LogService.Log($"walkOnSomething:{walkOnSomething},adjustmentY:{adjustmentY}");
+
+            return false;
+        }
 
         public void Respawn()
         {
@@ -23,7 +125,7 @@ namespace KihonEngine.GameEngine.Graphics
             State.Graphics.PlayerCamera.RotationZFromOrigin.Angle = 0;
         }
 
-        public void MoveLongitudinal(double d)
+        public void MoveLongitudinal(double d, bool useClipping)
         {
             double u = 0.05;
             PerspectiveCamera camera = State.Graphics.PlayerCamera.Camera;
@@ -31,11 +133,15 @@ namespace KihonEngine.GameEngine.Graphics
             Vector3D direction = new Vector3D(camera.LookDirection.X, 0, camera.LookDirection.Z);
             direction.Normalize();
 
-            camera.Position = camera.Position + u * direction * d;
-            LogCameraPositionChanged();
+            var newPosition = camera.Position + u * direction * d;
+            if (!HasCollisions(useClipping, newPosition, out var adjustmentY))
+            {
+                camera.Position = new Point3D(newPosition.X, newPosition.Y + adjustmentY, newPosition.Z);
+                LogCameraPositionChanged();
+            }
         }
 
-        public void MoveVertical(double d)
+        public void MoveVertical(double d, bool useClipping)
         {
             double u = 0.05;
             PerspectiveCamera camera = State.Graphics.PlayerCamera.Camera;
@@ -43,11 +149,15 @@ namespace KihonEngine.GameEngine.Graphics
             Vector3D direction = camera.UpDirection;
             direction.Normalize();
 
-            camera.Position = camera.Position + u * direction * d;
-            LogCameraPositionChanged();
+            var newPosition = camera.Position + u * direction * d;
+            if (!HasCollisions(useClipping, newPosition, out var adjustmentY))
+            {
+                camera.Position = new Point3D(newPosition.X, newPosition.Y + adjustmentY, newPosition.Z);
+                LogCameraPositionChanged();
+            }
         }
 
-        public void MoveLateral(double d)
+        public void MoveLateral(double d, bool useClipping)
         {
             double u = 0.05;
             PerspectiveCamera camera = State.Graphics.PlayerCamera.Camera;
@@ -55,8 +165,12 @@ namespace KihonEngine.GameEngine.Graphics
             var direction = Vector3D.CrossProduct(camera.UpDirection, camera.LookDirection);
             direction.Normalize();
 
-            camera.Position = camera.Position + u * direction * d;
-            LogCameraPositionChanged();
+            var newPosition = camera.Position + u * direction * d;
+            if (!HasCollisions(useClipping, newPosition, out var adjustmentY))
+            {
+                camera.Position = new Point3D(newPosition.X, newPosition.Y + adjustmentY, newPosition.Z);
+                LogCameraPositionChanged();
+            }
         }
 
         public void RotateHorizontal(double d)
