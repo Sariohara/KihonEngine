@@ -235,7 +235,7 @@ namespace KihonEngine.GameEngine.GameLogics.Fps
 
             if (collisionResult.HasBodyCollision)
             {
-                LogService.Log("Start body collision");
+                LogService.Log("Start body collision management");
                 if (!newPosition.Equals(camera.Position))
                 {
                     newPosition = camera.Position;
@@ -248,20 +248,20 @@ namespace KihonEngine.GameEngine.GameLogics.Fps
                 {
                     var roundLimit = 100;
                     var round = 0;
-                    var increment = 1;
+                    var verticalDirection = 1;
                     if (jumpState.YSpeed < 0)
                     {
-                        increment = -1;
+                        verticalDirection = -1;
                     }
 
                     while (collisionResult.HasBodyCollision)
                     {
                         LogService.Log($"Adapt position");
                         LogService.Log($"  Collision for position : {newPosition.X},{newPosition.Y},{newPosition.Z}");
-                        LogService.Log($"  Collision increment    : { -increment}");
-                        LogService.Log($"  Try new position       : {newPosition.X},{newPosition.Y - increment},{newPosition.Z}");
+                        LogService.Log($"  Collision increment    : { -verticalDirection}");
+                        LogService.Log($"  Try new position       : {newPosition.X},{newPosition.Y - verticalDirection},{newPosition.Z}");
                         
-                        newPosition = new Point3D(newPosition.X, newPosition.Y - increment, newPosition.Z);
+                        newPosition = new Point3D(newPosition.X, newPosition.Y - verticalDirection, newPosition.Z);
                         playerBox = _collisionManager.GetPlayerBox(newPosition);
                         collisionResult = _collisionManager.DetectCollisions(playerBox);
                         LogService.Log($"  HasBodyCollision       : {collisionResult.HasBodyCollision}");
@@ -272,6 +272,8 @@ namespace KihonEngine.GameEngine.GameLogics.Fps
                             break;
                         }
                     }
+
+                    jumpState.YSpeed = 0;
                 }
             }
 

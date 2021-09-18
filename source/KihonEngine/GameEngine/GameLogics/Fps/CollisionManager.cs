@@ -16,17 +16,17 @@ namespace KihonEngine.GameEngine.GameLogics.Fps
         }
 
         private const int PlayerCameraSizeY = 10;
+        private const int PlayerSizeY = 12;
+        private const int PlayerSizeX = 6;
+        private const int PlayerSizeZ = 6;
 
         public Rect3D GetPlayerBox(Point3D cameraPosition)
         {
-            var playerSizeX = 6;
-            var playerSizeY = 12;
-            var playerSizeZ = 6;
-            var originX = cameraPosition.X - playerSizeX / 2;
+            var originX = cameraPosition.X - PlayerSizeX / 2;
             var originY = cameraPosition.Y - PlayerCameraSizeY;
-            var originZ = cameraPosition.Z - playerSizeZ / 2;
+            var originZ = cameraPosition.Z - PlayerSizeZ / 2;
 
-            return new Rect3D(originX, originY, originZ, playerSizeX, playerSizeY, playerSizeZ);
+            return new Rect3D(originX, originY, originZ, PlayerSizeX, PlayerSizeY, PlayerSizeZ);
         }
 
         public CollisionResult DetectCollisions(Rect3D animatedModelBox)
@@ -78,7 +78,7 @@ namespace KihonEngine.GameEngine.GameLogics.Fps
                         if (delta >= result.DeltaYForHead)
                         {
                             result.DeltaYForHead = delta;
-                            result.AdjustedYForHead = animatedModelBox.Y - box.Y;
+                            result.AdjustedYForHead = box.Y - PlayerSizeY + PlayerCameraSizeY;
                         }
                     }
                     else
