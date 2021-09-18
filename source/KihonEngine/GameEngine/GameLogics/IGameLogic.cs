@@ -2,7 +2,7 @@
 using System.Windows;
 using System.Windows.Input;
 
-namespace KihonEngine.GameEngine
+namespace KihonEngine.GameEngine.GameLogics
 {
     public interface IGameLogic
     {

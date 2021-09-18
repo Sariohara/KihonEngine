@@ -1,16 +1,18 @@
 ﻿
+using System;
 using System.Windows.Media.Media3D;
 
 namespace KihonEngine.GameEngine.Graphics
 {
     public interface ICameraController
     {
-        bool HasCollisions(bool useClipping, Point3D position, out double adjustmentY);
-
         void Respawn();
-        void MoveLongitudinal(double d, bool useClipping);
-        void MoveVertical(double d, bool useClipping);
-        void MoveLateral(double d, bool useClipping);
+        Point3D GetMoveLongitudinal(Point3D position, Vector3D lookDirection, Vector3D upDirection, double d);
+        Point3D GetMoveVertical(Point3D position, Vector3D lookDirection, Vector3D upDirection, double d);
+        Point3D GetMoveLateral(Point3D position, Vector3D lookDirection, Vector3D upDirection, double d);
+        void MoveLongitudinal(double d);
+        void MoveVertical(double d);
+        void MoveLateral(double d);
         public void RotateHorizontal(double d);
         public void RotateVertical(double d);
 

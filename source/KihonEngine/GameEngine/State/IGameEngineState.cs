@@ -1,5 +1,6 @@
 ﻿
 using KihonEngine.GameEngine.State.Editor;
+using System.Windows.Input;
 
 namespace KihonEngine.GameEngine.State
 {
@@ -16,5 +17,7 @@ namespace KihonEngine.GameEngine.State
         public string CurrentLogicName { get; set; }
 
         public bool CanHandleMouseMoves { get; set; }
+
+        public Key[] KeyPressed { get; set; }
     }
 }

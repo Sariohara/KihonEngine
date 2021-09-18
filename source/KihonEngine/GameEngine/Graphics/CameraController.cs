@@ -1,5 +1,6 @@
 ﻿using KihonEngine.GameEngine.State;
 using KihonEngine.Services;
+using System;
 using System.Collections.Generic;
 using System.Windows.Media.Media3D;
 
@@ -12,20 +13,6 @@ namespace KihonEngine.GameEngine.Graphics
         private IGameEngineState State
             => Container.Get<IGameEngineState>();
 
-        private Rect3D GetPlayerBox(Point3D cameraPosition)
-        {
-            var points = new List<Point3D>();
-
-            var playerSizeX = 6;
-            var playerSizeY = 12;
-            var playerSizeZ = 6;
-            var gridSize = .5;
-            var originX = cameraPosition.X - playerSizeX / 2;
-            var originY = cameraPosition.Y - 10;
-            var originZ = cameraPosition.Z - playerSizeZ / 2;
-
-            return new Rect3D(originX, originY, originZ, playerSizeX, playerSizeY, playerSizeZ);
-        }
         //private List<Point3D> GetPlayerPoints(Point3D fromPosition)
         //{
         //    var points = new List<Point3D>();
@@ -52,66 +39,7 @@ namespace KihonEngine.GameEngine.Graphics
         //    return points;
         //}
 
-        public bool HasCollisions(bool useClipping, Point3D position, out double adjustmentY)
-        {
-            adjustmentY = 0;
 
-            if (!useClipping)
-            {
-                return false;
-            }
-
-            var playerBox = GetPlayerBox(position);
-            
-            bool walkOnSomething = false;
-            foreach (var model in State.Graphics.Level)
-            {
-                var box = new Rect3D(playerBox.Location, playerBox.Size);
-                if (model.Type == ModelsBuilders.ModelType.Skybox || model.Type == ModelsBuilders.ModelType.Light)
-                {
-                    continue;
-                }
-
-                Rect3D boundBox = model.GetModel().Content.Bounds;
-                if (box.IntersectsWith(boundBox))
-                {
-                    box.Intersect(boundBox);
-
-                    if (box.Y == playerBox.Y && box.SizeY == 0)
-                    {
-                        LogService.Log($"collision:walk with {model.Type}:{box.X},{box.Y},{box.Z}:{box.SizeX},{box.SizeY},{box.SizeZ}");
-                        // Walk on something
-                        walkOnSomething = true;
-                        adjustmentY = box.SizeY;
-                    }
-                    else if (box.Y <= playerBox.Y + 2 && box.Y + box.SizeY <= playerBox.Y + 2)
-                    {
-                        LogService.Log($"collision:y-change with {model.Type}:{box.X},{box.Y},{box.Z}:{box.SizeX},{box.SizeY},{box.SizeZ}");
-                        // possible stairs
-                        walkOnSomething = true;
-
-                        if (box.SizeY > adjustmentY)
-                        {
-                            adjustmentY = box.SizeY;
-                        }
-                    }
-                    else
-                    {
-                        LogService.Log($"collision:real with {model.Type}:{box.X},{box.Y},{box.Z}:{box.SizeX},{box.SizeY},{box.SizeZ}");
-                        return true;
-                    }
-                }
-            }
-
-            if (!walkOnSomething)
-            {
-                adjustmentY = -1;
-            }
-
-            LogService.Log($"walkOnSomething:{walkOnSomething},adjustmentY:{adjustmentY}");
-
-            return false;
-        }
 
         public void Respawn()
         {
@@ -125,23 +53,34 @@ namespace KihonEngine.GameEngine.Graphics
             State.Graphics.PlayerCamera.RotationZFromOrigin.Angle = 0;
         }
 
-        public void MoveLongitudinal(double d, bool useClipping)
+        public Point3D GetMoveLongitudinal(double d)
         {
             double u = 0.05;
             PerspectiveCamera camera = State.Graphics.PlayerCamera.Camera;
-            
+
             Vector3D direction = new Vector3D(camera.LookDirection.X, 0, camera.LookDirection.Z);
             direction.Normalize();
 
-            var newPosition = camera.Position + u * direction * d;
-            if (!HasCollisions(useClipping, newPosition, out var adjustmentY))
-            {
-                camera.Position = new Point3D(newPosition.X, newPosition.Y + adjustmentY, newPosition.Z);
-                LogCameraPositionChanged();
-            }
+            return camera.Position + u * direction * d;
         }
 
-        public void MoveVertical(double d, bool useClipping)
+        public Point3D GetMoveLongitudinal(Point3D position, Vector3D lookDirection, Vector3D upDirection, double d)
+        {
+            double u = 0.05;
+
+            Vector3D direction = new Vector3D(lookDirection.X, 0, lookDirection.Z);
+            direction.Normalize();
+
+            return position + u * direction * d;
+        }
+
+        public void MoveLongitudinal(double d)
+        {
+            State.Graphics.PlayerCamera.Camera.Position = GetMoveLongitudinal(d);
+            LogCameraPositionChanged();
+        }
+
+        public Point3D GetMoveVertical(double d)
         {
             double u = 0.05;
             PerspectiveCamera camera = State.Graphics.PlayerCamera.Camera;
@@ -149,15 +88,37 @@ namespace KihonEngine.GameEngine.Graphics
             Vector3D direction = camera.UpDirection;
             direction.Normalize();
 
-            var newPosition = camera.Position + u * direction * d;
-            if (!HasCollisions(useClipping, newPosition, out var adjustmentY))
-            {
-                camera.Position = new Point3D(newPosition.X, newPosition.Y + adjustmentY, newPosition.Z);
-                LogCameraPositionChanged();
-            }
+            return camera.Position + u * direction * d;
         }
 
-        public void MoveLateral(double d, bool useClipping)
+        public Point3D GetMoveVertical(Point3D position, Vector3D lookDirection, Vector3D upDirection, double d)
+        {
+            double u = 0.05;
+
+            Vector3D direction = upDirection;
+            direction.Normalize();
+
+            return position + u * direction * d;
+        }
+
+        public void MoveVertical(double d)
+        {
+            State.Graphics.PlayerCamera.Camera.Position = GetMoveVertical(d);
+
+            LogCameraPositionChanged();
+        }
+
+        public Point3D GetMoveLateral(Point3D position, Vector3D lookDirection, Vector3D upDirection, double d)
+        {
+            double u = 0.05;
+
+            var direction = Vector3D.CrossProduct(upDirection, lookDirection);
+            direction.Normalize();
+
+            return position + u * direction * d;
+        }
+
+        public Point3D GetMoveLateral(double d)
         {
             double u = 0.05;
             PerspectiveCamera camera = State.Graphics.PlayerCamera.Camera;
@@ -165,12 +126,13 @@ namespace KihonEngine.GameEngine.Graphics
             var direction = Vector3D.CrossProduct(camera.UpDirection, camera.LookDirection);
             direction.Normalize();
 
-            var newPosition = camera.Position + u * direction * d;
-            if (!HasCollisions(useClipping, newPosition, out var adjustmentY))
-            {
-                camera.Position = new Point3D(newPosition.X, newPosition.Y + adjustmentY, newPosition.Z);
-                LogCameraPositionChanged();
-            }
+            return camera.Position + u * direction * d;
+        }
+
+        public void MoveLateral(double d)
+        {
+            State.Graphics.PlayerCamera.Camera.Position = GetMoveLateral(d);
+            LogCameraPositionChanged();
         }
 
         public void RotateHorizontal(double d)

@@ -8,8 +8,10 @@ using KihonEngine.GameEngine.State;
 using KihonEngine.GameEngine.Graphics;
 using KihonEngine.GameEngine.Configuration;
 using KihonEngine.GameEngine.InputControls;
+using System.Threading;
+using System.Threading.Tasks;
 
-namespace KihonEngine.GameEngine
+namespace KihonEngine.GameEngine.GameLogics
 {
     public abstract class GameLogicBase : IGameLogic
     {
@@ -27,10 +29,8 @@ namespace KihonEngine.GameEngine
         protected HashSet<Key> _keyboardPressedKeys = new HashSet<Key>();
         protected ConcurrentQueue<MouseEvent> _mouseEvents = new ConcurrentQueue<MouseEvent>();
 
-        private System.Threading.Thread _gameLogicThread;
-        private bool _shouldStop;
-
-        protected bool ShouldStop => _shouldStop;
+        private Thread _gameLogicThread;
+        private CancellationTokenSource _cts;
 
         public GameLogicBase()
         {
@@ -43,9 +43,9 @@ namespace KihonEngine.GameEngine
 
         public void Start()
         {
-            _shouldStop = false;
+            _cts = new CancellationTokenSource();
             LogService.Log($"Start {LogicName} thread");
-            _gameLogicThread = new System.Threading.Thread(() => MainLoop());
+            _gameLogicThread = new Thread(() => MainLoop(_cts.Token));
             _gameLogicThread.Start();
         }
 
@@ -53,10 +53,10 @@ namespace KihonEngine.GameEngine
         {
             if (_gameLogicThread != null)
             {
-                _shouldStop = true;
+                _cts.Cancel();
                 LogService.Log($"Signal sent for stop {LogicName} thread");
 
-                _gameLogicThread.Join(3000);
+                //_gameLogicThread.Join(3000); // Deadlock removed
                 _gameLogicThread = null;
             }
         }
@@ -92,6 +92,7 @@ namespace KihonEngine.GameEngine
                 if (!_keyboardPressedKeys.Contains(key))
                 {
                     _keyboardPressedKeys.Add(key);
+                    State.KeyPressed = _keyboardPressedKeys.ToArray();
                 }
             }
         }
@@ -103,7 +104,20 @@ namespace KihonEngine.GameEngine
                 if (_keyboardPressedKeys.Contains(key))
                 {
                     _keyboardPressedKeys.Remove(key);
+                    State.KeyPressed = _keyboardPressedKeys.ToArray();
                 }
+            }
+        }
+
+        protected void Wait(int millisecondsDelay, CancellationToken stoppingToken)
+        {
+            try
+            {
+                Task.Delay(10, stoppingToken).Wait();
+            }
+            catch (Exception)
+            {
+
             }
         }
 
@@ -115,6 +129,6 @@ namespace KihonEngine.GameEngine
             }
         }
 
-        protected abstract void MainLoop();
+        protected abstract void MainLoop(CancellationToken stoppingToken);
     }
 }

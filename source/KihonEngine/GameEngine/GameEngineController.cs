@@ -10,6 +10,7 @@ using KihonEngine.GameEngine.InputControls;
 using System.Windows.Controls;
 using KihonEngine.GameEngine.Graphics.Output;
 using KihonEngine.GameEngine.Graphics.Maps.Predefined;
+using KihonEngine.GameEngine.GameLogics;
 
 namespace KihonEngine.GameEngine
 {
@@ -210,44 +211,33 @@ namespace KihonEngine.GameEngine
         }
 
         public void SwitchToPlayMode()
-        {
-            // Stop game logic
-            _gameLogic?.Stop();
-
-            // Mouse
-            State.Graphics.Viewport.Cursor = Cursors.None;
-            State.CanHandleMouseMoves = true;
-            State.Graphics.Viewport.CaptureMouse();
-
-            // Set state
-            State.EngineMode = EngineMode.PlayMode;
-
-            // Respawn
-            CameraController.Respawn();
-
-            State.Graphics.Viewport.Focus();
-            NotifyIOs();
-
-            // Start game
-            _gameLogic = new FpsGameLogic();
-            _gameLogic.StateChanged += _gameLogic_StateChanged;
-
-            State.CurrentLogicName = _gameLogic.LogicName;
-            _gameLogic.Start();
+        {           
+            SwitchToGameLogic<GameLogics.Fps.FpsGameLogic>(EngineMode.PlayMode, () => 
+            {
+                State.Graphics.Viewport.Cursor = Cursors.None;
+                State.Graphics.Viewport.CaptureMouse();
+            });
         }
 
         public void SwitchToEditorMode()
         {
+            SwitchToGameLogic<GameLogics.Editor.EditorLogic>(EngineMode.EditorMode, () => { });
+        }
+
+        private void SwitchToGameLogic<TGameLogic>(EngineMode mode, Action configure) where TGameLogic : class, IGameLogic, new()
+        {
             // Stop game logic
             _gameLogic?.Stop();
 
             // Mouse
-            State.Graphics.Viewport.Cursor = State.Graphics.Viewport.Cursor = Cursors.Arrow;
-            State.CanHandleMouseMoves = true;
+            State.Graphics.Viewport.Cursor = Cursors.Arrow;
             State.Graphics.Viewport.ReleaseMouseCapture();
+            State.CanHandleMouseMoves = true;
 
             // Set state
-            State.EngineMode = EngineMode.EditorMode;
+            configure();
+
+            State.EngineMode = mode;
             State.Editor.ActionSelect.SelectedModel = null;
 
             // Respawn
@@ -257,7 +247,7 @@ namespace KihonEngine.GameEngine
             NotifyIOs();
 
             // Start Editor
-            _gameLogic = new EditorLogic();
+            _gameLogic = new TGameLogic();
 
             _gameLogic.StateChanged += _gameLogic_StateChanged;
 

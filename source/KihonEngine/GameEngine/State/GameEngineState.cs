@@ -1,4 +1,5 @@
 ﻿using KihonEngine.GameEngine.State.Editor;
+using System.Windows.Input;
 using System.Windows.Media;
 
 namespace KihonEngine.GameEngine.State
@@ -25,5 +26,7 @@ namespace KihonEngine.GameEngine.State
         public string CurrentLogicName { get; set; }
 
         public bool CanHandleMouseMoves { get; set; }
+
+        public Key[] KeyPressed { get; set; }
     }
 }

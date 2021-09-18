@@ -5,11 +5,13 @@ using KihonEngine.Studio.GameEngine.State.Editor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Media3D;
 
-namespace KihonEngine.GameEngine
+namespace KihonEngine.GameEngine.GameLogics.Editor
 {
     public class EditorLogic : GameLogicBase
     {
@@ -382,13 +384,13 @@ namespace KihonEngine.GameEngine
                 }
                 else if (mouseEvent.RightButton == System.Windows.Input.MouseButtonState.Pressed)
                 {
-                    graphicUpdates.Add(() => CameraController.MoveLateral(mouseEvent.DX * 10, false));
-                    graphicUpdates.Add(() => CameraController.MoveVertical(mouseEvent.DY * 10, false));
+                    graphicUpdates.Add(() => CameraController.MoveLateral(mouseEvent.DX * 10));
+                    graphicUpdates.Add(() => CameraController.MoveVertical(mouseEvent.DY * 10));
                 }
             }
             else if (mouseEvent.Type == MouseEventType.Wheel)
             {
-                graphicUpdates.Add(() => CameraController.MoveLongitudinal(mouseEvent.Delta, false));
+                graphicUpdates.Add(() => CameraController.MoveLongitudinal(mouseEvent.Delta));
             }
         }
 
@@ -425,21 +427,24 @@ namespace KihonEngine.GameEngine
         }
 
 
-        protected override void MainLoop()
+        protected override void MainLoop(CancellationToken stoppingToken)
         {
             LogService.Log($"Editor Started");
 
-            while (!ShouldStop)
+            while (!stoppingToken.IsCancellationRequested)
             {
-                System.Threading.Thread.Sleep(10);
+                Wait(10, stoppingToken);
 
-                var graphicUpdates = new List<Action>();
+                if (!stoppingToken.IsCancellationRequested)
+                {
+                    var graphicUpdates = new List<Action>();
 
-                // Calculate changes
-                DispatchEvents(graphicUpdates);
+                    // Calculate changes
+                    DispatchEvents(graphicUpdates);
 
-                // Update graphics
-                UpdateGraphics(graphicUpdates);
+                    // Update graphics
+                    UpdateGraphics(graphicUpdates);
+                }
             }
 
             LogService.Log($"Editor stopped");

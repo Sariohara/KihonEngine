@@ -10,11 +10,16 @@ namespace KihonEngine.GameEngine.State.FpsGame
     {
         public JumpState()
         {
-            InitialYSpeed = 15;
-            Gravity = .2;
+            InitialYSpeed = 2;
+            Gravity = .1;
+            FallSizeLimitToDeath = 200;
         }
 
         public bool IsJumping { get; set; }
+
+        public double FallSize { get; set; }
+
+        public double FallSizeLimitToDeath { get; set; }
 
         public double YSpeed { get; set; }
 
