@@ -170,7 +170,7 @@ namespace KihonEngine.Studio
             Engine.Configure();
             
             LogService.AddListener(this.outputWindow);
-            LogService.AddListener(new FileLogListener(".out.log"));
+            //LogService.AddListener(new FileLogListener(".out.log"));
 
             WorldEngine.RegisterMap<RoofTopMapBuilder>();
             WorldEngine.RegisterMap<DarkCastleMapBuilder>();
