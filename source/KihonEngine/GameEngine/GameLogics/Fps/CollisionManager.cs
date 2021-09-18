@@ -1,5 +1,6 @@
 ﻿using KihonEngine.GameEngine.State;
 using KihonEngine.Services;
+using System;
 using System.Windows.Media.Media3D;
 
 namespace KihonEngine.GameEngine.GameLogics.Fps
@@ -35,8 +36,7 @@ namespace KihonEngine.GameEngine.GameLogics.Fps
 
             foreach (var levelElement in State.Graphics.Level)
             {
-                if (levelElement.Type == Graphics.ModelsBuilders.ModelType.Skybox
-                    || levelElement.Type == Graphics.ModelsBuilders.ModelType.Light)
+                if (levelElement.Type == Graphics.ModelsBuilders.ModelType.Light)
                 {
                     continue;
                 }
@@ -47,6 +47,23 @@ namespace KihonEngine.GameEngine.GameLogics.Fps
                 if (box.IntersectsWith(levelElementBox))
                 {
                     box.Intersect(levelElementBox);
+
+                    if (levelElement.Type == Graphics.ModelsBuilders.ModelType.Skybox)
+                    {
+                        if (
+                            Math.Round(box.SizeY, 10) != Math.Round(animatedModelBox.SizeY, 10) 
+                            || Math.Round(box.SizeX, 10) != Math.Round(animatedModelBox.SizeX, 10) ||
+                            Math.Round(box.SizeZ, 10) != Math.Round(animatedModelBox.SizeZ, 10))
+                        {
+                            // Outside skybox
+                            LogService.Log($"collision:reach skybox borders {levelElement.Type}:{box.X},{box.Y},{box.Z}:{box.SizeX},{box.SizeY},{box.SizeZ}");
+                            result.HasCollision = true;
+                            result.HasReachSkybox = true;
+                            return result;
+                        }
+
+                        continue;
+                    }
 
                     if (box.Y == animatedModelBox.Y && box.SizeY == 0)
                     {

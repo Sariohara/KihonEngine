@@ -14,6 +14,7 @@ namespace KihonEngine.GameEngine.State.FpsGame
             InitialYSpeed = 2;
             Gravity = .1;
             FallSizeLimitToDeath = 200;
+            YSpeedMax = 10;
         }
 
         public bool IsJumping { get; set; }
@@ -23,6 +24,8 @@ namespace KihonEngine.GameEngine.State.FpsGame
         public double FallSizeLimitToDeath { get; set; }
 
         public double YSpeed { get; set; }
+
+        public double YSpeedMax { get; set; }
 
         public int InitialYSpeed { get; set; }
 

@@ -185,6 +185,28 @@ namespace KihonEngine.GameEngine.GameLogics.Fps
             }
         }
 
+        private void CalculateDamages(GraphicUpdateContext ctx)
+        {
+            var lifeState = State.Game.Get<LifeState>();
+            var jumpState = State.Game.Get<JumpState>();
+            if (!jumpState.IsJumping && jumpState.FallSize > jumpState.FallSizeLimitToDeath)
+            {
+                // Just end a jump, and jump was too heigh
+                jumpState.IsJumping = false;
+                lifeState.Life = 0;
+            }
+
+            if (!lifeState.IsAlive)
+            {
+                LogService.Log("Player is dead. Respawn.");
+                
+                State.Game.Reset<LifeState>();
+                State.Game.Reset<JumpState>();
+
+                CameraController.Respawn();
+            }
+        }
+
         private void CalculateJump(GraphicUpdateContext ctx)
         {
             var jumpState = State.Game.Get<JumpState>();
@@ -215,17 +237,15 @@ namespace KihonEngine.GameEngine.GameLogics.Fps
 
             jumpState.YSpeed -= State.Game.Get<JumpState>().Gravity;
 
+            if (Math.Abs(jumpState.YSpeed) > jumpState.YSpeedMax)
+            {
+                var direction = jumpState.YSpeed >= 0? 1 : -1;
+                jumpState.YSpeed = direction * jumpState.YSpeedMax;
+            }
+
             if (jumpState.YSpeed < 0)
             {
                 jumpState.FallSize += -jumpState.YSpeed;
-
-                if (jumpState.FallSize > jumpState.FallSizeLimitToDeath)
-                {
-                    State.Game.Reset<JumpState>();
-                    LogService.Log("Death. Respawn");
-                    CameraController.Respawn();
-                    return;
-                }
             }
 
             newPosition = new Point3D(newPosition.X, newPosition.Y + jumpState.YSpeed, newPosition.Z);
@@ -233,6 +253,14 @@ namespace KihonEngine.GameEngine.GameLogics.Fps
             var playerBox = _collisionManager.GetPlayerBox(newPosition);
             var collisionResult = _collisionManager.DetectCollisions(playerBox);
 
+            if (collisionResult.HasReachSkybox)
+            {
+                jumpState.YSpeed = 0;
+                jumpState.IsJumping = false;
+                
+                return;
+            }
+            
             if (collisionResult.HasBodyCollision)
             {
                 LogService.Log("Start body collision management");
@@ -335,6 +363,7 @@ namespace KihonEngine.GameEngine.GameLogics.Fps
 
             graphicUpdates.Add(ctx => DetectCollisionsAndMove(ctx));
             graphicUpdates.Add(ctx => CalculateJump(ctx));
+            graphicUpdates.Add(ctx => CalculateDamages(ctx));
         }
 
         private void UpdateGraphics(List<Action<GraphicUpdateContext>> graphicUpdates)

@@ -14,6 +14,7 @@ namespace KihonEngine.GameEngine.GameLogics.Fps
         public bool HasCollision { get; set; }
         public bool HasFeetOnFloor { get; set; }
         public bool HasFeetInTheVoid { get; set; }
+        public bool HasReachSkybox { get; set; }
         public double DeltaYForFeet { get; set; }
         public double AdjustedYForFeet { get; set; }
         public double DeltaYForHead { get; set; }

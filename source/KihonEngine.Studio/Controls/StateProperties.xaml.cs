@@ -74,10 +74,6 @@ namespace KihonEngine.Studio.Controls
             AddProperty(properties, "CurrentLogicName", state.CurrentLogicName.ToString());
             AddProperty(properties, "CanHandleMouseMoves", state.CanHandleMouseMoves.ToString());
             AddProperty(properties, "KeyPressed", state.KeyPressed != null ? string.Join(",", state.KeyPressed.Select(x => x.ToString())) : string.Empty);
-            AddProperty(properties, "State.Game.FallState.IsFalling", state.Game.Get<FallState>().IsFalling.ToString());
-            AddProperty(properties, "State.Game.FallState.FallHeigh", state.Game.Get<FallState>().FallHeigh.ToString());
-            AddProperty(properties, "State.Game.FallState.CanMoveWhenFall", state.Game.Get<FallState>().CanMoveWhenFall.ToString());
-            AddProperty(properties, "State.Game.FallState.DeadFall", state.Game.Get<FallState>().DeadFall.ToString());
             AddProperty(properties, "State.Game.JumpState.IsJumping", state.Game.Get<JumpState>().IsJumping.ToString());
             AddProperty(properties, "State.Game.JumpState.YSpeed", state.Game.Get<JumpState>().YSpeed.ToString());
             AddProperty(properties, "State.Game.JumpState.Gravity", state.Game.Get<JumpState>().Gravity.ToString());
