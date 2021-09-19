@@ -60,7 +60,11 @@ namespace KihonEngine.Studio.Controls.ModelEditors
                 if (layeredModel != null)
                 {
                     var definition = GameEngineController.GetDefinition<VolumeDefinition>(layeredModel);
-                    definition.Metadata.Width = int.Parse(tbWidth.Text);
+                    
+                    InputHelper.TryUpdate(
+                        tbWidth.Text,
+                        width => definition.Metadata.Width = width);
+
                     GameEngineController.ReplaceModelAndNotify(layeredModel, definition);
                 }
             }
@@ -75,6 +79,11 @@ namespace KihonEngine.Studio.Controls.ModelEditors
                 {
                     var definition = GameEngineController.GetDefinition<VolumeDefinition>(layeredModel);
                     definition.Metadata.Height = int.Parse(tbHeight.Text);
+
+                    InputHelper.TryUpdate(
+                       tbHeight.Text,
+                       height => definition.Metadata.Height = height);
+
                     GameEngineController.ReplaceModelAndNotify(layeredModel, definition);
                 }
             }
@@ -88,7 +97,11 @@ namespace KihonEngine.Studio.Controls.ModelEditors
                 if (layeredModel != null)
                 {
                     var definition = GameEngineController.GetDefinition<VolumeDefinition>(layeredModel);
-                    definition.Metadata.Length = int.Parse(tbLength.Text);
+
+                    InputHelper.TryUpdate(
+                       tbLength.Text,
+                       length => definition.Metadata.Length = length);
+
                     GameEngineController.ReplaceModelAndNotify(layeredModel, definition);
                 }
             }

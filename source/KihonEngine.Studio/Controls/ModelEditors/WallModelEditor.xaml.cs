@@ -58,7 +58,11 @@ namespace KihonEngine.Studio.Controls.ModelEditors
                 if (layeredModel != null)
                 {
                     var definition = GameEngineController.GetDefinition<WallDefinition>(layeredModel);
-                    definition.Metadata.Width = int.Parse(tbWidth.Text);
+                    
+                    InputHelper.TryUpdate(
+                        tbWidth.Text,
+                        width => definition.Metadata.Width = width);
+
                     GameEngineController.ReplaceModelAndNotify(layeredModel, definition);
                 }
             }
@@ -72,7 +76,11 @@ namespace KihonEngine.Studio.Controls.ModelEditors
                 if (layeredModel != null)
                 {
                     var definition = GameEngineController.GetDefinition<WallDefinition>(layeredModel);
-                    definition.Metadata.Height = int.Parse(tbHeight.Text);
+
+                    InputHelper.TryUpdate(
+                       tbHeight.Text,
+                       height => definition.Metadata.Height = height);
+
                     GameEngineController.ReplaceModelAndNotify(layeredModel, definition);
                 }
             }

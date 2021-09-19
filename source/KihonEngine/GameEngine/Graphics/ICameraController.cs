@@ -1,11 +1,11 @@
 ﻿
-using System;
 using System.Windows.Media.Media3D;
 
 namespace KihonEngine.GameEngine.Graphics
 {
     public interface ICameraController
     {
+        void SetPosition(Point3D newPosition);
         void Respawn();
         Point3D GetMoveLongitudinal(Point3D position, Vector3D lookDirection, Vector3D upDirection, double d);
         Point3D GetMoveVertical(Point3D position, Vector3D lookDirection, Vector3D upDirection, double d);

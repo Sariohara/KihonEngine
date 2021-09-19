@@ -79,7 +79,11 @@ namespace KihonEngine.Studio.Controls.ModelEditors
                 if (layeredModel != null)
                 {
                     var definition = GameEngineController.GetDefinition<SkyboxDefinition>(layeredModel);
-                    definition.Metadata.Width = int.Parse(tbWidth.Text);
+
+                    InputHelper.TryUpdate(
+                        tbWidth.Text,
+                        width => definition.Metadata.Width = width);
+                    ;
                     GameEngineController.ReplaceModelAndNotify(layeredModel, definition);
                 }
             }
@@ -94,7 +98,10 @@ namespace KihonEngine.Studio.Controls.ModelEditors
                 {
                     var definition = GameEngineController.GetDefinition<SkyboxDefinition>(layeredModel);
                     var vector = definition.Metadata.Normal;
-                    definition.Metadata.Normal = new Vector3D(int.Parse(tbNormalX.Text), vector.Y, vector.Z);
+                    InputHelper.TryUpdate(
+                        tbNormalX.Text,
+                        x => definition.Metadata.Normal = new Vector3D(x, vector.Y, vector.Z));
+
                     GameEngineController.ReplaceModelAndNotify(layeredModel, definition);
                 }
             }
@@ -109,7 +116,11 @@ namespace KihonEngine.Studio.Controls.ModelEditors
                 {
                     var definition = GameEngineController.GetDefinition<SkyboxDefinition>(layeredModel);
                     var vector = definition.Metadata.Normal;
-                    definition.Metadata.Normal = new Vector3D(vector.X, int.Parse(tbNormalY.Text), vector.Z);
+
+                    InputHelper.TryUpdate(
+                        tbNormalY.Text,
+                        y => definition.Metadata.Normal = new Vector3D(vector.X, y, vector.Z));
+
                     GameEngineController.ReplaceModelAndNotify(layeredModel, definition);
                 }
             }
@@ -124,7 +135,11 @@ namespace KihonEngine.Studio.Controls.ModelEditors
                 {
                     var definition = GameEngineController.GetDefinition<SkyboxDefinition>(layeredModel);
                     var vector = definition.Metadata.Normal;
-                    definition.Metadata.Normal = new Vector3D(vector.X, vector.Y, int.Parse(tbNormalZ.Text));
+
+                    InputHelper.TryUpdate(
+                        tbNormalZ.Text,
+                        z => definition.Metadata.Normal = new Vector3D(vector.X, vector.Y, z));
+
                     GameEngineController.ReplaceModelAndNotify(layeredModel, definition);
                 }
             }

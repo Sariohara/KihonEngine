@@ -36,14 +36,14 @@ namespace KihonEngine.Studio.Controls.ModelEditors
             if (propertyGrid.IsEnabled)
             {
                 var metadata = (FloorMetadata)state.Editor.ActionSelect.SelectedModel.Metadata[ModelType.Floor.ToString()];
-                tbWith.Text = metadata.Width.ToString();
+                tbWidth.Text = metadata.Width.ToString();
                 tbLength.Text = metadata.Length.ToString();
                 tbTexture.Text = metadata.Texture;
                 cbUseBackMaterial.IsChecked = metadata.UseBackMaterial;
             }
             else
             {
-                tbWith.Text = string.Empty;
+                tbWidth.Text = string.Empty;
                 tbLength.Text = string.Empty;
                 tbTexture.Text = string.Empty;
                 cbUseBackMaterial.IsChecked = false;
@@ -52,7 +52,7 @@ namespace KihonEngine.Studio.Controls.ModelEditors
             synchronizing = false;
         }
 
-        private void tbWith_KeyUp(object sender, KeyEventArgs e)
+        private void tbWidth_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
             {
@@ -60,7 +60,11 @@ namespace KihonEngine.Studio.Controls.ModelEditors
                 if (layeredModel != null)
                 {
                     var definition = GameEngineController.GetDefinition<FloorDefinition>(layeredModel);
-                    definition.Metadata.Width = int.Parse(tbWith.Text);
+
+                    InputHelper.TryUpdate(
+                        tbWidth.Text,
+                        width => definition.Metadata.Width = width);
+
                     GameEngineController.ReplaceModelAndNotify(layeredModel, definition);
                 }
             }
@@ -74,7 +78,11 @@ namespace KihonEngine.Studio.Controls.ModelEditors
                 if (layeredModel != null)
                 {
                     var definition = GameEngineController.GetDefinition<FloorDefinition>(layeredModel);
-                    definition.Metadata.Length = int.Parse(tbLength.Text);
+
+                    InputHelper.TryUpdate(
+                        tbLength.Text,
+                        length => definition.Metadata.Length = length);
+
                     GameEngineController.ReplaceModelAndNotify(layeredModel, definition);
                 }
             }

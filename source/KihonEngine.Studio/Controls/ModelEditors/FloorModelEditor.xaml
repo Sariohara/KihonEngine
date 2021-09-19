@@ -18,7 +18,7 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center">With</Label>
-        <TextBox Grid.Row="0" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="tbWith" KeyUp="tbWith_KeyUp"></TextBox>
+        <TextBox Grid.Row="0" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="tbWidth" KeyUp="tbWidth_KeyUp"></TextBox>
 
         <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center">Length</Label>
         <TextBox Grid.Row="1" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="tbLength" KeyUp="tbLength_KeyUp"></TextBox>

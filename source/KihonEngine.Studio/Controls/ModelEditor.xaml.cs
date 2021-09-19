@@ -270,12 +270,17 @@ namespace KihonEngine.Studio.Controls
             var layeredModel = State.Editor.ActionSelect.SelectedModel;
             if (layeredModel != null)
             {
-                var step = int.Parse(tbPositionX.Text);
                 var position = GetPosition(layeredModel);
-                layeredModel.Translate(new Vector3D(step, position.Y, position.Z));
+
+                InputHelper.TryUpdate(
+                    tbPositionX.Text, 
+                    step => layeredModel.Translate(new Vector3D(step, position.Y, position.Z)));
+                
                 GameEngineController.NotifyIOs();
             }
         }
+
+        
 
         private void tbPositionY_KeyUp(object sender, KeyEventArgs e)
         {
@@ -287,9 +292,12 @@ namespace KihonEngine.Studio.Controls
             var layeredModel = State.Editor.ActionSelect.SelectedModel;
             if (layeredModel != null)
             {
-                var step = int.Parse(tbPositionY.Text);
                 var position = GetPosition(layeredModel);
-                layeredModel.Translate(new Vector3D(position.X, step, position.Z));
+
+                InputHelper.TryUpdate(
+                    tbPositionY.Text,
+                    step => layeredModel.Translate(new Vector3D(position.X, step, position.Z)));
+
                 GameEngineController.NotifyIOs();
             }
         }
@@ -304,9 +312,12 @@ namespace KihonEngine.Studio.Controls
             var layeredModel = State.Editor.ActionSelect.SelectedModel;
             if (layeredModel != null)
             {
-                var step = int.Parse(tbPositionZ.Text);
                 var position = GetPosition(layeredModel);
-                layeredModel.Translate(new Vector3D(position.X, position.Y, step));
+
+                InputHelper.TryUpdate(
+                    tbPositionZ.Text,
+                    step => layeredModel.Translate(new Vector3D(position.X, position.Y, step)));
+
                 GameEngineController.NotifyIOs();
             }
         }
@@ -318,8 +329,10 @@ namespace KihonEngine.Studio.Controls
                 return;
             }
 
-            var step = int.Parse(tbPositionStep.Text);
-            State.Editor.TranslationStep = step;
+            InputHelper.TryUpdate(
+                tbPositionStep.Text,
+                step => State.Editor.TranslationStep = step);
+
             GameEngineController.NotifyIOs();
         }
 
@@ -393,8 +406,10 @@ namespace KihonEngine.Studio.Controls
             var layeredModel = State.Editor.ActionSelect.SelectedModel;
             if (layeredModel != null)
             {
-                var angle = int.Parse(tbRotationX.Text);
-                layeredModel.RotateByAxisX(angle);
+                InputHelper.TryUpdate(
+                    tbRotationX.Text,
+                    angle => layeredModel.RotateByAxisX(angle));
+
                 GameEngineController.NotifyIOs();
             }
         }
@@ -409,8 +424,10 @@ namespace KihonEngine.Studio.Controls
             var layeredModel = State.Editor.ActionSelect.SelectedModel;
             if (layeredModel != null)
             {
-                var angle = int.Parse(tbRotationY.Text);
-                layeredModel.RotateByAxisY(angle);
+                InputHelper.TryUpdate(
+                    tbRotationY.Text,
+                    angle => layeredModel.RotateByAxisY(angle));
+
                 GameEngineController.NotifyIOs();
             }
         }
@@ -425,8 +442,10 @@ namespace KihonEngine.Studio.Controls
             var layeredModel = State.Editor.ActionSelect.SelectedModel;
             if (layeredModel != null)
             {
-                var angle = int.Parse(tbRotationZ.Text);
-                layeredModel.RotateByAxisZ(angle);
+                InputHelper.TryUpdate(
+                    tbRotationZ.Text,
+                    angle => layeredModel.RotateByAxisZ(angle));
+
                 GameEngineController.NotifyIOs();
             }
         }
@@ -438,8 +457,10 @@ namespace KihonEngine.Studio.Controls
                 return;
             }
 
-            var step = int.Parse(tbRotationStep.Text);
-            State.Editor.RotationStep = step;
+            InputHelper.TryUpdate(
+                tbRotationStep.Text,
+                step => State.Editor.RotationStep = step);
+
             GameEngineController.NotifyIOs();
         }
 

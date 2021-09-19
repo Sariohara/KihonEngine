@@ -66,11 +66,6 @@ namespace KihonEngine.GameEngine.GameLogics.Fps
             }
         }
 
-        private void LogCameraPositionChanged()
-        {
-            LogService.Log($"Moved to position ({State.Graphics.PlayerCamera.Camera.Position.X}, {State.Graphics.PlayerCamera.Camera.Position.Y}, {State.Graphics.PlayerCamera.Camera.Position.Z})");
-        }
-
         private void DetectCollisionsAndMove(Point3D newPosition)
         {
             var playerBox = _collisionManager.GetPlayerBox(newPosition);
@@ -89,8 +84,7 @@ namespace KihonEngine.GameEngine.GameLogics.Fps
                 BeginToFall();
             }
 
-            State.Graphics.PlayerCamera.Camera.Position = newPosition;
-            LogCameraPositionChanged();
+            CameraController.SetPosition(newPosition);
         }
 
         private void BeginToFall()
@@ -105,11 +99,6 @@ namespace KihonEngine.GameEngine.GameLogics.Fps
             jumpState.HasMoveRight = _keyboardPressedKeys.Contains(keyboardSettings.MoveRight);
             jumpState.HasMoveLeft = _keyboardPressedKeys.Contains(keyboardSettings.MoveLeft);
             jumpState.YSpeed = -1;
-        }
-
-        public class GraphicUpdateContext
-        {
-            public Point3D NewPosition { get; set; }
         }
 
         private void SetNewPosition(GraphicUpdateContext ctx)
@@ -312,8 +301,7 @@ namespace KihonEngine.GameEngine.GameLogics.Fps
 
             if (newPosition != camera.Position)
             {
-                camera.Position = newPosition;
-                LogCameraPositionChanged();
+                CameraController.SetPosition(newPosition);
             }
         }
 
@@ -325,7 +313,6 @@ namespace KihonEngine.GameEngine.GameLogics.Fps
             graphicUpdates.Add(ctx => SetNewPosition(ctx));
             foreach (var key in keys)
             {
-                var jumpState = State.Game.Get<JumpState>();
                 if (key == keyboardSettings.Jump)
                 {
                     graphicUpdates.Add(ctx => BeginToJump(ctx));

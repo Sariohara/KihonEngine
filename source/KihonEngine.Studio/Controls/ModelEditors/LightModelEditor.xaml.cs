@@ -55,7 +55,11 @@ namespace KihonEngine.Studio.Controls.ModelEditors
                 {
                     var definition = GameEngineController.GetDefinition<LightDefinition>(layeredModel);
                     var vector = definition.Metadata.Direction;
-                    definition.Metadata.Direction = new Vector3D(int.Parse(tbX.Text), vector.Y, vector.Z);
+
+                    InputHelper.TryUpdate(
+                        tbX.Text,
+                        x => definition.Metadata.Direction = new Vector3D(x, vector.Y, vector.Z));
+
                     GameEngineController.ReplaceModelAndNotify(layeredModel, definition);
                 }
             }
@@ -70,7 +74,12 @@ namespace KihonEngine.Studio.Controls.ModelEditors
                 {
                     var definition = GameEngineController.GetDefinition<LightDefinition>(layeredModel);
                     var vector = definition.Metadata.Direction;
-                    definition.Metadata.Direction = new Vector3D(vector.X, int.Parse(tbY.Text), vector.Z);
+                    
+                    InputHelper.TryUpdate(
+                        tbY.Text,
+                        y => definition.Metadata.Direction = new Vector3D(vector.X, y, vector.Z));
+
+
                     GameEngineController.ReplaceModelAndNotify(layeredModel, definition);
                 }
             }
@@ -85,7 +94,11 @@ namespace KihonEngine.Studio.Controls.ModelEditors
                 {
                     var definition = GameEngineController.GetDefinition<LightDefinition>(layeredModel);
                     var vector = definition.Metadata.Direction;
-                    definition.Metadata.Direction = new Vector3D(vector.X, vector.Y, int.Parse(tbZ.Text));
+                    
+                    InputHelper.TryUpdate(
+                        tbZ.Text,
+                        z => definition.Metadata.Direction = new Vector3D(vector.X, vector.Y, z));
+
                     GameEngineController.ReplaceModelAndNotify(layeredModel, definition);
                 }
             }

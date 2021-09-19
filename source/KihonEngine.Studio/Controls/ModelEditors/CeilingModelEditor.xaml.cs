@@ -58,7 +58,11 @@ namespace KihonEngine.Studio.Controls.ModelEditors
                 if (layeredModel != null)
                 {
                     var definition = GameEngineController.GetDefinition<CeilingDefinition>(layeredModel);
-                    definition.Metadata.Width = int.Parse(tbWidth.Text);
+
+                    InputHelper.TryUpdate(
+                        tbWidth.Text,
+                        width => definition.Metadata.Width = width);
+
                     GameEngineController.ReplaceModelAndNotify(layeredModel, definition);
                 }
             }
@@ -72,7 +76,11 @@ namespace KihonEngine.Studio.Controls.ModelEditors
                 if (layeredModel != null)
                 {
                     var definition = GameEngineController.GetDefinition<CeilingDefinition>(layeredModel);
-                    definition.Metadata.Length = int.Parse(tbLength.Text);
+
+                    InputHelper.TryUpdate(
+                        tbLength.Text,
+                        length => definition.Metadata.Length = length);
+
                     GameEngineController.ReplaceModelAndNotify(layeredModel, definition);
                 }
             }

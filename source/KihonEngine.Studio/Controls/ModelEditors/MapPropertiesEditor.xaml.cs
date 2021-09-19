@@ -64,7 +64,11 @@ namespace KihonEngine.Studio.Controls.ModelEditors
             if (e.Key == Key.Enter)
             {
                 var position = State.Graphics.RespawnPosition;
-                State.Graphics.RespawnPosition = new Point3D(int.Parse(tbRespawnPositionX.Text), position.Y, position.Z);
+
+                InputHelper.TryUpdate(
+                    tbRespawnPositionX.Text,
+                    x => State.Graphics.RespawnPosition = new Point3D(x, position.Y, position.Z));
+                
                 GameEngineController.NotifyIOs();
             }
         }
@@ -74,7 +78,11 @@ namespace KihonEngine.Studio.Controls.ModelEditors
             if (e.Key == Key.Enter)
             {
                 var position = State.Graphics.RespawnPosition;
-                State.Graphics.RespawnPosition = new Point3D(position.X, int.Parse(tbRespawnPositionY.Text), position.Z);
+                
+                InputHelper.TryUpdate(
+                    tbRespawnPositionY.Text,
+                    y => State.Graphics.RespawnPosition = new Point3D(position.X, y, position.Z));
+
                 GameEngineController.NotifyIOs();
             }
         }
@@ -84,7 +92,11 @@ namespace KihonEngine.Studio.Controls.ModelEditors
             if (e.Key == Key.Enter)
             {
                 var position = State.Graphics.RespawnPosition;
-                State.Graphics.RespawnPosition = new Point3D(position.X, position.Y, int.Parse(tbRespawnPositionZ.Text));
+                
+                InputHelper.TryUpdate(
+                    tbRespawnPositionZ.Text,
+                    z => State.Graphics.RespawnPosition = new Point3D(position.X, position.Y, z));
+
                 GameEngineController.NotifyIOs();
             }
         }
@@ -94,7 +106,11 @@ namespace KihonEngine.Studio.Controls.ModelEditors
             if (e.Key == Key.Enter)
             {
                 var vector = State.Graphics.RespawnLookDirection;
-                State.Graphics.RespawnLookDirection = new Vector3D(int.Parse(tbRespawnLookDirectionX.Text), vector.Y, vector.Z);
+
+                InputHelper.TryUpdate(
+                    tbRespawnLookDirectionX.Text,
+                    x => State.Graphics.RespawnLookDirection = new Vector3D(x, vector.Y, vector.Z));
+
                 GameEngineController.NotifyIOs();
             }
         }
@@ -104,7 +120,11 @@ namespace KihonEngine.Studio.Controls.ModelEditors
             if (e.Key == Key.Enter)
             {
                 var vector = State.Graphics.RespawnLookDirection;
-                State.Graphics.RespawnLookDirection = new Vector3D(vector.X, int.Parse(tbRespawnLookDirectionY.Text), vector.Z);
+
+                InputHelper.TryUpdate(
+                    tbRespawnLookDirectionY.Text,
+                    y => State.Graphics.RespawnLookDirection = new Vector3D(vector.X, y, vector.Z));
+
                 GameEngineController.NotifyIOs();
             }
         }
@@ -114,7 +134,11 @@ namespace KihonEngine.Studio.Controls.ModelEditors
             if (e.Key == Key.Enter)
             {
                 var vector = State.Graphics.RespawnLookDirection;
-                State.Graphics.RespawnLookDirection = new Vector3D(vector.X, vector.Y, int.Parse(tbRespawnLookDirectionZ.Text));
+
+                InputHelper.TryUpdate(
+                    tbRespawnLookDirectionZ.Text,
+                    z => State.Graphics.RespawnLookDirection = new Vector3D(vector.X, vector.Y, z));
+
                 GameEngineController.NotifyIOs();
             }
         }

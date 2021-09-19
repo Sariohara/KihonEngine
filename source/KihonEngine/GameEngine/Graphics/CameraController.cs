@@ -1,7 +1,5 @@
 ﻿using KihonEngine.GameEngine.State;
 using KihonEngine.Services;
-using System;
-using System.Collections.Generic;
 using System.Windows.Media.Media3D;
 
 namespace KihonEngine.GameEngine.Graphics
@@ -13,33 +11,14 @@ namespace KihonEngine.GameEngine.Graphics
         private IGameEngineState State
             => Container.Get<IGameEngineState>();
 
-        //private List<Point3D> GetPlayerPoints(Point3D fromPosition)
-        //{
-        //    var points = new List<Point3D>();
-
-        //    var playerSizeX = 6;
-        //    var playerSizeY = 12;
-        //    var playerSizeZ = 6;
-        //    var gridSize = .5;
-        //    var originX = fromPosition.X - playerSizeX / 2;
-        //    var originY = fromPosition.Y - playerSizeY / 2;
-        //    var originZ = fromPosition.Z - playerSizeZ / 2;
-
-        //    for (double x = 0; x <= playerSizeX; x = x + gridSize)
-        //    {
-        //        for (double y = 0; y <= playerSizeY; y = y + gridSize)
-        //        {
-        //            for (double z = 0; z <= playerSizeZ; z = z + gridSize)
-        //            {
-        //                points.Add(new Point3D(originX + x, originY + y, originZ + z));
-        //            }
-        //        }
-        //    }
-
-        //    return points;
-        //}
-
-
+        public void SetPosition(Point3D newPosition)
+        {
+            if (!newPosition.Equals(State.Graphics.PlayerCamera.Camera.Position))
+            {
+                State.Graphics.PlayerCamera.Camera.Position = newPosition;
+                LogCameraPositionChanged();
+            }
+        }
 
         public void Respawn()
         {
@@ -51,6 +30,7 @@ namespace KihonEngine.GameEngine.Graphics
             State.Graphics.PlayerCamera.RotationXFromOrigin.Angle = 0;
             State.Graphics.PlayerCamera.RotationYFromOrigin.Angle = 0;
             State.Graphics.PlayerCamera.RotationZFromOrigin.Angle = 0;
+            LogCameraPositionChanged();
         }
 
         public Point3D GetMoveLongitudinal(double d)
@@ -76,8 +56,7 @@ namespace KihonEngine.GameEngine.Graphics
 
         public void MoveLongitudinal(double d)
         {
-            State.Graphics.PlayerCamera.Camera.Position = GetMoveLongitudinal(d);
-            LogCameraPositionChanged();
+            SetPosition(GetMoveLongitudinal(d));
         }
 
         public Point3D GetMoveVertical(double d)
@@ -103,9 +82,7 @@ namespace KihonEngine.GameEngine.Graphics
 
         public void MoveVertical(double d)
         {
-            State.Graphics.PlayerCamera.Camera.Position = GetMoveVertical(d);
-
-            LogCameraPositionChanged();
+            SetPosition(GetMoveVertical(d));
         }
 
         public Point3D GetMoveLateral(Point3D position, Vector3D lookDirection, Vector3D upDirection, double d)
@@ -131,8 +108,7 @@ namespace KihonEngine.GameEngine.Graphics
 
         public void MoveLateral(double d)
         {
-            State.Graphics.PlayerCamera.Camera.Position = GetMoveLateral(d);
-            LogCameraPositionChanged();
+            SetPosition(GetMoveLateral(d));
         }
 
         public void RotateHorizontal(double d)
