@@ -28,8 +28,7 @@ namespace KihonEngine.Studio.Controls.ModelEditors
         {
             InitializeComponent();
 
-            var textures = GetTextures();
-            cbTexture.ItemsSource = textures;
+            cbTexture.ItemsSource = GetTextures();
             cbTexture.SelectedIndex = 0;
         }
 
@@ -140,7 +139,7 @@ namespace KihonEngine.Studio.Controls.ModelEditors
         private class TextureViewModel
         {
             public string Name { get; set; }
-            public Brush TextureBrush { get; set; }
+            public Brush PreviewBrush { get; set; }
         }
 
         private TextureViewModel CreateTextureViewModel(string filename)
@@ -149,11 +148,11 @@ namespace KihonEngine.Studio.Controls.ModelEditors
 
             if (string.IsNullOrEmpty(filename))
             {
-                result.TextureBrush = new SolidColorBrush(Colors.Transparent);
+                result.PreviewBrush = new SolidColorBrush(Colors.Transparent);
             }
             else
             {
-                result.TextureBrush = new ImageBrush(ImageHelper.Get($"Textures.{filename}"));
+                result.PreviewBrush = new ImageBrush(ImageHelper.Get($"Textures.{filename}"));
             }
 
             return result;

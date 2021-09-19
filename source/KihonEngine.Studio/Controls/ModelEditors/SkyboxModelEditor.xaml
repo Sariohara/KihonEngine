@@ -20,7 +20,16 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center">Name</Label>
-        <TextBox Grid.Row="0" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="tbName" KeyUp="tbName_KeyUp"></TextBox>
+        <ComboBox Name="cbName" Grid.Row="0" Grid.Column="1" Margin="0,0,0,10" HorizontalAlignment="Stretch"  SelectionChanged="cbName_SelectionChanged">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="40" Height="40" Margin="5" Background="{Binding PreviewBrush}"/>
+                        <TextBlock  Text="{Binding Name}" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
 
         <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center">Width</Label>
         <TextBox Grid.Row="1" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="tbWidth" KeyUp="tbWidth_KeyUp"></TextBox>

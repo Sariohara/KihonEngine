@@ -28,7 +28,7 @@
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Width="20" Height="20" Margin="5" Background="{Binding TextureBrush}"/>
+                        <TextBlock Width="20" Height="20" Margin="5" Background="{Binding PreviewBrush}"/>
                         <TextBlock  Text="{Binding Name}" VerticalAlignment="Center"/>
                     </StackPanel>
                 </DataTemplate>

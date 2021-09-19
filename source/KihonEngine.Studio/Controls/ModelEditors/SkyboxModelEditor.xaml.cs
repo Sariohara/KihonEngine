@@ -4,9 +4,11 @@ using KihonEngine.GameEngine.Graphics.ModelsBuilders;
 using KihonEngine.GameEngine.State;
 using KihonEngine.Services;
 using KihonEngine.Studio.Controls;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
 using System.Windows.Media.Media3D;
 
 namespace KihonEngine.Studio.Controls.ModelEditors
@@ -26,6 +28,9 @@ namespace KihonEngine.Studio.Controls.ModelEditors
         public SkyboxModelEditor()
         {
             InitializeComponent();
+
+            cbName.ItemsSource = GetSkyboxes();
+            cbName.SelectedIndex = 0;
         }
 
         private bool synchronizing;
@@ -37,7 +42,7 @@ namespace KihonEngine.Studio.Controls.ModelEditors
             if (propertyGrid.IsEnabled)
             {
                 var metadata = (SkyboxMetadata)state.Editor.ActionSelect.SelectedModel.Metadata[ModelType.Skybox.ToString()];
-                tbName.Text = metadata.Name?.ToString();
+                TrySelectName(metadata.Name);
                 tbWidth.Text = metadata.Width.ToString();
                 tbNormalX.Text = metadata.Normal.X.ToString();
                 tbNormalY.Text = metadata.Normal.Y.ToString();
@@ -46,7 +51,7 @@ namespace KihonEngine.Studio.Controls.ModelEditors
             }
             else
             {
-                tbName.Text = string.Empty;
+                TrySelectName(string.Empty);
                 tbWidth.Text = string.Empty;
                 tbNormalX.Text = string.Empty;
                 tbNormalY.Text = string.Empty;
@@ -57,16 +62,31 @@ namespace KihonEngine.Studio.Controls.ModelEditors
             synchronizing = false;
         }
 
-        private void tbName_KeyUp(object sender, KeyEventArgs e)
+        private bool _disableNameChange;
+        private void cbName_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (e.Key == Key.Enter)
+            if (!synchronizing && !_disableNameChange && this.IsLoaded)
             {
                 var layeredModel = State.Editor.ActionSelect.SelectedModel;
                 if (layeredModel != null)
                 {
                     var definition = GameEngineController.GetDefinition<SkyboxDefinition>(layeredModel);
-                    definition.Metadata.Name = tbName.Text;
+                    definition.Metadata.Name = ((SkyboxViewModel)cbName.SelectedItem).Name;
                     GameEngineController.ReplaceModelAndNotify(layeredModel, definition);
+                }
+            }
+        }
+
+        private void TrySelectName(string name)
+        {
+            var list = GetSkyboxes();
+            for (int i = 0; i < list.Length; i++)
+            {
+                if (list[i].Name == name)
+                {
+                    _disableNameChange = true;
+                    cbName.SelectedIndex = i;
+                    _disableNameChange = false;
                 }
             }
         }
@@ -157,6 +177,35 @@ namespace KihonEngine.Studio.Controls.ModelEditors
                     GameEngineController.ReplaceModelAndNotify(layeredModel, definition);
                 }
             }
+        }
+
+        public class SkyboxViewModel
+        {
+            public string Name { get; set; }
+            public Brush PreviewBrush { get; set; }
+        }
+
+        private SkyboxViewModel CreateSkyboxViewModel(string name)
+        {
+            var result = new SkyboxViewModel { Name = name };
+
+            if (string.IsNullOrEmpty(name))
+            {
+                result.PreviewBrush = new SolidColorBrush(Colors.Transparent);
+            }
+            else
+            {
+                result.PreviewBrush = new ImageBrush(ImageHelper.Get($"Skyboxes.{name}-front.png"));
+            }
+
+            return result;
+        }
+
+        private SkyboxViewModel[] GetSkyboxes()
+        {
+            return new[] { string.Empty, "sky0", "sky1", "sky2" }
+                .Select(x => CreateSkyboxViewModel(x))
+                .ToArray();
         }
     }
 }
