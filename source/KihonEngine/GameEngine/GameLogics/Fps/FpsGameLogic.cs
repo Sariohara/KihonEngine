@@ -98,35 +98,13 @@ namespace KihonEngine.GameEngine.GameLogics.Fps
             var keyboardSettings = Configuration.GetKeyboardSettings();
             var jumpState = State.Game.Reset<JumpState>();
             jumpState.IsJumping = true;
+            jumpState.JumpDirection = State.Graphics.PlayerCamera.Camera.LookDirection;
             jumpState.HasMoveForward = _keyboardPressedKeys.Contains(keyboardSettings.MoveForward);
             jumpState.HasMoveBackward = _keyboardPressedKeys.Contains(keyboardSettings.MoveBackward);
             jumpState.HasMoveRight = _keyboardPressedKeys.Contains(keyboardSettings.MoveRight);
             jumpState.HasMoveLeft = _keyboardPressedKeys.Contains(keyboardSettings.MoveLeft);
             jumpState.YSpeed = -1;
         }
-
-        //private void CalculateJump(List<Action> graphicUpdates)
-        //{
-        //    var jumpState = State.Game.Get<JumpState>();
-        //    if (jumpState.IsJumping)
-        //    {
-        //        jumpState.YSpeed -= jumpState.Gravity;
-        //    }
-
-        //    //double yMoveWithoutCollisions = 0;
-        //    //for (double yMove = 0; yMove < jumpState.YSpeed; yMove++)
-        //    //{
-        //    //    var intermediateNewPosition = new Point3D(position.X, position.Y + yMove, position.Z);
-        //    //    if (!CameraController.HasCollisions(true, intermediateNewPosition, out var adjustmentY))
-        //    //    {
-        //    //        yMoveWithoutCollisions = yMove;
-        //    //    }
-        //    //    else
-        //    //    {
-        //    //        break;
-        //    //    }
-        //    //}
-        //}
 
         public class GraphicUpdateContext
         {
@@ -146,6 +124,7 @@ namespace KihonEngine.GameEngine.GameLogics.Fps
                 var keyboardSettings = Configuration.GetKeyboardSettings();
 
                 jumpState.IsJumping = true;
+                jumpState.JumpDirection = State.Graphics.PlayerCamera.Camera.LookDirection;
                 jumpState.HasMoveForward = _keyboardPressedKeys.Contains(keyboardSettings.MoveForward);
                 jumpState.HasMoveBackward = _keyboardPressedKeys.Contains(keyboardSettings.MoveBackward);
                 jumpState.HasMoveRight = _keyboardPressedKeys.Contains(keyboardSettings.MoveRight);
@@ -220,19 +199,19 @@ namespace KihonEngine.GameEngine.GameLogics.Fps
             var newPosition = camera.Position;
             if (jumpState.HasMoveForward)
             {
-                newPosition = CameraController.GetMoveLongitudinal(newPosition, camera.LookDirection, camera.UpDirection, keyboardSettings.MoveSpeed);
+                newPosition = CameraController.GetMoveLongitudinal(newPosition, jumpState.JumpDirection, camera.UpDirection, keyboardSettings.MoveSpeed);
             }
             if (jumpState.HasMoveBackward)
             {
-                newPosition = CameraController.GetMoveLongitudinal(newPosition, camera.LookDirection, camera.UpDirection, -keyboardSettings.MoveSpeed);
+                newPosition = CameraController.GetMoveLongitudinal(newPosition, jumpState.JumpDirection, camera.UpDirection, -keyboardSettings.MoveSpeed);
             }
             if (jumpState.HasMoveRight)
             {
-                newPosition = CameraController.GetMoveLateral(newPosition, camera.LookDirection, camera.UpDirection, -keyboardSettings.MoveSpeed);
+                newPosition = CameraController.GetMoveLateral(newPosition, jumpState.JumpDirection, camera.UpDirection, -keyboardSettings.MoveSpeed);
             }
             if (jumpState.HasMoveLeft)
             {
-                newPosition = CameraController.GetMoveLateral(newPosition, camera.LookDirection, camera.UpDirection, keyboardSettings.MoveSpeed);
+                newPosition = CameraController.GetMoveLateral(newPosition, jumpState.JumpDirection, camera.UpDirection, keyboardSettings.MoveSpeed);
             }
 
             jumpState.YSpeed -= State.Game.Get<JumpState>().Gravity;

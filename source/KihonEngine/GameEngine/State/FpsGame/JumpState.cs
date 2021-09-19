@@ -19,6 +19,8 @@ namespace KihonEngine.GameEngine.State.FpsGame
 
         public bool IsJumping { get; set; }
 
+        public Vector3D JumpDirection { get; set; }
+
         public double FallSize { get; set; }
 
         public double FallSizeLimitToDeath { get; set; }
