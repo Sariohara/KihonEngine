@@ -4,9 +4,11 @@ using KihonEngine.GameEngine.Graphics.ModelsBuilders;
 using KihonEngine.GameEngine.State;
 using KihonEngine.Services;
 using KihonEngine.Studio.Controls;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
 
 namespace KihonEngine.Studio.Controls.ModelEditors
 {
@@ -25,6 +27,10 @@ namespace KihonEngine.Studio.Controls.ModelEditors
         public FloorModelEditor()
         {
             InitializeComponent();
+
+            var textures = GetTextures();
+            cbTexture.ItemsSource = textures;
+            cbTexture.SelectedIndex = 0;
         }
 
         private bool synchronizing;
@@ -38,14 +44,14 @@ namespace KihonEngine.Studio.Controls.ModelEditors
                 var metadata = (FloorMetadata)state.Editor.ActionSelect.SelectedModel.Metadata[ModelType.Floor.ToString()];
                 tbWidth.Text = metadata.Width.ToString();
                 tbLength.Text = metadata.Length.ToString();
-                tbTexture.Text = metadata.Texture;
+                TrySelectTexture(metadata.Texture);
                 cbUseBackMaterial.IsChecked = metadata.UseBackMaterial;
             }
             else
             {
                 tbWidth.Text = string.Empty;
                 tbLength.Text = string.Empty;
-                tbTexture.Text = string.Empty;
+                TrySelectTexture(string.Empty);
                 cbUseBackMaterial.IsChecked = false;
             }
 
@@ -88,16 +94,31 @@ namespace KihonEngine.Studio.Controls.ModelEditors
             }
         }
 
-        private void tbTexture_KeyUp(object sender, KeyEventArgs e)
+        private bool _disableTextureChange;
+        private void cbtexture_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (e.Key == Key.Enter)
+            if (!synchronizing && !_disableTextureChange && this.IsLoaded)
             {
                 var layeredModel = State.Editor.ActionSelect.SelectedModel;
                 if (layeredModel != null)
                 {
                     var definition = GameEngineController.GetDefinition<FloorDefinition>(layeredModel);
-                    definition.Metadata.Texture = tbTexture.Text;
+                    definition.Metadata.Texture = ((TextureViewModel)cbTexture.SelectedItem).Name;
                     GameEngineController.ReplaceModelAndNotify(layeredModel, definition);
+                }
+            }
+        }
+
+        private void TrySelectTexture(string name)
+        {
+            var textures = GetTextures();
+            for(int i = 0; i < textures.Length; i++)
+            {
+                if (textures[i].Name == name)
+                {
+                    _disableTextureChange = true;
+                    cbTexture.SelectedIndex = i;
+                    _disableTextureChange = false;
                 }
             }
         }
@@ -114,6 +135,35 @@ namespace KihonEngine.Studio.Controls.ModelEditors
                     GameEngineController.ReplaceModelAndNotify(layeredModel, definition);
                 }
             }
+        }
+
+        private class TextureViewModel
+        {
+            public string Name { get; set; }
+            public Brush TextureBrush { get; set; }
+        }
+
+        private TextureViewModel CreateTextureViewModel(string filename)
+        {
+            var result = new TextureViewModel { Name = filename };
+
+            if (string.IsNullOrEmpty(filename))
+            {
+                result.TextureBrush = new SolidColorBrush(Colors.Transparent);
+            }
+            else
+            {
+                result.TextureBrush = new ImageBrush(ImageHelper.Get($"Textures.{filename}"));
+            }
+
+            return result;
+        }
+
+        private TextureViewModel[] GetTextures()
+        {
+            return new[] { string.Empty, "default.png", "floor0.jpg", "Ki.png", "Hon.png" }
+                .Select(x => CreateTextureViewModel(x))
+                .ToArray();
         }
     }
 }
