@@ -8,7 +8,7 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
 {
     public static class ImageHelper
     {
-        private static Dictionary<string, BitmapImage>  _bitmapImageCache = new Dictionary<string, BitmapImage>();
+        private static Dictionary<string, BitmapImage> _bitmapImageCache = new Dictionary<string, BitmapImage>();
         private static Dictionary<string, Bitmap> _bitmapCache = new Dictionary<string, Bitmap>();
 
         public static BitmapImage Get(string shortResourceName)
