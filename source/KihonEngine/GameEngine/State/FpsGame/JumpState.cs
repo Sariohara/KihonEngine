@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Media.Media3D;
+﻿using System.Windows.Media.Media3D;
 
 namespace KihonEngine.GameEngine.State.FpsGame
 {
@@ -11,19 +6,25 @@ namespace KihonEngine.GameEngine.State.FpsGame
     {
         public JumpState()
         {
+            // Jump configuration
             InitialYSpeed = 2;
             Gravity = .1;
-            FallSizeLimitToDeath = 200;
+            FallSizeMax = 200;
             YSpeedMax = 10;
+            NoGravityStepsMax = 10;
         }
 
         public bool IsJumping { get; set; }
 
         public Vector3D JumpDirection { get; set; }
 
+        public int NoGravityStepsMax { get; set; }
+
+        public int NoGravitySteps { get; set; }
+
         public double FallSize { get; set; }
 
-        public double FallSizeLimitToDeath { get; set; }
+        public double FallSizeMax { get; set; }
 
         public double YSpeed { get; set; }
 

@@ -99,6 +99,7 @@ namespace KihonEngine.GameEngine.GameLogics.Fps
             var jumpState = State.Game.Reset<JumpState>();
             jumpState.IsJumping = true;
             jumpState.JumpDirection = State.Graphics.PlayerCamera.Camera.LookDirection;
+            jumpState.NoGravitySteps = 0;
             jumpState.HasMoveForward = _keyboardPressedKeys.Contains(keyboardSettings.MoveForward);
             jumpState.HasMoveBackward = _keyboardPressedKeys.Contains(keyboardSettings.MoveBackward);
             jumpState.HasMoveRight = _keyboardPressedKeys.Contains(keyboardSettings.MoveRight);
@@ -118,17 +119,24 @@ namespace KihonEngine.GameEngine.GameLogics.Fps
 
         private void BeginToJump(GraphicUpdateContext ctx)
         {
-            var jumpState = State.Game.Reset<JumpState>();
+            var jumpState = State.Game.Get<JumpState>();
             if (!jumpState.IsJumping)
             {
+                jumpState = State.Game.Reset<JumpState>();
                 var keyboardSettings = Configuration.GetKeyboardSettings();
-
                 jumpState.IsJumping = true;
                 jumpState.JumpDirection = State.Graphics.PlayerCamera.Camera.LookDirection;
+                jumpState.NoGravitySteps = 1;
                 jumpState.HasMoveForward = _keyboardPressedKeys.Contains(keyboardSettings.MoveForward);
                 jumpState.HasMoveBackward = _keyboardPressedKeys.Contains(keyboardSettings.MoveBackward);
                 jumpState.HasMoveRight = _keyboardPressedKeys.Contains(keyboardSettings.MoveRight);
                 jumpState.HasMoveLeft = _keyboardPressedKeys.Contains(keyboardSettings.MoveLeft);
+                jumpState.YSpeed = jumpState.InitialYSpeed;
+            }
+            else if (jumpState.NoGravitySteps <= jumpState.NoGravityStepsMax 
+                && jumpState.YSpeed == jumpState.InitialYSpeed - jumpState.Gravity)
+            {
+                jumpState.NoGravitySteps++;
                 jumpState.YSpeed = jumpState.InitialYSpeed;
             }
         }
@@ -168,7 +176,7 @@ namespace KihonEngine.GameEngine.GameLogics.Fps
         {
             var lifeState = State.Game.Get<LifeState>();
             var jumpState = State.Game.Get<JumpState>();
-            if (!jumpState.IsJumping && jumpState.FallSize > jumpState.FallSizeLimitToDeath)
+            if (!jumpState.IsJumping && jumpState.FallSize > jumpState.FallSizeMax)
             {
                 // Just end a jump, and jump was too heigh
                 jumpState.IsJumping = false;
