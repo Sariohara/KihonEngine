@@ -38,6 +38,9 @@
     <None Remove="Content\Images\Skyboxes\sky2-left.png" />
     <None Remove="Content\Images\Skyboxes\sky2-right.png" />
     <None Remove="Content\Images\Skyboxes\sky2-top.png" />
+    <None Remove="Content\Images\Skyboxes\sky3-full.png" />
+    <None Remove="Content\Images\Skyboxes\sky4-full.jpg" />
+    <None Remove="Content\Images\Skyboxes\sky4-full.png" />
     <None Remove="Content\Images\Textures\default.png" />
     <None Remove="Content\Images\Textures\floor0.jpg" />
     <None Remove="Content\Images\Textures\Hon.png" />
@@ -51,6 +54,7 @@
     <EmbeddedResource Include="Content\Images\Skyboxes\sky0-left.png" />
     <EmbeddedResource Include="Content\Images\Skyboxes\sky0-right.png" />
     <EmbeddedResource Include="Content\Images\Skyboxes\sky0-top.png" />
+    <EmbeddedResource Include="Content\Images\Skyboxes\sky3-full.png" />
     <EmbeddedResource Include="Content\Images\Skyboxes\sky1-back.png" />
     <EmbeddedResource Include="Content\Images\Skyboxes\sky1-bottom.png" />
     <EmbeddedResource Include="Content\Images\Skyboxes\sky1-front.png" />
@@ -65,6 +69,8 @@
     <EmbeddedResource Include="Content\Images\Skyboxes\sky2-left.png" />
     <EmbeddedResource Include="Content\Images\Skyboxes\sky2-right.png" />
     <EmbeddedResource Include="Content\Images\Skyboxes\sky2-top.png" />
+    <EmbeddedResource Include="Content\Images\Skyboxes\sky4-full.jpg" />
+    <EmbeddedResource Include="Content\Images\Skyboxes\sky4-full.png" />
     <EmbeddedResource Include="Content\Images\Textures\default.png" />
     <EmbeddedResource Include="Content\Images\Textures\floor0.jpg" />
     <EmbeddedResource Include="Content\Images\Textures\Hon.png" />
@@ -73,6 +79,7 @@
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="System.Drawing.Common" Version="5.0.2" />
   </ItemGroup>
 
   <ItemGroup>

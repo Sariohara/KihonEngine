@@ -9,7 +9,11 @@
         mc:Ignorable="d"
         Loaded="mainWindow_Loaded"
         Closing="mainWindow_Closing"
-        Title="Kihon Engine Studio" Height="640" Width="1024">
+        Title="Kihon Engine Studio" 
+        Height="640" 
+        Width="1024" 
+        WindowStartupLocation="CenterScreen"
+        WindowState="Maximized">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -77,7 +81,7 @@
                             </LayoutAnchorablePane>
                         </LayoutPanel>
 
-                        <LayoutAnchorablePane DockWidth="200">
+                        <LayoutAnchorablePane DockWidth="250">
                             <LayoutAnchorable Title="Properties">
                                 <controls:ModelEditor x:Name="modelEditor"/>
                             </LayoutAnchorable>

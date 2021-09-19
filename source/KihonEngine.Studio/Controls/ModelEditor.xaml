@@ -102,9 +102,10 @@
                 <Label x:Name="lblModelType"></Label>
             </StackPanel>
         </Label>
-        <DockPanel Name="panelCustomProperties" Grid.Row="7" Grid.Column="1">
-            
-        </DockPanel>
+        <ScrollViewer Grid.Row="7" Grid.Column="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+            <DockPanel Name="panelCustomProperties" />
+        </ScrollViewer>
+        
         <Label Grid.Row="8" Grid.Column="1" Background="LightGray" Margin="5">Actions</Label>
         <Button Grid.Row="9" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="btnRemoveModel" Click="btnRemoveModel_Click">Delete</Button>
     </Grid>

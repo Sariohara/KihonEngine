@@ -195,7 +195,7 @@ namespace KihonEngine.Studio.Controls.ModelEditors
             }
             else
             {
-                result.PreviewBrush = new ImageBrush(ImageHelper.Get($"Skyboxes.{name}-front.png"));
+                result.PreviewBrush = new ImageBrush(ImageHelper.Get($"Skyboxes.{name}-full.png"));
             }
 
             return result;
@@ -203,7 +203,7 @@ namespace KihonEngine.Studio.Controls.ModelEditors
 
         private SkyboxViewModel[] GetSkyboxes()
         {
-            return new[] { string.Empty, "sky0", "sky1", "sky2" }
+            return new[] { string.Empty, "sky0", "sky1", "sky2", "sky3" }
                 .Select(x => CreateSkyboxViewModel(x))
                 .ToArray();
         }

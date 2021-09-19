@@ -1,9 +1,7 @@
 ﻿using KihonEngine.GameEngine.Graphics.ModelDefinitions;
-using System;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Media.Media3D;
 
 namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
@@ -11,6 +9,11 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
     public class SkyboxBuilder : ModelBuilder
     {
         private List<LayeredModel3D> models;
+
+        private Point[] _defaultTextureCoordinates1 = new[] { new Point(0, 0), new Point(0, 1), new Point(1, 1) };
+        private Point[] _defaultTextureCoordinates2 = new[] { new Point(1, 0), new Point(0, 0), new Point(1, 1) };
+        private Point[] _topTextureCoordinates1 = new[] { new Point(1, 1), new Point(1, 0), new Point(0, 0) };
+        private Point[] _topTextureCoordinates2 = new[] { new Point(0, 1), new Point(1, 1), new Point(0, 0) };
 
         public SkyboxBuilder(Color color, List<LayeredModel3D> models) : base(color)
         {
@@ -33,41 +36,43 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
             Point3D p6 = new Point3D(w, w, w);
             Point3D p7 = new Point3D(0, w, w);
 
+            var normals = new[] { normal, normal, normal };
+
             //front
-            layeredModel.Children.Add(CreateTriangle(p6, p2, p3, CreateMaterial(skyboxName, "back"), new[] { new Point(0, 0), new Point(0, 1), new Point(1, 1) }, new[] { normal, normal, normal }));
-            layeredModel.Children.Add(CreateTriangle(p7, p6, p3, CreateMaterial(skyboxName, "back"), new[] { new Point(1, 0), new Point(0, 0), new Point(1, 1) }, new[] { normal, normal, normal }));
+            layeredModel.Children.Add(CreateTriangle(p6, p2, p3, CreateMaterial(skyboxName, SkyboxFace.Back), _defaultTextureCoordinates1, normals));
+            layeredModel.Children.Add(CreateTriangle(p7, p6, p3, CreateMaterial(skyboxName, SkyboxFace.Back), _defaultTextureCoordinates2, normals));
 
             //right                                                               
-            layeredModel.Children.Add(CreateTriangle(p5, p1, p2, CreateMaterial(skyboxName, "right"), new[] { new Point(0, 0), new Point(0, 1), new Point(1, 1) }, new[] { normal, normal, normal}));
-            layeredModel.Children.Add(CreateTriangle(p6, p5, p2, CreateMaterial(skyboxName, "right"), new[] { new Point(1, 0), new Point(0, 0), new Point(1, 1) }, new[] { normal, normal, normal }));
+            layeredModel.Children.Add(CreateTriangle(p5, p1, p2, CreateMaterial(skyboxName, SkyboxFace.Right), _defaultTextureCoordinates1, normals));
+            layeredModel.Children.Add(CreateTriangle(p6, p5, p2, CreateMaterial(skyboxName, SkyboxFace.Right), _defaultTextureCoordinates2, normals));
 
             //back                                                                
-            layeredModel.Children.Add(CreateTriangle(p4, p0, p1, CreateMaterial(skyboxName, "front"), new[] { new Point(0, 0), new Point(0, 1), new Point(1, 1) }, new[] { normal, normal, normal }));
-            layeredModel.Children.Add(CreateTriangle(p5, p4, p1, CreateMaterial(skyboxName, "front"), new[] { new Point(1, 0), new Point(0, 0), new Point(1, 1) }, new[] { normal, normal, normal }));
+            layeredModel.Children.Add(CreateTriangle(p4, p0, p1, CreateMaterial(skyboxName, SkyboxFace.Front), _defaultTextureCoordinates1, normals));
+            layeredModel.Children.Add(CreateTriangle(p5, p4, p1, CreateMaterial(skyboxName, SkyboxFace.Front), _defaultTextureCoordinates2, normals));
 
             //left                                                                
-            layeredModel.Children.Add(CreateTriangle(p7, p3, p0, CreateMaterial(skyboxName, "left"), new[] { new Point(0, 0), new Point(0, 1), new Point(1, 1) }, new[] { normal, normal, normal }));
-            layeredModel.Children.Add(CreateTriangle(p4, p7, p0, CreateMaterial(skyboxName, "left"), new[] { new Point(1, 0), new Point(0, 0), new Point(1, 1) }, new[] { normal, normal, normal }));
+            layeredModel.Children.Add(CreateTriangle(p7, p3, p0, CreateMaterial(skyboxName, SkyboxFace.Left), _defaultTextureCoordinates1, normals));
+            layeredModel.Children.Add(CreateTriangle(p4, p7, p0, CreateMaterial(skyboxName, SkyboxFace.Left), _defaultTextureCoordinates2, normals));
 
             //top                                                                 
-            layeredModel.Children.Add(CreateTriangle(p5, p6, p7, CreateMaterial(skyboxName, "top"), new[] { new Point(1, 1), new Point(1, 0), new Point(0, 0) }, new[] { normal, normal, normal }));
-            layeredModel.Children.Add(CreateTriangle(p4, p5, p7, CreateMaterial(skyboxName, "top"), new[] { new Point(0, 1), new Point(1, 1), new Point(0, 0) }, new[] { normal, normal, normal }));
+            layeredModel.Children.Add(CreateTriangle(p5, p6, p7, CreateMaterial(skyboxName, SkyboxFace.Top), _topTextureCoordinates1, normals));
+            layeredModel.Children.Add(CreateTriangle(p4, p5, p7, CreateMaterial(skyboxName, SkyboxFace.Top), _topTextureCoordinates2, normals));
 
             //bottom                                                              
-            layeredModel.Children.Add(CreateTriangle(p0, p3, p2, CreateMaterial(skyboxName, "bottom"), new[] { new Point(0, 0), new Point(0, 1), new Point(1, 1) }, new[] { normal, normal, normal }));
-            layeredModel.Children.Add(CreateTriangle(p1, p0, p2, CreateMaterial(skyboxName, "bottom"), new[] { new Point(1, 0), new Point(0, 0), new Point(1, 1) }, new[] { normal, normal, normal }));
+            layeredModel.Children.Add(CreateTriangle(p0, p3, p2, CreateMaterial(skyboxName, SkyboxFace.Bottom), _defaultTextureCoordinates1, normals));
+            layeredModel.Children.Add(CreateTriangle(p1, p0, p2, CreateMaterial(skyboxName, SkyboxFace.Bottom), _defaultTextureCoordinates2, normals));
 
             models.Add(layeredModel);
             return layeredModel;
         }
 
-        private Material CreateMaterial(string filepath, string face)
+        private Material CreateMaterial(string filepath, SkyboxFace face)
         {
             var materiaGroup = new MaterialGroup();
 
             if (!string.IsNullOrEmpty(filepath))
             {
-                var imageSource = ImageHelper.Get($"Skyboxes.{filepath}-{face}.png");
+                var imageSource = ImageHelper.GetSkyboxPart($"Skyboxes.{filepath}-full.png", face);
                 var brush = new ImageBrush(imageSource);
                 materiaGroup.Children.Add(new DiffuseMaterial(brush));
             }
