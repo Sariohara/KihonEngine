@@ -203,7 +203,7 @@ namespace KihonEngine.Studio.Controls.ModelEditors
 
         private SkyboxViewModel[] GetSkyboxes()
         {
-            return new[] { string.Empty, "sky0", "sky1", "sky3" }
+            return new[] { string.Empty, "sky0", "sky1", "sky2" , "sky3" }
                 .Select(x => CreateSkyboxViewModel(x))
                 .ToArray();
         }
