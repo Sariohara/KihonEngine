@@ -160,7 +160,7 @@ namespace KihonEngine.Studio.Controls.ModelEditors
 
         private TextureViewModel[] GetTextures()
         {
-            return new[] { string.Empty, "default.png", "floor0.jpg", "ki.png", "kon.png" }
+            return new[] { string.Empty, "default.png", "floor0.jpg", "ki.png", "hon.png" }
                 .Select(x => CreateTextureViewModel(x))
                 .ToArray();
         }
