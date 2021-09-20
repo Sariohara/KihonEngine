@@ -49,8 +49,8 @@ namespace KihonEngine.Studio
 
             var maps = WorldEngine.RegisteredMaps;
             var empty = "Demo : <Empty>";
-            menuOpen0.Header = menuOpen1.Header = menuOpen2.Header = menuOpen3.Header = empty;
-            menuOpen0.Visibility = menuOpen1.Visibility = menuOpen2.Visibility = menuOpen3.Visibility = Visibility.Collapsed;
+            menuOpen0.Header = menuOpen1.Header = menuOpen2.Header = menuOpen3.Header = menuOpen4.Header = menuOpen5.Header = empty;
+            menuOpen0.Visibility = menuOpen1.Visibility = menuOpen2.Visibility = menuOpen3.Visibility = menuOpen4.Visibility = menuOpen5.Visibility = Visibility.Collapsed;
 
             if (maps.Length > 0)
             {
@@ -74,6 +74,18 @@ namespace KihonEngine.Studio
             {
                 menuOpen3.Header = "Demo 4 : " + maps[3];
                 menuOpen3.Visibility = Visibility.Visible;
+            }
+
+            if (maps.Length > 4)
+            {
+                menuOpen4.Header = "Demo 5 : " + maps[4];
+                menuOpen4.Visibility = Visibility.Visible;
+            }
+
+            if (maps.Length > 5)
+            {
+                menuOpen5.Header = "Demo 6 : " + maps[5];
+                menuOpen5.Visibility = Visibility.Visible;
             }
         }
 

@@ -28,6 +28,8 @@
                     <MenuItem Header="Demo : Empty" x:Name="menuOpen1" Click="MenuOpen_Click" />
                     <MenuItem Header="Demo : Empty" x:Name="menuOpen2" Click="MenuOpen_Click" />
                     <MenuItem Header="Demo : Empty" x:Name="menuOpen3" Click="MenuOpen_Click" />
+                    <MenuItem Header="Demo : Empty" x:Name="menuOpen4" Click="MenuOpen_Click" />
+                    <MenuItem Header="Demo : Empty" x:Name="menuOpen5" Click="MenuOpen_Click" />
                     <Separator />
                     <MenuItem Header="File..." Click="MenuOpenFromFile_Click" />
                 </MenuItem>
