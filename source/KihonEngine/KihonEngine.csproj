@@ -57,8 +57,8 @@
     <EmbeddedResource Include="Content\Images\Skyboxes\sky1-top.png" />
     <EmbeddedResource Include="Content\Images\Textures\default.png" />
     <EmbeddedResource Include="Content\Images\Textures\floor0.jpg" />
-    <EmbeddedResource Include="Content\Images\Textures\Hon.png" />
-    <EmbeddedResource Include="Content\Images\Textures\Ki.png" />
+    <EmbeddedResource Include="Content\Images\Textures\hon.png" />
+    <EmbeddedResource Include="Content\Images\Textures\ki.png" />
   </ItemGroup>
 
   <ItemGroup>

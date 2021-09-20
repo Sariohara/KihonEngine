@@ -176,6 +176,7 @@ namespace KihonEngine.Studio
             WorldEngine.RegisterMap<Q3DM1MapBuilder>();
             WorldEngine.RegisterMap<DarkCastleMapBuilder>();
             WorldEngine.RegisterMap<ArenaMapBuilder>();
+            WorldEngine.RegisterMap<RoofTopMapBuilder>();
             WorldEngine.RegisterMap<LogoMapBuilder>();
 
             GameEngineController.RegisterIO(this);
