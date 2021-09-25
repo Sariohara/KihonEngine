@@ -1,14 +1,13 @@
-﻿using KihonEngine.GameEngine.Graphics.Maps;
-using KihonEngine.GameEngine.Graphics.ModelDefinitions;
+﻿using KihonEngine.GameEngine.Graphics.ModelDefinitions;
 using KihonEngine.GameEngine.Graphics.ModelsBuilders;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Media.Media3D;
 
-namespace KihonEngine.SampleMaps
+namespace KihonEngine.GameEngine.Graphics.Maps
 {
-    public abstract class ResourceBasedMapBuilder : IMapBuilder
+    public abstract class MapBuilderFromResource : IMapBuilder
     {
         public string MapName => _mapBuilder.MapName;
 
@@ -18,11 +17,10 @@ namespace KihonEngine.SampleMaps
 
         private MapBuilderFromDefinition _mapBuilder;
 
-        public ResourceBasedMapBuilder(string resourceName)
+        public MapBuilderFromResource(System.Reflection.Assembly resourceAssembly, string resourceName)
         {
-            var assembly = System.Reflection.Assembly.GetExecutingAssembly();
-            var assemblyName = assembly.GetName().Name;
-            var stream = assembly.GetManifestResourceStream($"{assemblyName}.{resourceName}");
+            var assemblyName = resourceAssembly.GetName().Name;
+            var stream = resourceAssembly.GetManifestResourceStream(resourceName);
             using (StreamReader reader = new StreamReader(stream))
             {
                 var json = reader.ReadToEnd();
