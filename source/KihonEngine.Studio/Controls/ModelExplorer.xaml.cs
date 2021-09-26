@@ -98,8 +98,11 @@ namespace KihonEngine.Studio.Controls
                 }
 
                 lvModels.ItemsSource = list;
-                lvModels.SelectedIndex = lvSelectedIndex;
-                lvModels.ScrollIntoView(list[lvSelectedIndex]);
+                if (lvSelectedIndex != -1)
+                {
+                    lvModels.SelectedIndex = lvSelectedIndex;
+                    lvModels.ScrollIntoView(list[lvSelectedIndex]);
+                }
             }
             else
             {
