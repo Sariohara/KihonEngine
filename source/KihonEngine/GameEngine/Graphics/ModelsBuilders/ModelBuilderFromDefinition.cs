@@ -93,11 +93,11 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
                 brush.Opacity = definition.Metadata.Opacity.Value;
                 materialGroup.Children.Add(new DiffuseMaterial(brush));
 
-                model = builder.Create(definition.Position.X, definition.Position.Y, definition.Position.Z, definition.Metadata.XSize, definition.Metadata.ZSize, definition.Metadata.YSize, materialGroup);
+                model = builder.Create(definition.Position.X, definition.Position.Y, definition.Position.Z, definition.Metadata.XSize, definition.Metadata.YSize, definition.Metadata.ZSize, materialGroup);
             }
             else
             {
-                model = builder.Create(definition.Position.X, definition.Position.Y, definition.Position.Z, definition.Metadata.XSize, definition.Metadata.ZSize, definition.Metadata.YSize);
+                model = builder.Create(definition.Position.X, definition.Position.Y, definition.Position.Z, definition.Metadata.XSize, definition.Metadata.YSize, definition.Metadata.ZSize);
             }
 
             model.RotateByAxisX(definition.RotationAxisX);

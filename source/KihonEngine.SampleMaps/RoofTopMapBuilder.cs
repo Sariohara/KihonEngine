@@ -61,26 +61,26 @@ namespace KihonEngine.SampleMaps
 
             // Front table
             volumeBuilder.Color = Colors.LightGray;
-            volumeBuilder.Create(-10, 0, -40, 10, 30, 7);
+            volumeBuilder.Create(-10, 0, -40, 10, 7, 30);
 
             volumeBuilder.Color = Colors.Red;
             volumeBuilder.Create(5, 0, -40);
-            volumeBuilder.Create(10, 0, -40, 2, 5, 10);
+            volumeBuilder.Create(10, 0, -40, 2, 10, 5);
 
             volumeBuilder.Create(-20, 0, -40);
-            volumeBuilder.Create(-22, 0, -40, 2, 5, 10);
+            volumeBuilder.Create(-22, 0, -40, 2, 10, 5);
 
             volumeBuilder.Create(5, 0, -30);
-            volumeBuilder.Create(10, 0, -30, 2, 5, 10);
+            volumeBuilder.Create(10, 0, -30, 2, 10, 5);
 
             volumeBuilder.Create(-20, 0, -30);
-            volumeBuilder.Create(-22, 0, -30, 2, 5, 10);
+            volumeBuilder.Create(-22, 0, -30, 2, 10, 5);
 
             volumeBuilder.Create(5, 0, -20);
-            volumeBuilder.Create(10, 0, -20, 2, 5, 10);
+            volumeBuilder.Create(10, 0, -20, 2, 10, 5);
 
             volumeBuilder.Create(-20, 0, -20);
-            volumeBuilder.Create(-22, 0, -20, 2, 5, 10);
+            volumeBuilder.Create(-22, 0, -20, 2, 10, 5);
 
 
             volumeBuilder.Color = Colors.LightGray;
@@ -133,17 +133,17 @@ namespace KihonEngine.SampleMaps
 
             volumeBuilder.Color = Colors.Brown;
             var uSize = 2;
-            volumeBuilder.Create(-25, 0, 20, uSize, uSize, 25);
-            volumeBuilder.Create(15- uSize, 0, 20, uSize, uSize, 25);
-            volumeBuilder.Create(-25, 0, 80- uSize, uSize, uSize, 25);
-            volumeBuilder.Create(15 - uSize, 0, 80 - uSize, uSize, uSize, 25);
+            volumeBuilder.Create(-25, 0, 20, uSize, 25, uSize);
+            volumeBuilder.Create(15- uSize, 0, 20, uSize, 25, uSize);
+            volumeBuilder.Create(-25, 0, 80- uSize, uSize, 25, uSize);
+            volumeBuilder.Create(15 - uSize, 0, 80 - uSize, uSize, 25, uSize);
 
             // Borders
             volumeBuilder.Color = Colors.LightGray;
             volumeBuilder.Create(-100, 0, -100, 200, 5, 5);
-            volumeBuilder.Create(100 - 5, 0, -100, 5, 200, 5);
+            volumeBuilder.Create(100 - 5, 0, -100, 5, 5, 200);
             volumeBuilder.Create(-100, 0, 100 - 5, 200, 5, 5);
-            volumeBuilder.Create(-100, 0, -100, 5, 200, 5);
+            volumeBuilder.Create(-100, 0, -100, 5, 5, 200);
 
 
             volumeBuilder.Create(-100, 0, -100, 12);

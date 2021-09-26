@@ -24,7 +24,7 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
             return Create(x, y, z, size, size, size, material);
         }
 
-        public LayeredModel3D Create(double x, double y, double z, double xSize, double zSize, double ySize, Material material = null)
+        public LayeredModel3D Create(double x, double y, double z, double xSize, double ySize, double zSize, Material material = null)
         {
             xSize = Math.Round(xSize, 2);
             ySize = Math.Round(ySize, 2);
