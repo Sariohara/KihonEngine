@@ -1,0 +1,1640 @@
+{
+  "Name": "E1M1",
+  "PlayerPosition": "10,10,90",
+  "PlayerLookDirection": "0,0,-1",
+  "Ceilings": [],
+  "Floors": [],
+  "Lights": [
+    {
+      "Metadata": {
+        "Direction": "-3,-4,-5"
+      },
+      "Index": 0,
+      "Color": "#00FFFFFF",
+      "Position": "0,0,0",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "Direction": "3,4,5"
+      },
+      "Index": 1,
+      "Color": "#00FFFFFF",
+      "Position": "0,0,0",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    }
+  ],
+  "Skyboxes": [
+    {
+      "Metadata": {
+        "Name": "sky3",
+        "Size": 10000,
+        "Normal": "-3,-4,-5",
+        "UseBackMaterial": false
+      },
+      "Index": 2,
+      "Color": "#00FFFFFF",
+      "Position": "-5000,-5000,-5000",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    }
+  ],
+  "Volumes": [
+    {
+      "Metadata": {
+        "XSize": 5.0,
+        "YSize": 55.0,
+        "ZSize": 5.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 3,
+      "Color": "#FFFFFFFF",
+      "Position": "30,0,0",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 5.0,
+        "YSize": 55.0,
+        "ZSize": 5.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 4,
+      "Color": "#FFFFFFFF",
+      "Position": "-15,0,0",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 5.0,
+        "YSize": 55.0,
+        "ZSize": 5.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 5,
+      "Color": "#FFFFFFFF",
+      "Position": "-15,0,45",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 5.0,
+        "YSize": 55.0,
+        "ZSize": 5.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 6,
+      "Color": "#FFFFFFFF",
+      "Position": "30,0,45",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 50.0,
+        "YSize": 1.0,
+        "ZSize": 5.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 7,
+      "Color": "#FFFFFFFF",
+      "Position": "-15,-1,0",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 50.0,
+        "YSize": 1.0,
+        "ZSize": 5.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 8,
+      "Color": "#FFFFFFFF",
+      "Position": "-15,-1,45",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 5.0,
+        "YSize": 1.0,
+        "ZSize": 50.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 9,
+      "Color": "#FFFFFFFF",
+      "Position": "-15,-1,0",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 5.0,
+        "YSize": 5.0,
+        "ZSize": 50.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 10,
+      "Color": "#FFFFFFFF",
+      "Position": "50,-1,0",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 60.0,
+        "YSize": 1.0,
+        "ZSize": 50.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 11,
+      "Color": "#FF4682B4",
+      "Position": "-10,-2,0",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 5.0,
+        "YSize": 20.0,
+        "ZSize": 40.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 12,
+      "Color": "#FFFFFFFF",
+      "Position": "-16,30,5",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 40.0,
+        "YSize": 20.0,
+        "ZSize": 5.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 13,
+      "Color": "#FFFFFFFF",
+      "Position": "-10,30,-1",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 40.0,
+        "YSize": 20.0,
+        "ZSize": 5.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 14,
+      "Color": "#FFFFFFFF",
+      "Position": "-10,30,46",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 5.0,
+        "YSize": 5.0,
+        "ZSize": 50.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 15,
+      "Color": "#FFFFFFFF",
+      "Position": "50,45,0",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 70.0,
+        "YSize": 5.0,
+        "ZSize": 50.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 16,
+      "Color": "#FFFFFFFF",
+      "Position": "-15,50,0",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 5.0,
+        "YSize": 45.0,
+        "ZSize": 10.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 17,
+      "Color": "#FFFFFFFF",
+      "Position": "50,0,-0",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 5.0,
+        "YSize": 45.0,
+        "ZSize": 10.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 18,
+      "Color": "#FFFFFFFF",
+      "Position": "50,0,40",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 5.0,
+        "YSize": 45.0,
+        "ZSize": 10.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 19,
+      "Color": "#FFFFFFFF",
+      "Position": "50,0,20",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 110.0,
+        "YSize": 35.0,
+        "ZSize": 40.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 20,
+      "Color": "#FFFFFFFF",
+      "Position": "-55,20,-40",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 40.0,
+        "YSize": 35.0,
+        "ZSize": 50.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 21,
+      "Color": "#FFFFFFFF",
+      "Position": "-55,20,0",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 110.0,
+        "YSize": 35.0,
+        "ZSize": 40.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 22,
+      "Color": "#FFFFFFFF",
+      "Position": "-55,20,50",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 105.0,
+        "YSize": 2.0,
+        "ZSize": 40.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 23,
+      "Color": "#FFFFFFFF",
+      "Position": "-55,-1,-40",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 105.0,
+        "YSize": 2.0,
+        "ZSize": 40.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 24,
+      "Color": "#FFFFFFFF",
+      "Position": "-55,-1,50",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 40.0,
+        "YSize": 2.0,
+        "ZSize": 50.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 25,
+      "Color": "#FFFFFFFF",
+      "Position": "-55,-1,0",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 20.0,
+        "YSize": 1.0,
+        "ZSize": 10.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 26,
+      "Color": "#FFFFFFFF",
+      "Position": "0,0,90",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 20.0,
+        "YSize": 1.0,
+        "ZSize": 10.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 27,
+      "Color": "#FFFFFFFF",
+      "Position": "0,20,90",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 5.0,
+        "YSize": 21.0,
+        "ZSize": 40.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 28,
+      "Color": "#FFFFFFFF",
+      "Position": "50,-1,50",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 5.0,
+        "YSize": 21.0,
+        "ZSize": 40.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 29,
+      "Color": "#FFFFFFFF",
+      "Position": "50,-1,-40",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 30.0,
+        "YSize": 20.0,
+        "ZSize": 1.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 30,
+      "Color": "#FFFFFFFF",
+      "Position": "20,0,90",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 1.0,
+        "YSize": 20.0,
+        "ZSize": 10.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 31,
+      "Color": "#FFFFFFFF",
+      "Position": "20,0,90",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 20.0,
+        "YSize": 20.0,
+        "ZSize": 1.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 32,
+      "Color": "#FFFFFFFF",
+      "Position": "0,0,100",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 1.0,
+        "YSize": 20.0,
+        "ZSize": 10.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 33,
+      "Color": "#FFFFFFFF",
+      "Position": "-1,0,90",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 55.0,
+        "YSize": 20.0,
+        "ZSize": 1.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 34,
+      "Color": "#FFFFFFFF",
+      "Position": "-55,0,90",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 20.0,
+        "YSize": 1.0,
+        "ZSize": 30.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 35,
+      "Color": "#FFFFFFFF",
+      "Position": "-75,0,15",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 20.0,
+        "YSize": 30.0,
+        "ZSize": 30.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 36,
+      "Color": "#FFFFFFFF",
+      "Position": "-75,20,15",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 30.0,
+        "YSize": 1.0,
+        "ZSize": 70.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 37,
+      "Color": "#FFFFFFFF",
+      "Position": "20,0,-110",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 30.0,
+        "YSize": 1.0,
+        "ZSize": 70.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 38,
+      "Color": "#FFFFFFFF",
+      "Position": "20,20,-110",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 5.0,
+        "YSize": 56.0,
+        "ZSize": 20.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 39,
+      "Color": "#FFFFFFFF",
+      "Position": "50,-1,-60",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 75.0,
+        "YSize": 20.0,
+        "ZSize": 1.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 40,
+      "Color": "#FFFFFFFF",
+      "Position": "-55,0,-41",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 1.0,
+        "YSize": 20.0,
+        "ZSize": 70.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 41,
+      "Color": "#FFFFFFFF",
+      "Position": "19,0,-110",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 1.0,
+        "YSize": 20.0,
+        "ZSize": 45.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 42,
+      "Color": "#FFFFFFFF",
+      "Position": "-55,0,45",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 1.0,
+        "YSize": 20.0,
+        "ZSize": 55.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 43,
+      "Color": "#FFFFFFFF",
+      "Position": "-55,0,-40",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 20.0,
+        "YSize": 50.0,
+        "ZSize": 35.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 44,
+      "Color": "#FFFFFFFF",
+      "Position": "-75,0,-20",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 1.0,
+        "YSize": 20.0,
+        "ZSize": 20.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 45,
+      "Color": "#FFFFFFFF",
+      "Position": "50,0,-80",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 30.0,
+        "YSize": 1.0,
+        "ZSize": 30.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 46,
+      "Color": "#FFFFFFFF",
+      "Position": "50,0,-110",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 30.0,
+        "YSize": 20.0,
+        "ZSize": 1.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 47,
+      "Color": "#FFFFFFFF",
+      "Position": "50,0,-80",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 60.0,
+        "YSize": 20.0,
+        "ZSize": 1.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 48,
+      "Color": "#FFFFFFFF",
+      "Position": "20,0,-111",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 30.0,
+        "YSize": 1.0,
+        "ZSize": 30.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 49,
+      "Color": "#FFFFFFFF",
+      "Position": "50,20,-110",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 20.0,
+        "YSize": 50.0,
+        "ZSize": 35.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 50,
+      "Color": "#FFFFFFFF",
+      "Position": "-75,0,45",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 60.0,
+        "YSize": 1.0,
+        "ZSize": 100.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 51,
+      "Color": "#FFFFFFFF",
+      "Position": "-135,0,-20",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 60.0,
+        "YSize": 1.0,
+        "ZSize": 100.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 52,
+      "Color": "#FFFFFFFF",
+      "Position": "-135,50,-20",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 10.0,
+        "YSize": 10.0,
+        "ZSize": 10.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 53,
+      "Color": "#FFFFFFFF",
+      "Position": "-110,0,0",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 10.0,
+        "YSize": 10.0,
+        "ZSize": 10.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 54,
+      "Color": "#FFFFFFFF",
+      "Position": "-110,40,0",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 10.0,
+        "YSize": 10.0,
+        "ZSize": 10.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 55,
+      "Color": "#FFFFFFFF",
+      "Position": "-110,0,50",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 10.0,
+        "YSize": 10.0,
+        "ZSize": 10.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 56,
+      "Color": "#FFFFFFFF",
+      "Position": "-110,40,50",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 5.0,
+        "YSize": 25.0,
+        "ZSize": 5.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 57,
+      "Color": "#FFFFFFFF",
+      "Position": "-108,10,2",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 5.0,
+        "YSize": 25.0,
+        "ZSize": 5.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 58,
+      "Color": "#FFFFFFFF",
+      "Position": "-108,10,52",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 60.0,
+        "YSize": 51.0,
+        "ZSize": 40.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 59,
+      "Color": "#FFFFFFFF",
+      "Position": "-135,0,-60",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 60.0,
+        "YSize": 51.0,
+        "ZSize": 40.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 60,
+      "Color": "#FFFFFFFF",
+      "Position": "-135,0,80",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 35.0,
+        "YSize": 2.0,
+        "ZSize": 20.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 61,
+      "Color": "#FFFFFFFF",
+      "Position": "-135,1,20",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 33.0,
+        "YSize": 2.0,
+        "ZSize": 20.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 62,
+      "Color": "#FFFFFFFF",
+      "Position": "-135,3,20",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 31.0,
+        "YSize": 2.0,
+        "ZSize": 20.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 63,
+      "Color": "#FFFFFFFF",
+      "Position": "-135,5,20",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 29.0,
+        "YSize": 2.0,
+        "ZSize": 20.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 64,
+      "Color": "#FFFFFFFF",
+      "Position": "-135,7,20",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 27.0,
+        "YSize": 2.0,
+        "ZSize": 20.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 65,
+      "Color": "#FFFFFFFF",
+      "Position": "-135,9,20",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 25.0,
+        "YSize": 2.0,
+        "ZSize": 20.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 66,
+      "Color": "#FFFFFFFF",
+      "Position": "-135,11,20",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 23.0,
+        "YSize": 2.0,
+        "ZSize": 20.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 67,
+      "Color": "#FFFFFFFF",
+      "Position": "-135,13,20",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 21.0,
+        "YSize": 2.0,
+        "ZSize": 20.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 68,
+      "Color": "#FFFFFFFF",
+      "Position": "-135,15,20",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 19.0,
+        "YSize": 2.0,
+        "ZSize": 20.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 69,
+      "Color": "#FFFFFFFF",
+      "Position": "-135,17,20",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 17.0,
+        "YSize": 2.0,
+        "ZSize": 20.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 70,
+      "Color": "#FFFFFFFF",
+      "Position": "-135,19,20",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 1.0,
+        "YSize": 21.0,
+        "ZSize": 100.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 71,
+      "Color": "#FFFFFFFF",
+      "Position": "-135,0,-20",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 1.0,
+        "YSize": 10.0,
+        "ZSize": 100.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 72,
+      "Color": "#FFFFFFFF",
+      "Position": "-135,40,-20",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 20.0,
+        "YSize": 1.0,
+        "ZSize": 50.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 73,
+      "Color": "#FFFFFFFF",
+      "Position": "-155,20,5",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 1.0,
+        "YSize": 20.0,
+        "ZSize": 25.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 74,
+      "Color": "#FFFFFFFF",
+      "Position": "-135,20,-20",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 1.0,
+        "YSize": 20.0,
+        "ZSize": 25.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 75,
+      "Color": "#FFFFFFFF",
+      "Position": "-135,20,55",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 20.0,
+        "YSize": 11.0,
+        "ZSize": 50.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 76,
+      "Color": "#FFFFFFFF",
+      "Position": "-155,40,5",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 20.0,
+        "YSize": 20.0,
+        "ZSize": 1.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 77,
+      "Color": "#FFFFFFFF",
+      "Position": "-155,20,5",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 20.0,
+        "YSize": 20.0,
+        "ZSize": 1.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 78,
+      "Color": "#FFFFFFFF",
+      "Position": "-155,20,55",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 35.0,
+        "YSize": 1.0,
+        "ZSize": 30.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 79,
+      "Color": "#FFFFFFFF",
+      "Position": "-190,20,15",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 35.0,
+        "YSize": 1.0,
+        "ZSize": 30.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 80,
+      "Color": "#FFFFFFFF",
+      "Position": "-190,50,15",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 10.0,
+        "YSize": 51.0,
+        "ZSize": 5.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 81,
+      "Color": "#FFFFFFFF",
+      "Position": "-165,0,10",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 10.0,
+        "YSize": 51.0,
+        "ZSize": 5.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 82,
+      "Color": "#FFFFFFFF",
+      "Position": "-165,0,45",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 10.0,
+        "YSize": 51.0,
+        "ZSize": 5.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 83,
+      "Color": "#FFFFFFFF",
+      "Position": "-190,0,10",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 10.0,
+        "YSize": 51.0,
+        "ZSize": 5.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 84,
+      "Color": "#FFFFFFFF",
+      "Position": "-190,0,45",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 5.0,
+        "YSize": 51.0,
+        "ZSize": 20.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 85,
+      "Color": "#FFFFFFFF",
+      "Position": "-160,0,-10",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 5.0,
+        "YSize": 51.0,
+        "ZSize": 20.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 86,
+      "Color": "#FFFFFFFF",
+      "Position": "-160,0,50",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 15.0,
+        "YSize": 25.0,
+        "ZSize": 5.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 87,
+      "Color": "#FFFFFFFF",
+      "Position": "-180,0,10",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 15.0,
+        "YSize": 6.0,
+        "ZSize": 5.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 88,
+      "Color": "#FFFFFFFF",
+      "Position": "-180,45,10",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 15.0,
+        "YSize": 25.0,
+        "ZSize": 5.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 89,
+      "Color": "#FFFFFFFF",
+      "Position": "-180,0,45",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 15.0,
+        "YSize": 6.0,
+        "ZSize": 5.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 90,
+      "Color": "#FFFFFFFF",
+      "Position": "-180,45,45",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 5.0,
+        "YSize": 51.0,
+        "ZSize": 10.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 91,
+      "Color": "#FFFFFFFF",
+      "Position": "-195,0,10",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 5.0,
+        "YSize": 51.0,
+        "ZSize": 10.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 92,
+      "Color": "#FFFFFFFF",
+      "Position": "-195,0,40",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 5.0,
+        "YSize": 25.0,
+        "ZSize": 20.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 93,
+      "Color": "#FFFFFFFF",
+      "Position": "-195,0,20",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 5.0,
+        "YSize": 6.0,
+        "ZSize": 20.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 94,
+      "Color": "#FFFFFFFF",
+      "Position": "-195,45,20",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 20.0,
+        "YSize": 51.0,
+        "ZSize": 10.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 95,
+      "Color": "#FFFFFFFF",
+      "Position": "-155,0,60",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 20.0,
+        "YSize": 51.0,
+        "ZSize": 10.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 96,
+      "Color": "#FFFFFFFF",
+      "Position": "-155,0,-10",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 125.0,
+        "YSize": 1.0,
+        "ZSize": 180.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 97,
+      "Color": "#FFFFFFFF",
+      "Position": "-260,0,-60",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 125.0,
+        "YSize": 30.0,
+        "ZSize": 5.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 98,
+      "Color": "#FFFFFFFF",
+      "Position": "-260,0,-60",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 125.0,
+        "YSize": 30.0,
+        "ZSize": 5.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 99,
+      "Color": "#FFFFFFFF",
+      "Position": "-260,0,115",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 5.0,
+        "YSize": 30.0,
+        "ZSize": 180.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 100,
+      "Color": "#FFFFFFFF",
+      "Position": "-260,0,-60",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 150.0,
+        "YSize": 1.0,
+        "ZSize": 120.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 101,
+      "Color": "#FFFFFFFF",
+      "Position": "80,0,-155",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 60.0,
+        "YSize": 1.0,
+        "ZSize": 30.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 102,
+      "Color": "#FFFFFFFF",
+      "Position": "230,0,-80",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 30.0,
+        "YSize": 1.0,
+        "ZSize": 30.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 103,
+      "Color": "#FFFFFFFF",
+      "Position": "260,0,-50",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 90.0,
+        "YSize": 1.0,
+        "ZSize": 120.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 104,
+      "Color": "#FFFFFFFF",
+      "Position": "230,0,-20",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 30.0,
+        "YSize": 1.0,
+        "ZSize": 30.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 105,
+      "Color": "#FFFFFFFF",
+      "Position": "260,0,100",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 90.0,
+        "YSize": 1.0,
+        "ZSize": 60.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 106,
+      "Color": "#FFFFFFFF",
+      "Position": "230,0,130",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 20.0,
+        "YSize": 1.0,
+        "ZSize": 20.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 107,
+      "Color": "#FFFFFFFF",
+      "Position": "265,0,190",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 30.0,
+        "YSize": 1.0,
+        "ZSize": 30.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 108,
+      "Color": "#FFFFFFFF",
+      "Position": "260,0,210",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    }
+  ],
+  "Walls": []
+}

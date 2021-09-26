@@ -21,10 +21,12 @@
   <ItemGroup>
     <None Remove="AbstractCity.json" />
     <None Remove="arena.json" />
+    <None Remove="E1M1.json" />
     <None Remove="packageIcon.png" />
     <None Remove="Q3DM1.json" />
     <EmbeddedResource Include="Arena.json" />
     <EmbeddedResource Include="AbstractCity.json" />
+    <EmbeddedResource Include="E1M1.json" />
     <EmbeddedResource Include="Q3DM1.json" />
     <None Include="packageIcon.png">
       <Pack>True</Pack>
