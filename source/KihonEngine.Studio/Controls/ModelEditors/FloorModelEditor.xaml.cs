@@ -41,15 +41,15 @@ namespace KihonEngine.Studio.Controls.ModelEditors
             if (propertyGrid.IsEnabled)
             {
                 var metadata = (FloorMetadata)state.Editor.ActionSelect.SelectedModel.Metadata[ModelType.Floor.ToString()];
-                tbWidth.Text = metadata.Width.ToString();
-                tbLength.Text = metadata.Length.ToString();
+                tbXSize.Text = metadata.XSize.ToString();
+                tbZSize.Text = metadata.ZSize.ToString();
                 TrySelectTexture(metadata.Texture);
                 cbUseBackMaterial.IsChecked = metadata.UseBackMaterial;
             }
             else
             {
-                tbWidth.Text = string.Empty;
-                tbLength.Text = string.Empty;
+                tbXSize.Text = string.Empty;
+                tbZSize.Text = string.Empty;
                 TrySelectTexture(string.Empty);
                 cbUseBackMaterial.IsChecked = false;
             }
@@ -57,7 +57,7 @@ namespace KihonEngine.Studio.Controls.ModelEditors
             synchronizing = false;
         }
 
-        private void tbWidth_KeyUp(object sender, KeyEventArgs e)
+        private void tbXSize_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
             {
@@ -67,15 +67,15 @@ namespace KihonEngine.Studio.Controls.ModelEditors
                     var definition = GameEngineController.GetDefinition<FloorDefinition>(layeredModel);
 
                     InputHelper.TryUpdate(
-                        tbWidth.Text,
-                        width => definition.Metadata.Width = width);
+                        tbXSize.Text,
+                        width => definition.Metadata.XSize = width);
 
                     GameEngineController.ReplaceModelAndNotify(layeredModel, definition);
                 }
             }
         }
 
-        private void tbLength_KeyUp(object sender, KeyEventArgs e)
+        private void tbZSize_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
             {
@@ -85,8 +85,8 @@ namespace KihonEngine.Studio.Controls.ModelEditors
                     var definition = GameEngineController.GetDefinition<FloorDefinition>(layeredModel);
 
                     InputHelper.TryUpdate(
-                        tbLength.Text,
-                        length => definition.Metadata.Length = length);
+                        tbZSize.Text,
+                        length => definition.Metadata.ZSize = length);
 
                     GameEngineController.ReplaceModelAndNotify(layeredModel, definition);
                 }

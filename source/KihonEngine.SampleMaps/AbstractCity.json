@@ -6,8 +6,8 @@
   "Floors": [
     {
       "Metadata": {
-        "Width": 200.0,
-        "Length": 200.0,
+        "XSize": 200.0,
+        "ZSize": 200.0,
         "Texture": "default.png",
         "UseBackMaterial": true
       },
@@ -47,7 +47,7 @@
     {
       "Metadata": {
         "Name": "sky1",
-        "Width": 10000,
+        "Size": 10000,
         "Normal": "-3,-4,-5",
         "UseBackMaterial": false
       },
@@ -62,9 +62,9 @@
   "Volumes": [
     {
       "Metadata": {
-        "Width": 10.0,
-        "Height": 30.0,
-        "Length": 100.0,
+        "XSize": 10.0,
+        "YSize": 30.0,
+        "ZSize": 100.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -77,9 +77,9 @@
     },
     {
       "Metadata": {
-        "Width": 80.0,
-        "Height": 10.0,
-        "Length": 10.0,
+        "XSize": 80.0,
+        "YSize": 10.0,
+        "ZSize": 10.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -92,9 +92,9 @@
     },
     {
       "Metadata": {
-        "Width": 30.0,
-        "Height": 20.0,
-        "Length": 30.0,
+        "XSize": 30.0,
+        "YSize": 20.0,
+        "ZSize": 30.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -107,9 +107,9 @@
     },
     {
       "Metadata": {
-        "Width": 150.0,
-        "Height": 10.0,
-        "Length": 10.0,
+        "XSize": 150.0,
+        "YSize": 10.0,
+        "ZSize": 10.0,
         "UseBackMaterial": true,
         "Opacity": null
       },

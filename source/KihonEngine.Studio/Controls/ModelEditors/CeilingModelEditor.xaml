@@ -16,11 +16,11 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center">Width</Label>
-        <TextBox Grid.Row="0" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="tbWidth" KeyUp="tbWidth_KeyUp"></TextBox>
+        <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center">XSize</Label>
+        <TextBox Grid.Row="0" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="tbXSize" KeyUp="tbXSize_KeyUp"></TextBox>
 
-        <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center">Length</Label>
-        <TextBox Grid.Row="1" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="tbLength" KeyUp="tbLength_KeyUp"></TextBox>
+        <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center">ZSize</Label>
+        <TextBox Grid.Row="1" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="tbZSize" KeyUp="tbZSize_KeyUp"></TextBox>
 
         <Label Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center">UseBackMaterial</Label>
         <CheckBox Grid.Row="2" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="cbUseBackMaterial" Checked="cbUseBackMaterial_Checked" Unchecked="cbUseBackMaterial_Checked" ></CheckBox>

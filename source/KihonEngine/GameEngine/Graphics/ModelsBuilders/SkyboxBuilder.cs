@@ -20,21 +20,21 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
             this.models = models;
         }
 
-        public LayeredModel3D Create(int x, int y, int z, int w, Vector3D normal, string skyboxName = null)
+        public LayeredModel3D Create(int x, int y, int z, int size, Vector3D normal, string skyboxName = null)
         {
             var layeredModel = LayeredModel3D.Create(ModelType.Skybox);
-            layeredModel.Metadata.Add(ModelType.Skybox.ToString(), new SkyboxMetadata { Name = skyboxName, Width = w, Normal = normal, UseBackMaterial = UseBackMaterial });
+            layeredModel.Metadata.Add(ModelType.Skybox.ToString(), new SkyboxMetadata { Name = skyboxName, Size = size, Normal = normal, UseBackMaterial = UseBackMaterial });
             layeredModel.Translate(new Vector3D(x, y, z));
             //layeredModel.Translation = TransformHelper.TransformByTranslation(x, y, z);
 
             Point3D p0 = new Point3D(0, 0, 0);
-            Point3D p1 = new Point3D(w, 0, 0);
-            Point3D p2 = new Point3D(w, 0, w);
-            Point3D p3 = new Point3D(0, 0, w);
-            Point3D p4 = new Point3D(0, w, 0);
-            Point3D p5 = new Point3D(w, w, 0);
-            Point3D p6 = new Point3D(w, w, w);
-            Point3D p7 = new Point3D(0, w, w);
+            Point3D p1 = new Point3D(size, 0, 0);
+            Point3D p2 = new Point3D(size, 0, size);
+            Point3D p3 = new Point3D(0, 0, size);
+            Point3D p4 = new Point3D(0, size, 0);
+            Point3D p5 = new Point3D(size, size, 0);
+            Point3D p6 = new Point3D(size, size, size);
+            Point3D p7 = new Point3D(0, size, size);
 
             var normals = new[] { normal, normal, normal };
 

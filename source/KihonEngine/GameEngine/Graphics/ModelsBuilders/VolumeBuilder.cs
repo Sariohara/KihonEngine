@@ -19,30 +19,30 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
             return Create(x, y, z, 5, 5, 5, material);
         }
 
-        public LayeredModel3D Create(double x, double y, double z, double w, Material material = null)
+        public LayeredModel3D Create(double x, double y, double z, double size, Material material = null)
         {
-            return Create(x, y, z, w, w, w, material);
+            return Create(x, y, z, size, size, size, material);
         }
 
-        public LayeredModel3D Create(double x, double y, double z, double w, double l, double h, Material material = null)
+        public LayeredModel3D Create(double x, double y, double z, double xSize, double zSize, double ySize, Material material = null)
         {
-            w = Math.Round(w, 2);
-            h = Math.Round(h, 2);
-            l = Math.Round(l, 2);
+            xSize = Math.Round(xSize, 2);
+            ySize = Math.Round(ySize, 2);
+            zSize = Math.Round(zSize, 2);
 
             var layeredModel = LayeredModel3D.Create(ModelType.Volume);
-            layeredModel.Metadata.Add(ModelType.Volume.ToString(), new VolumeMetadata { Width = w, Height = h, Length = l, UseBackMaterial = UseBackMaterial });
+            layeredModel.Metadata.Add(ModelType.Volume.ToString(), new VolumeMetadata { XSize = xSize, YSize = ySize, ZSize = zSize, UseBackMaterial = UseBackMaterial });
             layeredModel.Translate(new Vector3D(x, y, z));
             //layeredModel.Translation = TransformHelper.TransformByTranslation(x, y, z);
 
             Point3D p0 = new Point3D(0, 0, 0);
-            Point3D p1 = new Point3D(w, 0, 0);
-            Point3D p2 = new Point3D(w, 0, l);
-            Point3D p3 = new Point3D(0, 0, l);
-            Point3D p4 = new Point3D(0, h, 0);
-            Point3D p5 = new Point3D(w, h, 0);
-            Point3D p6 = new Point3D(w, h, l);
-            Point3D p7 = new Point3D(0, h, l);
+            Point3D p1 = new Point3D(xSize, 0, 0);
+            Point3D p2 = new Point3D(xSize, 0, zSize);
+            Point3D p3 = new Point3D(0, 0, zSize);
+            Point3D p4 = new Point3D(0, ySize, 0);
+            Point3D p5 = new Point3D(xSize, ySize, 0);
+            Point3D p6 = new Point3D(xSize, ySize, zSize);
+            Point3D p7 = new Point3D(0, ySize, zSize);
 
             //front
             layeredModel.Children.Add(CreateTriangle(p3, p2, p6, material));

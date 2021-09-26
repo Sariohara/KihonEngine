@@ -3,8 +3,8 @@ namespace KihonEngine.GameEngine.Graphics.ModelDefinitions
 {
     public class FloorMetadata
     {
-        public double Width { get; set; }
-        public double Length { get; set; }
+        public double XSize { get; set; }
+        public double ZSize { get; set; }
         public string Texture { get; set; }
         public bool UseBackMaterial { get; set; }
     }

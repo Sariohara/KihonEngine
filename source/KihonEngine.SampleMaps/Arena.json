@@ -32,7 +32,7 @@
     {
       "Metadata": {
         "Name": "sky0",
-        "Width": 10000,
+        "Size": 10000,
         "Normal": "-3,-4,-5",
         "UseBackMaterial": false
       },
@@ -47,9 +47,9 @@
   "Volumes": [
     {
       "Metadata": {
-        "Width": 5.0,
-        "Height": 20.0,
-        "Length": 5.0,
+        "XSize": 5.0,
+        "YSize": 20.0,
+        "ZSize": 5.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -62,9 +62,9 @@
     },
     {
       "Metadata": {
-        "Width": 5.0,
-        "Height": 20.0,
-        "Length": 5.0,
+        "XSize": 5.0,
+        "YSize": 20.0,
+        "ZSize": 5.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -77,9 +77,9 @@
     },
     {
       "Metadata": {
-        "Width": 5.0,
-        "Height": 20.0,
-        "Length": 5.0,
+        "XSize": 5.0,
+        "YSize": 20.0,
+        "ZSize": 5.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -92,9 +92,9 @@
     },
     {
       "Metadata": {
-        "Width": 5.0,
-        "Height": 20.0,
-        "Length": 5.0,
+        "XSize": 5.0,
+        "YSize": 20.0,
+        "ZSize": 5.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -107,9 +107,9 @@
     },
     {
       "Metadata": {
-        "Width": 50.0,
-        "Height": 1.0,
-        "Length": 5.0,
+        "XSize": 50.0,
+        "YSize": 1.0,
+        "ZSize": 5.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -122,9 +122,9 @@
     },
     {
       "Metadata": {
-        "Width": 50.0,
-        "Height": 1.0,
-        "Length": 5.0,
+        "XSize": 50.0,
+        "YSize": 1.0,
+        "ZSize": 5.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -137,9 +137,9 @@
     },
     {
       "Metadata": {
-        "Width": 5.0,
-        "Height": 1.0,
-        "Length": 50.0,
+        "XSize": 5.0,
+        "YSize": 1.0,
+        "ZSize": 50.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -152,9 +152,9 @@
     },
     {
       "Metadata": {
-        "Width": 5.0,
-        "Height": 1.0,
-        "Length": 50.0,
+        "XSize": 5.0,
+        "YSize": 1.0,
+        "ZSize": 50.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -167,9 +167,9 @@
     },
     {
       "Metadata": {
-        "Width": 40.0,
-        "Height": 1.0,
-        "Length": 40.0,
+        "XSize": 40.0,
+        "YSize": 1.0,
+        "ZSize": 40.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -182,9 +182,9 @@
     },
     {
       "Metadata": {
-        "Width": 10.0,
-        "Height": 5.0,
-        "Length": 40.0,
+        "XSize": 10.0,
+        "YSize": 5.0,
+        "ZSize": 40.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -197,9 +197,9 @@
     },
     {
       "Metadata": {
-        "Width": 48.0,
-        "Height": 90.0,
-        "Length": 5.0,
+        "XSize": 48.0,
+        "YSize": 90.0,
+        "ZSize": 5.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -212,9 +212,9 @@
     },
     {
       "Metadata": {
-        "Width": 80.0,
-        "Height": 90.0,
-        "Length": 5.0,
+        "XSize": 80.0,
+        "YSize": 90.0,
+        "ZSize": 5.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -227,9 +227,9 @@
     },
     {
       "Metadata": {
-        "Width": 5.0,
-        "Height": 90.0,
-        "Length": 40.0,
+        "XSize": 5.0,
+        "YSize": 90.0,
+        "ZSize": 40.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -242,9 +242,9 @@
     },
     {
       "Metadata": {
-        "Width": 5.0,
-        "Height": 90.0,
-        "Length": 40.0,
+        "XSize": 5.0,
+        "YSize": 90.0,
+        "ZSize": 40.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -257,9 +257,9 @@
     },
     {
       "Metadata": {
-        "Width": 50.0,
-        "Height": 1.0,
-        "Length": 50.0,
+        "XSize": 50.0,
+        "YSize": 1.0,
+        "ZSize": 50.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -272,9 +272,9 @@
     },
     {
       "Metadata": {
-        "Width": 30.0,
-        "Height": 1.0,
-        "Length": 100.0,
+        "XSize": 30.0,
+        "YSize": 1.0,
+        "ZSize": 100.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -287,9 +287,9 @@
     },
     {
       "Metadata": {
-        "Width": 80.0,
-        "Height": 1.0,
-        "Length": 30.0,
+        "XSize": 80.0,
+        "YSize": 1.0,
+        "ZSize": 30.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -302,9 +302,9 @@
     },
     {
       "Metadata": {
-        "Width": 10.0,
-        "Height": 70.0,
-        "Length": 1.0,
+        "XSize": 10.0,
+        "YSize": 70.0,
+        "ZSize": 1.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -317,9 +317,9 @@
     },
     {
       "Metadata": {
-        "Width": 80.0,
-        "Height": 49.0,
-        "Length": 5.0,
+        "XSize": 80.0,
+        "YSize": 49.0,
+        "ZSize": 5.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -332,9 +332,9 @@
     },
     {
       "Metadata": {
-        "Width": 30.0,
-        "Height": 2.0,
-        "Length": 83.0,
+        "XSize": 30.0,
+        "YSize": 2.0,
+        "ZSize": 83.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -347,9 +347,9 @@
     },
     {
       "Metadata": {
-        "Width": 50.0,
-        "Height": 2.0,
-        "Length": 30.0,
+        "XSize": 50.0,
+        "YSize": 2.0,
+        "ZSize": 30.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -362,9 +362,9 @@
     },
     {
       "Metadata": {
-        "Width": 1.0,
-        "Height": 5.0,
-        "Length": 50.0,
+        "XSize": 1.0,
+        "YSize": 5.0,
+        "ZSize": 50.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -377,9 +377,9 @@
     },
     {
       "Metadata": {
-        "Width": 15.0,
-        "Height": 160.0,
-        "Length": 8.0,
+        "XSize": 15.0,
+        "YSize": 160.0,
+        "ZSize": 8.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -392,9 +392,9 @@
     },
     {
       "Metadata": {
-        "Width": 15.0,
-        "Height": 160.0,
-        "Length": 8.0,
+        "XSize": 15.0,
+        "YSize": 160.0,
+        "ZSize": 8.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -407,9 +407,9 @@
     },
     {
       "Metadata": {
-        "Width": 1.0,
-        "Height": 70.0,
-        "Length": 30.0,
+        "XSize": 1.0,
+        "YSize": 70.0,
+        "ZSize": 30.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -422,9 +422,9 @@
     },
     {
       "Metadata": {
-        "Width": 5.0,
-        "Height": 60.0,
-        "Length": 10.0,
+        "XSize": 5.0,
+        "YSize": 60.0,
+        "ZSize": 10.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -437,9 +437,9 @@
     },
     {
       "Metadata": {
-        "Width": 5.0,
-        "Height": 60.0,
-        "Length": 10.0,
+        "XSize": 5.0,
+        "YSize": 60.0,
+        "ZSize": 10.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -452,9 +452,9 @@
     },
     {
       "Metadata": {
-        "Width": 25.0,
-        "Height": 1.0,
-        "Length": 10.0,
+        "XSize": 25.0,
+        "YSize": 1.0,
+        "ZSize": 10.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -467,9 +467,9 @@
     },
     {
       "Metadata": {
-        "Width": 26.0,
-        "Height": 20.0,
-        "Length": 10.0,
+        "XSize": 26.0,
+        "YSize": 20.0,
+        "ZSize": 10.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -482,9 +482,9 @@
     },
     {
       "Metadata": {
-        "Width": 11.0,
-        "Height": 38.0,
-        "Length": 2.0,
+        "XSize": 11.0,
+        "YSize": 38.0,
+        "ZSize": 2.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -497,9 +497,9 @@
     },
     {
       "Metadata": {
-        "Width": 11.0,
-        "Height": 38.0,
-        "Length": 2.0,
+        "XSize": 11.0,
+        "YSize": 38.0,
+        "ZSize": 2.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -512,9 +512,9 @@
     },
     {
       "Metadata": {
-        "Width": 25.0,
-        "Height": 29.0,
-        "Length": 1.0,
+        "XSize": 25.0,
+        "YSize": 29.0,
+        "ZSize": 1.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -527,9 +527,9 @@
     },
     {
       "Metadata": {
-        "Width": 10.0,
-        "Height": 20.0,
-        "Length": 10.0,
+        "XSize": 10.0,
+        "YSize": 20.0,
+        "ZSize": 10.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -542,9 +542,9 @@
     },
     {
       "Metadata": {
-        "Width": 80.0,
-        "Height": 4.0,
-        "Length": 4.0,
+        "XSize": 80.0,
+        "YSize": 4.0,
+        "ZSize": 4.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -557,9 +557,9 @@
     },
     {
       "Metadata": {
-        "Width": 4.0,
-        "Height": 4.0,
-        "Length": 49.0,
+        "XSize": 4.0,
+        "YSize": 4.0,
+        "ZSize": 49.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -572,9 +572,9 @@
     },
     {
       "Metadata": {
-        "Width": 10.0,
-        "Height": 70.0,
-        "Length": 1.0,
+        "XSize": 10.0,
+        "YSize": 70.0,
+        "ZSize": 1.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -587,9 +587,9 @@
     },
     {
       "Metadata": {
-        "Width": 5.0,
-        "Height": 15.0,
-        "Length": 1.0,
+        "XSize": 5.0,
+        "YSize": 15.0,
+        "ZSize": 1.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -602,9 +602,9 @@
     },
     {
       "Metadata": {
-        "Width": 30.0,
-        "Height": 70.0,
-        "Length": 1.0,
+        "XSize": 30.0,
+        "YSize": 70.0,
+        "ZSize": 1.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -617,9 +617,9 @@
     },
     {
       "Metadata": {
-        "Width": 5.0,
-        "Height": 10.0,
-        "Length": 1.0,
+        "XSize": 5.0,
+        "YSize": 10.0,
+        "ZSize": 1.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -632,9 +632,9 @@
     },
     {
       "Metadata": {
-        "Width": 1.0,
-        "Height": 70.0,
-        "Length": 30.0,
+        "XSize": 1.0,
+        "YSize": 70.0,
+        "ZSize": 30.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -647,9 +647,9 @@
     },
     {
       "Metadata": {
-        "Width": 1.0,
-        "Height": 15.0,
-        "Length": 5.0,
+        "XSize": 1.0,
+        "YSize": 15.0,
+        "ZSize": 5.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -662,9 +662,9 @@
     },
     {
       "Metadata": {
-        "Width": 1.0,
-        "Height": 10.0,
-        "Length": 5.0,
+        "XSize": 1.0,
+        "YSize": 10.0,
+        "ZSize": 5.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -677,9 +677,9 @@
     },
     {
       "Metadata": {
-        "Width": 1.0,
-        "Height": 70.0,
-        "Length": 15.0,
+        "XSize": 1.0,
+        "YSize": 70.0,
+        "ZSize": 15.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -692,9 +692,9 @@
     },
     {
       "Metadata": {
-        "Width": 1.0,
-        "Height": 15.0,
-        "Length": 5.0,
+        "XSize": 1.0,
+        "YSize": 15.0,
+        "ZSize": 5.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -707,9 +707,9 @@
     },
     {
       "Metadata": {
-        "Width": 1.0,
-        "Height": 10.0,
-        "Length": 5.0,
+        "XSize": 1.0,
+        "YSize": 10.0,
+        "ZSize": 5.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -722,9 +722,9 @@
     },
     {
       "Metadata": {
-        "Width": 1.0,
-        "Height": 70.0,
-        "Length": 15.0,
+        "XSize": 1.0,
+        "YSize": 70.0,
+        "ZSize": 15.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -737,9 +737,9 @@
     },
     {
       "Metadata": {
-        "Width": 190.0,
-        "Height": 50.0,
-        "Length": 50.0,
+        "XSize": 190.0,
+        "YSize": 50.0,
+        "ZSize": 50.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -752,9 +752,9 @@
     },
     {
       "Metadata": {
-        "Width": 6.0,
-        "Height": 110.0,
-        "Length": 21.0,
+        "XSize": 6.0,
+        "YSize": 110.0,
+        "ZSize": 21.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -767,9 +767,9 @@
     },
     {
       "Metadata": {
-        "Width": 6.0,
-        "Height": 160.0,
-        "Length": 18.0,
+        "XSize": 6.0,
+        "YSize": 160.0,
+        "ZSize": 18.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -782,9 +782,9 @@
     },
     {
       "Metadata": {
-        "Width": 1.0,
-        "Height": 50.0,
-        "Length": 75.0,
+        "XSize": 1.0,
+        "YSize": 50.0,
+        "ZSize": 75.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -797,9 +797,9 @@
     },
     {
       "Metadata": {
-        "Width": 1.0,
-        "Height": 10.0,
-        "Length": 80.0,
+        "XSize": 1.0,
+        "YSize": 10.0,
+        "ZSize": 80.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -812,9 +812,9 @@
     },
     {
       "Metadata": {
-        "Width": 50.0,
-        "Height": 51.0,
-        "Length": 170.0,
+        "XSize": 50.0,
+        "YSize": 51.0,
+        "ZSize": 170.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -827,9 +827,9 @@
     },
     {
       "Metadata": {
-        "Width": 18.0,
-        "Height": 160.0,
-        "Length": 8.0,
+        "XSize": 18.0,
+        "YSize": 160.0,
+        "ZSize": 8.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -842,9 +842,9 @@
     },
     {
       "Metadata": {
-        "Width": 18.0,
-        "Height": 160.0,
-        "Length": 6.0,
+        "XSize": 18.0,
+        "YSize": 160.0,
+        "ZSize": 6.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -857,9 +857,9 @@
     },
     {
       "Metadata": {
-        "Width": 1.0,
-        "Height": 130.0,
-        "Length": 26.0,
+        "XSize": 1.0,
+        "YSize": 130.0,
+        "ZSize": 26.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -872,9 +872,9 @@
     },
     {
       "Metadata": {
-        "Width": 42.0,
-        "Height": 160.0,
-        "Length": 1.0,
+        "XSize": 42.0,
+        "YSize": 160.0,
+        "ZSize": 1.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -887,9 +887,9 @@
     },
     {
       "Metadata": {
-        "Width": 30.0,
-        "Height": 50.0,
-        "Length": 1.0,
+        "XSize": 30.0,
+        "YSize": 50.0,
+        "ZSize": 1.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -902,9 +902,9 @@
     },
     {
       "Metadata": {
-        "Width": 1.0,
-        "Height": 20.0,
-        "Length": 20.0,
+        "XSize": 1.0,
+        "YSize": 20.0,
+        "ZSize": 20.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -917,9 +917,9 @@
     },
     {
       "Metadata": {
-        "Width": 80.0,
-        "Height": 30.0,
-        "Length": 270.0,
+        "XSize": 80.0,
+        "YSize": 30.0,
+        "ZSize": 270.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -932,9 +932,9 @@
     },
     {
       "Metadata": {
-        "Width": 10.0,
-        "Height": 50.0,
-        "Length": 78.0,
+        "XSize": 10.0,
+        "YSize": 50.0,
+        "ZSize": 78.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -947,9 +947,9 @@
     },
     {
       "Metadata": {
-        "Width": 30.0,
-        "Height": 30.0,
-        "Length": 15.0,
+        "XSize": 30.0,
+        "YSize": 30.0,
+        "ZSize": 15.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -962,9 +962,9 @@
     },
     {
       "Metadata": {
-        "Width": 40.0,
-        "Height": 60.0,
-        "Length": 20.0,
+        "XSize": 40.0,
+        "YSize": 60.0,
+        "ZSize": 20.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -977,9 +977,9 @@
     },
     {
       "Metadata": {
-        "Width": 10.0,
-        "Height": 10.0,
-        "Length": 10.0,
+        "XSize": 10.0,
+        "YSize": 10.0,
+        "ZSize": 10.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -992,9 +992,9 @@
     },
     {
       "Metadata": {
-        "Width": 10.0,
-        "Height": 10.0,
-        "Length": 10.0,
+        "XSize": 10.0,
+        "YSize": 10.0,
+        "ZSize": 10.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1007,9 +1007,9 @@
     },
     {
       "Metadata": {
-        "Width": 2.0,
-        "Height": 60.0,
-        "Length": 2.0,
+        "XSize": 2.0,
+        "YSize": 60.0,
+        "ZSize": 2.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1022,9 +1022,9 @@
     },
     {
       "Metadata": {
-        "Width": 2.0,
-        "Height": 40.0,
-        "Length": 2.0,
+        "XSize": 2.0,
+        "YSize": 40.0,
+        "ZSize": 2.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1037,9 +1037,9 @@
     },
     {
       "Metadata": {
-        "Width": 10.0,
-        "Height": 10.0,
-        "Length": 10.0,
+        "XSize": 10.0,
+        "YSize": 10.0,
+        "ZSize": 10.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1052,9 +1052,9 @@
     },
     {
       "Metadata": {
-        "Width": 2.0,
-        "Height": 20.0,
-        "Length": 2.0,
+        "XSize": 2.0,
+        "YSize": 20.0,
+        "ZSize": 2.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1067,9 +1067,9 @@
     },
     {
       "Metadata": {
-        "Width": 30.0,
-        "Height": 1.0,
-        "Length": 185.0,
+        "XSize": 30.0,
+        "YSize": 1.0,
+        "ZSize": 185.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1082,9 +1082,9 @@
     },
     {
       "Metadata": {
-        "Width": 200.0,
-        "Height": 1.0,
-        "Length": 30.0,
+        "XSize": 200.0,
+        "YSize": 1.0,
+        "ZSize": 30.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1097,9 +1097,9 @@
     },
     {
       "Metadata": {
-        "Width": 220.0,
-        "Height": 40.0,
-        "Length": 80.0,
+        "XSize": 220.0,
+        "YSize": 40.0,
+        "ZSize": 80.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1112,9 +1112,9 @@
     },
     {
       "Metadata": {
-        "Width": 1.0,
-        "Height": 10.0,
-        "Length": 170.0,
+        "XSize": 1.0,
+        "YSize": 10.0,
+        "ZSize": 170.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1127,9 +1127,9 @@
     },
     {
       "Metadata": {
-        "Width": 18.0,
-        "Height": 160.0,
-        "Length": 10.0,
+        "XSize": 18.0,
+        "YSize": 160.0,
+        "ZSize": 10.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1142,9 +1142,9 @@
     },
     {
       "Metadata": {
-        "Width": 30.0,
-        "Height": 1.0,
-        "Length": 195.0,
+        "XSize": 30.0,
+        "YSize": 1.0,
+        "ZSize": 195.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1157,9 +1157,9 @@
     },
     {
       "Metadata": {
-        "Width": 10.0,
-        "Height": 160.0,
-        "Length": 18.0,
+        "XSize": 10.0,
+        "YSize": 160.0,
+        "ZSize": 18.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1172,9 +1172,9 @@
     },
     {
       "Metadata": {
-        "Width": 18.0,
-        "Height": 160.0,
-        "Length": 10.0,
+        "XSize": 18.0,
+        "YSize": 160.0,
+        "ZSize": 10.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1187,9 +1187,9 @@
     },
     {
       "Metadata": {
-        "Width": 10.0,
-        "Height": 160.0,
-        "Length": 18.0,
+        "XSize": 10.0,
+        "YSize": 160.0,
+        "ZSize": 18.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1202,9 +1202,9 @@
     },
     {
       "Metadata": {
-        "Width": 188.0,
-        "Height": 1.0,
-        "Length": 30.0,
+        "XSize": 188.0,
+        "YSize": 1.0,
+        "ZSize": 30.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1217,9 +1217,9 @@
     },
     {
       "Metadata": {
-        "Width": 1.0,
-        "Height": 10.0,
-        "Length": 5.0,
+        "XSize": 1.0,
+        "YSize": 10.0,
+        "ZSize": 5.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1232,9 +1232,9 @@
     },
     {
       "Metadata": {
-        "Width": 50.0,
-        "Height": 10.0,
-        "Length": 1.0,
+        "XSize": 50.0,
+        "YSize": 10.0,
+        "ZSize": 1.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1247,9 +1247,9 @@
     },
     {
       "Metadata": {
-        "Width": 215.0,
-        "Height": 10.0,
-        "Length": 1.0,
+        "XSize": 215.0,
+        "YSize": 10.0,
+        "ZSize": 1.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1262,9 +1262,9 @@
     },
     {
       "Metadata": {
-        "Width": 5.0,
-        "Height": 160.0,
-        "Length": 18.0,
+        "XSize": 5.0,
+        "YSize": 160.0,
+        "ZSize": 18.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1277,9 +1277,9 @@
     },
     {
       "Metadata": {
-        "Width": 5.0,
-        "Height": 160.0,
-        "Length": 18.0,
+        "XSize": 5.0,
+        "YSize": 160.0,
+        "ZSize": 18.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1292,9 +1292,9 @@
     },
     {
       "Metadata": {
-        "Width": 1.0,
-        "Height": 15.0,
-        "Length": 30.0,
+        "XSize": 1.0,
+        "YSize": 15.0,
+        "ZSize": 30.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1307,9 +1307,9 @@
     },
     {
       "Metadata": {
-        "Width": 5.0,
-        "Height": 160.0,
-        "Length": 18.0,
+        "XSize": 5.0,
+        "YSize": 160.0,
+        "ZSize": 18.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1322,9 +1322,9 @@
     },
     {
       "Metadata": {
-        "Width": 12.0,
-        "Height": 115.0,
-        "Length": 1.0,
+        "XSize": 12.0,
+        "YSize": 115.0,
+        "ZSize": 1.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1337,9 +1337,9 @@
     },
     {
       "Metadata": {
-        "Width": 1.0,
-        "Height": 70.0,
-        "Length": 12.0,
+        "XSize": 1.0,
+        "YSize": 70.0,
+        "ZSize": 12.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1352,9 +1352,9 @@
     },
     {
       "Metadata": {
-        "Width": 1.0,
-        "Height": 70.0,
-        "Length": 13.0,
+        "XSize": 1.0,
+        "YSize": 70.0,
+        "ZSize": 13.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1367,9 +1367,9 @@
     },
     {
       "Metadata": {
-        "Width": 188.0,
-        "Height": 1.0,
-        "Length": 30.0,
+        "XSize": 188.0,
+        "YSize": 1.0,
+        "ZSize": 30.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1382,9 +1382,9 @@
     },
     {
       "Metadata": {
-        "Width": 10.0,
-        "Height": 5.0,
-        "Length": 40.0,
+        "XSize": 10.0,
+        "YSize": 5.0,
+        "ZSize": 40.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1397,9 +1397,9 @@
     },
     {
       "Metadata": {
-        "Width": 1.0,
-        "Height": 10.0,
-        "Length": 10.0,
+        "XSize": 1.0,
+        "YSize": 10.0,
+        "ZSize": 10.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1412,9 +1412,9 @@
     },
     {
       "Metadata": {
-        "Width": 1.0,
-        "Height": 10.0,
-        "Length": 10.0,
+        "XSize": 1.0,
+        "YSize": 10.0,
+        "ZSize": 10.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1427,9 +1427,9 @@
     },
     {
       "Metadata": {
-        "Width": 1.0,
-        "Height": 15.0,
-        "Length": 30.0,
+        "XSize": 1.0,
+        "YSize": 15.0,
+        "ZSize": 30.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1442,9 +1442,9 @@
     },
     {
       "Metadata": {
-        "Width": 1.0,
-        "Height": 10.0,
-        "Length": 10.0,
+        "XSize": 1.0,
+        "YSize": 10.0,
+        "ZSize": 10.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1457,9 +1457,9 @@
     },
     {
       "Metadata": {
-        "Width": 1.0,
-        "Height": 10.0,
-        "Length": 10.0,
+        "XSize": 1.0,
+        "YSize": 10.0,
+        "ZSize": 10.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1472,9 +1472,9 @@
     },
     {
       "Metadata": {
-        "Width": 1.0,
-        "Height": 30.0,
-        "Length": 5.0,
+        "XSize": 1.0,
+        "YSize": 30.0,
+        "ZSize": 5.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1487,9 +1487,9 @@
     },
     {
       "Metadata": {
-        "Width": 1.0,
-        "Height": 30.0,
-        "Length": 5.0,
+        "XSize": 1.0,
+        "YSize": 30.0,
+        "ZSize": 5.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1502,9 +1502,9 @@
     },
     {
       "Metadata": {
-        "Width": 30.0,
-        "Height": 1.0,
-        "Length": 195.0,
+        "XSize": 30.0,
+        "YSize": 1.0,
+        "ZSize": 195.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1517,9 +1517,9 @@
     },
     {
       "Metadata": {
-        "Width": 188.0,
-        "Height": 1.0,
-        "Length": 16.0,
+        "XSize": 188.0,
+        "YSize": 1.0,
+        "ZSize": 16.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1532,9 +1532,9 @@
     },
     {
       "Metadata": {
-        "Width": 22.0,
-        "Height": 60.0,
-        "Length": 1.0,
+        "XSize": 22.0,
+        "YSize": 60.0,
+        "ZSize": 1.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1547,9 +1547,9 @@
     },
     {
       "Metadata": {
-        "Width": 20.0,
-        "Height": 60.0,
-        "Length": 1.0,
+        "XSize": 20.0,
+        "YSize": 60.0,
+        "ZSize": 1.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1562,9 +1562,9 @@
     },
     {
       "Metadata": {
-        "Width": 5.0,
-        "Height": 160.0,
-        "Length": 18.0,
+        "XSize": 5.0,
+        "YSize": 160.0,
+        "ZSize": 18.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1577,9 +1577,9 @@
     },
     {
       "Metadata": {
-        "Width": 5.0,
-        "Height": 160.0,
-        "Length": 18.0,
+        "XSize": 5.0,
+        "YSize": 160.0,
+        "ZSize": 18.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1592,9 +1592,9 @@
     },
     {
       "Metadata": {
-        "Width": 50.0,
-        "Height": 10.0,
-        "Length": 1.0,
+        "XSize": 50.0,
+        "YSize": 10.0,
+        "ZSize": 1.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1607,9 +1607,9 @@
     },
     {
       "Metadata": {
-        "Width": 50.0,
-        "Height": 10.0,
-        "Length": 1.0,
+        "XSize": 50.0,
+        "YSize": 10.0,
+        "ZSize": 1.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1622,9 +1622,9 @@
     },
     {
       "Metadata": {
-        "Width": 22.0,
-        "Height": 50.0,
-        "Length": 1.0,
+        "XSize": 22.0,
+        "YSize": 50.0,
+        "ZSize": 1.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1637,9 +1637,9 @@
     },
     {
       "Metadata": {
-        "Width": 23.0,
-        "Height": 50.0,
-        "Length": 1.0,
+        "XSize": 23.0,
+        "YSize": 50.0,
+        "ZSize": 1.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1652,9 +1652,9 @@
     },
     {
       "Metadata": {
-        "Width": 23.0,
-        "Height": 50.0,
-        "Length": 1.0,
+        "XSize": 23.0,
+        "YSize": 50.0,
+        "ZSize": 1.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1667,9 +1667,9 @@
     },
     {
       "Metadata": {
-        "Width": 23.0,
-        "Height": 50.0,
-        "Length": 1.0,
+        "XSize": 23.0,
+        "YSize": 50.0,
+        "ZSize": 1.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1682,9 +1682,9 @@
     },
     {
       "Metadata": {
-        "Width": 265.0,
-        "Height": 10.0,
-        "Length": 1.0,
+        "XSize": 265.0,
+        "YSize": 10.0,
+        "ZSize": 1.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1697,9 +1697,9 @@
     },
     {
       "Metadata": {
-        "Width": 18.0,
-        "Height": 160.0,
-        "Length": 5.0,
+        "XSize": 18.0,
+        "YSize": 160.0,
+        "ZSize": 5.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1712,9 +1712,9 @@
     },
     {
       "Metadata": {
-        "Width": 18.0,
-        "Height": 160.0,
-        "Length": 5.0,
+        "XSize": 18.0,
+        "YSize": 160.0,
+        "ZSize": 5.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1727,9 +1727,9 @@
     },
     {
       "Metadata": {
-        "Width": 50.0,
-        "Height": 5.0,
-        "Length": 1.0,
+        "XSize": 50.0,
+        "YSize": 5.0,
+        "ZSize": 1.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1742,9 +1742,9 @@
     },
     {
       "Metadata": {
-        "Width": 50.0,
-        "Height": 5.0,
-        "Length": 1.0,
+        "XSize": 50.0,
+        "YSize": 5.0,
+        "ZSize": 1.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1757,9 +1757,9 @@
     },
     {
       "Metadata": {
-        "Width": 50.0,
-        "Height": 5.0,
-        "Length": 1.0,
+        "XSize": 50.0,
+        "YSize": 5.0,
+        "ZSize": 1.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1772,9 +1772,9 @@
     },
     {
       "Metadata": {
-        "Width": 1.0,
-        "Height": 10.0,
-        "Length": 170.0,
+        "XSize": 1.0,
+        "YSize": 10.0,
+        "ZSize": 170.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1787,9 +1787,9 @@
     },
     {
       "Metadata": {
-        "Width": 40.0,
-        "Height": 70.0,
-        "Length": 30.0,
+        "XSize": 40.0,
+        "YSize": 70.0,
+        "ZSize": 30.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1802,9 +1802,9 @@
     },
     {
       "Metadata": {
-        "Width": 60.0,
-        "Height": 80.0,
-        "Length": 40.0,
+        "XSize": 60.0,
+        "YSize": 80.0,
+        "ZSize": 40.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1817,9 +1817,9 @@
     },
     {
       "Metadata": {
-        "Width": 40.0,
-        "Height": 80.0,
-        "Length": 80.0,
+        "XSize": 40.0,
+        "YSize": 80.0,
+        "ZSize": 80.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1832,9 +1832,9 @@
     },
     {
       "Metadata": {
-        "Width": 30.0,
-        "Height": 100.0,
-        "Length": 30.0,
+        "XSize": 30.0,
+        "YSize": 100.0,
+        "ZSize": 30.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1847,9 +1847,9 @@
     },
     {
       "Metadata": {
-        "Width": 40.0,
-        "Height": 50.0,
-        "Length": 40.0,
+        "XSize": 40.0,
+        "YSize": 50.0,
+        "ZSize": 40.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1862,9 +1862,9 @@
     },
     {
       "Metadata": {
-        "Width": 50.0,
-        "Height": 30.0,
-        "Length": 70.0,
+        "XSize": 50.0,
+        "YSize": 30.0,
+        "ZSize": 70.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1877,9 +1877,9 @@
     },
     {
       "Metadata": {
-        "Width": 10.0,
-        "Height": 10.0,
-        "Length": 10.0,
+        "XSize": 10.0,
+        "YSize": 10.0,
+        "ZSize": 10.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1892,9 +1892,9 @@
     },
     {
       "Metadata": {
-        "Width": 2.0,
-        "Height": 40.0,
-        "Length": 2.0,
+        "XSize": 2.0,
+        "YSize": 40.0,
+        "ZSize": 2.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1907,9 +1907,9 @@
     },
     {
       "Metadata": {
-        "Width": 10.0,
-        "Height": 10.0,
-        "Length": 10.0,
+        "XSize": 10.0,
+        "YSize": 10.0,
+        "ZSize": 10.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1922,9 +1922,9 @@
     },
     {
       "Metadata": {
-        "Width": 10.0,
-        "Height": 10.0,
-        "Length": 10.0,
+        "XSize": 10.0,
+        "YSize": 10.0,
+        "ZSize": 10.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1937,9 +1937,9 @@
     },
     {
       "Metadata": {
-        "Width": 2.0,
-        "Height": 60.0,
-        "Length": 2.0,
+        "XSize": 2.0,
+        "YSize": 60.0,
+        "ZSize": 2.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1952,9 +1952,9 @@
     },
     {
       "Metadata": {
-        "Width": 2.0,
-        "Height": 70.0,
-        "Length": 2.0,
+        "XSize": 2.0,
+        "YSize": 70.0,
+        "ZSize": 2.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1967,9 +1967,9 @@
     },
     {
       "Metadata": {
-        "Width": 10.0,
-        "Height": 10.0,
-        "Length": 10.0,
+        "XSize": 10.0,
+        "YSize": 10.0,
+        "ZSize": 10.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1982,9 +1982,9 @@
     },
     {
       "Metadata": {
-        "Width": 30.0,
-        "Height": 50.0,
-        "Length": 30.0,
+        "XSize": 30.0,
+        "YSize": 50.0,
+        "ZSize": 30.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -1997,9 +1997,9 @@
     },
     {
       "Metadata": {
-        "Width": 2.0,
-        "Height": 20.0,
-        "Length": 2.0,
+        "XSize": 2.0,
+        "YSize": 20.0,
+        "ZSize": 2.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -2012,9 +2012,9 @@
     },
     {
       "Metadata": {
-        "Width": 2.0,
-        "Height": 30.0,
-        "Length": 2.0,
+        "XSize": 2.0,
+        "YSize": 30.0,
+        "ZSize": 2.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -2027,9 +2027,9 @@
     },
     {
       "Metadata": {
-        "Width": 2.0,
-        "Height": 30.0,
-        "Length": 2.0,
+        "XSize": 2.0,
+        "YSize": 30.0,
+        "ZSize": 2.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -2042,9 +2042,9 @@
     },
     {
       "Metadata": {
-        "Width": 2.0,
-        "Height": 20.0,
-        "Length": 2.0,
+        "XSize": 2.0,
+        "YSize": 20.0,
+        "ZSize": 2.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -2057,9 +2057,9 @@
     },
     {
       "Metadata": {
-        "Width": 10.0,
-        "Height": 10.0,
-        "Length": 10.0,
+        "XSize": 10.0,
+        "YSize": 10.0,
+        "ZSize": 10.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -2072,9 +2072,9 @@
     },
     {
       "Metadata": {
-        "Width": 10.0,
-        "Height": 10.0,
-        "Length": 10.0,
+        "XSize": 10.0,
+        "YSize": 10.0,
+        "ZSize": 10.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -2087,9 +2087,9 @@
     },
     {
       "Metadata": {
-        "Width": 10.0,
-        "Height": 10.0,
-        "Length": 10.0,
+        "XSize": 10.0,
+        "YSize": 10.0,
+        "ZSize": 10.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -2102,9 +2102,9 @@
     },
     {
       "Metadata": {
-        "Width": 10.0,
-        "Height": 60.0,
-        "Length": 50.0,
+        "XSize": 10.0,
+        "YSize": 60.0,
+        "ZSize": 50.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -2117,9 +2117,9 @@
     },
     {
       "Metadata": {
-        "Width": 140.0,
-        "Height": 10.0,
-        "Length": 130.0,
+        "XSize": 140.0,
+        "YSize": 10.0,
+        "ZSize": 130.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -2132,9 +2132,9 @@
     },
     {
       "Metadata": {
-        "Width": 10.0,
-        "Height": 90.0,
-        "Length": 18.0,
+        "XSize": 10.0,
+        "YSize": 90.0,
+        "ZSize": 18.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -2147,9 +2147,9 @@
     },
     {
       "Metadata": {
-        "Width": 10.0,
-        "Height": 90.0,
-        "Length": 18.0,
+        "XSize": 10.0,
+        "YSize": 90.0,
+        "ZSize": 18.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -2162,9 +2162,9 @@
     },
     {
       "Metadata": {
-        "Width": 10.0,
-        "Height": 90.0,
-        "Length": 18.0,
+        "XSize": 10.0,
+        "YSize": 90.0,
+        "ZSize": 18.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -2177,9 +2177,9 @@
     },
     {
       "Metadata": {
-        "Width": 10.0,
-        "Height": 90.0,
-        "Length": 18.0,
+        "XSize": 10.0,
+        "YSize": 90.0,
+        "ZSize": 18.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -2192,9 +2192,9 @@
     },
     {
       "Metadata": {
-        "Width": 48.0,
-        "Height": 1.0,
-        "Length": 30.0,
+        "XSize": 48.0,
+        "YSize": 1.0,
+        "ZSize": 30.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -2207,9 +2207,9 @@
     },
     {
       "Metadata": {
-        "Width": 83.0,
-        "Height": 10.0,
-        "Length": 80.0,
+        "XSize": 83.0,
+        "YSize": 10.0,
+        "ZSize": 80.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -2222,9 +2222,9 @@
     },
     {
       "Metadata": {
-        "Width": 33.0,
-        "Height": 1.0,
-        "Length": 63.0,
+        "XSize": 33.0,
+        "YSize": 1.0,
+        "ZSize": 63.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -2237,9 +2237,9 @@
     },
     {
       "Metadata": {
-        "Width": 40.0,
-        "Height": 10.0,
-        "Length": 45.0,
+        "XSize": 40.0,
+        "YSize": 10.0,
+        "ZSize": 45.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -2252,9 +2252,9 @@
     },
     {
       "Metadata": {
-        "Width": 85.0,
-        "Height": 62.0,
-        "Length": 50.0,
+        "XSize": 85.0,
+        "YSize": 62.0,
+        "ZSize": 50.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -2267,9 +2267,9 @@
     },
     {
       "Metadata": {
-        "Width": 10.0,
-        "Height": 90.0,
-        "Length": 18.0,
+        "XSize": 10.0,
+        "YSize": 90.0,
+        "ZSize": 18.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -2282,9 +2282,9 @@
     },
     {
       "Metadata": {
-        "Width": 30.0,
-        "Height": 1.0,
-        "Length": 150.0,
+        "XSize": 30.0,
+        "YSize": 1.0,
+        "ZSize": 150.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
@@ -2297,9 +2297,9 @@
     },
     {
       "Metadata": {
-        "Width": 100.0,
-        "Height": 1.0,
-        "Length": 80.0,
+        "XSize": 100.0,
+        "YSize": 1.0,
+        "ZSize": 80.0,
         "UseBackMaterial": true,
         "Opacity": null
       },

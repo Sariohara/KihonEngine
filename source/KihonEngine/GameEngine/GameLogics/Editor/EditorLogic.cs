@@ -96,9 +96,9 @@ namespace KihonEngine.GameEngine.GameLogics.Editor
 
                         Metadata = new VolumeMetadata
                         {
-                            Width = State.Editor.ActionSelect.MaxX + selectionBoxDistance * 2,
-                            Height = State.Editor.ActionSelect.MaxY + selectionBoxDistance * 2,
-                            Length = State.Editor.ActionSelect.MaxZ + selectionBoxDistance * 2,
+                            XSize = State.Editor.ActionSelect.MaxX + selectionBoxDistance * 2,
+                            YSize = State.Editor.ActionSelect.MaxY + selectionBoxDistance * 2,
+                            ZSize = State.Editor.ActionSelect.MaxZ + selectionBoxDistance * 2,
                             Opacity = .5,
                         }
                     };
@@ -213,9 +213,9 @@ namespace KihonEngine.GameEngine.GameLogics.Editor
                             Position = new Point3D(-midSize, -midSize, initialPosition.Z - wallDistance),
                             Metadata = new VolumeMetadata
                             {
-                                Width = midSize * 2,
-                                Height = midSize * 2,
-                                Length = State.Editor.ActionSelect.MaxZ + wallDistance * 2,
+                                XSize = midSize * 2,
+                                YSize = midSize * 2,
+                                ZSize = State.Editor.ActionSelect.MaxZ + wallDistance * 2,
                                 Opacity = .5,
                             }
                         };
@@ -229,9 +229,9 @@ namespace KihonEngine.GameEngine.GameLogics.Editor
                             Position = new Point3D(-midSize, initialPosition.Y - wallDistance, -midSize),
                             Metadata = new VolumeMetadata
                             {
-                                Width = midSize * 2,
-                                Height = State.Editor.ActionSelect.MaxY + wallDistance * 2,
-                                Length = midSize * 2,
+                                XSize = midSize * 2,
+                                YSize = State.Editor.ActionSelect.MaxY + wallDistance * 2,
+                                ZSize = midSize * 2,
                                 Opacity = .5,
                             }
                         };
@@ -245,9 +245,9 @@ namespace KihonEngine.GameEngine.GameLogics.Editor
                             Position = new Point3D(initialPosition.X - wallDistance, -midSize, -midSize),
                             Metadata = new VolumeMetadata
                             {
-                                Width = State.Editor.ActionSelect.MaxX + wallDistance * 2,
-                                Height = midSize * 2,
-                                Length = midSize * 2,
+                                XSize = State.Editor.ActionSelect.MaxX + wallDistance * 2,
+                                YSize = midSize * 2,
+                                ZSize = midSize * 2,
                                 Opacity = .5,
                             }
                         };

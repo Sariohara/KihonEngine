@@ -95,16 +95,16 @@ namespace KihonEngine.Studio.Controls
                 if (layeredModel3D.Type == ModelType.Ceiling)
                 {
                     var metadata = layerMetadata as CeilingMetadata;
-                    textInfos += $"    Length:{metadata.Length}\r\n";
-                    textInfos += $"    Width:{metadata.Width}\r\n";
+                    textInfos += $"    Length:{metadata.ZSize}\r\n";
+                    textInfos += $"    Width:{metadata.XSize}\r\n";
                     textInfos += $"    UseBackMaterial:{metadata.UseBackMaterial}\r\n";
                 }
                 else if (layeredModel3D.Type == ModelType.Floor)
                 {
                     var metadata = layerMetadata as FloorMetadata;
                     textInfos += $"    Texture:{metadata.Texture}\r\n";
-                    textInfos += $"    Length:{metadata.Length}\r\n";
-                    textInfos += $"    Width:{metadata.Width}\r\n";
+                    textInfos += $"    Length:{metadata.ZSize}\r\n";
+                    textInfos += $"    Width:{metadata.XSize}\r\n";
                     textInfos += $"    UseBackMaterial:{metadata.UseBackMaterial}\r\n";
                 }
                 else if (layeredModel3D.Type == ModelType.Light)
@@ -116,23 +116,23 @@ namespace KihonEngine.Studio.Controls
                 {
                     var metadata = layerMetadata as SkyboxMetadata;
                     textInfos += $"    Name:{metadata.Name}\r\n";
-                    textInfos += $"    Width:{metadata.Width}\r\n";
+                    textInfos += $"    Width:{metadata.Size}\r\n";
                     textInfos += $"    Normal:({metadata.Normal.X}, {metadata.Normal.Y}, {metadata.Normal.Z})\r\n";
                     textInfos += $"    UseBackMaterial:{metadata.UseBackMaterial}\r\n";
                 }
                 else if (layeredModel3D.Type == ModelType.Volume)
                 {
                     var metadata = layerMetadata as VolumeMetadata;
-                    textInfos += $"    Length:{metadata.Length}\r\n";
-                    textInfos += $"    Width:{metadata.Width}\r\n";
-                    textInfos += $"    Height:{metadata.Height}\r\n";
+                    textInfos += $"    Length:{metadata.ZSize}\r\n";
+                    textInfos += $"    Width:{metadata.XSize}\r\n";
+                    textInfos += $"    Height:{metadata.YSize}\r\n";
                     textInfos += $"    UseBackMaterial:{metadata.UseBackMaterial}\r\n";
                 }
                 else if (layeredModel3D.Type == ModelType.Wall)
                 {
                     var metadata = layerMetadata as WallMetadata;
-                    textInfos += $"    Width:{metadata.Width}\r\n";
-                    textInfos += $"    Height:{metadata.Height}\r\n";
+                    textInfos += $"    Width:{metadata.XSize}\r\n";
+                    textInfos += $"    Height:{metadata.YSize}\r\n";
                     textInfos += $"    UseBackMaterial:{metadata.UseBackMaterial}\r\n";
                 }
                 else

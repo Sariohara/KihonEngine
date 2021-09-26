@@ -86,8 +86,8 @@ namespace KihonEngine.Studio.Controls
                 Position = new System.Windows.Media.Media3D.Point3D(0, 30, 0),
                 Metadata = new CeilingMetadata
                 {
-                    Width = 10,
-                    Length = 20,
+                    XSize = 10,
+                    ZSize = 20,
                     UseBackMaterial = true,
                 }
             });
@@ -101,8 +101,8 @@ namespace KihonEngine.Studio.Controls
                 Position = new System.Windows.Media.Media3D.Point3D(0, 1, 0),
                 Metadata = new FloorMetadata
                 {
-                    Width = 10,
-                    Length = 20,
+                    XSize = 10,
+                    ZSize = 20,
                     UseBackMaterial = true,
                 }
             });
@@ -115,8 +115,8 @@ namespace KihonEngine.Studio.Controls
                 Color = Colors.White,
                 Metadata = new WallMetadata
                 {
-                    Width = 10,
-                    Height = 20,
+                    XSize = 10,
+                    YSize = 20,
                     UseBackMaterial = true,
                 }
             });
@@ -129,9 +129,9 @@ namespace KihonEngine.Studio.Controls
                 Color = Colors.White,
                 Metadata = new VolumeMetadata
                 {
-                    Width = 10,
-                    Height = 10,
-                    Length = 10,
+                    XSize = 10,
+                    YSize = 10,
+                    ZSize = 10,
                     UseBackMaterial = true,
                 }
             });
@@ -148,7 +148,7 @@ namespace KihonEngine.Studio.Controls
                 Metadata = new SkyboxMetadata
                 {
                     Name = "sky1",
-                    Width = 10000,
+                    Size = 10000,
                     Normal = normal,
                     UseBackMaterial = true,
                 }

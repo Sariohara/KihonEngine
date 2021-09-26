@@ -49,7 +49,7 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
         {
             var builder = new CeilingBuilder(definition.Color, level);
             builder.UseBackMaterial = definition.Metadata.UseBackMaterial;
-            var model = builder.Create((int)definition.Position.X, (int)definition.Position.Y, (int)definition.Position.Z, definition.Metadata.Width, definition.Metadata.Length);
+            var model = builder.Create((int)definition.Position.X, (int)definition.Position.Y, (int)definition.Position.Z, definition.Metadata.XSize, definition.Metadata.ZSize);
             model.RotateByAxisX(definition.RotationAxisX);
             model.RotateByAxisY(definition.RotationAxisY);
             model.RotateByAxisZ(definition.RotationAxisZ);
@@ -59,7 +59,7 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
         {
             var builder = new FloorBuilder(definition.Color, level);
             builder.UseBackMaterial = definition.Metadata.UseBackMaterial;
-            var model = builder.Create(definition.Position.X, definition.Position.Y, definition.Position.Z, definition.Metadata.Width, definition.Metadata.Length, definition.Metadata.Texture);
+            var model = builder.Create(definition.Position.X, definition.Position.Y, definition.Position.Z, definition.Metadata.XSize, definition.Metadata.ZSize, definition.Metadata.Texture);
             model.RotateByAxisX(definition.RotationAxisX);
             model.RotateByAxisY(definition.RotationAxisY);
             model.RotateByAxisZ(definition.RotationAxisZ);
@@ -75,7 +75,7 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
         {
             var builder = new SkyboxBuilder(definition.Color, level);
             builder.UseBackMaterial = definition.Metadata.UseBackMaterial;
-            var model = builder.Create((int)definition.Position.X, (int)definition.Position.Y, (int)definition.Position.Z, definition.Metadata.Width, definition.Metadata.Normal, definition.Metadata.Name);
+            var model = builder.Create((int)definition.Position.X, (int)definition.Position.Y, (int)definition.Position.Z, definition.Metadata.Size, definition.Metadata.Normal, definition.Metadata.Name);
             model.RotateByAxisX(definition.RotationAxisX);
             model.RotateByAxisY(definition.RotationAxisY);
             model.RotateByAxisZ(definition.RotationAxisZ);
@@ -93,11 +93,11 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
                 brush.Opacity = definition.Metadata.Opacity.Value;
                 materialGroup.Children.Add(new DiffuseMaterial(brush));
 
-                model = builder.Create(definition.Position.X, definition.Position.Y, definition.Position.Z, definition.Metadata.Width, definition.Metadata.Length, definition.Metadata.Height, materialGroup);
+                model = builder.Create(definition.Position.X, definition.Position.Y, definition.Position.Z, definition.Metadata.XSize, definition.Metadata.ZSize, definition.Metadata.YSize, materialGroup);
             }
             else
             {
-                model = builder.Create(definition.Position.X, definition.Position.Y, definition.Position.Z, definition.Metadata.Width, definition.Metadata.Length, definition.Metadata.Height);
+                model = builder.Create(definition.Position.X, definition.Position.Y, definition.Position.Z, definition.Metadata.XSize, definition.Metadata.ZSize, definition.Metadata.YSize);
             }
 
             model.RotateByAxisX(definition.RotationAxisX);
@@ -109,7 +109,7 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
         {
             var builder = new WallBuilder(definition.Color, level);
             builder.UseBackMaterial = definition.Metadata.UseBackMaterial;
-            var model = builder.Create((int)definition.Position.X, (int)definition.Position.Y, (int)definition.Position.Z, (int)definition.Metadata.Width, (int)definition.Metadata.Height);
+            var model = builder.Create((int)definition.Position.X, (int)definition.Position.Y, (int)definition.Position.Z, (int)definition.Metadata.XSize, (int)definition.Metadata.YSize);
             model.RotateByAxisX(definition.RotationAxisX);
             model.RotateByAxisY(definition.RotationAxisY);
             model.RotateByAxisZ(definition.RotationAxisZ);
