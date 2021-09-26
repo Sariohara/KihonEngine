@@ -12,7 +12,6 @@
                 <GridView>
                     <GridViewColumn Header="Index" Width="100" DisplayMemberBinding="{Binding Index}" />
                     <GridViewColumn Header="Type" Width="100" DisplayMemberBinding="{Binding Type}" />
-                    <GridViewColumn Header="Color" Width="250" DisplayMemberBinding="{Binding Color}" />
                 </GridView>
             </ListView.View>
         </ListView>

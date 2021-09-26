@@ -24,7 +24,7 @@ namespace KihonEngine.Studio.Controls
             => Container.Get<IGameEngineController>();
 
         private Timer timer;
-        private int timerIntervalInMilliseconds = 500;
+        private int timerIntervalInMilliseconds = 1000;
         private bool _processing;
 
         private IGameEngineState _lastState;
@@ -86,7 +86,6 @@ namespace KihonEngine.Studio.Controls
                     var viewModel = new ModelViewModel();
                     viewModel.Index = (index++).ToString();
                     viewModel.Type = layeredModel.Type.ToString();
-                    viewModel.Color = layeredModel.GetColor();
                     viewModel.Model = layeredModel;
 
                     list.Add(viewModel);
