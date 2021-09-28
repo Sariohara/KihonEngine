@@ -48,14 +48,14 @@
     {
       "Metadata": {
         "XSize": 5.0,
-        "YSize": 20.0,
+        "YSize": 60.0,
         "ZSize": 5.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
       "Index": 3,
       "Color": "#FFFFFFFF",
-      "Position": "30,0,0",
+      "Position": "-15,-40,0",
       "RotationAxisX": 0.0,
       "RotationAxisY": 0.0,
       "RotationAxisZ": 0.0
@@ -63,119 +63,104 @@
     {
       "Metadata": {
         "XSize": 5.0,
-        "YSize": 20.0,
+        "YSize": 60.0,
         "ZSize": 5.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
       "Index": 4,
       "Color": "#FFFFFFFF",
-      "Position": "-15,0,0",
+      "Position": "-15,-40,45",
       "RotationAxisX": 0.0,
       "RotationAxisY": 0.0,
       "RotationAxisZ": 0.0
     },
     {
       "Metadata": {
-        "XSize": 5.0,
-        "YSize": 20.0,
-        "ZSize": 5.0,
+        "XSize": 80.0,
+        "YSize": 5.0,
+        "ZSize": 3.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
       "Index": 5,
-      "Color": "#FFFFFFFF",
-      "Position": "-15,0,45",
+      "Color": "#FF696969",
+      "Position": "-45,-5,46",
       "RotationAxisX": 0.0,
       "RotationAxisY": 0.0,
       "RotationAxisZ": 0.0
     },
     {
       "Metadata": {
-        "XSize": 5.0,
-        "YSize": 20.0,
-        "ZSize": 5.0,
+        "XSize": 80.0,
+        "YSize": 5.0,
+        "ZSize": 3.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
       "Index": 6,
-      "Color": "#FFFFFFFF",
-      "Position": "30,0,45",
+      "Color": "#FF696969",
+      "Position": "-45,-5,1",
       "RotationAxisX": 0.0,
       "RotationAxisY": 0.0,
       "RotationAxisZ": 0.0
     },
     {
       "Metadata": {
-        "XSize": 50.0,
-        "YSize": 1.0,
-        "ZSize": 5.0,
+        "XSize": 3.0,
+        "YSize": 5.0,
+        "ZSize": 40.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
       "Index": 7,
-      "Color": "#FFFFFFFF",
-      "Position": "-15,-1,0",
+      "Color": "#FF696969",
+      "Position": "-14,-5,5",
       "RotationAxisX": 0.0,
       "RotationAxisY": 0.0,
       "RotationAxisZ": 0.0
     },
     {
       "Metadata": {
-        "XSize": 50.0,
-        "YSize": 1.0,
-        "ZSize": 5.0,
+        "XSize": 30.0,
+        "YSize": 15.0,
+        "ZSize": 80.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
       "Index": 8,
       "Color": "#FFFFFFFF",
-      "Position": "-15,-1,45",
+      "Position": "-45,-50,-30",
       "RotationAxisX": 0.0,
       "RotationAxisY": 0.0,
       "RotationAxisZ": 0.0
     },
     {
       "Metadata": {
-        "XSize": 5.0,
-        "YSize": 1.0,
-        "ZSize": 50.0,
+        "XSize": 6.0,
+        "YSize": 7.0,
+        "ZSize": 45.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
       "Index": 9,
-      "Color": "#FFFFFFFF",
-      "Position": "-15,-1,0",
+      "Color": "#FFFAEBD7",
+      "Position": "30,-50,0",
       "RotationAxisX": 0.0,
       "RotationAxisY": 0.0,
       "RotationAxisZ": 0.0
     },
     {
       "Metadata": {
-        "XSize": 5.0,
-        "YSize": 1.0,
-        "ZSize": 50.0,
+        "XSize": 45.0,
+        "YSize": 9.0,
+        "ZSize": 80.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
       "Index": 10,
-      "Color": "#FFFFFFFF",
-      "Position": "30,-1,0",
-      "RotationAxisX": 0.0,
-      "RotationAxisY": 0.0,
-      "RotationAxisZ": 0.0
-    },
-    {
-      "Metadata": {
-        "XSize": 40.0,
-        "YSize": 1.0,
-        "ZSize": 40.0,
-        "UseBackMaterial": true,
-        "Opacity": null
-      },
-      "Index": 11,
-      "Color": "#FF4682B4",
-      "Position": "-10,-2,5",
+      "Color": "#FFD3D3D3",
+      "Position": "-15,-50,-30",
       "RotationAxisX": 0.0,
       "RotationAxisY": 0.0,
       "RotationAxisZ": 0.0
@@ -188,7 +173,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 12,
+      "Index": 11,
       "Color": "#FFFFFFFF",
       "Position": "-12,31,5",
       "RotationAxisX": 0.0,
@@ -203,7 +188,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 13,
+      "Index": 12,
       "Color": "#FFFFFFFF",
       "Position": "-15,20,0",
       "RotationAxisX": 0.0,
@@ -218,7 +203,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 14,
+      "Index": 13,
       "Color": "#FFFFFFFF",
       "Position": "-44,20,45",
       "RotationAxisX": 0.0,
@@ -233,7 +218,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 15,
+      "Index": 14,
       "Color": "#FFFFFFFF",
       "Position": "-15,20,5",
       "RotationAxisX": 0.0,
@@ -243,14 +228,14 @@
     {
       "Metadata": {
         "XSize": 5.0,
-        "YSize": 90.0,
+        "YSize": 50.0,
         "ZSize": 40.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 16,
+      "Index": 15,
       "Color": "#FFFFFFFF",
-      "Position": "32,20,5",
+      "Position": "32,60,5",
       "RotationAxisX": 0.0,
       "RotationAxisY": 0.0,
       "RotationAxisZ": 0.0
@@ -259,26 +244,26 @@
       "Metadata": {
         "XSize": 50.0,
         "YSize": 1.0,
-        "ZSize": 50.0,
+        "ZSize": 55.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 17,
+      "Index": 16,
       "Color": "#FFFFFFFF",
-      "Position": "-15,0,50",
+      "Position": "-15,0,45",
       "RotationAxisX": 0.0,
       "RotationAxisY": 0.0,
       "RotationAxisZ": 0.0
     },
     {
       "Metadata": {
-        "XSize": 30.0,
+        "XSize": 35.0,
         "YSize": 1.0,
         "ZSize": 100.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 18,
+      "Index": 17,
       "Color": "#FFFFFFFF",
       "Position": "-45,0,0",
       "RotationAxisX": 0.0,
@@ -289,11 +274,11 @@
       "Metadata": {
         "XSize": 80.0,
         "YSize": 1.0,
-        "ZSize": 30.0,
+        "ZSize": 35.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 19,
+      "Index": 18,
       "Color": "#FFFFFFFF",
       "Position": "-45,0,-30",
       "RotationAxisX": 0.0,
@@ -308,7 +293,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 20,
+      "Index": 19,
       "Color": "#FFFFFFFF",
       "Position": "25,0,99",
       "RotationAxisX": 0.0,
@@ -323,7 +308,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 21,
+      "Index": 20,
       "Color": "#FFFFFFFF",
       "Position": "-45,21,50",
       "RotationAxisX": 0.0,
@@ -338,7 +323,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 22,
+      "Index": 21,
       "Color": "#FF5F9EA0",
       "Position": "-45,19,-30",
       "RotationAxisX": 0.0,
@@ -353,7 +338,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 23,
+      "Index": 22,
       "Color": "#FF5F9EA0",
       "Position": "-15,19,-30",
       "RotationAxisX": 0.0,
@@ -362,15 +347,15 @@
     },
     {
       "Metadata": {
-        "XSize": 1.0,
+        "XSize": 3.0,
         "YSize": 5.0,
-        "ZSize": 50.0,
+        "ZSize": 30.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 24,
-      "Color": "#FFFFFFFF",
-      "Position": "35,0,0",
+      "Index": 23,
+      "Color": "#FF696969",
+      "Position": "-14,-5,-30",
       "RotationAxisX": 0.0,
       "RotationAxisY": 0.0,
       "RotationAxisZ": 0.0
@@ -383,7 +368,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 25,
+      "Index": 24,
       "Color": "#FF696969",
       "Position": "33,-50,-1",
       "RotationAxisX": 0.0,
@@ -398,7 +383,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 26,
+      "Index": 25,
       "Color": "#FF696969",
       "Position": "33,-50,43",
       "RotationAxisX": 0.0,
@@ -413,7 +398,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 27,
+      "Index": 26,
       "Color": "#FFFFFFFF",
       "Position": "35,0,70",
       "RotationAxisX": 0.0,
@@ -428,7 +413,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 28,
+      "Index": 27,
       "Color": "#FFFFFFFF",
       "Position": "24,0,100",
       "RotationAxisX": 0.0,
@@ -443,7 +428,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 29,
+      "Index": 28,
       "Color": "#FFFFFFFF",
       "Position": "-4,0,100",
       "RotationAxisX": 0.0,
@@ -458,7 +443,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 30,
+      "Index": 29,
       "Color": "#FFFFFFFF",
       "Position": "0,0,100",
       "RotationAxisX": 0.0,
@@ -473,7 +458,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 31,
+      "Index": 30,
       "Color": "#FFFFFFFF",
       "Position": "0,40,100",
       "RotationAxisX": 0.0,
@@ -488,7 +473,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 32,
+      "Index": 31,
       "Color": "#FF800000",
       "Position": "-2,1,110",
       "RotationAxisX": 0.0,
@@ -503,7 +488,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 33,
+      "Index": 32,
       "Color": "#FF800000",
       "Position": "16,1,112",
       "RotationAxisX": 0.0,
@@ -518,7 +503,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 34,
+      "Index": 33,
       "Color": "#FFFFFFFF",
       "Position": "0,41,99",
       "RotationAxisX": 0.0,
@@ -533,7 +518,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 35,
+      "Index": 34,
       "Color": "#FFFFFFFF",
       "Position": "-10,60,72",
       "RotationAxisX": 0.0,
@@ -548,7 +533,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 36,
+      "Index": 35,
       "Color": "#FF696969",
       "Position": "-45,66,75",
       "RotationAxisX": 0.0,
@@ -563,7 +548,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 37,
+      "Index": 36,
       "Color": "#FF696969",
       "Position": "-7,66,50",
       "RotationAxisX": 0.0,
@@ -578,7 +563,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 38,
+      "Index": 37,
       "Color": "#FFFFFFFF",
       "Position": "-10,0,99",
       "RotationAxisX": 0.0,
@@ -593,7 +578,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 39,
+      "Index": 38,
       "Color": "#FFFFFFFF",
       "Position": "-15,1,99",
       "RotationAxisX": 0.0,
@@ -608,7 +593,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 40,
+      "Index": 39,
       "Color": "#FFFFFFFF",
       "Position": "-45,0,99",
       "RotationAxisX": 0.0,
@@ -623,7 +608,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 41,
+      "Index": 40,
       "Color": "#FFFFFFFF",
       "Position": "-15,60,99",
       "RotationAxisX": 0.0,
@@ -638,7 +623,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 42,
+      "Index": 41,
       "Color": "#FFFFFFFF",
       "Position": "-46,0,70",
       "RotationAxisX": 0.0,
@@ -653,7 +638,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 43,
+      "Index": 42,
       "Color": "#FFFFFFFF",
       "Position": "35,0,65",
       "RotationAxisX": 0.0,
@@ -668,7 +653,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 44,
+      "Index": 43,
       "Color": "#FFFFFFFF",
       "Position": "35,60,65",
       "RotationAxisX": 0.0,
@@ -683,7 +668,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 45,
+      "Index": 44,
       "Color": "#FFFFFFFF",
       "Position": "35,0,50",
       "RotationAxisX": 0.0,
@@ -698,7 +683,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 46,
+      "Index": 45,
       "Color": "#FFFFFFFF",
       "Position": "-46,0,65",
       "RotationAxisX": 0.0,
@@ -713,7 +698,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 47,
+      "Index": 46,
       "Color": "#FFFFFFFF",
       "Position": "-46,60,65",
       "RotationAxisX": 0.0,
@@ -728,7 +713,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 48,
+      "Index": 47,
       "Color": "#FFFFFFFF",
       "Position": "-46,0,50",
       "RotationAxisX": 0.0,
@@ -743,7 +728,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 49,
+      "Index": 48,
       "Color": "#FFFFFFFF",
       "Position": "-234,-50,-10",
       "RotationAxisX": 0.0,
@@ -758,7 +743,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 50,
+      "Index": 49,
       "Color": "#FF696969",
       "Position": "-50,0,30",
       "RotationAxisX": 0.0,
@@ -773,7 +758,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 51,
+      "Index": 50,
       "Color": "#FF696969",
       "Position": "-50,-50,-18",
       "RotationAxisX": 0.0,
@@ -788,7 +773,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 52,
+      "Index": 51,
       "Color": "#FFFFFFFF",
       "Position": "-46,60,-30",
       "RotationAxisX": 0.0,
@@ -799,13 +784,13 @@
       "Metadata": {
         "XSize": 1.0,
         "YSize": 10.0,
-        "ZSize": 80.0,
+        "ZSize": 30.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 53,
+      "Index": 52,
       "Color": "#FF696969",
-      "Position": "35,65,-30",
+      "Position": "40,65,-30",
       "RotationAxisX": 0.0,
       "RotationAxisY": 0.0,
       "RotationAxisZ": 0.0
@@ -813,14 +798,14 @@
     {
       "Metadata": {
         "XSize": 50.0,
-        "YSize": 51.0,
+        "YSize": 6.0,
         "ZSize": 170.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 54,
+      "Index": 53,
       "Color": "#FFFFFFFF",
-      "Position": "-10,-50,-195",
+      "Position": "-10,-5,-195",
       "RotationAxisX": 0.0,
       "RotationAxisY": 0.0,
       "RotationAxisZ": 0.0
@@ -833,7 +818,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 55,
+      "Index": 54,
       "Color": "#FF696969",
       "Position": "30,-50,-37",
       "RotationAxisX": 0.0,
@@ -848,7 +833,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 56,
+      "Index": 55,
       "Color": "#FF696969",
       "Position": "-18,-50,-35",
       "RotationAxisX": 0.0,
@@ -863,7 +848,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 57,
+      "Index": 56,
       "Color": "#FFFFFFFF",
       "Position": "-46,-50,-30",
       "RotationAxisX": 0.0,
@@ -878,7 +863,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 58,
+      "Index": 57,
       "Color": "#FFFFFFFF",
       "Position": "-46,-50,-31",
       "RotationAxisX": 0.0,
@@ -893,7 +878,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 59,
+      "Index": 58,
       "Color": "#FFFFFFFF",
       "Position": "0,60,-31",
       "RotationAxisX": 0.0,
@@ -908,7 +893,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 60,
+      "Index": 59,
       "Color": "#FFFFFFFF",
       "Position": "-46,0,35",
       "RotationAxisX": 0.0,
@@ -923,7 +908,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 61,
+      "Index": 60,
       "Color": "#FFF4A460",
       "Position": "-25,-80,-211",
       "RotationAxisX": 0.0,
@@ -934,13 +919,13 @@
       "Metadata": {
         "XSize": 10.0,
         "YSize": 50.0,
-        "ZSize": 78.0,
+        "ZSize": 35.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 62,
+      "Index": 61,
       "Color": "#FFFFFFFF",
-      "Position": "30,-49,-30",
+      "Position": "30,-49,-29",
       "RotationAxisX": 0.0,
       "RotationAxisY": 0.0,
       "RotationAxisZ": 0.0
@@ -948,14 +933,14 @@
     {
       "Metadata": {
         "XSize": 30.0,
-        "YSize": 30.0,
+        "YSize": 40.0,
         "ZSize": 15.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 63,
+      "Index": 62,
       "Color": "#FFF4A460",
-      "Position": "34,-50,-3",
+      "Position": "34,-60,-3",
       "RotationAxisX": 0.0,
       "RotationAxisY": 0.0,
       "RotationAxisZ": 0.0
@@ -963,12 +948,12 @@
     {
       "Metadata": {
         "XSize": 40.0,
-        "YSize": 60.0,
-        "ZSize": 20.0,
+        "YSize": 70.0,
+        "ZSize": 22.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 64,
+      "Index": 63,
       "Color": "#FFF4A460",
       "Position": "54,-100,-16",
       "RotationAxisX": 0.0,
@@ -983,9 +968,9 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 65,
+      "Index": 64,
       "Color": "#FF008000",
-      "Position": "86,0,-15",
+      "Position": "86,10,-15",
       "RotationAxisX": 0.0,
       "RotationAxisY": 0.0,
       "RotationAxisZ": 0.0
@@ -998,9 +983,9 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 66,
+      "Index": 65,
       "Color": "#FF008000",
-      "Position": "68,15,-7",
+      "Position": "68,25,-7",
       "RotationAxisX": 0.0,
       "RotationAxisY": 0.0,
       "RotationAxisZ": 0.0
@@ -1013,9 +998,9 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 67,
+      "Index": 66,
       "Color": "#FF8B4513",
-      "Position": "72,-40,-3",
+      "Position": "72,-30,-3",
       "RotationAxisX": 0.0,
       "RotationAxisY": 0.0,
       "RotationAxisZ": 0.0
@@ -1028,9 +1013,9 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 68,
+      "Index": 67,
       "Color": "#FF8B4513",
-      "Position": "90,-40,-11",
+      "Position": "90,-30,-11",
       "RotationAxisX": 0.0,
       "RotationAxisY": 0.0,
       "RotationAxisZ": 0.0
@@ -1043,9 +1028,9 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 69,
+      "Index": 68,
       "Color": "#FF008000",
-      "Position": "75,-17,-9",
+      "Position": "75,-10,-9",
       "RotationAxisX": 0.0,
       "RotationAxisY": 0.0,
       "RotationAxisZ": 0.0
@@ -1058,9 +1043,9 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 70,
+      "Index": 69,
       "Color": "#FF8B4513",
-      "Position": "80,-37,-5",
+      "Position": "80,-30,-5",
       "RotationAxisX": 0.0,
       "RotationAxisY": 0.0,
       "RotationAxisZ": 0.0
@@ -1073,7 +1058,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 71,
+      "Index": 70,
       "Color": "#FFFFFFFF",
       "Position": "-230,0,-195",
       "RotationAxisX": 0.0,
@@ -1088,7 +1073,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 72,
+      "Index": 71,
       "Color": "#FFFFFFFF",
       "Position": "-200,0,-195",
       "RotationAxisX": 0.0,
@@ -1103,7 +1088,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 73,
+      "Index": 72,
       "Color": "#FFF4A460",
       "Position": "-240,-90,-25",
       "RotationAxisX": 0.0,
@@ -1118,7 +1103,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 74,
+      "Index": 73,
       "Color": "#FF696969",
       "Position": "40,65,-200",
       "RotationAxisX": 0.0,
@@ -1133,7 +1118,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 75,
+      "Index": 74,
       "Color": "#FF696969",
       "Position": "30,-50,-205",
       "RotationAxisX": 0.0,
@@ -1148,7 +1133,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 76,
+      "Index": 75,
       "Color": "#FF800000",
       "Position": "-18,90,-195",
       "RotationAxisX": 0.0,
@@ -1163,7 +1148,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 77,
+      "Index": 76,
       "Color": "#FF696969",
       "Position": "-240,-50,-18",
       "RotationAxisX": 0.0,
@@ -1178,7 +1163,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 78,
+      "Index": 77,
       "Color": "#FF696969",
       "Position": "-18,-50,-205",
       "RotationAxisX": 0.0,
@@ -1193,7 +1178,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 79,
+      "Index": 78,
       "Color": "#FF696969",
       "Position": "-240,-50,30",
       "RotationAxisX": 0.0,
@@ -1208,7 +1193,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 80,
+      "Index": 79,
       "Color": "#FF800000",
       "Position": "-234,90,-18",
       "RotationAxisX": -45.0,
@@ -1223,7 +1208,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 81,
+      "Index": 80,
       "Color": "#FFFFFFFF",
       "Position": "-235,0,13",
       "RotationAxisX": 0.0,
@@ -1238,7 +1223,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 82,
+      "Index": 81,
       "Color": "#FFFFFFFF",
       "Position": "-230,0,40",
       "RotationAxisX": 0.0,
@@ -1253,7 +1238,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 83,
+      "Index": 82,
       "Color": "#FF696969",
       "Position": "-230,65,40",
       "RotationAxisX": 0.0,
@@ -1268,7 +1253,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 84,
+      "Index": 83,
       "Color": "#FF696969",
       "Position": "-183,-50,30",
       "RotationAxisX": 0.0,
@@ -1283,7 +1268,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 85,
+      "Index": 84,
       "Color": "#FF696969",
       "Position": "-183,-50,-18",
       "RotationAxisX": 0.0,
@@ -1298,7 +1283,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 86,
+      "Index": 85,
       "Color": "#FFFFFFFF",
       "Position": "-235,60,0",
       "RotationAxisX": 0.0,
@@ -1313,7 +1298,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 87,
+      "Index": 86,
       "Color": "#FF696969",
       "Position": "-200,-50,-18",
       "RotationAxisX": 0.0,
@@ -1328,7 +1313,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 88,
+      "Index": 87,
       "Color": "#FFFFFFFF",
       "Position": "-195,-50,-10",
       "RotationAxisX": 0.0,
@@ -1343,7 +1328,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 89,
+      "Index": 88,
       "Color": "#FFFFFFFF",
       "Position": "-235,0,18",
       "RotationAxisX": 0.0,
@@ -1358,7 +1343,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 90,
+      "Index": 89,
       "Color": "#FFFFFFFF",
       "Position": "-235,0,0",
       "RotationAxisX": 0.0,
@@ -1373,7 +1358,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 91,
+      "Index": 90,
       "Color": "#FF800000",
       "Position": "-234,90,18",
       "RotationAxisX": 45.0,
@@ -1383,14 +1368,14 @@
     {
       "Metadata": {
         "XSize": 10.0,
-        "YSize": 5.0,
-        "ZSize": 40.0,
+        "YSize": 1.0,
+        "ZSize": 44.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 92,
-      "Color": "#FFFFFFFF",
-      "Position": "22,31,5",
+      "Index": 91,
+      "Color": "#FF5F9EA0",
+      "Position": "-10,1,3",
       "RotationAxisX": 0.0,
       "RotationAxisY": 0.0,
       "RotationAxisZ": 0.0
@@ -1403,7 +1388,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 93,
+      "Index": 92,
       "Color": "#FFFFFFFF",
       "Position": "-235,70,0",
       "RotationAxisX": 45.0,
@@ -1418,7 +1403,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 94,
+      "Index": 93,
       "Color": "#FFFFFFFF",
       "Position": "-235,90,0",
       "RotationAxisX": -45.0,
@@ -1433,7 +1418,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 95,
+      "Index": 94,
       "Color": "#FFFFFFFF",
       "Position": "-235,95,0",
       "RotationAxisX": 0.0,
@@ -1448,7 +1433,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 96,
+      "Index": 95,
       "Color": "#FFFFFFFF",
       "Position": "-235,70,20",
       "RotationAxisX": -45.0,
@@ -1463,7 +1448,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 97,
+      "Index": 96,
       "Color": "#FFFFFFFF",
       "Position": "-235,90,21",
       "RotationAxisX": 45.0,
@@ -1478,7 +1463,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 98,
+      "Index": 97,
       "Color": "#FFFFFFFF",
       "Position": "-235,70,0",
       "RotationAxisX": 0.0,
@@ -1493,7 +1478,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 99,
+      "Index": 98,
       "Color": "#FFFFFFFF",
       "Position": "-235,70,25",
       "RotationAxisX": 0.0,
@@ -1508,7 +1493,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 100,
+      "Index": 99,
       "Color": "#FF800000",
       "Position": "18,90,-195",
       "RotationAxisX": 0.0,
@@ -1523,7 +1508,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 101,
+      "Index": 100,
       "Color": "#FF800000",
       "Position": "-234,101,7",
       "RotationAxisX": 0.0,
@@ -1538,7 +1523,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 102,
+      "Index": 101,
       "Color": "#FFFFFFFF",
       "Position": "-230,0,40",
       "RotationAxisX": 0.0,
@@ -1553,7 +1538,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 103,
+      "Index": 102,
       "Color": "#FFFFFFFF",
       "Position": "-203,0,40",
       "RotationAxisX": 0.0,
@@ -1568,7 +1553,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 104,
+      "Index": 103,
       "Color": "#FF696969",
       "Position": "-101,-50,-18",
       "RotationAxisX": 0.0,
@@ -1583,7 +1568,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 105,
+      "Index": 104,
       "Color": "#FF696969",
       "Position": "-101,-50,30",
       "RotationAxisX": 0.0,
@@ -1598,7 +1583,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 106,
+      "Index": 105,
       "Color": "#FFFFFFFF",
       "Position": "-100,0,40",
       "RotationAxisX": 0.0,
@@ -1613,7 +1598,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 107,
+      "Index": 106,
       "Color": "#FFFFFFFF",
       "Position": "-99,0,-10",
       "RotationAxisX": 0.0,
@@ -1628,7 +1613,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 108,
+      "Index": 107,
       "Color": "#FFFFFFFF",
       "Position": "-99,10,-10",
       "RotationAxisX": 0.0,
@@ -1643,7 +1628,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 109,
+      "Index": 108,
       "Color": "#FFFFFFFF",
       "Position": "-72,10,-10",
       "RotationAxisX": 0.0,
@@ -1658,7 +1643,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 110,
+      "Index": 109,
       "Color": "#FFFFFFFF",
       "Position": "-100,10,40",
       "RotationAxisX": 0.0,
@@ -1673,7 +1658,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 111,
+      "Index": 110,
       "Color": "#FFFFFFFF",
       "Position": "-72,10,40",
       "RotationAxisX": 0.0,
@@ -1682,13 +1667,13 @@
     },
     {
       "Metadata": {
-        "XSize": 265.0,
+        "XSize": 270.0,
         "YSize": 10.0,
         "ZSize": 1.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 112,
+      "Index": 111,
       "Color": "#FF696969",
       "Position": "-230,65,-10",
       "RotationAxisX": 0.0,
@@ -1699,11 +1684,11 @@
       "Metadata": {
         "XSize": 18.0,
         "YSize": 160.0,
-        "ZSize": 5.0,
+        "ZSize": 8.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 113,
+      "Index": 112,
       "Color": "#FF696969",
       "Position": "-18,-50,-165",
       "RotationAxisX": 0.0,
@@ -1714,11 +1699,11 @@
       "Metadata": {
         "XSize": 18.0,
         "YSize": 160.0,
-        "ZSize": 5.0,
+        "ZSize": 8.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 114,
+      "Index": 113,
       "Color": "#FF696969",
       "Position": "30,-50,-165",
       "RotationAxisX": 0.0,
@@ -1733,7 +1718,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 115,
+      "Index": 114,
       "Color": "#FFFFFFFF",
       "Position": "-230,60,40",
       "RotationAxisX": 0.0,
@@ -1748,7 +1733,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 116,
+      "Index": 115,
       "Color": "#FFFFFFFF",
       "Position": "-100,60,-10",
       "RotationAxisX": 0.0,
@@ -1763,7 +1748,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 117,
+      "Index": 116,
       "Color": "#FFFFFFFF",
       "Position": "-100,60,40",
       "RotationAxisX": 0.0,
@@ -1778,7 +1763,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 118,
+      "Index": 117,
       "Color": "#FF696969",
       "Position": "-10,65,-200",
       "RotationAxisX": 0.0,
@@ -1787,13 +1772,13 @@
     },
     {
       "Metadata": {
-        "XSize": 40.0,
+        "XSize": 30.0,
         "YSize": 70.0,
         "ZSize": 30.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 119,
+      "Index": 118,
       "Color": "#FFF4A460",
       "Position": "-32,-100,-195",
       "RotationAxisX": 0.0,
@@ -1808,7 +1793,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 120,
+      "Index": 119,
       "Color": "#FFF4A460",
       "Position": "-70,-120,-46",
       "RotationAxisX": 0.0,
@@ -1823,9 +1808,9 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 121,
+      "Index": 120,
       "Color": "#FFF4A460",
-      "Position": "-41,-129,-100",
+      "Position": "-41,-130,-100",
       "RotationAxisX": 0.0,
       "RotationAxisY": 0.0,
       "RotationAxisZ": 0.0
@@ -1838,7 +1823,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 122,
+      "Index": 121,
       "Color": "#FFF4A460",
       "Position": "-465,-123,-215",
       "RotationAxisX": 0.0,
@@ -1853,7 +1838,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 123,
+      "Index": 122,
       "Color": "#FFF4A460",
       "Position": "-456,-92,-252",
       "RotationAxisX": 0.0,
@@ -1868,9 +1853,9 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 124,
+      "Index": 123,
       "Color": "#FFF4A460",
-      "Position": "-86,-110,-85",
+      "Position": "-86,-91,-85",
       "RotationAxisX": 0.0,
       "RotationAxisY": 0.0,
       "RotationAxisZ": 0.0
@@ -1883,9 +1868,9 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 125,
+      "Index": 124,
       "Color": "#FF008000",
-      "Position": "-64,-13,-78",
+      "Position": "-54,-10,-45",
       "RotationAxisX": 0.0,
       "RotationAxisY": 0.0,
       "RotationAxisZ": 0.0
@@ -1898,7 +1883,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 126,
+      "Index": 125,
       "Color": "#FF8B4513",
       "Position": "-67,-41,-44",
       "RotationAxisX": 0.0,
@@ -1913,7 +1898,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 127,
+      "Index": 126,
       "Color": "#FF008000",
       "Position": "-87,-25,-102",
       "RotationAxisX": 0.0,
@@ -1928,7 +1913,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 128,
+      "Index": 127,
       "Color": "#FF008000",
       "Position": "-71,-4,-48",
       "RotationAxisX": 0.0,
@@ -1943,7 +1928,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 129,
+      "Index": 128,
       "Color": "#FF8B4513",
       "Position": "-95,-41,-89",
       "RotationAxisX": 0.0,
@@ -1953,14 +1938,14 @@
     {
       "Metadata": {
         "XSize": 2.0,
-        "YSize": 70.0,
+        "YSize": 45.0,
         "ZSize": 2.0,
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 130,
+      "Index": 129,
       "Color": "#FF8B4513",
-      "Position": "-60,-81,-74",
+      "Position": "-50,-51,-44",
       "RotationAxisX": 0.0,
       "RotationAxisY": 0.0,
       "RotationAxisZ": 0.0
@@ -1973,7 +1958,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 131,
+      "Index": 130,
       "Color": "#FF008000",
       "Position": "-100,14,-94",
       "RotationAxisX": 0.0,
@@ -1988,7 +1973,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 132,
+      "Index": 131,
       "Color": "#FFF4A460",
       "Position": "-100,-90,-100",
       "RotationAxisX": 0.0,
@@ -2003,7 +1988,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 133,
+      "Index": 132,
       "Color": "#FF8B4513",
       "Position": "-84,-41,-98",
       "RotationAxisX": 0.0,
@@ -2018,7 +2003,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 134,
+      "Index": 133,
       "Color": "#FF8B4513",
       "Position": "-450,-24,-201",
       "RotationAxisX": 0.0,
@@ -2033,7 +2018,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 135,
+      "Index": 134,
       "Color": "#FF8B4513",
       "Position": "-433,-42,-250",
       "RotationAxisX": 0.0,
@@ -2048,7 +2033,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 136,
+      "Index": 135,
       "Color": "#FF8B4513",
       "Position": "-448,-42,-234",
       "RotationAxisX": 0.0,
@@ -2063,7 +2048,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 137,
+      "Index": 136,
       "Color": "#FF008000",
       "Position": "-452,-26,-238",
       "RotationAxisX": 0.0,
@@ -2078,7 +2063,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 138,
+      "Index": 137,
       "Color": "#FF008000",
       "Position": "-436,-14,-253",
       "RotationAxisX": 0.0,
@@ -2093,7 +2078,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 139,
+      "Index": 138,
       "Color": "#FF008000",
       "Position": "-454,2,-205",
       "RotationAxisX": 0.0,
@@ -2108,7 +2093,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 140,
+      "Index": 139,
       "Color": "#FFF4A460",
       "Position": "-56,-52,43",
       "RotationAxisX": 0.0,
@@ -2123,7 +2108,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 141,
+      "Index": 140,
       "Color": "#FFFFFFFF",
       "Position": "-281,-30,-250",
       "RotationAxisX": 0.0,
@@ -2138,7 +2123,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 142,
+      "Index": 141,
       "Color": "#FF696969",
       "Position": "-200,-40,-165",
       "RotationAxisX": 0.0,
@@ -2153,7 +2138,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 143,
+      "Index": 142,
       "Color": "#FF696969",
       "Position": "-240,-40,-165",
       "RotationAxisX": 0.0,
@@ -2168,7 +2153,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 144,
+      "Index": 143,
       "Color": "#FF696969",
       "Position": "-200,-40,-213",
       "RotationAxisX": 0.0,
@@ -2183,7 +2168,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 145,
+      "Index": 144,
       "Color": "#FF696969",
       "Position": "-240,-40,-213",
       "RotationAxisX": 0.0,
@@ -2198,7 +2183,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 146,
+      "Index": 145,
       "Color": "#FF5F9EA0",
       "Position": "-238,19,-195",
       "RotationAxisX": 0.0,
@@ -2213,7 +2198,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 147,
+      "Index": 146,
       "Color": "#FFF4A460",
       "Position": "-47,-10,93",
       "RotationAxisX": 0.0,
@@ -2228,7 +2213,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 148,
+      "Index": 147,
       "Color": "#FFFFFFFF",
       "Position": "-4,0,110",
       "RotationAxisX": 0.0,
@@ -2243,7 +2228,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 149,
+      "Index": 148,
       "Color": "#FFF4A460",
       "Position": "-59,-10,154",
       "RotationAxisX": 0.0,
@@ -2258,7 +2243,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 150,
+      "Index": 149,
       "Color": "#FFF4A460",
       "Position": "-47,-62,50",
       "RotationAxisX": 0.0,
@@ -2273,7 +2258,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 151,
+      "Index": 150,
       "Color": "#FF696969",
       "Position": "-145,-40,166",
       "RotationAxisX": 0.0,
@@ -2288,7 +2273,7 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 152,
+      "Index": 151,
       "Color": "#FFFFFFFF",
       "Position": "-155,0,39",
       "RotationAxisX": 0.0,
@@ -2303,9 +2288,699 @@
         "UseBackMaterial": true,
         "Opacity": null
       },
-      "Index": 153,
+      "Index": 152,
       "Color": "#FFFFFFFF",
       "Position": "-187,0,135",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 2.0,
+        "YSize": 40.0,
+        "ZSize": 80.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 153,
+      "Color": "#FFFFFFFF",
+      "Position": "-45,-40,-30",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 6.0,
+        "YSize": 3.0,
+        "ZSize": 80.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 154,
+      "Color": "#FFFAEBD7",
+      "Position": "-15,-40,-30",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 6.0,
+        "YSize": 2.0,
+        "ZSize": 80.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 155,
+      "Color": "#FFFFFFFF",
+      "Position": "-9,-41,-30",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 6.0,
+        "YSize": 5.0,
+        "ZSize": 45.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 156,
+      "Color": "#FFFFFFFF",
+      "Position": "36,-50,0",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 6.0,
+        "YSize": 3.0,
+        "ZSize": 43.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 157,
+      "Color": "#FFFAEBD7",
+      "Position": "42,-50,0",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 7.0,
+        "YSize": 1.0,
+        "ZSize": 45.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 158,
+      "Color": "#FFFFFFFF",
+      "Position": "48,-50,0",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 100.0,
+        "YSize": 1.0,
+        "ZSize": 33.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 159,
+      "Color": "#FFD3D3D3",
+      "Position": "55,-51,12",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 110.0,
+        "YSize": 10.0,
+        "ZSize": 110.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 160,
+      "Color": "#FFF4A460",
+      "Position": "55,-61,-50",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 70.0,
+        "YSize": 40.0,
+        "ZSize": 110.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 161,
+      "Color": "#FFF4A460",
+      "Position": "40,-80,-124",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 40.0,
+        "YSize": 120.0,
+        "ZSize": 42.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 162,
+      "Color": "#FFF4A460",
+      "Position": "40,-140,-112",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 5.0,
+        "YSize": 10.0,
+        "ZSize": 36.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 163,
+      "Color": "#FF696969",
+      "Position": "35,50,7",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 5.0,
+        "YSize": 5.0,
+        "ZSize": 25.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 164,
+      "Color": "#FF696969",
+      "Position": "35,33,1",
+      "RotationAxisX": -45.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 5.0,
+        "YSize": 5.0,
+        "ZSize": 25.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 165,
+      "Color": "#FF696969",
+      "Position": "35,33,24",
+      "RotationAxisX": 45.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 50.0,
+        "YSize": 11.0,
+        "ZSize": 170.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 166,
+      "Color": "#FFFFFFFF",
+      "Position": "-10,-50,-195",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 50.0,
+        "YSize": 50.0,
+        "ZSize": 30.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 167,
+      "Color": "#FFFFFFFF",
+      "Position": "-10,-50,-195",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 2.0,
+        "YSize": 2.0,
+        "ZSize": 95.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 168,
+      "Color": "#FFFAEBD7",
+      "Position": "-12,-43,-160",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 5.0,
+        "YSize": 40.0,
+        "ZSize": 45.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 169,
+      "Color": "#FFFFFFFF",
+      "Position": "35,-40,-112",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 5.0,
+        "YSize": 40.0,
+        "ZSize": 33.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 170,
+      "Color": "#FFFFFFFF",
+      "Position": "-10,-40,-68",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 5.0,
+        "YSize": 10.0,
+        "ZSize": 10.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 171,
+      "Color": "#FF696969",
+      "Position": "35,40,20",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 90.0,
+        "YSize": 20.0,
+        "ZSize": 36.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 172,
+      "Color": "#FFF4A460",
+      "Position": "40,-60,-160",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 40.0,
+        "YSize": 2.0,
+        "ZSize": 40.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 173,
+      "Color": "#FFFFFFFF",
+      "Position": "90,-50,-35",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 35.0,
+        "YSize": 4.0,
+        "ZSize": 35.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 174,
+      "Color": "#FFFAEBD7",
+      "Position": "90,-50,-35",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 30.0,
+        "YSize": 6.0,
+        "ZSize": 30.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 175,
+      "Color": "#FFFFFFFF",
+      "Position": "90,-50,-35",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 25.0,
+        "YSize": 8.0,
+        "ZSize": 25.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 176,
+      "Color": "#FFFAEBD7",
+      "Position": "90,-50,-35",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 61.0,
+        "YSize": 1.0,
+        "ZSize": 47.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 177,
+      "Color": "#FFD3D3D3",
+      "Position": "94,-51,-35",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 45.0,
+        "YSize": 13.0,
+        "ZSize": 15.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 178,
+      "Color": "#FFFFFFFF",
+      "Position": "100,-51,-50",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 18.0,
+        "YSize": 53.0,
+        "ZSize": 8.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 179,
+      "Color": "#FF696969",
+      "Position": "-18,-50,-70",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 18.0,
+        "YSize": 43.0,
+        "ZSize": 8.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 180,
+      "Color": "#FF696969",
+      "Position": "30,-40,-70",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 30.0,
+        "YSize": 5.0,
+        "ZSize": 10.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 181,
+      "Color": "#FF696969",
+      "Position": "0,-10,-70",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 18.0,
+        "YSize": 53.0,
+        "ZSize": 8.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 182,
+      "Color": "#FF696969",
+      "Position": "-18,-50,-120",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 18.0,
+        "YSize": 43.0,
+        "ZSize": 8.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 183,
+      "Color": "#FF696969",
+      "Position": "30,-40,-120",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 30.0,
+        "YSize": 5.0,
+        "ZSize": 10.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 184,
+      "Color": "#FF696969",
+      "Position": "0,-10,-120",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 5.0,
+        "YSize": 5.0,
+        "ZSize": 125.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 185,
+      "Color": "#FF696969",
+      "Position": "30,-10,-160",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 5.0,
+        "YSize": 5.0,
+        "ZSize": 125.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 186,
+      "Color": "#FF696969",
+      "Position": "-5,-10,-160",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 5.0,
+        "YSize": 40.0,
+        "ZSize": 3.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 187,
+      "Color": "#FF696969",
+      "Position": "30,-40,-40",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 2.0,
+        "YSize": 2.0,
+        "ZSize": 95.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 188,
+      "Color": "#FFFFFFFF",
+      "Position": "-14,-45,-160",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 2.0,
+        "YSize": 2.0,
+        "ZSize": 95.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 189,
+      "Color": "#FFFAEBD7",
+      "Position": "-16,-47,-160",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 5.0,
+        "YSize": 2.0,
+        "ZSize": 95.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 190,
+      "Color": "#FFFFFFFF",
+      "Position": "-21,-49,-160",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 10.0,
+        "YSize": 2.0,
+        "ZSize": 105.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 191,
+      "Color": "#FFFFFFFF",
+      "Position": "-28,-51,-165",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 150.0,
+        "YSize": 10.0,
+        "ZSize": 140.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 192,
+      "Color": "#FFF4A460",
+      "Position": "-150,-61,-165",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 50.0,
+        "YSize": 12.0,
+        "ZSize": 90.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 193,
+      "Color": "#FFFFFFFF",
+      "Position": "110,-50,-140",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 100.0,
+        "YSize": 25.0,
+        "ZSize": 60.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 194,
+      "Color": "#FFF4A460",
+      "Position": "-24,-35,60",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 30.0,
+        "YSize": 2.0,
+        "ZSize": 60.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 195,
+      "Color": "#FFF4A460",
+      "Position": "36,-10,90",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 30.0,
+        "YSize": 4.0,
+        "ZSize": 50.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 196,
+      "Color": "#FFF4A460",
+      "Position": "36,-10,100",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 30.0,
+        "YSize": 6.0,
+        "ZSize": 40.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 197,
+      "Color": "#FFF4A460",
+      "Position": "36,-10,110",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 30.0,
+        "YSize": 8.0,
+        "ZSize": 40.0,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 198,
+      "Color": "#FFF4A460",
+      "Position": "36,-10,120",
       "RotationAxisX": 0.0,
       "RotationAxisY": 0.0,
       "RotationAxisZ": 0.0
