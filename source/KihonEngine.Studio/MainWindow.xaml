@@ -23,6 +23,7 @@
         <Menu>
             <MenuItem Header="File">
                 <MenuItem Header="New" Click="MenuNew_Click" />
+                <MenuItem Header="New maze..." Click="MenuNewMaze_Click" />
                 <MenuItem Header="Open Map">
                     <MenuItem Header="Demo : Empty" x:Name="menuOpen0" Click="MenuOpen_Click" />
                     <MenuItem Header="Demo : Empty" x:Name="menuOpen1" Click="MenuOpen_Click" />

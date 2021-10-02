@@ -36,8 +36,11 @@ namespace KihonEngine.GameEngine.Graphics
 
         public void LoadMap(string mapName)
         {
-            IMapBuilder mapBuilder = MapBuilderFactory.Get(mapName);
+            LoadMap(MapBuilderFactory.Get(mapName));
+        }
 
+        public void LoadMap(IMapBuilder mapBuilder)
+        {
             // Create level
             State.Graphics.Level = mapBuilder.CreateMap();
             State.Graphics.LevelName = mapBuilder.MapName;

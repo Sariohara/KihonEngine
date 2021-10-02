@@ -2,12 +2,14 @@
 using System.Windows.Input;
 using KihonEngine.GameEngine.Graphics;
 using System.Windows.Controls;
+using KihonEngine.GameEngine.Graphics.Maps;
 
 namespace KihonEngine.GameEngine
 {
     public interface IGameEngineController
     {
         void LoadEmptyMap();
+        void LoadMap(IMapBuilder mapBuilder);
         void LoadMap(string mapName);
         void LoadMapFromFile(string filepath);
         void SaveMapToFile(string filepath);

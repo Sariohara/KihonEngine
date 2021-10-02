@@ -11,6 +11,7 @@ using System.Windows.Controls;
 using KihonEngine.GameEngine.Graphics.Output;
 using KihonEngine.GameEngine.Graphics.Maps.Predefined;
 using KihonEngine.GameEngine.GameLogics;
+using KihonEngine.GameEngine.Graphics.Maps;
 
 namespace KihonEngine.GameEngine
 {
@@ -56,6 +57,14 @@ namespace KihonEngine.GameEngine
         public void LoadEmptyMap()
         {
             LoadMap(PredefinedMapNames.Empty);
+        }
+
+        public void LoadMap(IMapBuilder mapBuilder)
+        {
+            WorldEngine.LoadMap(mapBuilder);
+
+            State.Editor.ActionSelect.SelectedModel = null;
+            NotifyIOs();
         }
 
         public void LoadMap(string mapName)
