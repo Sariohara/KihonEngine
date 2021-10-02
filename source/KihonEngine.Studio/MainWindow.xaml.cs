@@ -115,8 +115,6 @@ namespace KihonEngine.Studio
                 Owner = this,
                 ShowInTaskbar = false,
                 WindowStartupLocation = WindowStartupLocation.CenterOwner,
-                XSize = 10,
-                ZSize = 15,
             };
 
             if (dialog.ShowDialog() == true)
@@ -207,7 +205,7 @@ namespace KihonEngine.Studio
             WorldEngine.RegisterMap<Q3DM1MapBuilder>();
             //WorldEngine.RegisterMap<MazeMapBuilder>();
             //            WorldEngine.RegisterMap<DarkCastleMapBuilder>();
-            WorldEngine.RegisterMap<ArenaMapBuilder>();
+            WorldEngine.RegisterMap<DarkCastleM2MapBuilder>();
             WorldEngine.RegisterMap<RoofTopMapBuilder>();
             WorldEngine.RegisterMap<LogoMapBuilder>();
 

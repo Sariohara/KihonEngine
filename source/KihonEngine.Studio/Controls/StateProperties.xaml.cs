@@ -76,6 +76,7 @@ namespace KihonEngine.Studio.Controls
             AddProperty(properties, "  CanHandleMouseMoves", state.CanHandleMouseMoves.ToString());
             AddProperty(properties, "  KeyPressed", state.KeyPressed != null ? string.Join(",", state.KeyPressed.Select(x => x.ToString())) : string.Empty);
             AddProperty(properties, "Game", string.Empty);
+            AddProperty(properties, "  Game.LifeState.Life", state.Game.Get<LifeState>().Life.ToString());
             AddProperty(properties, "  Game.JumpState.IsJumping", state.Game.Get<JumpState>().IsJumping.ToString());
             AddProperty(properties, "  Game.JumpState.YSpeed", state.Game.Get<JumpState>().YSpeed.ToString());
             AddProperty(properties, "  Game.JumpState.Gravity", state.Game.Get<JumpState>().Gravity.ToString());

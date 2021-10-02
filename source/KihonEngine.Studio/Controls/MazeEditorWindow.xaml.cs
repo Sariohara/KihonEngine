@@ -32,6 +32,9 @@ namespace KihonEngine.Studio.Controls
         public MazeEditorWindow()
         {
             InitializeComponent();
+
+            XSize = 10;
+            ZSize = 15;
         }
 
         public int XSize { get; set; }

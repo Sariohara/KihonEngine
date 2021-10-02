@@ -13,7 +13,7 @@
             Engine.Configure();
 
             // Configure game : we will use an existing map from KihonEngine.SampleMaps
-            StandardStartups.BuildStandaloneFullScreenGame<KihonEngine.SampleMaps.DarkCastleMapBuilder>();
+            StandardStartups.BuildStandaloneFullScreenGame<KihonEngine.SampleMaps.DarkCastleM2MapBuilder>();
 
             // When click Start button
             btnStart.Click += (sender, e) => Engine.Play();

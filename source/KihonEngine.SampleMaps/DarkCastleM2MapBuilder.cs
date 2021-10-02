@@ -3,11 +3,11 @@ using KihonEngine.GameEngine.Graphics.Maps;
 
 namespace KihonEngine.SampleMaps
 {
-    public class ArenaMapBuilder : MapBuilderFromResource
+    public class DarkCastleM2MapBuilder : MapBuilderFromResource
     {
-        public ArenaMapBuilder() : base(
+        public DarkCastleM2MapBuilder() : base(
             System.Reflection.Assembly.GetExecutingAssembly(),
-            "KihonEngine.SampleMaps.Arena.json")
+            "KihonEngine.SampleMaps.DarkCastleM2.json")
         {
         }
     }

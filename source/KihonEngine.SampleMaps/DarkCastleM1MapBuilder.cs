@@ -6,9 +6,9 @@ using System.Windows.Media.Media3D;
 
 namespace KihonEngine.SampleMaps
 {
-    public class DarkCastleMapBuilder : IMapBuilder
+    public class DarkCastleM1MapBuilder : IMapBuilder
     {
-        public string MapName => "Dark Castle";
+        public string MapName => "Dark Castle M1";
 
         public Point3D PlayerPosition => new Point3D(10, 10, 70);
 
