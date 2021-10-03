@@ -8,9 +8,9 @@ Actually, with Kihon Engine, you can:
 
 ## Learn about Kihon Engine
 
-* [Getting started : create a simple game](doc/GettingStarted.md)
-* [Technical documentation](doc/architecture-overview.md)
-* [Create maps with Kihon Engine Studio](doc/kihon-engine-studio.md)
+* [Getting started : create a simple game](https://github.com/nico65535/KihonEngine/blob/main/doc/GettingStarted.md)
+* [Technical documentation](https://github.com/nico65535/KihonEngine/blob/main/doc/architecture-overview.md)
+* [Create maps with Kihon Engine Studio](https://github.com/nico65535/KihonEngine/blob/main/doc/kihon-engine-studio.md)
 
 ## Components Overview
 
