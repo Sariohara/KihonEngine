@@ -17,7 +17,8 @@ The maze generator available in `File > New maze` can be used as a started for q
 ![Screenshot - Maze editor](kihonEngine-studio-mazeEditor-01.png)
 
 ## Play mode
-Play mode allow to play on the map directly into the editor, in order to test the gameplay
+Play mode allows to test the map directly into the editor, in order to verify if gameplay is as expected
+
 ![Screenshot - Play on 3D map](kihonEngine-studio-playMap-01.png)
 
 ## Edit mode
@@ -25,12 +26,17 @@ Edit mode is the default mode of the editor
 ![Screenshot - Edit 3D map](kihonEngine-studio-editMap-01.png)
 
 ### Adding 3D models to maps
-* Add floor
-* Add ceilings
-* Add walls
-* Add volumes, like cube, rectangles
-* Add lights to make the viewport3D scene visible
-* Add skyboxes. Actually, three predefined skyboxes are availables
+
+Diferent kind of 3D models can be added to a map
+
+| Mode type | Description |
+| ----------| ------------| 
+| Floor     | 
+| Ceiling   | 
+| Wall      | 
+| Volume    | Like cube, rectangles 
+| Light     | To make the viewport3D scene visible
+| Skyboxe   | Actually, four predefined skyboxes are availables
 
 ![Screenshot - Add 3D models](kihonEngine-studio-add3dModels-01.png)
 
