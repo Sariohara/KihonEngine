@@ -12,8 +12,11 @@
             // Configure game
             StandardStartups.BuildStandaloneFullScreenGame();
 
-            // When click Start button
-            btnStart.Click += (sender, e) => Engine.Play<SampleMaps.DarkCastleM2MapBuilder>();
+            // When click a Start button
+            btnStart1.Click += (sender, e) => Engine.Play<SampleMaps.E1M1MapBuilder>();
+            btnStart2.Click += (sender, e) => Engine.Play<SampleMaps.Q3DM1MapBuilder>();
+            btnStart3.Click += (sender, e) => Engine.Play<SampleMaps.DarkCastleM2MapBuilder>();
+            btnStart4.Click += (sender, e) => Engine.Play<SampleMaps.Maze.MazeMapBuilder>();
 
             // When click Exit button
             btnExit.Click += (sender, e) => Close();

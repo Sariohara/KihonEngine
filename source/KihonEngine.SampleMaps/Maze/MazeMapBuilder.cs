@@ -21,8 +21,8 @@ namespace KihonEngine.SampleMaps.Maze
 
         public MazeMapBuilder()
         {
-            SizeX = 10;
-            SizeZ = 15;
+            SizeX = 8;
+            SizeZ = 12;
         }
 
         public MazeMapBuilder(int sizeX, int sizeZ, MazeNode[,] nodes)
