@@ -30,11 +30,14 @@ namespace KihonEngine.GameEngine.Graphics.Maps.Predefined
             lightBuilder.Create(new Vector3D(3, 4, -5));
 
             // Sky box
-            //skyboxBuilder.Color = Colors.DarkSlateGray;
             var color = new Color { R = 37, G = 37, B = 38 };
-            skyboxBuilder.Color = color;
+            skyboxBuilder.Color = Colors.DarkSlateGray;
             
             skyboxBuilder.Create(-5000, -5000, -5000, 10000, new Vector3D(3, 4, 5));
+
+            // Respawn position
+            volumeBuilder.Color = Colors.Red;
+            volumeBuilder.Create(30, -50, 60, 20, 50, 20);
 
             // Cubes
             var size = 30;

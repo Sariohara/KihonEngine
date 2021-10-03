@@ -27,6 +27,8 @@ namespace KihonEngine.GameEngine
 
         void StopGameLogic();
         void Play();
+        void Play(IMapBuilder mapBuilder);
+        void Play<TMapBuilder>() where TMapBuilder : class, IMapBuilder, new();
         void SwitchToPlayMode();
         void SwitchToEditorMode();
 

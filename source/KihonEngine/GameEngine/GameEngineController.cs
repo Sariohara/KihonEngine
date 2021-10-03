@@ -209,6 +209,17 @@ namespace KihonEngine.GameEngine
             NotifyIOs();
         }
 
+        public void Play<TMapBuilder>() where TMapBuilder : class, IMapBuilder, new()
+        {
+            Play(new TMapBuilder());
+        }
+
+        public void Play(IMapBuilder mapBuilder)
+        {
+            LoadMap(mapBuilder);
+            Play();
+        }
+
         public void Play()
         {
             if (State.Game.IsStandaloneFullScreenGame)

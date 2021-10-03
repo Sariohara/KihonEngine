@@ -1,4 +1,5 @@
 ﻿using KihonEngine.GameEngine;
+using KihonEngine.GameEngine.Graphics.Maps;
 using KihonEngine.Services;
 using System;
 
@@ -21,6 +22,38 @@ namespace KihonEngine
             if (_initialized)
             {
                 Controller.Play();
+            }
+            else
+            {
+                throw new InvalidOperationException($"You should call Engine.Configure() and StandardStartups before call Play().");
+            }
+        }
+
+        /// <summary>
+        /// Start game with a specific map
+        /// </summary>
+        /// <param name="mapBuilder">Map to load before play</param>
+        public static void Play(IMapBuilder mapBuilder)
+        {
+            if (_initialized)
+            {
+                Controller.Play(mapBuilder);
+            }
+            else
+            {
+                throw new InvalidOperationException($"You should call Engine.Configure() and StandardStartups before call Play().");
+            }
+        }
+
+        /// <summary>
+        /// Start game with a specific map
+        /// </summary>
+        /// <typeparam name="TMapBuilder">IMapBuilder class to use for map generation</typeparam>
+        public static void Play<TMapBuilder>() where TMapBuilder : class, IMapBuilder, new()
+        {
+            if (_initialized)
+            {
+                Controller.Play<TMapBuilder>();
             }
             else
             {
