@@ -12,7 +12,7 @@ Actually, with Kihon Engine, you can:
 * [Technical documentation](doc/architecture-overview.md)
 * [Create maps with Kihon Engine Studio](doc/kihon-engine-studio.md)
 
-## Overview
+## Components Overview
 
 Kihon Engin contains 4 components
 
@@ -23,10 +23,14 @@ Kihon Engin contains 4 components
 |KihonEngine.SampleGame | This is the demo game |
 |KihonEngine.Studio | Kihon Engine Studio is the IDE for map edition |
 
+## Applications Overview
+
+### The Demo Game
 The sample game is available for test Kihon Engine on demo maps contained in `KihonEngine.SampleMaps`
 
 ![Screenshot - Splash Screen](doc/kihonEngine-sampleGame-splashScreen-01.png)
 
+### Kihon Engine Studio
 
 Kihon Engine Studio, the map editor offer a complete set of features for create or edit maps
 
