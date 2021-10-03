@@ -38,19 +38,13 @@ Diferent kind of 3D models can be added to a map
 | Light     | To make the viewport3D scene visible
 | Skyboxe   | Actually, four predefined skyboxes are availables
 
-![Screenshot - Add 3D models](kihonEngine-studio-add3dModels-01.png)
-
 ### Possibility to edit the 3D models
 * By dimentions
 * By colors
 * As proof of concept, actually only four textures are available for floors
 
-![Screenshot - Edit 3D models](kihonEngine-studio-edit3dModels-01.png)
-
 ### Possibility to move 3D models on the map
 * By rotation on axis X, Y and Z
 * By translation on axis X, Y and Z
-
-![Screenshot - Move 3D models](kihonEngine-studio-move3dModels-01.png)
 
 Go back to [ documentation home page](../README.md)
