@@ -276,20 +276,17 @@ namespace KihonEngine.GameEngine
             var keyboardSettings = Configuration.GetKeyboardSettings();
 
             // Controls
-            if (e.Key == keyboardSettings.CancelOperation && e.RoutedEvent.Name == "KeyDown")
+            if (e.Key == keyboardSettings.CancelOperation && e.RoutedEvent.Name == "KeyDown" && State.EngineMode == EngineMode.PlayMode)
             {
-                if (State.EngineMode == EngineMode.PlayMode)
+                if (State.Game.IsStandaloneFullScreenGame)
                 {
-                    if (State.Game.IsStandaloneFullScreenGame)
-                    {
-                        SwitchToNormalScreen();
-                        StopGameLogic();
-                    }
-                    else
-                    {
-                        SwitchToNormalScreen();
-                        SwitchToEditorMode();
-                    }
+                    SwitchToNormalScreen();
+                    StopGameLogic();
+                }
+                else
+                {
+                    SwitchToNormalScreen();
+                    SwitchToEditorMode();
                 }
             }
             else if (e.Key == keyboardSettings.FullScreenMode && e.RoutedEvent.Name == "KeyDown")

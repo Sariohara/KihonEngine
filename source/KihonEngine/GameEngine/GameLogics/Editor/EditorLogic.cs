@@ -1,6 +1,7 @@
 ﻿using KihonEngine.GameEngine.Graphics.ModelDefinitions;
 using KihonEngine.GameEngine.Graphics.ModelsBuilders;
 using KihonEngine.GameEngine.InputControls;
+using KihonEngine.Services;
 using KihonEngine.Studio.GameEngine.State.Editor;
 using System;
 using System.Collections.Generic;
@@ -15,14 +16,18 @@ namespace KihonEngine.GameEngine.GameLogics.Editor
 {
     public class EditorLogic : GameLogicBase
     {
+        public const int MeterboxMidSize = 100000;
+
         public override string LogicName => "EditorLogic";
 
         private const int wallDistance = 2;
         private const int selectionBoxDistance = 1;
 
+        protected INewModelManager NewModelManager { get; set; }
+
         public EditorLogic() : base()
         {
-
+            NewModelManager = Container.Get<INewModelManager>();
         }
 
         private bool ContainsModel(LayeredModel3D layeredModel, string face, Model3D modelHit)
@@ -36,10 +41,51 @@ namespace KihonEngine.GameEngine.GameLogics.Editor
             return false;
         }
 
+        private void MoveNewModel(KeyboardSettings keyboardSettings, Key[] keys, MouseEvent mouseEvent, List<Action> graphicUpdates)
+        {
+            var needRefresh = false;
+
+            if (State.Editor.ActionNew.Mode != GameEngine.State.Editor.NewModelMode.Active)
+            {
+                return;
+            }
+
+            if (keys.Contains(Key.Escape))
+            {
+                NewModelManager.CancelAddNewModel();
+                needRefresh = true;
+            }
+
+            if (mouseEvent != null)
+            {
+                if (mouseEvent.Type == MouseEventType.Click
+                    && mouseEvent.LeftButton == MouseButtonState.Released)
+                {
+                    NewModelManager.ApplyNewModel();
+                    needRefresh = true;
+                }
+                else if (mouseEvent.Type == MouseEventType.Move)
+                {
+                    needRefresh = NewModelManager.UpdateNewModelPosition(mouseEvent.Position);
+                }
+            }
+
+            if (needRefresh)
+            {
+                // for the moment, only for launch NotifyIO
+                graphicUpdates.Add(() => { });
+            }
+        }
+
         private void SelectModel(KeyboardSettings keyboardSettings, Key[] keys, MouseEvent mouseEvent, List<Action> graphicUpdates)
         {
             var needRefresh = false;
 
+            if (State.Editor.ActionNew.Mode == GameEngine.State.Editor.NewModelMode.Active)
+            {
+                return;
+            }
+            
             if (mouseEvent.Type == MouseEventType.Click
                 && mouseEvent.LeftButton == MouseButtonState.Pressed)
             {
@@ -58,16 +104,12 @@ namespace KihonEngine.GameEngine.GameLogics.Editor
                     LogService.Log($"bounds:{bb.X},{bb.Y},{bb.Z}, {bb.SizeX}, {bb.SizeY}, {bb.SizeZ}");
 
                     State.Editor.ActionSelect.SelectedModel = selectedModel;
-                    //_moveModelState.SelectedModel = selectedModel;
                     var points = TransformHelper.GetPoints(selectedModel.Children);
 
                     var initialPosition = new Point3D(
                          selectedModel.Translation.Value.OffsetX,
                         selectedModel.Translation.Value.OffsetY,
                         selectedModel.Translation.Value.OffsetZ);
-                        //bb.X,
-                        //bb.Y,
-                        //bb.Z);
 
                     State.Editor.ActionSelect.InitialModelPosition = initialPosition;
                     State.Editor.ActionSelect.MinX = points.Min(x => x.X);
@@ -76,12 +118,6 @@ namespace KihonEngine.GameEngine.GameLogics.Editor
                     State.Editor.ActionSelect.MaxX = points.Max(x => x.X);
                     State.Editor.ActionSelect.MaxY = points.Max(x => x.Y);
                     State.Editor.ActionSelect.MaxZ = points.Max(x => x.Z);
-                    //State.Editor.ActionSelect.MinX = bb.X;
-                    //State.Editor.ActionSelect.MinY = bb.Y;
-                    //State.Editor.ActionSelect.MinZ = bb.Z;
-                    //State.Editor.ActionSelect.MaxX = bb.SizeX;
-                    //State.Editor.ActionSelect.MaxY = bb.SizeY;
-                    //State.Editor.ActionSelect.MaxZ = bb.SizeZ;
 
                     var modelBuilder = new ModelBuilderFromDefinition();
 
@@ -130,6 +166,11 @@ namespace KihonEngine.GameEngine.GameLogics.Editor
 
         private void MoveModel(KeyboardSettings keyboardSettings, Key[] keys, MouseEvent mouseEvent, List<Action> graphicUpdates)
         {
+            if (State.Editor.ActionNew.Mode == GameEngine.State.Editor.NewModelMode.Active)
+            {
+                return;
+            }
+
             var needRefresh = false;
 
             // Leave : no Left Click
@@ -157,7 +198,7 @@ namespace KihonEngine.GameEngine.GameLogics.Editor
 
                     // Build Meter Box 
                     VolumeDefinition definition = null;
-                    var midSize = 100000;
+                    var midSize = MeterboxMidSize;
 
                     var hittedModel = WorldEngine.GetModel(mouseEvent.Position, out var selectedBoxHitPoint, out var modelHit);
 
@@ -405,12 +446,18 @@ namespace KihonEngine.GameEngine.GameLogics.Editor
             {
                 State.Graphics.Viewport.Dispatcher.Invoke(() =>
                 {
+                    MoveNewModel(keyboardSettings, keys, mouseEvent, graphicUpdates);
                     SelectModel(keyboardSettings, keys, mouseEvent, graphicUpdates);
                     MoveModel(keyboardSettings, keys, mouseEvent, graphicUpdates);
                 });
 
                 SwitchCameraPosition(keyboardSettings, keys, mouseEvent, graphicUpdates);
             }
+
+            State.Graphics.Viewport.Dispatcher.Invoke(() =>
+            {
+                MoveNewModel(keyboardSettings, keys, null, graphicUpdates);
+            });
         }
 
         private void UpdateGraphics(List<Action> graphicUpdates)

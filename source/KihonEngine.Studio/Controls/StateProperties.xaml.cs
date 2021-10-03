@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Timers;
 using System.Windows.Controls;
+using System.Windows.Media.Media3D;
 
 namespace KihonEngine.Studio.Controls
 {
@@ -100,6 +101,7 @@ namespace KihonEngine.Studio.Controls
             AddProperty(properties, "  Graphics.Level", state.Graphics.Level.Count.ToString() + " model(s)");
             AddProperty(properties, "  Graphics.LevelName", state.Graphics.LevelName);
             AddProperty(properties, "  Graphics.PlayerCamera.Camera.Position", state.Graphics.PlayerCamera.Camera.Position.ToString());
+            AddProperty(properties, "  Graphics.PlayerCamera.Camera.TransformedPosition", state.Graphics.PlayerCamera.GetTransformedPosition().ToString());
             AddProperty(properties, "  Graphics.PlayerCamera.Camera.LookDirection", state.Graphics.PlayerCamera.Camera.LookDirection.ToString());
 
             var lvSelectedIndex = lvStateProperties.SelectedIndex;

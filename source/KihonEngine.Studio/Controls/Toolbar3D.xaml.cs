@@ -1,4 +1,5 @@
 ﻿using KihonEngine.GameEngine;
+using KihonEngine.GameEngine.GameLogics.Editor;
 using KihonEngine.GameEngine.Graphics;
 using KihonEngine.GameEngine.Graphics.ModelDefinitions;
 using KihonEngine.GameEngine.Graphics.ModelsBuilders;
@@ -25,6 +26,8 @@ namespace KihonEngine.Studio.Controls
             => Container.Get<IGameEngineState>();
         private ICameraController CameraController
             => Container.Get<ICameraController>();
+        private INewModelManager NewModelManager
+            => Container.Get<INewModelManager>();
 
         public Toolbox3D()
         {
@@ -47,6 +50,12 @@ namespace KihonEngine.Studio.Controls
             }
 
             btnStopGameLogic.IsEnabled = State.EngineMode != EngineMode.Off;
+            btnAddCeiling.IsEnabled = State.Editor.ActionNew.Mode != KihonEngine.GameEngine.State.Editor.NewModelMode.Active;
+            btnAddFloor.IsEnabled = State.Editor.ActionNew.Mode != KihonEngine.GameEngine.State.Editor.NewModelMode.Active;
+            btnAddWall.IsEnabled = State.Editor.ActionNew.Mode != KihonEngine.GameEngine.State.Editor.NewModelMode.Active;
+            btnAddVolume.IsEnabled = State.Editor.ActionNew.Mode != KihonEngine.GameEngine.State.Editor.NewModelMode.Active;
+            btnAddLight.IsEnabled = State.Editor.ActionNew.Mode != KihonEngine.GameEngine.State.Editor.NewModelMode.Active;
+            btnAddSkybox.IsEnabled = State.Editor.ActionNew.Mode != KihonEngine.GameEngine.State.Editor.NewModelMode.Active;
         }
 
         private void btnFullScreen_Click(object sender, RoutedEventArgs e)
@@ -80,7 +89,8 @@ namespace KihonEngine.Studio.Controls
 
         private void btnAddCeiling_Click(object sender, RoutedEventArgs e)
         {
-            GameEngineController.AddModelAndNotify(new CeilingDefinition
+            NewModelManager.StartAddNewModel(new CeilingDefinition
+            //GameEngineController.AddModelAndNotify(new CeilingDefinition
             {
                 Color = Colors.White,
                 Position = new System.Windows.Media.Media3D.Point3D(0, 30, 0),
@@ -95,7 +105,8 @@ namespace KihonEngine.Studio.Controls
 
         private void btnAddFloor_Click(object sender, RoutedEventArgs e)
         {
-            GameEngineController.AddModelAndNotify(new FloorDefinition
+            NewModelManager.StartAddNewModel(new FloorDefinition
+            //GameEngineController.AddModelAndNotify(new FloorDefinition
             {
                 Color = Colors.White,
                 Position = new System.Windows.Media.Media3D.Point3D(0, 1, 0),
@@ -110,7 +121,8 @@ namespace KihonEngine.Studio.Controls
 
         private void btnAddWall_Click(object sender, RoutedEventArgs e)
         {
-            GameEngineController.AddModelAndNotify(new WallDefinition
+            NewModelManager.StartAddNewModel(new WallDefinition
+            //GameEngineController.AddModelAndNotify(new WallDefinition
             {
                 Color = Colors.White,
                 Metadata = new WallMetadata
@@ -124,7 +136,8 @@ namespace KihonEngine.Studio.Controls
 
         private void btnAddVolume_Click(object sender, RoutedEventArgs e)
         {
-            GameEngineController.AddModelAndNotify(new VolumeDefinition
+            NewModelManager.StartAddNewModel(new VolumeDefinition
+            //GameEngineController.AddModelAndNotify(new VolumeDefinition
             {
                 Color = Colors.White,
                 Metadata = new VolumeMetadata

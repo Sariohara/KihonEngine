@@ -98,6 +98,11 @@ namespace KihonEngine.Studio.Controls
                 }
 
                 lvModels.ItemsSource = list;
+                if (lvSelectedIndex > list.Count)
+                {
+                    lvSelectedIndex = list.Count - 1;
+                }
+
                 if (lvSelectedIndex != -1)
                 {
                     lvModels.SelectedIndex = lvSelectedIndex;

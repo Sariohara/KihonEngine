@@ -1,5 +1,6 @@
 ﻿using KihonEngine.GameEngine;
 using KihonEngine.GameEngine.Configuration;
+using KihonEngine.GameEngine.GameLogics.Editor;
 using KihonEngine.GameEngine.Graphics;
 using KihonEngine.GameEngine.Graphics.Maps;
 using KihonEngine.GameEngine.InputControls;
@@ -26,6 +27,9 @@ namespace KihonEngine
 
             locator.Register<IWorldEngine>(new WorldEngine());
             locator.Register<ICameraController>(new CameraController());
+
+            // Editor Services
+            locator.Register<INewModelManager>(new NewModelManager());
 
             // Engine main controller
             locator.Register<IGameEngineController>(new GameEngineController());
