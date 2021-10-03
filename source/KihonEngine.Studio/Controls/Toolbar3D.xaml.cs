@@ -90,7 +90,6 @@ namespace KihonEngine.Studio.Controls
         private void btnAddCeiling_Click(object sender, RoutedEventArgs e)
         {
             NewModelManager.StartAddNewModel(new CeilingDefinition
-            //GameEngineController.AddModelAndNotify(new CeilingDefinition
             {
                 Color = Colors.White,
                 Position = new System.Windows.Media.Media3D.Point3D(0, 30, 0),
@@ -106,7 +105,6 @@ namespace KihonEngine.Studio.Controls
         private void btnAddFloor_Click(object sender, RoutedEventArgs e)
         {
             NewModelManager.StartAddNewModel(new FloorDefinition
-            //GameEngineController.AddModelAndNotify(new FloorDefinition
             {
                 Color = Colors.White,
                 Position = new System.Windows.Media.Media3D.Point3D(0, 1, 0),
@@ -122,7 +120,6 @@ namespace KihonEngine.Studio.Controls
         private void btnAddWall_Click(object sender, RoutedEventArgs e)
         {
             NewModelManager.StartAddNewModel(new WallDefinition
-            //GameEngineController.AddModelAndNotify(new WallDefinition
             {
                 Color = Colors.White,
                 Metadata = new WallMetadata
@@ -137,7 +134,6 @@ namespace KihonEngine.Studio.Controls
         private void btnAddVolume_Click(object sender, RoutedEventArgs e)
         {
             NewModelManager.StartAddNewModel(new VolumeDefinition
-            //GameEngineController.AddModelAndNotify(new VolumeDefinition
             {
                 Color = Colors.White,
                 Metadata = new VolumeMetadata
