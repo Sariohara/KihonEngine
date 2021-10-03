@@ -1,4 +1,4 @@
-## Kihon Engine Studio
+# Kihon Engine Studio
 
 Kihon Engine Studio helps for building maps
 
@@ -11,13 +11,20 @@ Some generic features
 * Game state viewer to analyse game state at any time
 * Possibility to switch between edit mode and game mode in order to vizualise how map is rendered at play time
 
-Edit mode
+## Maze generator
+The maze generator available in `File > New maze` can be used as a started for quickly create maps
+
+![Screenshot - Maze editor](kihonEngine-studio-mazeEditor-01.png)
+
+## Play mode
+Play mode allow to play on the map directly into the editor, in order to test the gameplay
+![Screenshot - Play on 3D map](kihonEngine-studio-playMap-01.png)
+
+## Edit mode
+Edit mode is the default mode of the editor
 ![Screenshot - Edit 3D map](kihonEngine-studio-editMap-01.png)
 
-Play mode
-![Screenshot - Playt on 3D map](kihonEngine-studio-playMap-01.png)
-
-Adding 3D models to maps
+### Adding 3D models to maps
 * Add floor
 * Add ceilings
 * Add walls
@@ -27,14 +34,14 @@ Adding 3D models to maps
 
 ![Screenshot - Add 3D models](kihonEngine-studio-add3dModels-01.png)
 
-Possibility to edit the 3D models
+### Possibility to edit the 3D models
 * By dimentions
 * By colors
 * As proof of concept, actually only four textures are available for floors
 
 ![Screenshot - Edit 3D models](kihonEngine-studio-edit3dModels-01.png)
 
-Possibility to move 3D models on the map
+### Possibility to move 3D models on the map
 * By rotation on axis X, Y and Z
 * By translation on axis X, Y and Z
 
