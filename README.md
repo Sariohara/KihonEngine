@@ -42,7 +42,7 @@ Actually, with Kihon Engine, you can:
 
 ## Components Overview
 
-Kihon Engin contains 4 components
+Kihon Engine contains 4 components
 
 |Component | Description |
 |----------|-------------|
