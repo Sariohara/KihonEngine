@@ -12,7 +12,7 @@ Some generic features
 * Possibility to switch between edit mode and game mode in order to vizualise how map is rendered at play time
 
 ## Maze generator
-The maze generator available in `File > New maze` can be used as a started for quickly create maps
+The maze generator available in `File > New maze` can be used as a starter for quickly create maps
 
 ![Screenshot - Maze editor](kihonEngine-studio-mazeEditor-01.png)
 
