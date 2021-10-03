@@ -82,4 +82,4 @@ And by click Start Game, you will launch one of the few sample maps available in
 
 ![Screenshot - Walkthrough](kihonEngine-sampleGame-walkthrough-01.png)
 
-Go back to [ documentation home page](../readme.md)
+Go back to [ documentation home page](../README.md)

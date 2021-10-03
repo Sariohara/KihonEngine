@@ -28,12 +28,12 @@ Kihon Engin contains 4 components
 ### The Demo Game
 The sample game is available for test Kihon Engine on demo maps contained in `KihonEngine.SampleMaps`
 
-![Screenshot - Splash Screen](doc/kihonEngine-sampleGame-splashScreen-01.png)
+![Screenshot - Splash Screen](https://raw.github.com/nico65535/kihonengine/main/doc/kihonEngine-sampleGame-splashScreen-01.png)
 
 ### Kihon Engine Studio
 
 Kihon Engine Studio, the map editor offer a complete set of features for create or edit maps
 
-![Screenshot - Splash Screen](doc/kihonEngine-studio-editMap-002.png)
+![Screenshot - Splash Screen](https://raw.github.com/nico65535/kihonengine/main/doc/kihonEngine-studio-editMap-002.png)
 
 

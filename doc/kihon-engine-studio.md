@@ -40,3 +40,4 @@ Possibility to move 3D models on the map
 
 ![Screenshot - Move 3D models](kihonEngine-studio-move3dModels-01.png)
 
+Go back to [ documentation home page](../README.md)
