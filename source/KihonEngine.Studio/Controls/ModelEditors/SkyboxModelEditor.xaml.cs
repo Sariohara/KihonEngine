@@ -43,7 +43,7 @@ namespace KihonEngine.Studio.Controls.ModelEditors
             {
                 var metadata = (SkyboxMetadata)state.Editor.ActionSelect.SelectedModel.Metadata[ModelType.Skybox.ToString()];
                 TrySelectName(metadata.Name);
-                tbWidth.Text = metadata.Width.ToString();
+                tbSize.Text = metadata.Size.ToString();
                 tbNormalX.Text = metadata.Normal.X.ToString();
                 tbNormalY.Text = metadata.Normal.Y.ToString();
                 tbNormalZ.Text = metadata.Normal.Z.ToString();
@@ -52,7 +52,7 @@ namespace KihonEngine.Studio.Controls.ModelEditors
             else
             {
                 TrySelectName(string.Empty);
-                tbWidth.Text = string.Empty;
+                tbSize.Text = string.Empty;
                 tbNormalX.Text = string.Empty;
                 tbNormalY.Text = string.Empty;
                 tbNormalZ.Text = string.Empty;
@@ -91,7 +91,7 @@ namespace KihonEngine.Studio.Controls.ModelEditors
             }
         }
 
-        private void tbWidth_KeyUp(object sender, KeyEventArgs e)
+        private void tbSize_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
             {
@@ -101,8 +101,8 @@ namespace KihonEngine.Studio.Controls.ModelEditors
                     var definition = GameEngineController.GetDefinition<SkyboxDefinition>(layeredModel);
 
                     InputHelper.TryUpdate(
-                        tbWidth.Text,
-                        width => definition.Metadata.Width = width);
+                        tbSize.Text,
+                        width => definition.Metadata.Size = width);
                     ;
                     GameEngineController.ReplaceModelAndNotify(layeredModel, definition);
                 }

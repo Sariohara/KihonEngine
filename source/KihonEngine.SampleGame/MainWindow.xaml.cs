@@ -9,14 +9,14 @@
         {
             InitializeComponent();
 
-            // Configure game engine
-            Engine.Configure();
+            // Configure game
+            StandardStartups.BuildStandaloneFullScreenGame();
 
-            // Configure game : we will use an existing map from KihonEngine.SampleMaps
-            StandardStartups.BuildStandaloneFullScreenGame<KihonEngine.SampleMaps.DarkCastleMapBuilder>();
-
-            // When click Start button
-            btnStart.Click += (sender, e) => Engine.Play();
+            // When click a Start button
+            btnStart1.Click += (sender, e) => Engine.Play<SampleMaps.E1M1MapBuilder>();
+            btnStart2.Click += (sender, e) => Engine.Play<SampleMaps.Q3DM1MapBuilder>();
+            btnStart3.Click += (sender, e) => Engine.Play<SampleMaps.DarkCastleM2MapBuilder>();
+            btnStart4.Click += (sender, e) => Engine.Play<SampleMaps.Maze.MazeMapBuilder>();
 
             // When click Exit button
             btnExit.Click += (sender, e) => Close();

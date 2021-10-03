@@ -32,7 +32,7 @@
         </ComboBox>
 
         <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center">Width</Label>
-        <TextBox Grid.Row="1" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="tbWidth" KeyUp="tbWidth_KeyUp"></TextBox>
+        <TextBox Grid.Row="1" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="tbSize" KeyUp="tbSize_KeyUp"></TextBox>
 
         <Label Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center">Normal.X</Label>
         <TextBox Grid.Row="2" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="tbNormalX" KeyUp="tbNormalX_KeyUp"></TextBox>

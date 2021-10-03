@@ -8,12 +8,17 @@
     <Authors>Nicolas VIEL</Authors>
     <Company>Nicolas VIEL</Company>
     <Copyright>Copyright (c) 2021 Nicolas VIEL</Copyright>
-    <Version>2021.09.22</Version>
+    <Version>2021.10.03</Version>
     <Product>Kihon Engine Sample Maps</Product>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="Images\background.png" />
+    <None Remove="Images\DarkCastleM2-preview.png" />
+    <None Remove="Images\E1M1-preview.png" />
+    <None Remove="Images\exit-preview.png" />
+    <None Remove="Images\maze-preview.png" />
+    <None Remove="Images\Q3DM1-preview.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,6 +27,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Images\DarkCastleM2-preview.png" />
+    <Resource Include="Images\E1M1-preview.png" />
+    <Resource Include="Images\exit-preview.png" />
+    <Resource Include="Images\maze-preview.png" />
+    <Resource Include="Images\Q3DM1-preview.png" />
     <Resource Include="Images\sky0-top.png" />
   </ItemGroup>
 

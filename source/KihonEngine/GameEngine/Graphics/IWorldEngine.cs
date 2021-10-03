@@ -12,7 +12,8 @@ namespace KihonEngine.GameEngine.Graphics
 
         void RegisterMap(IMapBuilder mapBuilder);
         string RegisterMap<TMapBuilder>() where TMapBuilder : class, IMapBuilder, new();
-        public void LoadMap(string mapName);
+        void LoadMap(IMapBuilder mapBuilder);
+        void LoadMap(string mapName);
 
         LayeredModel3D GetModel(Point position);
         LayeredModel3D GetModel(Point position, out Point3D? hitPoint);

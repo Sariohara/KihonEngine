@@ -2,12 +2,14 @@
 using System.Windows.Input;
 using KihonEngine.GameEngine.Graphics;
 using System.Windows.Controls;
+using KihonEngine.GameEngine.Graphics.Maps;
 
 namespace KihonEngine.GameEngine
 {
     public interface IGameEngineController
     {
         void LoadEmptyMap();
+        void LoadMap(IMapBuilder mapBuilder);
         void LoadMap(string mapName);
         void LoadMapFromFile(string filepath);
         void SaveMapToFile(string filepath);
@@ -25,6 +27,8 @@ namespace KihonEngine.GameEngine
 
         void StopGameLogic();
         void Play();
+        void Play(IMapBuilder mapBuilder);
+        void Play<TMapBuilder>() where TMapBuilder : class, IMapBuilder, new();
         void SwitchToPlayMode();
         void SwitchToEditorMode();
 

@@ -11,6 +11,7 @@ using System.Windows.Controls;
 using KihonEngine.GameEngine.Graphics.Output;
 using KihonEngine.GameEngine.Graphics.Maps.Predefined;
 using KihonEngine.GameEngine.GameLogics;
+using KihonEngine.GameEngine.Graphics.Maps;
 
 namespace KihonEngine.GameEngine
 {
@@ -56,6 +57,14 @@ namespace KihonEngine.GameEngine
         public void LoadEmptyMap()
         {
             LoadMap(PredefinedMapNames.Empty);
+        }
+
+        public void LoadMap(IMapBuilder mapBuilder)
+        {
+            WorldEngine.LoadMap(mapBuilder);
+
+            State.Editor.ActionSelect.SelectedModel = null;
+            NotifyIOs();
         }
 
         public void LoadMap(string mapName)
@@ -200,6 +209,17 @@ namespace KihonEngine.GameEngine
             NotifyIOs();
         }
 
+        public void Play<TMapBuilder>() where TMapBuilder : class, IMapBuilder, new()
+        {
+            Play(new TMapBuilder());
+        }
+
+        public void Play(IMapBuilder mapBuilder)
+        {
+            LoadMap(mapBuilder);
+            Play();
+        }
+
         public void Play()
         {
             if (State.Game.IsStandaloneFullScreenGame)
@@ -267,20 +287,17 @@ namespace KihonEngine.GameEngine
             var keyboardSettings = Configuration.GetKeyboardSettings();
 
             // Controls
-            if (e.Key == keyboardSettings.CancelOperation && e.RoutedEvent.Name == "KeyDown")
+            if (e.Key == keyboardSettings.CancelOperation && e.RoutedEvent.Name == "KeyDown" && State.EngineMode == EngineMode.PlayMode)
             {
-                if (State.EngineMode == EngineMode.PlayMode)
+                if (State.Game.IsStandaloneFullScreenGame)
                 {
-                    if (State.Game.IsStandaloneFullScreenGame)
-                    {
-                        SwitchToNormalScreen();
-                        StopGameLogic();
-                    }
-                    else
-                    {
-                        SwitchToNormalScreen();
-                        SwitchToEditorMode();
-                    }
+                    SwitchToNormalScreen();
+                    StopGameLogic();
+                }
+                else
+                {
+                    SwitchToNormalScreen();
+                    SwitchToEditorMode();
                 }
             }
             else if (e.Key == keyboardSettings.FullScreenMode && e.RoutedEvent.Name == "KeyDown")

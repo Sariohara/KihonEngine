@@ -1,5 +1,6 @@
 ﻿using KihonEngine.GameEngine.Graphics;
 using KihonEngine.GameEngine.Graphics.Maps;
+using KihonEngine.GameEngine.Graphics.Maps.Predefined;
 using KihonEngine.GameEngine.State;
 using KihonEngine.Services;
 using System.Collections.Generic;
@@ -28,6 +29,14 @@ namespace KihonEngine
         }
 
         /// <summary>
+        /// Build a Full Screen mode game without map preload 
+        /// </summary>
+        public static void BuildStandaloneFullScreenGame()
+        {
+            BuildStandaloneFullScreenGame(new[] { new LogoMapBuilder() });
+        }
+
+        /// <summary>
         /// Build a Full Screen mode game with a specific IMapBuilder class to use for map generation
         /// </summary>
         /// <typeparam name="TMapBuilder">IMapBuilder class to use for map generation</typeparam>
@@ -51,6 +60,11 @@ namespace KihonEngine
         /// <param name="mapBuilders">Set of IMapBuilder classes to use for map generation</param>
         public static void BuildStandaloneFullScreenGame(IEnumerable<IMapBuilder> mapBuilders)
         {
+            if (!Engine.IsInitialized)
+            {
+                Engine.Configure();
+            }
+
             var state = Container.Get<IGameEngineState>();
             var worldEngine = Container.Get<IWorldEngine>();
 

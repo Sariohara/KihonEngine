@@ -11,6 +11,7 @@ namespace KihonEngine.GameEngine.State.Editor
             RotationStep = 1;
             ActionSelect = new SelectModelState();
             ActionMove = new MoveModelState { ShowMeterWallWhenMove = true };
+            ActionNew = new NewModelState();
         }
 
         public Color CurrentColor { get; set; }
@@ -18,6 +19,8 @@ namespace KihonEngine.GameEngine.State.Editor
         public SelectModelState ActionSelect { get; set; }
 
         public MoveModelState ActionMove { get; set; }
+        
+        public NewModelState ActionNew { get; set; }
 
         public int TranslationStep { get; set; }
 

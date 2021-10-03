@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         Title="Kihon Engine - Sample Game" 
-        ResizeMode="NoResize" Height="350" Width="480" WindowStartupLocation="CenterScreen">
+        ResizeMode="NoResize" Height="480" Width="640" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Style TargetType="{x:Type Button}">
             <Setter Property="Background" Value="Black" />
@@ -28,22 +28,126 @@
         <Style TargetType="{x:Type Label}">
             <Setter Property="Foreground" Value="White" />
         </Style>
-        <Style TargetType="{x:Type Canvas}">
-            <Setter Property="Background">
-                <Setter.Value>
-                    <ImageBrush ImageSource="Images/sky0-top.png"/>
-                </Setter.Value>
-            </Setter>
-        </Style>
     </Window.Resources>
-    <Canvas>
-        <Label x:Name="lblTitle" Content="Dark Castle Sample Game" 
-               Canvas.Left="92" Canvas.Top="30" FontSize="24"/>
-        <Button x:Name="btnStart" Content="Start Game" 
-                Canvas.Left="175" Canvas.Top="120" Height="50" Width="129" />
-        <Button x:Name="btnExit" Content="Exit" 
-                Canvas.Left="175" Canvas.Top="220" Height="50" Width="129"/>
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/KihonEngine.SampleGame;component/Images/sky0-top.png"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition />
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition />
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition />
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition />
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition />
+            <ColumnDefinition Width="5" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="lblTitle" Content="Select a map to explore" 
+               VerticalAlignment="Center" HorizontalAlignment="Center"
+               Grid.Column="2" Grid.ColumnSpan="7" Grid.Row="0" FontSize="24"/>
+
+        <Button x:Name="btnStart1" 
+                Grid.Column="1" Grid.Row="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Image Source="Images/E1M1-preview.png" Stretch="UniformToFill" Margin="1"
+                       VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                       Grid.Column="0" Grid.Row="1"/>
+                <TextBlock Text="E1M1 : Hangar" Margin="5"
+                           HorizontalAlignment="Center" VerticalAlignment="Center"
+                           Grid.Column="0" Grid.Row="0"/>
+            </Grid>
+        </Button>
+        <Button x:Name="btnStart2"
+                Grid.Column="3" Grid.Row="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Image Source="Images/Q3DM1-preview.png" Stretch="UniformToFill" Margin="1"
+                       VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                       Grid.Column="0" Grid.Row="1"/>
+                <TextBlock Text="Q3DM1 : Arena Gate" Margin="5"
+                           HorizontalAlignment="Center" VerticalAlignment="Center"
+                           Grid.Column="0" Grid.Row="0"/>
+            </Grid>
+        </Button>
+        <Button x:Name="btnStart3"
+                Grid.Column="5" Grid.Row="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Image Source="Images/DarkCastleM2-preview.png" Stretch="UniformToFill" Margin="1"
+                       VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                       Grid.Column="0" Grid.Row="1"/>
+                <TextBlock Text="Dark Castle" Margin="5"
+                           HorizontalAlignment="Center" VerticalAlignment="Center"
+                           Grid.Column="0" Grid.Row="0"/>
+            </Grid>
+        </Button>
+        <Button x:Name="btnStart4" 
+                Grid.Column="7" Grid.Row="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Image Source="Images/maze-preview.png" Stretch="UniformToFill" Margin="1"
+                       VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                       Grid.Column="0" Grid.Row="1"/>
+                <TextBlock Text="Random Maze" Margin="5"
+                           HorizontalAlignment="Center" VerticalAlignment="Center"
+                           Grid.Column="0" Grid.Row="0"/>
+            </Grid>
+        </Button>
+        <Button x:Name="btnExit"
+                Grid.Column="9" Grid.Row="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Image Source="Images/exit-preview.png" Stretch="UniformToFill" Margin="1"
+                       VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                       Grid.Column="0" Grid.Row="1"/>
+                <TextBlock Text="Exit" Margin="5"
+                           HorizontalAlignment="Center" VerticalAlignment="Center"
+                           Grid.Column="0" Grid.Row="0"/>
+            </Grid>
+        </Button>
+
         <Label x:Name="lblPoweredBy" Content="Powered by Kihon Engine" 
-               Canvas.Right="5" Canvas.Bottom="5" FontSize="8"/>
-    </Canvas>
+               HorizontalAlignment="Right" VerticalAlignment="Bottom"
+               Grid.Column="8" Grid.ColumnSpan="2" Grid.Row="2" FontSize="8"/>
+    </Grid>
 </Window>

@@ -13,16 +13,16 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
             this.models = models;
         }
 
-        public LayeredModel3D Create(int x, int y, int z, int w, int l)
+        public LayeredModel3D Create(int x, int y, int z, int xSize, int zSize)
         {
             var layeredModel = LayeredModel3D.Create(ModelType.Ceiling);
-            layeredModel.Metadata.Add(ModelType.Ceiling.ToString(), new CeilingMetadata { Width = w, Length = l, UseBackMaterial = UseBackMaterial });
+            layeredModel.Metadata.Add(ModelType.Ceiling.ToString(), new CeilingMetadata { XSize = xSize, ZSize = zSize, UseBackMaterial = UseBackMaterial });
             layeredModel.Translate(new Vector3D(x, y, z));
 
             Point3D p0 = new Point3D(0, 0, 0);
-            Point3D p1 = new Point3D(w, 0, 0);
-            Point3D p2 = new Point3D(w, 0, l);
-            Point3D p3 = new Point3D(0, 0, l);
+            Point3D p1 = new Point3D(xSize, 0, 0);
+            Point3D p2 = new Point3D(xSize, 0, zSize);
+            Point3D p3 = new Point3D(0, 0, zSize);
 
             //bottom
             layeredModel.Children.Add(CreateTriangle(p0, p1, p2));

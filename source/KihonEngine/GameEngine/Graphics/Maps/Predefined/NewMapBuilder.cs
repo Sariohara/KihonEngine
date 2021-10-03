@@ -35,13 +35,13 @@ namespace KihonEngine.GameEngine.Graphics.Maps.Predefined
             volumeBuilder.Create(0, 0, 0, 0.5);
 
             volumeBuilder.Color = Colors.LightGreen;
-            volumeBuilder.Create(0, 0.5, 0, 0.5, 0.5, 15);
+            volumeBuilder.Create(0, 0.5, 0, 0.5, 15, 0.5);
 
             volumeBuilder.Color = Colors.Red;
             volumeBuilder.Create(0.5, 0, 0, 15, 0.5, 0.5);
 
             volumeBuilder.Color = Colors.Blue;
-            volumeBuilder.Create(0, 0, 0.5, 0.5, 15, 0.5);
+            volumeBuilder.Create(0, 0, 0.5, 0.5, 0.5, 15);
 
             // Floor : central
             var midFloorSize = 100;

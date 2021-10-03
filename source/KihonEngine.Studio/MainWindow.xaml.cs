@@ -108,6 +108,22 @@ namespace KihonEngine.Studio
             lblNotification.Text = $"Load map <{State.Graphics.LevelName}> succeeded";
         }
 
+        private void MenuNewMaze_Click(object sender, RoutedEventArgs e)
+        {
+            var dialog = new MazeEditorWindow
+            {
+                Owner = this,
+                ShowInTaskbar = false,
+                WindowStartupLocation = WindowStartupLocation.CenterOwner,
+            };
+
+            if (dialog.ShowDialog() == true)
+            {
+                GameEngineController.LoadMap(dialog.MapBuilder);
+                lblNotification.Text = $"Load map <{State.Graphics.LevelName}> succeeded";
+            }
+        }
+
         private void MenuOpenFromFile_Click(object sender, RoutedEventArgs e)
         {
             var dialog = new OpenFileDialog();
@@ -185,9 +201,11 @@ namespace KihonEngine.Studio
             LogService.AddListener(this.outputWindow);
             //LogService.AddListener(new FileLogListener(".out.log"));
 
+            WorldEngine.RegisterMap<E1M1MapBuilder>();
             WorldEngine.RegisterMap<Q3DM1MapBuilder>();
-            WorldEngine.RegisterMap<DarkCastleMapBuilder>();
-            WorldEngine.RegisterMap<ArenaMapBuilder>();
+            //WorldEngine.RegisterMap<MazeMapBuilder>();
+            //            WorldEngine.RegisterMap<DarkCastleMapBuilder>();
+            WorldEngine.RegisterMap<DarkCastleM2MapBuilder>();
             WorldEngine.RegisterMap<RoofTopMapBuilder>();
             WorldEngine.RegisterMap<LogoMapBuilder>();
 

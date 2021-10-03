@@ -36,21 +36,21 @@ namespace KihonEngine.Studio.Controls.ModelEditors
             if (propertyGrid.IsEnabled)
             {
                 var metadata = (WallMetadata)state.Editor.ActionSelect.SelectedModel.Metadata[ModelType.Wall.ToString()];
-                tbWidth.Text = metadata.Width.ToString();
-                tbHeight.Text = metadata.Height.ToString();
+                tbXSize.Text = metadata.XSize.ToString();
+                tbYSize.Text = metadata.YSize.ToString();
                 cbUseBackMaterial.IsChecked = metadata.UseBackMaterial;
             }
             else
             {
-                tbWidth.Text = string.Empty;
-                tbHeight.Text = string.Empty;
+                tbXSize.Text = string.Empty;
+                tbYSize.Text = string.Empty;
                 cbUseBackMaterial.IsChecked = false;
             }
 
             synchronizing = false;
         }
 
-        private void tbWidth_KeyUp(object sender, KeyEventArgs e)
+        private void tbXSize_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
             {
@@ -60,15 +60,15 @@ namespace KihonEngine.Studio.Controls.ModelEditors
                     var definition = GameEngineController.GetDefinition<WallDefinition>(layeredModel);
                     
                     InputHelper.TryUpdate(
-                        tbWidth.Text,
-                        width => definition.Metadata.Width = width);
+                        tbXSize.Text,
+                        width => definition.Metadata.XSize = width);
 
                     GameEngineController.ReplaceModelAndNotify(layeredModel, definition);
                 }
             }
         }
 
-        private void tbHeight_KeyUp(object sender, KeyEventArgs e)
+        private void tbYSize_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
             {
@@ -78,8 +78,8 @@ namespace KihonEngine.Studio.Controls.ModelEditors
                     var definition = GameEngineController.GetDefinition<WallDefinition>(layeredModel);
 
                     InputHelper.TryUpdate(
-                       tbHeight.Text,
-                       height => definition.Metadata.Height = height);
+                       tbYSize.Text,
+                       height => definition.Metadata.YSize = height);
 
                     GameEngineController.ReplaceModelAndNotify(layeredModel, definition);
                 }
