@@ -1,18 +1,47 @@
-# KihonEngine
+# Getting Started
  
-Kihon Engine is a basic 3D engine developed in dotnet core and WPF. It can be used for developpinng basic 3D video games.
-
-Actually, with Kihon Engine, you can:
-* Build maps with Kihon Engine Studio.
-* Run maps in a basic FPS game mode and walk around the map in first person view.
-
-## Getting started
-
 Create a video game based on Kihon Engine is very easy.
 
-Just take a look inside the sample project `KihonEngine.SampleGame` . 
+You can take a look inside the sample project `KihonEngine.SampleGame` . 
 
-The whole `MainWindow.xaml.cs` should look something like this:
+Or create a .NET 5 WPF application by following this short tutorial.
+
+## Create a sample application
+
+Begin by creating a .NET 5 WPF application
+
+![Screenshot - Nuget packages](create-new-wpf-app.png)
+
+
+Add Kihon Engine Nuget packages to the project
+
+![Screenshot - Nuget packages](nuget-packages.png)
+
+Open `MainWindow.xaml` and add some buttons like this:
+
+```xml
+<Window x:Class="KihonEngine.SampleGame.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Kihon Engine - Sample Game" 
+        ResizeMode="NoResize" Height="350" Width="480" WindowStartupLocation="CenterScreen">
+<Canvas>
+        <Label x:Name="lblTitle" Content="Dark Castle Sample Game" 
+               Canvas.Left="92" Canvas.Top="30" FontSize="24"/>
+        <Button x:Name="btnStart" Content="Start Game" 
+                Canvas.Left="175" Canvas.Top="120" Height="50" Width="129" />
+        <Button x:Name="btnExit" Content="Exit" 
+                Canvas.Left="175" Canvas.Top="220" Height="50" Width="129"/>
+        <Label x:Name="lblPoweredBy" Content="Powered by Kihon Engine" 
+               Canvas.Right="5" Canvas.Bottom="5" FontSize="8"/>
+    </Canvas>
+</Window>
+```
+
+And the whole `MainWindow.xaml.cs` should look something like this:
 
 ```csharp
 namespace KihonEngine.SampleGame
@@ -41,59 +70,16 @@ namespace KihonEngine.SampleGame
 }
 ```
 
-And that's all. When the application starts, you will have basic startup screen. 
+And that's all. 
 
-![Screenshot - Splash Screen](https://raw.github.com/nico65535/kihonengine/master/doc/kihonEngine-sampleGame-splashScreen-01.png)
+## Execute the sample application
 
-And by click Start Game, you will launch one of the few sample maps available in `KihonEngine.SampleMaps`
+When the application starts, you will have basic a startup screen. 
 
-![Screenshot - Walkthrough](https://raw.github.com/nico65535/kihonengine/master/doc/kihonEngine-sampleGame-walkthrough-01.png)
+![Screenshot - Splash Screen](kihonEngine-sampleGame-splashScreen-00.png)
 
-## Kihon Engine technical architecture overview
+And by click Start Game, you will launch one of the few sample maps available in `KihonEngine.SampleMaps` nuget package
 
-Kihon Engine global architecture is the following
+![Screenshot - Walkthrough](kihonEngine-sampleGame-walkthrough-01.png)
 
-![Screenshot - Move 3D models](https://raw.github.com/nico65535/kihonengine/master/doc/kihonEngine-architecture-overview-01.png)
-
-## Kihon Engine Studio
-
-Kihon Engine Studio helps for building maps
-
-The actual basic features are the following
-
-Some generic features 
-* Save and load maps from files based on a json format
-* Possibility to change map global properties like map name, respawn player camera (position and direction)
-* Source viewer for the currently edited map, in order to visualize the json format
-* Game state viewer to analyse game state at any time
-* Possibility to switch between edit mode and game mode in order to vizualise how map is rendered at play time
-
-Edit mode
-![Screenshot - Edit 3D map](https://raw.github.com/nico65535/kihonengine/master/doc/kihonEngine-studio-editMap-01.png)
-
-Play mode
-![Screenshot - Playt on 3D map](https://raw.github.com/nico65535/kihonengine/master/doc/kihonEngine-studio-playMap-01.png)
-
-Adding 3D models to maps
-* Add floor
-* Add ceilings
-* Add walls
-* Add volumes, like cube, rectangles
-* Add lights to make the viewport3D scene visible
-* Add skyboxes. Actually, three predefined skyboxes are availables
-
-![Screenshot - Add 3D models](https://raw.github.com/nico65535/kihonengine/master/doc/kihonEngine-studio-add3dModels-01.png)
-
-Possibility to edit the 3D models
-* By dimentions
-* By colors
-* As proof of concept, actually only four textures are available for floors
-
-![Screenshot - Edit 3D models](https://raw.github.com/nico65535/kihonengine/master/doc/kihonEngine-studio-edit3dModels-01.png)
-
-Possibility to move 3D models on the map
-* By rotation on axis X, Y and Z
-* By translation on axis X, Y and Z
-
-![Screenshot - Move 3D models](https://raw.github.com/nico65535/kihonengine/master/doc/kihonEngine-studio-move3dModels-01.png)
-
+Go back to [ documentation home page](../readme.md)
