@@ -1,3 +1,17 @@
+
+| Download Nuget Package         | Packages |
+|--------------------|----------------|
+| KihonEngine        | [![NuGet](https://badgen.net/nuget/v/kihonEngine)](https://www.nuget.org/packages/KihonEngine/) |
+| KihonEngine.SampleMaps        | [![NuGet](https://badgen.net/nuget/v/kihonEngine.SampleMaps)](https://www.nuget.org/packages/KihonEngine.SampleMaps/) |
+
+| Download application           | Packages |
+|--------------------|----------------|
+| KihonEngine Sample Game        | [![Generic badge](https://img.shields.io/badge/Download-2021.10.3-Green.svg)](https://github.com/nico65535/KihonEngine/releases/download/2021.10.03/Binaries-KihonEngine.SampleGame-2021.10.03.zip) |
+| KihonEngine Studio        | [![Generic badge](https://img.shields.io/badge/Download-2021.10.3-Green.svg)](https://github.com/nico65535/KihonEngine/releases/download/2021.10.03/Binaries-KihonEngine.Studio-2021.10.03.zip) |
+| Full package        | [![Generic badge](https://img.shields.io/badge/Download-2021.10.3-Green.svg)](https://github.com/nico65535/KihonEngine/releases/download/2021.10.03/Binaries-KihonEngine-2021.10.03.zip) |
+
+![Net5](https://badgen.net/badge/Framework/.NET&nbsp;5/blue)
+
 # KihonEngine
 
 <!--
@@ -12,7 +26,7 @@
 [![Github all releases](https://img.shields.io/github/downloads/nico65535/KihonEngine/total.svg)](https://GitHub.com/nico65535/KihonEngine/releases/)
 -->
 
-[![Generic badge](https://img.shields.io/badge/Download-2021.10.3-Green.svg)](https://github.com/nico65535/KihonEngine/releases/download/2021.10.03/Binaries-KihonEngine-2021.10.03.zip) [![NuGet](https://badgen.net/nuget/v/kihonEngine)](https://www.nuget.org/packages/KihonEngine/)
+
 
 Kihon Engine is a basic 3D engine developed in dotnet core and WPF. It can be used for developpinng basic 3D video games.
 
