@@ -1,14 +1,14 @@
 
 | Download Nuget Package         | Packages |
 |--------------------|----------------|
-| KihonEngine        | [![NuGet](https://badgen.net/nuget/v/kihonEngine)](https://www.nuget.org/packages/KihonEngine/) |
-| KihonEngine.SampleMaps        | [![NuGet](https://badgen.net/nuget/v/kihonEngine.SampleMaps)](https://www.nuget.org/packages/KihonEngine.SampleMaps/) |
+| [![NuGet](https://img.shields.io/nuget/dt/KihonEngine.svg)](https://www.nuget.org/packages/KihonEngine/) | [KihonEngine](http://nuget.org/packages/KihonEngine)        | 
+| [![NuGet](https://img.shields.io/nuget/dt/kihonEngine.SampleMaps)](https://www.nuget.org/packages/KihonEngine.SampleMaps/) |[KihonEngine.SampleMaps](http://nuget.org/packages/KihonEngine.SampleMaps)        | 
 
 | Download application           | Packages |
 |--------------------|----------------|
-| KihonEngine Sample Game        | [![Generic badge](https://img.shields.io/badge/Download-2021.10.3-Green.svg)](https://github.com/nico65535/KihonEngine/releases/download/2021.10.03/Binaries-KihonEngine.SampleGame-2021.10.03.zip) |
-| KihonEngine Studio        | [![Generic badge](https://img.shields.io/badge/Download-2021.10.3-Green.svg)](https://github.com/nico65535/KihonEngine/releases/download/2021.10.03/Binaries-KihonEngine.Studio-2021.10.03.zip) |
-| Full package        | [![Generic badge](https://img.shields.io/badge/Download-2021.10.3-Green.svg)](https://github.com/nico65535/KihonEngine/releases/download/2021.10.03/Binaries-KihonEngine-2021.10.03.zip) |
+| [![Generic badge](https://img.shields.io/badge/Download-2021.10.3-Green.svg)](https://github.com/nico65535/KihonEngine/releases/download/2021.10.03/Binaries-KihonEngine.SampleGame-2021.10.03.zip) |KihonEngine Sample Game        | 
+| [![Generic badge](https://img.shields.io/badge/Download-2021.10.3-Green.svg)](https://github.com/nico65535/KihonEngine/releases/download/2021.10.03/Binaries-KihonEngine.Studio-2021.10.03.zip) |KihonEngine Studio        | 
+| [![Generic badge](https://img.shields.io/badge/Download-2021.10.3-Green.svg)](https://github.com/nico65535/KihonEngine/releases/download/2021.10.03/Binaries-KihonEngine-2021.10.03.zip) |Full package        | 
 
 ![Net5](https://badgen.net/badge/Framework/.NET&nbsp;5/blue)
 
