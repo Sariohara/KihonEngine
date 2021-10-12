@@ -59,7 +59,13 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
         {
             var builder = new FloorBuilder(definition.Color, level);
             builder.UseBackMaterial = definition.Metadata.UseBackMaterial;
-            var model = builder.Create(definition.Position.X, definition.Position.Y, definition.Position.Z, definition.Metadata.XSize, definition.Metadata.ZSize, definition.Metadata.Texture);
+            var model = builder.Create(definition.Position.X, definition.Position.Y, definition.Position.Z, definition.Metadata.XSize, definition.Metadata.ZSize);
+            if (!string.IsNullOrEmpty(definition.Metadata.Texture?.Name))
+            {
+                var texture = definition.Metadata.Texture;
+                builder.ApplyTexture(model, texture.Name, texture.TileMode, texture.Stretch, texture.Ratio);
+            }
+
             model.RotateByAxisX(definition.RotationAxisX);
             model.RotateByAxisY(definition.RotationAxisY);
             model.RotateByAxisZ(definition.RotationAxisZ);

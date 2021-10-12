@@ -1,9 +1,6 @@
 ﻿using KihonEngine.GameEngine.Graphics.ModelsBuilders;
-using System;
 using System.Collections.Generic;
-using System.Windows;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Media.Media3D;
 
 namespace KihonEngine.GameEngine.Graphics.Maps.Predefined
@@ -42,23 +39,15 @@ namespace KihonEngine.GameEngine.Graphics.Maps.Predefined
             // Cubes
             var size = 30;
 
-            var textureKi = CreateMaterial("ki.png");
-            var textureHon = CreateMaterial("hon.png");
-
-            var textureCoordinates1 = new[] { new Point(0, 1), new Point(1, 1), new Point(1, 0) };
-            var textureCoordinates2 = new[] { new Point(0, 1), new Point(1, 0), new Point(0, 0) };
-
             volumeBuilder.Color = Colors.WhiteSmoke;
             var model = volumeBuilder.Create(0, 0, -50, size);
+            volumeBuilder.ApplyTexture(model, VolumeFace.Front, "ki.png");
             model.RotateByAxisY(35);
-            ApplyTextureToVolume(model, "Front1", textureKi, textureCoordinates1);
-            ApplyTextureToVolume(model, "Front2", textureKi, textureCoordinates2);
 
             volumeBuilder.Color = Colors.WhiteSmoke;
             model = volumeBuilder.Create(50, 0, -50, size);
+            volumeBuilder.ApplyTexture(model, VolumeFace.Front, "hon.png");
             model.RotateByAxisY(-35);
-            ApplyTextureToVolume(model, "Front1", textureHon, textureCoordinates1);
-            ApplyTextureToVolume(model, "Front2", textureHon, textureCoordinates2);
 
             volumeBuilder.Color = Colors.SeaGreen;
             volumeBuilder.Create(0, 0, -10, 10);
@@ -66,34 +55,6 @@ namespace KihonEngine.GameEngine.Graphics.Maps.Predefined
             volumeBuilder.Create(70, 0, -10, 10);
 
             return level;
-        }
-
-        private MaterialGroup CreateMaterial(string filename)
-        {
-            var materiaGroup = new MaterialGroup();
-
-            var imageSource = ImageHelper.Get($"Textures.{filename}");
-            var brush = new ImageBrush(imageSource);
-            brush.TileMode = TileMode.Tile;
-            brush.Stretch = Stretch.Uniform;
-            brush.Viewport = new Rect(new Point(0, 0), new Point(1, 1));
-            brush.ViewboxUnits = BrushMappingMode.RelativeToBoundingBox;
-            materiaGroup.Children.Add(new DiffuseMaterial(brush));
-
-            return materiaGroup;
-        }
-
-        private void ApplyTextureToVolume(LayeredModel3D layeredModel, string face, MaterialGroup material, Point[] textureCoordinates)
-        {
-            var model3DGroup = (Model3DGroup)layeredModel.Metadata[face];
-            var geometry = (GeometryModel3D)model3DGroup.Children[0];
-            geometry.Material = material;
-            var mesh = (MeshGeometry3D)geometry.Geometry;
-
-            foreach (var point in textureCoordinates)
-            {
-                mesh.TextureCoordinates.Add(point);
-            }
         }
     }
 }

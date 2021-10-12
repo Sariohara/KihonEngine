@@ -1,6 +1,7 @@
 ﻿using KihonEngine.GameEngine.Graphics.ModelDefinitions;
 using System;
 using System.Collections.Generic;
+using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Media3D;
 
@@ -69,21 +70,28 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
             layeredModel.Children.Add(CreateTriangle(p2, p0, p1, material));
 
             // Metadata
-            layeredModel.Metadata.Add("Front1", layeredModel.Children[0]);
-            layeredModel.Metadata.Add("Front2", layeredModel.Children[1]);
-            layeredModel.Metadata.Add("Right1", layeredModel.Children[2]);
-            layeredModel.Metadata.Add("Right2", layeredModel.Children[3]);
-            layeredModel.Metadata.Add("Back1", layeredModel.Children[4]);
-            layeredModel.Metadata.Add("Back2", layeredModel.Children[5]);
-            layeredModel.Metadata.Add("Left1", layeredModel.Children[6]);
-            layeredModel.Metadata.Add("Left2", layeredModel.Children[7]);
-            layeredModel.Metadata.Add("Top1", layeredModel.Children[8]);
-            layeredModel.Metadata.Add("Top2", layeredModel.Children[9]);
-            layeredModel.Metadata.Add("Bottom1", layeredModel.Children[10]);
-            layeredModel.Metadata.Add("Bottom2", layeredModel.Children[11]);
+            layeredModel.Metadata.Add($"{VolumeFace.Front}1", layeredModel.Children[0]);
+            layeredModel.Metadata.Add($"{VolumeFace.Front}2", layeredModel.Children[1]);
+            layeredModel.Metadata.Add($"{VolumeFace.Right}1", layeredModel.Children[2]);
+            layeredModel.Metadata.Add($"{VolumeFace.Right}2", layeredModel.Children[3]);
+            layeredModel.Metadata.Add($"{VolumeFace.Back}1", layeredModel.Children[4]);
+            layeredModel.Metadata.Add($"{VolumeFace.Back}2", layeredModel.Children[5]);
+            layeredModel.Metadata.Add($"{VolumeFace.Left}1", layeredModel.Children[6]);
+            layeredModel.Metadata.Add($"{VolumeFace.Left}2", layeredModel.Children[7]);
+            layeredModel.Metadata.Add($"{VolumeFace.Top}1", layeredModel.Children[8]);
+            layeredModel.Metadata.Add($"{VolumeFace.Top}2", layeredModel.Children[9]);
+            layeredModel.Metadata.Add($"{VolumeFace.Bottom}1", layeredModel.Children[10]);
+            layeredModel.Metadata.Add($"{VolumeFace.Bottom}2", layeredModel.Children[11]);
 
             models.Add(layeredModel);
             return layeredModel;
+        }
+
+        public void ApplyTexture(LayeredModel3D layeredModel, VolumeFace face, string filename, TileMode tileMode = TileMode.Tile, Stretch stretch = Stretch.Uniform, double ratio = 1)
+        {
+            var material = CreateMaterial(filename, tileMode, stretch, ratio);
+            ApplyTextureToVolume(layeredModel, $"{face}1", material, TextureCoordinates1);
+            ApplyTextureToVolume(layeredModel, $"{face}2", material, TextureCoordinates2);
         }
     }
 }

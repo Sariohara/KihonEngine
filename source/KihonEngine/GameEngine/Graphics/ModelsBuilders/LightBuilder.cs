@@ -5,13 +5,11 @@ using System.Windows.Media.Media3D;
 
 namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
 {
-    public class LightBuilder
+    public class LightBuilder : ModelBuilder
     {
-        public Color Color { get; set; }
-
         private List<LayeredModel3D> models;
 
-        public LightBuilder(Color color, List<LayeredModel3D> models)
+        public LightBuilder(Color color, List<LayeredModel3D> models) : base(color)
         {
             Color = color;
             this.models = models;

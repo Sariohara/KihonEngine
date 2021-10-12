@@ -2,7 +2,10 @@
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Windows;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Media.Media3D;
 
 namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
 {
@@ -146,6 +149,31 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
             Bitmap partialImage = imageSource.Clone(cloneRect, imageSource.PixelFormat);
 
             return ToBitmapImage(partialImage);
+        }
+
+        public static MaterialGroup CreateMaterial(string filename)
+        {
+            return CreateMaterial(filename, TileMode.Tile, Stretch.UniformToFill, 1);
+        }
+
+        public static MaterialGroup CreateMaterial(string filename, TileMode tileMode = TileMode.Tile, Stretch stretch = Stretch.UniformToFill)
+        {
+            return CreateMaterial(filename, tileMode, stretch, 1);
+        }
+
+        public static MaterialGroup CreateMaterial(string filename, TileMode tileMode = TileMode.Tile, Stretch stretch = Stretch.UniformToFill, double ratio = 1)
+        {
+            var materiaGroup = new MaterialGroup();
+
+            var imageSource = Get($"Textures.{filename}");
+            var brush = new ImageBrush(imageSource);
+            brush.TileMode = tileMode;
+            brush.Stretch = stretch;
+            brush.Viewport = new Rect(new System.Windows.Point(0, 0), new System.Windows.Point(ratio, ratio));
+            brush.ViewboxUnits = BrushMappingMode.RelativeToBoundingBox;
+            materiaGroup.Children.Add(new DiffuseMaterial(brush));
+
+            return materiaGroup;
         }
     }
 }

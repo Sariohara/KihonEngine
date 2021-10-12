@@ -37,6 +37,11 @@
     <None Remove="Content\Images\Textures\floor0.jpg" />
     <None Remove="Content\Images\Textures\Hon.png" />
     <None Remove="Content\Images\Textures\Ki.png" />
+    <None Remove="Content\Images\Textures\steve-back.png" />
+    <None Remove="Content\Images\Textures\steve-front.png" />
+    <None Remove="Content\Images\Textures\steve-left.png" />
+    <None Remove="Content\Images\Textures\steve-right.png" />
+    <None Remove="Content\Images\Textures\steve-top.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Content\Images\Skyboxes\sky0-back.png" />
@@ -59,6 +64,11 @@
     <EmbeddedResource Include="Content\Images\Textures\floor0.jpg" />
     <EmbeddedResource Include="Content\Images\Textures\hon.png" />
     <EmbeddedResource Include="Content\Images\Textures\ki.png" />
+    <EmbeddedResource Include="Content\Images\Textures\steve-back.png" />
+    <EmbeddedResource Include="Content\Images\Textures\steve-front.png" />
+    <EmbeddedResource Include="Content\Images\Textures\steve-left.png" />
+    <EmbeddedResource Include="Content\Images\Textures\steve-right.png" />
+    <EmbeddedResource Include="Content\Images\Textures\steve-top.png" />
   </ItemGroup>
 
   <ItemGroup>

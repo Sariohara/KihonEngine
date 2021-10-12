@@ -12,6 +12,7 @@
                 <GridView>
                     <GridViewColumn Header="Index" Width="100" DisplayMemberBinding="{Binding Index}" />
                     <GridViewColumn Header="Type" Width="100" DisplayMemberBinding="{Binding Type}" />
+                    <GridViewColumn Header="Tags" Width="300" DisplayMemberBinding="{Binding Tags}" />
                 </GridView>
             </ListView.View>
         </ListView>

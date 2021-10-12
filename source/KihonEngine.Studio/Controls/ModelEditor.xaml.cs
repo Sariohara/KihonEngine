@@ -59,7 +59,7 @@ namespace KihonEngine.Studio.Controls
                 {
                     EnablePositionAndRotationGrids();
 
-                    var position = GetPosition(_selectedModel);
+                    var position = _selectedModel.GetPosition();
                     tbPositionX.Text = position.X.ToString();
                     tbPositionY.Text = position.Y.ToString();
                     tbPositionZ.Text = position.Z.ToString();
@@ -188,12 +188,6 @@ namespace KihonEngine.Studio.Controls
             }
         }
 
-        private Point3D GetPosition(LayeredModel3D layeredModel)
-        {
-            var matrix = layeredModel.Translation.Value;
-            return new Point3D(matrix.OffsetX, matrix.OffsetY, matrix.OffsetZ);
-        }
-
         private void btnPositionXPlus_Click(object sender, RoutedEventArgs e)
         {
             var layeredModel = State.Editor.ActionSelect.SelectedModel;
@@ -270,7 +264,7 @@ namespace KihonEngine.Studio.Controls
             var layeredModel = State.Editor.ActionSelect.SelectedModel;
             if (layeredModel != null)
             {
-                var position = GetPosition(layeredModel);
+                var position = layeredModel.GetPosition();
 
                 InputHelper.TryUpdate(
                     tbPositionX.Text, 
@@ -292,7 +286,7 @@ namespace KihonEngine.Studio.Controls
             var layeredModel = State.Editor.ActionSelect.SelectedModel;
             if (layeredModel != null)
             {
-                var position = GetPosition(layeredModel);
+                var position = layeredModel.GetPosition();
 
                 InputHelper.TryUpdate(
                     tbPositionY.Text,
@@ -312,7 +306,7 @@ namespace KihonEngine.Studio.Controls
             var layeredModel = State.Editor.ActionSelect.SelectedModel;
             if (layeredModel != null)
             {
-                var position = GetPosition(layeredModel);
+                var position = layeredModel.GetPosition();
 
                 InputHelper.TryUpdate(
                     tbPositionZ.Text,

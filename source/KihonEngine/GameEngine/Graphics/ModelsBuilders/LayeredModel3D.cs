@@ -33,49 +33,6 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
             _translationLayer = translationLayer;
         }
 
-        //public static LayeredModel3D Load(ModelVisual3D model)
-        //{
-        //    TryLoad(model, out var layeredModel);
-        //    return layeredModel;
-        //}
-
-        //public static bool TryLoad(ModelVisual3D model, out LayeredModel3D layeredModel)
-        //{
-        //    layeredModel = null;
-
-        //    if (model.Content is Model3DGroup)
-        //    {
-        //        var translationLayer = model.Content as Model3DGroup;
-        //        var axisZRotationLayer = GetSubLayer(translationLayer);
-        //        var axisYRotationLayer = GetSubLayer(axisZRotationLayer);
-        //        var axisXRotationLayer = GetSubLayer(axisYRotationLayer);
-        //        var model3DLayer = GetSubLayer(axisXRotationLayer);
-
-        //        if (model3DLayer != null)
-        //        {
-        //            layeredModel = new LayeredModel3D(ModelType.Undefined, model, model3DLayer, axisXRotationLayer, axisYRotationLayer, axisZRotationLayer, translationLayer);
-        //        }
-        //    }
-
-        //    return layeredModel != null;
-        //}
-
-        //private static Model3DGroup GetSubLayer(Model3DGroup layer)
-        //{
-        //    if (layer == null)
-        //    {
-        //        return null;
-        //    }
-
-        //    Model3DGroup subLayer = null;
-        //    if (layer.Children.Count == 1 && layer.Children.First() is Model3DGroup)
-        //    {
-        //        subLayer = layer.Children.First() as Model3DGroup;
-        //    }
-
-        //    return subLayer;
-        //}
-
         public static LayeredModel3D Create(ModelType type)
         {
             var model3DLayer = new Model3DGroup();
@@ -162,6 +119,29 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
             }
         }
 
+        public List<string> Tags {
+            get {
+                if (!Metadata.ContainsKey("Tags"))
+                {
+                    Metadata["Tags"] = new List<string>();
+                }
+
+                return (List<string>)Metadata["Tags"];
+            }
+        }
+
+        public Point3D GetPosition()
+        {
+            var matrix = Translation.Value;
+            return new Point3D(matrix.OffsetX, matrix.OffsetY, matrix.OffsetZ);
+        }
+
+        public Vector3D GetPositionAsVector()
+        {
+            var matrix = Translation.Value;
+            return new Vector3D(matrix.OffsetX, matrix.OffsetY, matrix.OffsetZ);
+        }
+
         public ModelType Type { get { return _type; } }
 
         public Dictionary<string, object> Metadata { get { return _metadata; } }
@@ -169,6 +149,15 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
         public ModelVisual3D GetModel()
         {
             return _model;
+        }
+
+        public Model3DGroup WrapModel()
+        {
+            // Add Translation layer
+            var wrapperLayer = new Model3DGroup();
+            wrapperLayer.Children.Add(_translationLayer);
+
+            return wrapperLayer;
         }
 
         public Model3DCollection Children
@@ -187,6 +176,12 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
             _axisXRotationLayer.Transform = TransformHelper.TransformByXAxisRotation(_axisXRotationAngle, this);
         }
 
+        public void RotateByAxisX(double angle, Point3D origin)
+        {
+            _axisXRotationAngle = TransformHelper.NormalizeAngle(angle);
+            _axisXRotationLayer.Transform = TransformHelper.TransformByXAxisRotation(_axisXRotationAngle, origin);
+        }
+
         public double AxisYRotationAngle
         {
             get { return _axisYRotationAngle; }
@@ -198,6 +193,12 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
             _axisYRotationLayer.Transform = TransformHelper.TransformByYAxisRotation(_axisYRotationAngle, this);
         }
 
+        public void RotateByAxisY(double angle, Point3D origin)
+        {
+            _axisYRotationAngle = TransformHelper.NormalizeAngle(angle);
+            _axisYRotationLayer.Transform = TransformHelper.TransformByYAxisRotation(_axisYRotationAngle, origin);
+        }
+
         public double AxisZRotationAngle
         {
             get { return _axisZRotationAngle; }
@@ -207,6 +208,12 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
         {
             _axisZRotationAngle = TransformHelper.NormalizeAngle(angle);
             _axisZRotationLayer.Transform = TransformHelper.TransformByZAxisRotation(_axisZRotationAngle, this);
+        }
+
+        public void RotateByAxisZ(double angle, Point3D origin)
+        {
+            _axisZRotationAngle = TransformHelper.NormalizeAngle(angle);
+            _axisZRotationLayer.Transform = TransformHelper.TransformByZAxisRotation(_axisZRotationAngle, origin);
         }
 
         public Transform3D Translation

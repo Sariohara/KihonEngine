@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Media.Media3D;
 
 namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
@@ -16,15 +15,15 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
             this.models = models;
         }
 
-        public LayeredModel3D Create(double x, double y, double z, double size, string texture = null)
+        public LayeredModel3D Create(double x, double y, double z, double size)
         {
-            return Create(x, y, z, size, size, texture);
+            return Create(x, y, z, size, size);
         }
 
-        public LayeredModel3D Create(double x, double y, double z, double xSize, double zSize, string texture = null)
+        public LayeredModel3D Create(double x, double y, double z, double xSize, double zSize)
         {
             var layeredModel = LayeredModel3D.Create(ModelType.Floor);
-            layeredModel.Metadata.Add(ModelType.Floor.ToString(), new FloorMetadata { Texture = texture, XSize = xSize, ZSize = zSize, UseBackMaterial = UseBackMaterial });
+            layeredModel.Metadata.Add(ModelType.Floor.ToString(), new FloorMetadata { XSize = xSize, ZSize = zSize, UseBackMaterial = UseBackMaterial });
             layeredModel.Translate(new Vector3D(x, y, z));
 
             Point3D p0 = new Point3D(0, 0, 0);
@@ -33,33 +32,26 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
             Point3D p3 = new Point3D(0, 0, zSize);
 
             //bottom
-            layeredModel.Children.Add(CreateTriangle(p0, p3, p2, CreateMaterial(texture), new[] { new Point(0, 0), new Point(0, 1), new Point(1, 1) }));
-            layeredModel.Children.Add(CreateTriangle(p1, p0, p2, CreateMaterial(texture), new[] { new Point(1, 0), new Point(0, 0), new Point(1, 1) }));
+            var material = CreateMaterial(null);
+            layeredModel.Children.Add(CreateTriangle(p0, p3, p2, material, new[] { new Point(0, 0), new Point(0, 1), new Point(1, 1) }));
+            layeredModel.Children.Add(CreateTriangle(p1, p0, p2, material, new[] { new Point(1, 0), new Point(0, 0), new Point(1, 1) }));
+
+            // Metadata
+            layeredModel.Metadata.Add("Face1", layeredModel.Children[0]);
+            layeredModel.Metadata.Add("Face2", layeredModel.Children[1]);
 
             models.Add(layeredModel);
             return layeredModel;
         }
 
-        private Material CreateMaterial(string filename)
+        public void ApplyTexture(LayeredModel3D layeredModel, string filename, TileMode tileMode, Stretch stretch, double ratio)
         {
-            var materiaGroup = new MaterialGroup();
+            var metadata = (FloorMetadata)layeredModel.Metadata[ModelType.Floor.ToString()];
+            metadata.Texture = new TextureMetadata { Name = filename, TileMode = tileMode, Stretch = stretch, Ratio = ratio };
 
-            if (!string.IsNullOrEmpty(filename))
-            {
-                var imageSource = ImageHelper.Get($"Textures.{filename}");
-                var brush = new ImageBrush(imageSource);
-                brush.TileMode = TileMode.Tile;
-                brush.Stretch = Stretch.Uniform;
-                brush.Viewport = new Rect(new Point(0, 0), new Point(0.05, 0.05));
-                brush.ViewboxUnits = BrushMappingMode.RelativeToBoundingBox;
-                materiaGroup.Children.Add(new DiffuseMaterial(brush));
-            }
-            else
-            {
-                materiaGroup.Children.Add(new DiffuseMaterial(new SolidColorBrush(Color)));
-            }
-
-            return materiaGroup;
+            var material = CreateMaterial(filename, tileMode, stretch, ratio);
+            ApplyTextureToVolume(layeredModel, "Face1", material, TextureCoordinates1);
+            ApplyTextureToVolume(layeredModel, "Face2", material, TextureCoordinates2);
         }
     }
 }

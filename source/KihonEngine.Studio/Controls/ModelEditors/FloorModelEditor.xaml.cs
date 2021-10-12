@@ -43,7 +43,7 @@ namespace KihonEngine.Studio.Controls.ModelEditors
                 var metadata = (FloorMetadata)state.Editor.ActionSelect.SelectedModel.Metadata[ModelType.Floor.ToString()];
                 tbXSize.Text = metadata.XSize.ToString();
                 tbZSize.Text = metadata.ZSize.ToString();
-                TrySelectTexture(metadata.Texture);
+                TrySelectTexture(metadata.Texture?.Name);
                 cbUseBackMaterial.IsChecked = metadata.UseBackMaterial;
             }
             else
@@ -102,7 +102,14 @@ namespace KihonEngine.Studio.Controls.ModelEditors
                 if (layeredModel != null)
                 {
                     var definition = GameEngineController.GetDefinition<FloorDefinition>(layeredModel);
-                    definition.Metadata.Texture = ((TextureViewModel)cbTexture.SelectedItem).Name;
+                    definition.Metadata.Texture = new TextureMetadata
+                    {
+                        TileMode = TileMode.Tile,
+                        Stretch = Stretch.Uniform,
+                        Ratio = 0.05,
+                    };
+
+                    definition.Metadata.Texture.Name = ((TextureViewModel)cbTexture.SelectedItem).Name;
                     GameEngineController.ReplaceModelAndNotify(layeredModel, definition);
                 }
             }

@@ -87,6 +87,7 @@ namespace KihonEngine.Studio.Controls
                     viewModel.Index = (index++).ToString();
                     viewModel.Type = layeredModel.Type.ToString();
                     viewModel.Model = layeredModel;
+                    viewModel.Tags = string.Join(",", layeredModel.Tags.ToArray());
 
                     list.Add(viewModel);
                 }
@@ -119,7 +120,7 @@ namespace KihonEngine.Studio.Controls
         {
             public string Index { get; set; }
             public string Type { get; set; }
-            public Color Color { get; set; }
+            public string Tags { get; set; }
             public LayeredModel3D Model { get; set; }
         }
 

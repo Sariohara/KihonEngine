@@ -28,11 +28,19 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
             layeredModel.Children.Add(CreateTriangle(p1, p0, p2, material));
             layeredModel.Children.Add(CreateTriangle(p3, p1, p2, material));
 
-            //// Transformations
-            //layeredModel.Translation = TransformHelper.TransformByTranslation(x, y, z);
+            // Metadata
+            layeredModel.Metadata.Add("Face1", layeredModel.Children[0]);
+            layeredModel.Metadata.Add("Face2", layeredModel.Children[1]);
 
             models.Add(layeredModel);
             return layeredModel;
+        }
+
+        public void ApplyTexture(LayeredModel3D layeredModel, string filename, TileMode tileMode, Stretch stretch, double ratio)
+        {
+            var material = CreateMaterial(filename, tileMode, stretch, ratio);
+            ApplyTextureToVolume(layeredModel, "Face1", material, TextureCoordinates1);
+            ApplyTextureToVolume(layeredModel, "Face2", material, TextureCoordinates2);
         }
     }
 }

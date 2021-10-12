@@ -5,6 +5,7 @@ namespace KihonEngine.GameEngine.Graphics.ModelDefinitions
     {
         public double XSize { get; set; }
         public double YSize { get; set; }
+        public TextureMetadata Texture { get; set; }
         public bool UseBackMaterial { get; set; }
     }
 }

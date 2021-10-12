@@ -36,7 +36,8 @@ namespace KihonEngine.GameEngine.GameLogics.Fps
 
             foreach (var levelElement in State.Graphics.Level)
             {
-                if (levelElement.Type == Graphics.ModelsBuilders.ModelType.Light)
+                if (levelElement.Type == Graphics.ModelsBuilders.ModelType.Light
+                    || levelElement.Tags.Contains(CharacterMetadata.Character))
                 {
                     continue;
                 }

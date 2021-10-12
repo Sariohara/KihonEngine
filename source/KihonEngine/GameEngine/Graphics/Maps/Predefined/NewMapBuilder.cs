@@ -47,7 +47,8 @@ namespace KihonEngine.GameEngine.Graphics.Maps.Predefined
             var midFloorSize = 100;
             floorBuilder.UseBackMaterial = true;
             floorBuilder.Color = Colors.LightGray;
-            floorBuilder.Create(-100, 0, -midFloorSize, midFloorSize * 2, "default.png");
+            var model = floorBuilder.Create(-100, 0, -midFloorSize, midFloorSize * 2);
+            floorBuilder.ApplyTexture(model, "default.png", TileMode.Tile, Stretch.Uniform, 0.05);
 
             return level;
         }
