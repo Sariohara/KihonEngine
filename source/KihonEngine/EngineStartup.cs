@@ -28,7 +28,6 @@ namespace KihonEngine
 
             var contentService = new ContentService();
             contentService.RegisterSource(new EmbeddedContentSource());
-            contentService.RegisterSource(new FileContentSource(@"D:\Home\ME\Developpement\GIT\PAK"));
             locator.Register<IContentService>(contentService);
 
             locator.Register<IWorldEngine>(new WorldEngine());
