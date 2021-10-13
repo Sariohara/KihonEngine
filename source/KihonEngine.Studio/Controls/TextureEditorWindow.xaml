@@ -9,9 +9,10 @@
         Loaded="Window_Loaded"
         KeyDown="Window_KeyDown"
         Style="{DynamicResource ResourceKey=WindowDefaultStyle}"
-        ResizeMode="NoResize" Height="450" Width="800">
+        ResizeMode="NoResize" Height="550" Width="950">
     <Grid Margin="10">
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -19,7 +20,7 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="50" />
         </Grid.RowDefinitions>
-        <Canvas Grid.Row="0" Grid.Column="0" >
+        <Canvas Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
             <TextBlock Canvas.Left="10" Canvas.Top="10" Text="TileMode" />
             <ComboBox Canvas.Left="70" Canvas.Top="10" x:Name="cbTileMode" Width="100" SelectionChanged="cbTileMode_SelectionChanged"/>
             <TextBlock Canvas.Left="210" Canvas.Top="10" Text="Stretch" />
@@ -29,7 +30,8 @@
             <TextBlock Canvas.Left="510" Canvas.Top="10" Text="Ratio Y" />
             <TextBox Canvas.Left="550" Canvas.Top="10" x:Name="tbRatioY" Width="50" KeyUp="tbRatioY_KeyUp" />
         </Canvas>
-        <ListBox Grid.Row="1"  x:Name="lbox" HorizontalContentAlignment="Stretch" SelectionChanged="lbox_SelectionChanged" >
+        <TreeView Grid.Row="1" Grid.Column="0" x:Name="treeView" SelectedItemChanged="treeView_SelectedItemChanged"/>
+        <ListBox Grid.Row="1" Grid.Column="1"  x:Name="lbox" HorizontalContentAlignment="Stretch" SelectionChanged="lbox_SelectionChanged" >
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel IsItemsHost="True" Orientation="Horizontal" Width="700"/>
@@ -60,7 +62,7 @@
                 </Style>
             </ListBox.ItemContainerStyle>
         </ListBox>
-        <Canvas Grid.Row="2" Grid.Column="0">
+        <Canvas Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
             <Button Canvas.Right="10" Canvas.Bottom="10" x:Name="btClose" Content="Close" Width="100"  Click="btClose_Click" />
         </Canvas>
     </Grid>

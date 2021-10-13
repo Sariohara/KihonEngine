@@ -2,6 +2,7 @@
 using KihonEngine.GameEngine.Configuration;
 using KihonEngine.GameEngine.GameLogics.Editor;
 using KihonEngine.GameEngine.Graphics;
+using KihonEngine.GameEngine.Graphics.Content;
 using KihonEngine.GameEngine.Graphics.Maps;
 using KihonEngine.GameEngine.InputControls;
 using KihonEngine.GameEngine.State;
@@ -24,6 +25,11 @@ namespace KihonEngine
             locator.Register<IConfigurationService>(new ConfigurationService());
             locator.Register<IMapStorageService>(new MapStorageService());
             locator.Register<IMapBuilderFactory>(new MapBuilderFactory());
+
+            var contentService = new ContentService();
+            contentService.RegisterSource(new EmbeddedContentSource());
+            contentService.RegisterSource(new FileContentSource(@"D:\Home\ME\Developpement\GIT\PAK"));
+            locator.Register<IContentService>(contentService);
 
             locator.Register<IWorldEngine>(new WorldEngine());
             locator.Register<ICameraController>(new CameraController());

@@ -3,13 +3,14 @@ using KihonEngine.GameEngine.Graphics.ModelDefinitions;
 using KihonEngine.GameEngine.Graphics.ModelsBuilders;
 using KihonEngine.GameEngine.State;
 using KihonEngine.Services;
-using KihonEngine.Studio.Controls;
+using KihonEngine.GameEngine.Graphics.Content;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Media3D;
+using System.Collections.Generic;
 
 namespace KihonEngine.Studio.Controls.ModelEditors
 {
@@ -24,6 +25,8 @@ namespace KihonEngine.Studio.Controls.ModelEditors
             => Container.Get<IGameEngineController>();
         private IGameEngineState State
             => Container.Get<IGameEngineState>();
+        private IContentService ContentService 
+            => Container.Get<IContentService>();
 
         public SkyboxModelEditor()
         {
@@ -195,7 +198,7 @@ namespace KihonEngine.Studio.Controls.ModelEditors
             }
             else
             {
-                result.PreviewBrush = new ImageBrush(ImageHelper.Get($"Skyboxes.{name}-full.png"));
+                result.PreviewBrush = new ImageBrush(ImageHelper.Get(GraphicContentType.Skybox, name));
             }
 
             return result;
@@ -203,7 +206,10 @@ namespace KihonEngine.Studio.Controls.ModelEditors
 
         private SkyboxViewModel[] GetSkyboxes()
         {
-            return new[] { string.Empty, "sky0", "sky1", "sky2" , "sky3" }
+            var skyboxes = new List<string>();
+            skyboxes.Add(string.Empty);
+            skyboxes.AddRange(ContentService.GetResources(GraphicContentType.Skybox));
+            return skyboxes
                 .Select(x => CreateSkyboxViewModel(x))
                 .ToArray();
         }

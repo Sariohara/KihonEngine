@@ -72,7 +72,7 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
 
             if (!string.IsNullOrEmpty(filepath))
             {
-                var imageSource = ImageHelper.GetSkyboxPart($"Skyboxes.{filepath}-full.png", face);
+                var imageSource = ImageHelper.GetSkyboxPart(filepath, face);
                 var brush = new ImageBrush(imageSource);
                 materiaGroup.Children.Add(new DiffuseMaterial(brush));
             }

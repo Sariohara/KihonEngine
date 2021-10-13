@@ -41,14 +41,14 @@ namespace KihonEngine.Studio.Controls.ModelEditors
                 var metadata = (WallMetadata)state.Editor.ActionSelect.SelectedModel.Metadata[ModelType.Wall.ToString()];
                 tbXSize.Text = metadata.XSize.ToString();
                 tbYSize.Text = metadata.YSize.ToString();
-                btTextureImg.Background = CreateTextureBrush(metadata.Texture?.Name);
+                btTextureImg.Background = ImageHelper.CreateTextureBrush(metadata.Texture?.Name);
                 cbUseBackMaterial.IsChecked = metadata.UseBackMaterial;
             }
             else
             {
                 tbXSize.Text = string.Empty;
                 tbYSize.Text = string.Empty;
-                btTextureImg.Background = CreateTextureBrush(string.Empty);
+                btTextureImg.Background = ImageHelper.CreateTextureBrush(string.Empty);
                 cbUseBackMaterial.IsChecked = false;
             }
 
@@ -138,16 +138,6 @@ namespace KihonEngine.Studio.Controls.ModelEditors
                 changeTextureAction(definition);
                 GameEngineController.ReplaceModelAndNotify(layeredModel, definition);
             }
-        }
-
-        private System.Windows.Media.Brush CreateTextureBrush(string filename)
-        {
-            if (string.IsNullOrEmpty(filename))
-            {
-                return new SolidColorBrush(Colors.Transparent);
-            }
-
-            return new ImageBrush(ImageHelper.Get($"Textures.{filename}"));
         }
     }
 }

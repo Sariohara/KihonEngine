@@ -31,7 +31,7 @@ namespace KihonEngine.SampleMaps
             lightBuilder.Create(new Vector3D(3, 4, 5));
 
             // Sky box
-            skyboxBuilder.Create(-5000, -5000, -5000, 10000, new Vector3D(-3, -4, -5), "sky0");
+            skyboxBuilder.Create(-5000, -5000, -5000, 10000, new Vector3D(-3, -4, -5), "sky0-full.png");
 
             // Floor : central
             var midFloorSize = 100;

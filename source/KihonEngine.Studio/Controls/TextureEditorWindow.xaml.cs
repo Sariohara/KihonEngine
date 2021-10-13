@@ -1,7 +1,7 @@
 ﻿using KihonEngine.GameEngine.Graphics.ModelDefinitions;
 using KihonEngine.GameEngine.Graphics.ModelsBuilders;
 using System;
-using System.Collections.Generic;
+using KihonEngine.GameEngine.Graphics.Content;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +13,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using KihonEngine.Services;
+using System.Collections.Generic;
 
 namespace KihonEngine.Studio.Controls
 {
@@ -21,20 +23,13 @@ namespace KihonEngine.Studio.Controls
     /// </summary>
     public partial class TextureEditorWindow : Window
     {
-        private string[] AvailableTextures = {
-                string.Empty,
-                "default.png",
-                "floor0.jpg",
-                "ki.png",
-                "hon.png",
-                "steve-front.png",
-                "steve-back.png",
-                "steve-top.png",
-                "steve-left.png",
-                "steve-right.png",
-            };
+        private IContentService ContentService
+            => Container.Get<IContentService>();
 
         public event EventHandler<TextureMetadata> OnTextureChanged;
+
+        private List<string> _textures;
+        private List<string> _directories;
 
         public TextureEditorWindow()
         {
@@ -42,7 +37,53 @@ namespace KihonEngine.Studio.Controls
 
             cbTileMode.ItemsSource = Enum.GetValues<TileMode>();
             cbStretch.ItemsSource = Enum.GetValues<Stretch>();
-            lbox.ItemsSource = GetTextures();
+
+            LoadTextures();
+        }
+
+        private void LoadTextures()
+        {
+            // Load textures
+            _textures = new List<string>();
+            _textures.Add(string.Empty);
+            _textures.AddRange(ContentService.GetResources(GraphicContentType.Texture));
+
+            // Get directories
+            _directories = new List<string>();
+            foreach (var texture in _textures)
+            {
+                var folderName = GetFolderName(texture);
+
+                if (!_directories.Contains(folderName))
+                {
+                    _directories.Add(folderName);
+                }
+            }
+
+            _directories.Sort();
+
+            treeView.Items.Clear();
+            foreach (var directory in _directories)
+            {
+                var directoryNode = new TreeViewItem { Header = directory };
+                treeView.Items.Add(directoryNode);
+            }
+        }
+
+        private string GetFolderName(string texture)
+        {
+            if (string.IsNullOrEmpty(texture))
+            {
+                return string.Empty;
+            }
+
+            var folderEndIndex = texture.LastIndexOf('\\');
+            if (folderEndIndex > 0)
+            {
+                return texture.Substring(0, folderEndIndex);
+            }
+
+            return string.Empty;
         }
 
         public TextureMetadata Texture { get; set; }
@@ -69,21 +110,67 @@ namespace KihonEngine.Studio.Controls
             _synchronizing = false;
         }
 
-        
-        private void TrySelectTexture(string name)
+        private void LoadDirectory(string directory)
         {
-            var textures = GetTextures();
-            for (int i = 0; i < textures.Length; i++)
+            var textures = new List<string>();
+            if (directory == string.Empty)
             {
-                if (textures[i].Name == name)
+                
+                textures.AddRange(_textures.Where(x => x.IndexOf('\\') == -1));
+            }
+            else
+            {
+                textures.AddRange(_textures.Where(x => x.StartsWith(directory)));
+            }
+
+            _synchronizing = true;
+            lbox.ItemsSource = textures
+                .Select(x => CreateTextureViewModel(x))
+                .ToArray();
+            _synchronizing = false;
+            //lbox.SelectedIndex = 0;
+        }
+        
+        private void TrySelectTexture(string textureName)
+        {
+            // Select tree view node
+            var folderName = GetFolderName(textureName);
+            var match = false;
+            foreach(var item in treeView.Items)
+            {
+                if (((TreeViewItem)item).Header.ToString() == folderName)
                 {
-                    lbox.SelectedIndex = i;
-                    lbox.ScrollIntoView(lbox.SelectedItem);
-                    return;
+                    ((TreeViewItem)item).IsSelected = true;
+                    match = true;
+                    break;
                 }
             }
 
-            lbox.SelectedIndex = 0;
+            if (!match)
+            {
+                var item = (TreeViewItem)treeView.Items.GetItemAt(0);
+                item.IsSelected = true;
+                folderName = item.Header.ToString();
+                textureName = string.Empty;
+            }
+            
+            LoadDirectory(folderName);
+
+            if (textureName == null)
+            {
+                textureName = string.Empty;
+            }
+            
+            foreach(var item in lbox.Items)
+            {
+                var viewModel = (TextureViewModel)item;
+                if (viewModel.Name == textureName)
+                {
+                    lbox.SelectedItem = viewModel;
+                    lbox.ScrollIntoView(viewModel);
+                    return;
+                }
+            }
         }
 
         private class TextureViewModel
@@ -102,17 +189,10 @@ namespace KihonEngine.Studio.Controls
             }
             else
             {
-                result.PreviewBrush = new ImageBrush(ImageHelper.Get($"Textures.{filename}"));
+                result.PreviewBrush = new ImageBrush(ImageHelper.Get(GraphicContentType.Texture, filename));
             }
 
             return result;
-        }
-
-        private TextureViewModel[] GetTextures()
-        {
-            return AvailableTextures
-                .Select(x => CreateTextureViewModel(x))
-                .ToArray();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -203,6 +283,15 @@ namespace KihonEngine.Studio.Controls
             if (OnTextureChanged != null)
             {
                 OnTextureChanged(this, Texture);
+            }
+        }
+
+        private void treeView_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        {
+            if (!_synchronizing)
+            {
+                var node = (TreeViewItem)e.NewValue;
+                LoadDirectory(node.Header.ToString());
             }
         }
     }

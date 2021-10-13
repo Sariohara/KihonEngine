@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using KihonEngine.GameEngine.Graphics.Content;
+using KihonEngine.Services;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
@@ -11,51 +13,17 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
 {
     public static class ImageHelper
     {
-        private static Dictionary<string, BitmapImage> _bitmapImageCache = new Dictionary<string, BitmapImage>();
-        private static Dictionary<string, Bitmap> _bitmapCache = new Dictionary<string, Bitmap>();
+        private static Dictionary<string, BitmapImage> _skyboxCache = new Dictionary<string, BitmapImage>();
+        private static IContentService _source = Container.Get<IContentService>();
 
-        public static BitmapImage Get(string shortResourceName)
+        public static BitmapImage Get(GraphicContentType contentType, string resourceName)
         {
-            BitmapImage bitmap = null;
-            
-            if (!_bitmapImageCache.TryGetValue(shortResourceName, out bitmap))
-            {
-                var assembly = System.Reflection.Assembly.GetExecutingAssembly();
-                bitmap = new BitmapImage();
-
-                var assemblyName = typeof(ImageHelper).Assembly.GetName().Name;
-                using (var stream = assembly.GetManifestResourceStream($"{assemblyName}.Content.Images.{shortResourceName}"))
-                {
-                    bitmap.BeginInit();
-                    bitmap.StreamSource = stream;
-                    bitmap.CacheOption = BitmapCacheOption.OnLoad;
-                    bitmap.EndInit();
-                }
-
-                _bitmapImageCache.Add(shortResourceName, bitmap);
-            }
-
-            return bitmap;
+            return _source.Get(contentType, resourceName);
         }
 
-        public static Bitmap GetBitmap(string shortResourceName)
+        public static Bitmap GetBitmap(GraphicContentType contentType, string resourceName)
         {
-            Bitmap bitmap = null;
-
-            if (!_bitmapCache.TryGetValue(shortResourceName, out bitmap))
-            {
-                var assembly = System.Reflection.Assembly.GetExecutingAssembly();
-
-                var assemblyName = typeof(ImageHelper).Assembly.GetName().Name;
-                using (var stream = assembly.GetManifestResourceStream($"{assemblyName}.Content.Images.{shortResourceName}"))
-                {
-                    bitmap = new Bitmap(stream);
-                }
-
-                _bitmapCache.Add(shortResourceName, bitmap);
-            }
-
-            return bitmap;
+            return _source.GetBitmap(contentType, resourceName);
         }
 
         public static BitmapImage ToBitmapImage(Bitmap bitmap)
@@ -83,23 +51,28 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
         /// <param name="column">column in skybox image</param>
         /// <param name="row">row in skybox image</param>
         /// <returns></returns>
-        public static BitmapImage GetSkyboxPart(string shortResourceName, SkyboxFace face)
+        public static BitmapImage GetSkyboxPart(string resourceName, SkyboxFace face)
         {
             BitmapImage bitmap = null;
 
-            var key = $"{shortResourceName}|{face}";
-            if (!_bitmapImageCache.TryGetValue(key, out bitmap))
+            var key = $"{resourceName}|{face}";
+            if (!_skyboxCache.TryGetValue(key, out bitmap))
             {
-                bitmap = BuildSkyboxPart(shortResourceName, face);
-                _bitmapImageCache.Add(key, bitmap);
+                bitmap = BuildSkyboxPart(resourceName, face);
+                _skyboxCache.Add(key, bitmap);
             }
 
             return bitmap;
         }
         
-        private static BitmapImage BuildSkyboxPart(string shortResourceName, SkyboxFace face)
+        private static BitmapImage BuildSkyboxPart(string resourceName, SkyboxFace face)
         {
-            var imageSource = GetBitmap(shortResourceName);
+            var imageSource = GetBitmap(GraphicContentType.Skybox, resourceName);
+            if (imageSource == null)
+            {
+                return null;
+            }
+
             var sizeX = imageSource.Size.Width / 4;
             var sizeY = imageSource.Size.Height / 3;
             int x = 0;
@@ -165,7 +138,7 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
         {
             var materiaGroup = new MaterialGroup();
 
-            var imageSource = Get($"Textures.{filename}");
+            var imageSource = Get(GraphicContentType.Texture, filename);
             var brush = new ImageBrush(imageSource);
             brush.TileMode = tileMode;
             brush.Stretch = stretch;
@@ -174,6 +147,16 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
             materiaGroup.Children.Add(new DiffuseMaterial(brush));
 
             return materiaGroup;
+        }
+
+        public static System.Windows.Media.Brush CreateTextureBrush(string filename)
+        {
+            if (string.IsNullOrEmpty(filename))
+            {
+                return new SolidColorBrush(Colors.Transparent);
+            }
+
+            return new ImageBrush(Get(GraphicContentType.Texture, filename));
         }
     }
 }

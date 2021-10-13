@@ -41,12 +41,12 @@ namespace KihonEngine.Studio.Controls.ModelEditors
                 tbXSize.Text = metadata.XSize.ToString();
                 tbYSize.Text = metadata.YSize.ToString();
                 tbZSize.Text = metadata.ZSize.ToString();
-                btTextureFrontImg.Background = CreateTextureBrush(metadata.TextureFront?.Name);
-                btTextureBackImg.Background = CreateTextureBrush(metadata.TextureBack?.Name);
-                tbTextureTopImg.Background = CreateTextureBrush(metadata.TextureTop?.Name);
-                btTextureBottomImg.Background = CreateTextureBrush(metadata.TextureBottom?.Name);
-                btTextureLeftImg.Background = CreateTextureBrush(metadata.TextureLeft?.Name);
-                btTextureRightImg.Background = CreateTextureBrush(metadata.TextureRight?.Name);
+                btTextureFrontImg.Background = ImageHelper.CreateTextureBrush(metadata.TextureFront?.Name);
+                btTextureBackImg.Background = ImageHelper.CreateTextureBrush(metadata.TextureBack?.Name);
+                tbTextureTopImg.Background = ImageHelper.CreateTextureBrush(metadata.TextureTop?.Name);
+                btTextureBottomImg.Background = ImageHelper.CreateTextureBrush(metadata.TextureBottom?.Name);
+                btTextureLeftImg.Background = ImageHelper.CreateTextureBrush(metadata.TextureLeft?.Name);
+                btTextureRightImg.Background = ImageHelper.CreateTextureBrush(metadata.TextureRight?.Name);
                 cbUseBackMaterial.IsChecked = metadata.UseBackMaterial;
             }
             else
@@ -54,12 +54,12 @@ namespace KihonEngine.Studio.Controls.ModelEditors
                 tbXSize.Text = string.Empty;
                 tbYSize.Text = string.Empty;
                 tbZSize.Text = string.Empty;
-                btTextureFrontImg.Background = CreateTextureBrush(string.Empty);
-                btTextureBackImg.Background = CreateTextureBrush(string.Empty);
-                tbTextureTopImg.Background = CreateTextureBrush(string.Empty);
-                btTextureBottomImg.Background = CreateTextureBrush(string.Empty);
-                btTextureLeftImg.Background = CreateTextureBrush(string.Empty);
-                btTextureRightImg.Background = CreateTextureBrush(string.Empty);
+                btTextureFrontImg.Background = ImageHelper.CreateTextureBrush(string.Empty);
+                btTextureBackImg.Background = ImageHelper.CreateTextureBrush(string.Empty);
+                tbTextureTopImg.Background = ImageHelper.CreateTextureBrush(string.Empty);
+                btTextureBottomImg.Background = ImageHelper.CreateTextureBrush(string.Empty);
+                btTextureLeftImg.Background = ImageHelper.CreateTextureBrush(string.Empty);
+                btTextureRightImg.Background = ImageHelper.CreateTextureBrush(string.Empty);
                 cbUseBackMaterial.IsChecked = false;
             }
 
@@ -197,16 +197,6 @@ namespace KihonEngine.Studio.Controls.ModelEditors
                 changeTextureAction(definition);
                 GameEngineController.ReplaceModelAndNotify(layeredModel, definition);
             }
-        }
-
-        private Brush CreateTextureBrush(string filename)
-        {
-            if (string.IsNullOrEmpty(filename))
-            {
-                return new SolidColorBrush(Colors.Transparent);
-            }
-
-            return new ImageBrush(ImageHelper.Get($"Textures.{filename}"));
         }
     }
 }

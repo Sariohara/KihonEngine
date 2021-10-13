@@ -28,7 +28,7 @@ namespace KihonEngine.GameEngine.Graphics.Maps.Predefined
             lightBuilder.Create(new Vector3D(3, 4, 5));
 
             // Sky box
-            skyboxBuilder.Create(-5000, -5000, -5000, 10000, new Vector3D(-3, -4, -5), "sky1");
+            skyboxBuilder.Create(-5000, -5000, -5000, 10000, new Vector3D(-3, -4, -5), "sky1-full.png");
 
             // Origin
             volumeBuilder.Color = Colors.White;

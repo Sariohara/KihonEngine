@@ -46,7 +46,7 @@
   "Skyboxes": [
     {
       "Metadata": {
-        "Name": "sky1",
+        "Name": "sky1-full.png",
         "Size": 10000,
         "Normal": "-3,-4,-5",
         "UseBackMaterial": false
