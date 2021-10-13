@@ -16,6 +16,8 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center">XSize</Label>
         <TextBox Grid.Row="0" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="tbXSize" KeyUp="tbXSize_KeyUp"></TextBox>
@@ -26,7 +28,39 @@
         <Label Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center">ZSize</Label>
         <TextBox Grid.Row="2" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="tbZSize" KeyUp="tbZSize_KeyUp"></TextBox>
 
-        <Label Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center">UseBackMaterial</Label>
-        <CheckBox Grid.Row="3" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="cbUseBackMaterial" Checked="cbUseBackMaterial_Checked" Unchecked="cbUseBackMaterial_Checked" ></CheckBox>
+        <Label Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center">Texture</Label>
+        <Grid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button x:Name="btTextureTop" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Stretch" Click="btTextureTop_Click">
+                <TextBlock x:Name="tbTextureTopImg" Width="20" Height="20"/>
+            </Button>
+            <Button x:Name="btTextureBack" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" Click="btTextureBack_Click">
+                <TextBlock x:Name="btTextureBackImg" Width="20" Height="20"/>
+            </Button>
+            <Button x:Name="btTextureLeft" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" Click="btTextureLeft_Click">
+                <TextBlock x:Name="btTextureLeftImg" Width="20" Height="20"/>
+            </Button>
+            <Button x:Name="btTextureFront" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Stretch" Click="btTextureFront_Click">
+                <TextBlock x:Name="btTextureFrontImg" Width="20" Height="20"/>
+            </Button>
+            <Button x:Name="btTextureRight" Grid.Row="1" Grid.Column="3" HorizontalAlignment="Stretch" Click="btTextureRight_Click">
+                <TextBlock x:Name="btTextureRightImg" Width="20" Height="20"/>
+            </Button>
+            <Button x:Name="btTextureBottom" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Stretch" Click="btTextureBottom_Click">
+                <TextBlock x:Name="btTextureBottomImg" Width="20" Height="20"/>
+            </Button>
+        </Grid>
+        <Label Grid.Row="5" Grid.Column="0" HorizontalAlignment="Center">UseBackMaterial</Label>
+        <CheckBox Grid.Row="5" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="cbUseBackMaterial" Checked="cbUseBackMaterial_Checked" Unchecked="cbUseBackMaterial_Checked" ></CheckBox>
     </Grid>
 </UserControl>

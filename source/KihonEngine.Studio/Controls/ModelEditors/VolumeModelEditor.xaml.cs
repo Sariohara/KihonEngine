@@ -4,9 +4,11 @@ using KihonEngine.GameEngine.Graphics.ModelsBuilders;
 using KihonEngine.GameEngine.State;
 using KihonEngine.Services;
 using KihonEngine.Studio.Controls;
+using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
 
 namespace KihonEngine.Studio.Controls.ModelEditors
 {
@@ -39,6 +41,12 @@ namespace KihonEngine.Studio.Controls.ModelEditors
                 tbXSize.Text = metadata.XSize.ToString();
                 tbYSize.Text = metadata.YSize.ToString();
                 tbZSize.Text = metadata.ZSize.ToString();
+                btTextureFrontImg.Background = CreateTextureBrush(metadata.TextureFront?.Name);
+                btTextureBackImg.Background = CreateTextureBrush(metadata.TextureBack?.Name);
+                tbTextureTopImg.Background = CreateTextureBrush(metadata.TextureTop?.Name);
+                btTextureBottomImg.Background = CreateTextureBrush(metadata.TextureBottom?.Name);
+                btTextureLeftImg.Background = CreateTextureBrush(metadata.TextureLeft?.Name);
+                btTextureRightImg.Background = CreateTextureBrush(metadata.TextureRight?.Name);
                 cbUseBackMaterial.IsChecked = metadata.UseBackMaterial;
             }
             else
@@ -46,6 +54,12 @@ namespace KihonEngine.Studio.Controls.ModelEditors
                 tbXSize.Text = string.Empty;
                 tbYSize.Text = string.Empty;
                 tbZSize.Text = string.Empty;
+                btTextureFrontImg.Background = CreateTextureBrush(string.Empty);
+                btTextureBackImg.Background = CreateTextureBrush(string.Empty);
+                tbTextureTopImg.Background = CreateTextureBrush(string.Empty);
+                btTextureBottomImg.Background = CreateTextureBrush(string.Empty);
+                btTextureLeftImg.Background = CreateTextureBrush(string.Empty);
+                btTextureRightImg.Background = CreateTextureBrush(string.Empty);
                 cbUseBackMaterial.IsChecked = false;
             }
 
@@ -118,6 +132,81 @@ namespace KihonEngine.Studio.Controls.ModelEditors
                     GameEngineController.ReplaceModelAndNotify(layeredModel, definition);
                 }
             }
+        }
+
+        private void btTextureTop_Click(object sender, RoutedEventArgs e)
+        {
+            OnEditTexture(def => def.Metadata.TextureTop, (def, e) => def.Metadata.TextureTop = e);
+        }
+
+        private void btTextureBack_Click(object sender, RoutedEventArgs e)
+        {
+            OnEditTexture(def => def.Metadata.TextureBack, (def, e) => def.Metadata.TextureBack = e);
+        }
+
+        private void btTextureLeft_Click(object sender, RoutedEventArgs e)
+        {
+            OnEditTexture(def => def.Metadata.TextureLeft, (def, e) => def.Metadata.TextureLeft = e);
+        }
+
+        private void btTextureFront_Click(object sender, RoutedEventArgs e)
+        {
+            OnEditTexture(def => def.Metadata.TextureFront, (def, e) => def.Metadata.TextureFront = e);
+        }
+
+        private void btTextureRight_Click(object sender, RoutedEventArgs e)
+        {
+            OnEditTexture(def => def.Metadata.TextureRight, (def, e) => def.Metadata.TextureRight = e);
+        }
+
+        private void btTextureBottom_Click(object sender, RoutedEventArgs e)
+        {
+            OnEditTexture(def => def.Metadata.TextureBottom, (def, e) => def.Metadata.TextureBottom = e);
+        }
+
+        private void OnEditTexture(Func<VolumeDefinition, TextureMetadata> textureSelector, Action<VolumeDefinition, TextureMetadata> onTextureChanged)
+        {
+            var layeredModel = State.Editor.ActionSelect.SelectedModel;
+
+            if (layeredModel != null)
+            {
+                var definition = GameEngineController.GetDefinition<VolumeDefinition>(layeredModel);
+
+                var dialog = new TextureEditorWindow
+                {
+                    Owner = Window.GetWindow(this),
+                    Texture = textureSelector(definition),
+                    ShowInTaskbar = false,
+                    WindowStartupLocation = WindowStartupLocation.CenterOwner,
+                };
+
+                dialog.OnTextureChanged += (sender, e)
+                    => OnChangeTexture<VolumeDefinition>(def => onTextureChanged(def, e));
+
+                dialog.ShowDialog();
+            }
+        }
+
+        private void OnChangeTexture<TDefinition>(Action<TDefinition> changeTextureAction)
+             where TDefinition : ModelBaseDefinition
+        {
+            var layeredModel = State.Editor.ActionSelect.SelectedModel;
+            if (layeredModel != null)
+            {
+                var definition = GameEngineController.GetDefinition<TDefinition>(layeredModel);
+                changeTextureAction(definition);
+                GameEngineController.ReplaceModelAndNotify(layeredModel, definition);
+            }
+        }
+
+        private Brush CreateTextureBrush(string filename)
+        {
+            if (string.IsNullOrEmpty(filename))
+            {
+                return new SolidColorBrush(Colors.Transparent);
+            }
+
+            return new ImageBrush(ImageHelper.Get($"Textures.{filename}"));
         }
     }
 }

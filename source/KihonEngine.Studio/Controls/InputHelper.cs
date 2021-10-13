@@ -11,5 +11,13 @@ namespace KihonEngine.Studio.Controls
                 updateAction(resultValue);
             }
         }
+
+        public static void TryUpdateDouble(string text, Action<double> updateAction)
+        {
+            if (double.TryParse(text, out var resultValue))
+            {
+                updateAction(resultValue);
+            }
+        }
     }
 }

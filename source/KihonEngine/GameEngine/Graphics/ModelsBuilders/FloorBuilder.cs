@@ -44,12 +44,12 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
             return layeredModel;
         }
 
-        public void ApplyTexture(LayeredModel3D layeredModel, string filename, TileMode tileMode, Stretch stretch, double ratio)
+        public void ApplyTexture(LayeredModel3D layeredModel, string filename, TileMode tileMode, Stretch stretch, double ratioX, double ratioY)
         {
             var metadata = (FloorMetadata)layeredModel.Metadata[ModelType.Floor.ToString()];
-            metadata.Texture = new TextureMetadata { Name = filename, TileMode = tileMode, Stretch = stretch, Ratio = ratio };
+            metadata.Texture = new TextureMetadata { Name = filename, TileMode = tileMode, Stretch = stretch, RatioX = ratioX, RatioY = ratioY };
 
-            var material = CreateMaterial(filename, tileMode, stretch, ratio);
+            var material = CreateMaterial(filename, tileMode, stretch, ratioX, ratioY);
             ApplyTextureToVolume(layeredModel, "Face1", material, TextureCoordinates1);
             ApplyTextureToVolume(layeredModel, "Face2", material, TextureCoordinates2);
         }

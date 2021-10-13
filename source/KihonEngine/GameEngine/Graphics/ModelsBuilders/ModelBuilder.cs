@@ -95,12 +95,12 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
             });
         }
 
-        protected MaterialGroup CreateMaterial(string filename, TileMode tileMode = TileMode.Tile, Stretch stretch = Stretch.Uniform, double ratio = 1)
+        protected MaterialGroup CreateMaterial(string filename, TileMode tileMode = TileMode.Tile, Stretch stretch = Stretch.Uniform, double ratioX = 1, double ratioY = 1)
         {
             MaterialGroup material;
             if (!string.IsNullOrEmpty(filename))
             {
-                material = ImageHelper.CreateMaterial(filename, tileMode, stretch, ratio);
+                material = ImageHelper.CreateMaterial(filename, tileMode, stretch, ratioX, ratioY);
             }
             else
             {
@@ -116,6 +116,12 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
             var model3DGroup = (Model3DGroup)layeredModel.Metadata[face];
             var geometry = (GeometryModel3D)model3DGroup.Children[0];
             geometry.Material = material;
+
+            if (UseBackMaterial)
+            {
+                geometry.BackMaterial = material;
+            }
+
             var mesh = (MeshGeometry3D)geometry.Geometry;
 
             foreach (var point in textureCoordinates)

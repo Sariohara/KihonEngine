@@ -87,9 +87,34 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
             return layeredModel;
         }
 
-        public void ApplyTexture(LayeredModel3D layeredModel, VolumeFace face, string filename, TileMode tileMode = TileMode.Tile, Stretch stretch = Stretch.Uniform, double ratio = 1)
+        public void ApplyTexture(LayeredModel3D layeredModel, VolumeFace face, string filename, TileMode tileMode = TileMode.Tile, Stretch stretch = Stretch.Uniform, double ratioX = 1, double ratioY = 1)
         {
-            var material = CreateMaterial(filename, tileMode, stretch, ratio);
+            var metadata = (VolumeMetadata)layeredModel.Metadata[ModelType.Volume.ToString()];
+            var textureMetadata = new TextureMetadata { Name = filename, TileMode = tileMode, Stretch = stretch, RatioX = ratioX, RatioY = ratioY };
+
+            switch (face)
+            {
+                case VolumeFace.Front:
+                    metadata.TextureFront = textureMetadata;
+                    break;
+                case VolumeFace.Back:
+                    metadata.TextureBack = textureMetadata;
+                    break;
+                case VolumeFace.Top:
+                    metadata.TextureTop = textureMetadata;
+                    break;
+                case VolumeFace.Bottom:
+                    metadata.TextureBottom = textureMetadata;
+                    break;
+                case VolumeFace.Left:
+                    metadata.TextureLeft = textureMetadata;
+                    break;
+                case VolumeFace.Right:
+                    metadata.TextureRight = textureMetadata;
+                    break;
+            }
+
+            var material = CreateMaterial(filename, tileMode, stretch, ratioX, ratioY);
             ApplyTextureToVolume(layeredModel, $"{face}1", material, TextureCoordinates1);
             ApplyTextureToVolume(layeredModel, $"{face}2", material, TextureCoordinates2);
         }

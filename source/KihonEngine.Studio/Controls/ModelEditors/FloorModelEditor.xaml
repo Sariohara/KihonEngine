@@ -24,17 +24,9 @@
         <TextBox Grid.Row="1" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="tbZSize" KeyUp="tbZSize_KeyUp"></TextBox>
 
         <Label Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center">Texture</Label>
-        <ComboBox Name="cbTexture" Grid.Row="2" Grid.Column="1" Margin="0,0,0,10" HorizontalAlignment="Stretch"  SelectionChanged="cbtexture_SelectionChanged">
-            <ComboBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Width="20" Height="20" Margin="5" Background="{Binding PreviewBrush}"/>
-                        <TextBlock  Text="{Binding Name}" VerticalAlignment="Center"/>
-                    </StackPanel>
-                </DataTemplate>
-            </ComboBox.ItemTemplate>
-        </ComboBox>
-
+        <Button x:Name="btTexture" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" Click="btTexture_Click">
+            <TextBlock x:Name="btTextureImg" Width="20" Height="20"/>
+        </Button>
         <Label Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center">UseBackMaterial</Label>
         <CheckBox Grid.Row="3" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="cbUseBackMaterial" Checked="cbUseBackMaterial_Checked" Unchecked="cbUseBackMaterial_Checked" ></CheckBox>
     </Grid>

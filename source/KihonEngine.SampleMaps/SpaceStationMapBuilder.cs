@@ -37,7 +37,7 @@ namespace KihonEngine.SampleMaps
             var midFloorSize = 100;
             floorBuilder.Color = Colors.LightGray;
             var model = floorBuilder.Create(-100, 0, -midFloorSize, midFloorSize * 2);
-            floorBuilder.ApplyTexture(model, "floor0.jpg", TileMode.Tile, Stretch.Uniform, 0.05);
+            floorBuilder.ApplyTexture(model, "floor0.jpg", TileMode.Tile, Stretch.Uniform, 0.05, 0.05);
 
             return level;
         }

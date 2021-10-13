@@ -161,7 +161,7 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
             return CreateMaterial(filename, tileMode, stretch, 1);
         }
 
-        public static MaterialGroup CreateMaterial(string filename, TileMode tileMode = TileMode.Tile, Stretch stretch = Stretch.UniformToFill, double ratio = 1)
+        public static MaterialGroup CreateMaterial(string filename, TileMode tileMode = TileMode.Tile, Stretch stretch = Stretch.UniformToFill, double ratioX = 1, double ratioY = 1)
         {
             var materiaGroup = new MaterialGroup();
 
@@ -169,7 +169,7 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
             var brush = new ImageBrush(imageSource);
             brush.TileMode = tileMode;
             brush.Stretch = stretch;
-            brush.Viewport = new Rect(new System.Windows.Point(0, 0), new System.Windows.Point(ratio, ratio));
+            brush.Viewport = new Rect(new System.Windows.Point(0, 0), new System.Windows.Point(ratioX, ratioY));
             brush.ViewboxUnits = BrushMappingMode.RelativeToBoundingBox;
             materiaGroup.Children.Add(new DiffuseMaterial(brush));
 

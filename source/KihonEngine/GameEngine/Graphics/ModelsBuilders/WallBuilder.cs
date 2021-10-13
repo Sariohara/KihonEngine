@@ -20,13 +20,13 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
             layeredModel.Metadata.Add(ModelType.Wall.ToString(), new WallMetadata { XSize = xSize, YSize = ySize, UseBackMaterial = UseBackMaterial });
 
             Point3D p0 = new Point3D(0, 0, 0);
-            Point3D p2 = new Point3D(xSize, 0, 0);
-            Point3D p1 = new Point3D(0, ySize, 0);
-            Point3D p3 = new Point3D(xSize, ySize, 0);
+            Point3D p1 = new Point3D(xSize, 0, 0);
+            Point3D p4 = new Point3D(0, ySize, 0);
+            Point3D p5 = new Point3D(xSize, ySize, 0);
 
             //back
-            layeredModel.Children.Add(CreateTriangle(p1, p0, p2, material));
-            layeredModel.Children.Add(CreateTriangle(p3, p1, p2, material));
+            layeredModel.Children.Add(CreateTriangle(p1, p0, p4, material));
+            layeredModel.Children.Add(CreateTriangle(p1, p4, p5, material));
 
             // Metadata
             layeredModel.Metadata.Add("Face1", layeredModel.Children[0]);
@@ -36,9 +36,12 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
             return layeredModel;
         }
 
-        public void ApplyTexture(LayeredModel3D layeredModel, string filename, TileMode tileMode, Stretch stretch, double ratio)
+        public void ApplyTexture(LayeredModel3D layeredModel, string filename, TileMode tileMode, Stretch stretch, double ratioX, double ratioY)
         {
-            var material = CreateMaterial(filename, tileMode, stretch, ratio);
+            var metadata = (WallMetadata)layeredModel.Metadata[ModelType.Wall.ToString()];
+            metadata.Texture = new TextureMetadata { Name = filename, TileMode = tileMode, Stretch = stretch, RatioX = ratioX, RatioY = ratioY };
+
+            var material = CreateMaterial(filename, tileMode, stretch, ratioX, ratioY);
             ApplyTextureToVolume(layeredModel, "Face1", material, TextureCoordinates1);
             ApplyTextureToVolume(layeredModel, "Face2", material, TextureCoordinates2);
         }

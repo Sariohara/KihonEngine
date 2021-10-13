@@ -1,0 +1,67 @@
+﻿<Window x:Class="KihonEngine.Studio.Controls.TextureEditorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KihonEngine.Studio.Controls"
+        mc:Ignorable="d"
+        Title="Edit texture" 
+        Loaded="Window_Loaded"
+        KeyDown="Window_KeyDown"
+        Style="{DynamicResource ResourceKey=WindowDefaultStyle}"
+        ResizeMode="NoResize" Height="450" Width="800">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <Canvas Grid.Row="0" Grid.Column="0" >
+            <TextBlock Canvas.Left="10" Canvas.Top="10" Text="TileMode" />
+            <ComboBox Canvas.Left="70" Canvas.Top="10" x:Name="cbTileMode" Width="100" SelectionChanged="cbTileMode_SelectionChanged"/>
+            <TextBlock Canvas.Left="210" Canvas.Top="10" Text="Stretch" />
+            <ComboBox Canvas.Left="250" Canvas.Top="10" x:Name="cbStretch" Width="100" SelectionChanged="cbStretch_SelectionChanged"/>
+            <TextBlock Canvas.Left="410" Canvas.Top="10" Text="Ratio X" />
+            <TextBox Canvas.Left="450" Canvas.Top="10" x:Name="tbRatioX" Width="50" KeyUp="tbRatioX_KeyUp" />
+            <TextBlock Canvas.Left="510" Canvas.Top="10" Text="Ratio Y" />
+            <TextBox Canvas.Left="550" Canvas.Top="10" x:Name="tbRatioY" Width="50" KeyUp="tbRatioY_KeyUp" />
+        </Canvas>
+        <ListBox Grid.Row="1"  x:Name="lbox" HorizontalContentAlignment="Stretch" SelectionChanged="lbox_SelectionChanged" >
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel IsItemsHost="True" Orientation="Horizontal" Width="700"/>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Width="200">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="130"/>
+                            <ColumnDefinition Width="70"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.RowSpan="3" Margin="0,0,12,0" Background="{Binding PreviewBrush}" Width="100" Height="100" HorizontalAlignment="Left" />
+                        <TextBlock Grid.Column="1" Grid.ColumnSpan="3" Text="{Binding Name}" FontSize="12" VerticalAlignment="Center"/>
+                        <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Text="{Binding Description}" TextWrapping="Wrap"/>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="Padding" Value="0"/>
+                    <Setter Property="Margin" Value="6"/>
+                </Style>
+            </ListBox.ItemContainerStyle>
+        </ListBox>
+        <Canvas Grid.Row="2" Grid.Column="0">
+            <Button Canvas.Right="10" Canvas.Bottom="10" x:Name="btClose" Content="Close" Width="100"  Click="btClose_Click" />
+        </Canvas>
+    </Grid>
+</Window>

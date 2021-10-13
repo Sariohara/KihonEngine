@@ -3,8 +3,7 @@ using KihonEngine.GameEngine.Graphics.ModelDefinitions;
 using KihonEngine.GameEngine.Graphics.ModelsBuilders;
 using KihonEngine.GameEngine.State;
 using KihonEngine.Services;
-using KihonEngine.Studio.Controls;
-using System.Linq;
+using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -27,9 +26,6 @@ namespace KihonEngine.Studio.Controls.ModelEditors
         public FloorModelEditor()
         {
             InitializeComponent();
-
-            cbTexture.ItemsSource = GetTextures();
-            cbTexture.SelectedIndex = 0;
         }
 
         private bool synchronizing;
@@ -43,14 +39,14 @@ namespace KihonEngine.Studio.Controls.ModelEditors
                 var metadata = (FloorMetadata)state.Editor.ActionSelect.SelectedModel.Metadata[ModelType.Floor.ToString()];
                 tbXSize.Text = metadata.XSize.ToString();
                 tbZSize.Text = metadata.ZSize.ToString();
-                TrySelectTexture(metadata.Texture?.Name);
+                btTextureImg.Background = CreateTextureBrush(metadata.Texture?.Name);
                 cbUseBackMaterial.IsChecked = metadata.UseBackMaterial;
             }
             else
             {
                 tbXSize.Text = string.Empty;
                 tbZSize.Text = string.Empty;
-                TrySelectTexture(string.Empty);
+                btTextureImg.Background = CreateTextureBrush(string.Empty);
                 cbUseBackMaterial.IsChecked = false;
             }
 
@@ -93,42 +89,6 @@ namespace KihonEngine.Studio.Controls.ModelEditors
             }
         }
 
-        private bool _disableTextureChange;
-        private void cbtexture_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (!synchronizing && !_disableTextureChange && this.IsLoaded)
-            {
-                var layeredModel = State.Editor.ActionSelect.SelectedModel;
-                if (layeredModel != null)
-                {
-                    var definition = GameEngineController.GetDefinition<FloorDefinition>(layeredModel);
-                    definition.Metadata.Texture = new TextureMetadata
-                    {
-                        TileMode = TileMode.Tile,
-                        Stretch = Stretch.Uniform,
-                        Ratio = 0.05,
-                    };
-
-                    definition.Metadata.Texture.Name = ((TextureViewModel)cbTexture.SelectedItem).Name;
-                    GameEngineController.ReplaceModelAndNotify(layeredModel, definition);
-                }
-            }
-        }
-
-        private void TrySelectTexture(string name)
-        {
-            var textures = GetTextures();
-            for(int i = 0; i < textures.Length; i++)
-            {
-                if (textures[i].Name == name)
-                {
-                    _disableTextureChange = true;
-                    cbTexture.SelectedIndex = i;
-                    _disableTextureChange = false;
-                }
-            }
-        }
-
         private void cbUseBackMaterial_Checked(object sender, RoutedEventArgs e)
         {
             if (!synchronizing)
@@ -143,33 +103,49 @@ namespace KihonEngine.Studio.Controls.ModelEditors
             }
         }
 
-        private class TextureViewModel
+        private void btTexture_Click(object sender, RoutedEventArgs e)
         {
-            public string Name { get; set; }
-            public Brush PreviewBrush { get; set; }
+            var layeredModel = State.Editor.ActionSelect.SelectedModel;
+
+            if (layeredModel != null)
+            {
+                var definition = GameEngineController.GetDefinition<FloorDefinition>(layeredModel);
+
+                var dialog = new TextureEditorWindow
+                {
+                    Owner = Window.GetWindow(this),
+                    Texture = definition.Metadata.Texture,
+                    ShowInTaskbar = false,
+                    WindowStartupLocation = WindowStartupLocation.CenterOwner,
+                };
+
+                dialog.OnTextureChanged += (sender, e)
+                    => OnChangeTexture<FloorDefinition>(def => def.Metadata.Texture = e);
+                
+                dialog.ShowDialog();
+            }
         }
 
-        private TextureViewModel CreateTextureViewModel(string filename)
+        private void OnChangeTexture<TDefinition>(Action<TDefinition> changeTextureAction)
+             where TDefinition : ModelBaseDefinition
         {
-            var result = new TextureViewModel { Name = filename };
+            var layeredModel = State.Editor.ActionSelect.SelectedModel;
+            if (layeredModel != null)
+            {
+                var definition = GameEngineController.GetDefinition<TDefinition>(layeredModel);
+                changeTextureAction(definition);
+                GameEngineController.ReplaceModelAndNotify(layeredModel, definition);
+            }
+        }
 
+        private Brush CreateTextureBrush(string filename)
+        {
             if (string.IsNullOrEmpty(filename))
             {
-                result.PreviewBrush = new SolidColorBrush(Colors.Transparent);
-            }
-            else
-            {
-                result.PreviewBrush = new ImageBrush(ImageHelper.Get($"Textures.{filename}"));
+                return new SolidColorBrush(Colors.Transparent);
             }
 
-            return result;
-        }
-
-        private TextureViewModel[] GetTextures()
-        {
-            return new[] { string.Empty, "default.png", "floor0.jpg", "ki.png", "hon.png" }
-                .Select(x => CreateTextureViewModel(x))
-                .ToArray();
+            return new ImageBrush(ImageHelper.Get($"Textures.{filename}"));
         }
     }
 }

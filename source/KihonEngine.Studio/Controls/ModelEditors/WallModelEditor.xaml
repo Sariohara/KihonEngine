@@ -15,6 +15,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center">XSize</Label>
         <TextBox Grid.Row="0" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="tbXSize" KeyUp="tbXSize_KeyUp"></TextBox>
@@ -22,7 +23,12 @@
         <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center">YSize</Label>
         <TextBox Grid.Row="1" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="tbYSize" KeyUp="tbYSize_KeyUp"></TextBox>
 
-        <Label Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center">UseBackMaterial</Label>
-        <CheckBox Grid.Row="2" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="cbUseBackMaterial" Checked="cbUseBackMaterial_Checked" Unchecked="cbUseBackMaterial_Checked" ></CheckBox>
+        <Label Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center">Texture</Label>
+        <Button x:Name="btTexture" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" Click="btTexture_Click">
+            <TextBlock x:Name="btTextureImg" Width="20" Height="20"/>
+        </Button>
+        
+        <Label Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center">UseBackMaterial</Label>
+        <CheckBox Grid.Row="3" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="cbUseBackMaterial" Checked="cbUseBackMaterial_Checked" Unchecked="cbUseBackMaterial_Checked" ></CheckBox>
     </Grid>
 </UserControl>
