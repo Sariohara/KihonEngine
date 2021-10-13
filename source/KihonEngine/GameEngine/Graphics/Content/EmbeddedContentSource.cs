@@ -1,5 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Linq;
+using System.Collections.Generic;
 using System.Drawing;
+using System.Reflection;
 using System.Windows.Media.Imaging;
 
 namespace KihonEngine.GameEngine.Graphics.Content
@@ -8,32 +11,36 @@ namespace KihonEngine.GameEngine.Graphics.Content
     {
         private Dictionary<string, BitmapImage> _bitmapImageCache = new Dictionary<string, BitmapImage>();
         private Dictionary<string, Bitmap> _bitmapCache = new Dictionary<string, Bitmap>();
+        private Assembly _targetAssembly;
+
+        public EmbeddedContentSource()
+        {
+            _targetAssembly = typeof(EmbeddedContentSource).Assembly;
+        }
+
+        public EmbeddedContentSource(Type type)
+        {
+            _targetAssembly = type.Assembly;
+        }
+
+        public string Name => $"embedded:{_targetAssembly.GetName().Name}";
 
         public string[] GetResources(GraphicContentType contentType)
         {
-            if (contentType == GraphicContentType.Texture)
-            {
-                return new[] {
-                    "default.png",
-                    "floor0.jpg",
-                    "ki.png",
-                    "hon.png",
-                    "steve-front.png",
-                    "steve-back.png",
-                    "steve-top.png",
-                    "steve-left.png",
-                    "steve-right.png",
-                };
-            }
+            var resourceNames = _targetAssembly.GetManifestResourceNames();
+            var assemblyName = _targetAssembly.GetName().Name;
+            var prefixResourceName = $"{assemblyName}.Content.Images.{GetResourceDirectory(contentType)}.";
 
-            if (contentType == GraphicContentType.Skybox)
+            if (resourceNames.Any())
             {
-                return new[] {
-                    "sky0-full.png",
-                    "sky1-full.png",
-                    "sky2-full.png",
-                    "sky3-full.png",
-                };
+                var results = resourceNames
+                 .Where(x => x.StartsWith(prefixResourceName))
+                 .Select(x => x.Substring(prefixResourceName.Length))
+                 .ToList();
+
+                results.Sort();
+
+                return results.ToArray();
             }
 
             return new string[] { };
@@ -46,10 +53,8 @@ namespace KihonEngine.GameEngine.Graphics.Content
             var shortResourceName = $"{GetResourceDirectory(contentType)}.{resourceName}";
             if (!_bitmapImageCache.TryGetValue(shortResourceName, out bitmap))
             {
-                var assembly = System.Reflection.Assembly.GetExecutingAssembly();
-
-                var assemblyName = typeof(EmbeddedContentSource).Assembly.GetName().Name;
-                using (var stream = assembly.GetManifestResourceStream($"{assemblyName}.Content.Images.{shortResourceName}"))
+                var assemblyName = _targetAssembly.GetName().Name;
+                using (var stream = _targetAssembly.GetManifestResourceStream($"{assemblyName}.Content.Images.{shortResourceName}"))
                 {
                     if (stream != null)
                     {
@@ -73,10 +78,8 @@ namespace KihonEngine.GameEngine.Graphics.Content
             var shortResourceName = $"{GetResourceDirectory(contentType)}.{resourceName}";
             if (!_bitmapCache.TryGetValue(shortResourceName, out bitmap))
             {
-                var assembly = System.Reflection.Assembly.GetExecutingAssembly();
-
-                var assemblyName = typeof(EmbeddedContentSource).Assembly.GetName().Name;
-                using (var stream = assembly.GetManifestResourceStream($"{assemblyName}.Content.Images.{shortResourceName}"))
+                var assemblyName = _targetAssembly.GetName().Name;
+                using (var stream = _targetAssembly.GetManifestResourceStream($"{assemblyName}.Content.Images.{shortResourceName}"))
                 {
                     if (stream != null)
                     {

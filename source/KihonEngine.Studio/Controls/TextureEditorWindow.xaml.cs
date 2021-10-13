@@ -94,7 +94,8 @@ namespace KihonEngine.Studio.Controls
             _synchronizing = true;
             if (Texture == null)
             {
-                Texture = new TextureMetadata { 
+                Texture = new TextureMetadata {
+                    Name = string.Empty,
                     TileMode = TileMode.Tile,
                     Stretch = Stretch.UniformToFill,
                     RatioX = 1,
@@ -102,9 +103,14 @@ namespace KihonEngine.Studio.Controls
                 };
             }
 
+            if (Texture.Name == null)
+            {
+                Texture.Name = string.Empty;
+            }
+
             cbTileMode.SelectedValue = Texture.TileMode;
             cbStretch.SelectedValue = Texture.Stretch;
-            TrySelectTexture(Texture.Name);
+            TrySelectTexture();
             tbRatioX.Text = Texture.RatioX.ToString();
             tbRatioY.Text = Texture.RatioY.ToString();
             _synchronizing = false;
@@ -125,16 +131,32 @@ namespace KihonEngine.Studio.Controls
 
             _synchronizing = true;
             lbox.ItemsSource = textures
-                .Select(x => CreateTextureViewModel(x))
+                .Select(x => CreateTextureViewModel(x, directory))
                 .ToArray();
             _synchronizing = false;
-            //lbox.SelectedIndex = 0;
+
+            foreach (var item in lbox.Items)
+            {
+                var viewModel = (TextureViewModel)item;
+                if (viewModel.Name == Texture.Name)
+                {
+                    lbox.SelectedItem = viewModel;
+                    lbox.ScrollIntoView(viewModel);
+                    return;
+                }
+            }
+
+            if (lbox.Items.Count > 0)
+            {
+                lbox.ScrollIntoView(lbox.Items.GetItemAt(0));
+                lbox.ScrollIntoView(lbox.Items.GetItemAt(0));
+            }
         }
         
-        private void TrySelectTexture(string textureName)
+        private void TrySelectTexture()
         {
             // Select tree view node
-            var folderName = GetFolderName(textureName);
+            var folderName = GetFolderName(Texture.Name);
             var match = false;
             foreach(var item in treeView.Items)
             {
@@ -151,37 +173,22 @@ namespace KihonEngine.Studio.Controls
                 var item = (TreeViewItem)treeView.Items.GetItemAt(0);
                 item.IsSelected = true;
                 folderName = item.Header.ToString();
-                textureName = string.Empty;
             }
             
             LoadDirectory(folderName);
-
-            if (textureName == null)
-            {
-                textureName = string.Empty;
-            }
-            
-            foreach(var item in lbox.Items)
-            {
-                var viewModel = (TextureViewModel)item;
-                if (viewModel.Name == textureName)
-                {
-                    lbox.SelectedItem = viewModel;
-                    lbox.ScrollIntoView(viewModel);
-                    return;
-                }
-            }
         }
 
         private class TextureViewModel
         {
             public string Name { get; set; }
+            public string Directory { get; set; }
+            public string ShortName { get; set; }
             public Brush PreviewBrush { get; set; }
         }
 
-        private TextureViewModel CreateTextureViewModel(string filename)
+        private TextureViewModel CreateTextureViewModel(string filename, string directory)
         {
-            var result = new TextureViewModel { Name = filename };
+            var result = new TextureViewModel { Name = filename, Directory = directory, ShortName = filename };
 
             if (string.IsNullOrEmpty(filename))
             {
@@ -190,6 +197,11 @@ namespace KihonEngine.Studio.Controls
             else
             {
                 result.PreviewBrush = new ImageBrush(ImageHelper.Get(GraphicContentType.Texture, filename));
+
+                if (!string.IsNullOrEmpty(directory))
+                {
+                    result.ShortName = result.Name.Substring(result.Directory.Length + 1);
+                }
             }
 
             return result;

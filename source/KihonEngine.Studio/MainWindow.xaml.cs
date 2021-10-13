@@ -227,5 +227,10 @@ namespace KihonEngine.Studio
         {
             GameEngineController.StopGameLogic();
         }
+
+        private void MenuContentSources_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }

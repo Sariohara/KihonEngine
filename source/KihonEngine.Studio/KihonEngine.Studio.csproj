@@ -22,9 +22,24 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Content\Help\Manual.html" />
+    <None Remove="Content\Help\Manual.txt" />
+    <None Remove="Content\LICENSE.TXT" />
     <None Remove="Controls\Help\Logo1.png" />
     <None Remove="Controls\Help\Logo2.png" />
     <None Remove="Controls\Help\Logo3.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Content\Help\Manual.html">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\Help\Manual.txt">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\LICENSE.TXT">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>
@@ -40,13 +55,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Controls\Help\Logo1.png" />
-    <Resource Include="Controls\Help\Logo3.png">
+    <EmbeddedResource Include="Content\Images\Logo1.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Controls\Help\Logo2.png">
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\Images\Logo3.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\Images\Logo2.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>
@@ -68,18 +85,6 @@
     <Compile Update="Controls\ModelEditors\LightModelEditor.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="Content\Help\Manual.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Content\Help\Manual.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Content\LICENSE.TXT">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
 
   <ItemGroup>

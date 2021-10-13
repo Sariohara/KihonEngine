@@ -23,6 +23,8 @@ namespace KihonEngine.GameEngine.Graphics.Content
             _baseDirectory = Path.GetFullPath(baseDirectory);
         }
 
+        public string Name => $"file:{_baseDirectory}";
+
         public string[] GetResources(GraphicContentType contentType)
         {
             string folder = GetResourceDirectory(contentType);
@@ -76,10 +78,6 @@ namespace KihonEngine.GameEngine.Graphics.Content
                 if (File.Exists(path))
                 {
                     bitmap = new Bitmap(path);
-                    //using (var stream = File.OpenRead(path))
-                    //{
-                    //    bitmap = new Bitmap(stream);
-                    //}
 
                     _bitmapCache.Add(fullResourceName, bitmap);
                 }

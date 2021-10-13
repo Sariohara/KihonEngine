@@ -17,20 +17,8 @@
     <PackageTags>csharp game-engine dotnetcore wpf video-game 3d</PackageTags>
   </PropertyGroup>
   <ItemGroup>
-    <None Remove="Content\Images\Skyboxes\sky0-back.png" />
-    <None Remove="Content\Images\Skyboxes\sky0-bottom.png" />
-    <None Remove="Content\Images\Skyboxes\sky0-front.png" />
     <None Remove="Content\Images\Skyboxes\sky0-full.png" />
-    <None Remove="Content\Images\Skyboxes\sky0-left.png" />
-    <None Remove="Content\Images\Skyboxes\sky0-right.png" />
-    <None Remove="Content\Images\Skyboxes\sky0-top.png" />
-    <None Remove="Content\Images\Skyboxes\sky1-back.png" />
-    <None Remove="Content\Images\Skyboxes\sky1-bottom.png" />
-    <None Remove="Content\Images\Skyboxes\sky1-front.png" />
     <None Remove="Content\Images\Skyboxes\sky1-full.png" />
-    <None Remove="Content\Images\Skyboxes\sky1-left.png" />
-    <None Remove="Content\Images\Skyboxes\sky1-right.png" />
-    <None Remove="Content\Images\Skyboxes\sky1-top.png" />
     <None Remove="Content\Images\Skyboxes\sky2-full.png" />
     <None Remove="Content\Images\Skyboxes\sky3-full.png" />
     <None Remove="Content\Images\Textures\default.png" />
@@ -44,22 +32,10 @@
     <None Remove="Content\Images\Textures\steve-top.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Content\Images\Skyboxes\sky0-back.png" />
-    <EmbeddedResource Include="Content\Images\Skyboxes\sky0-bottom.png" />
-    <EmbeddedResource Include="Content\Images\Skyboxes\sky0-front.png" />
     <EmbeddedResource Include="Content\Images\Skyboxes\sky0-full.png" />
-    <EmbeddedResource Include="Content\Images\Skyboxes\sky0-left.png" />
-    <EmbeddedResource Include="Content\Images\Skyboxes\sky0-right.png" />
-    <EmbeddedResource Include="Content\Images\Skyboxes\sky0-top.png" />
     <EmbeddedResource Include="Content\Images\Skyboxes\sky2-full.png" />
     <EmbeddedResource Include="Content\Images\Skyboxes\sky3-full.png" />
-    <EmbeddedResource Include="Content\Images\Skyboxes\sky1-back.png" />
-    <EmbeddedResource Include="Content\Images\Skyboxes\sky1-bottom.png" />
-    <EmbeddedResource Include="Content\Images\Skyboxes\sky1-front.png" />
     <EmbeddedResource Include="Content\Images\Skyboxes\sky1-full.png" />
-    <EmbeddedResource Include="Content\Images\Skyboxes\sky1-left.png" />
-    <EmbeddedResource Include="Content\Images\Skyboxes\sky1-right.png" />
-    <EmbeddedResource Include="Content\Images\Skyboxes\sky1-top.png" />
     <EmbeddedResource Include="Content\Images\Textures\default.png" />
     <EmbeddedResource Include="Content\Images\Textures\floor0.jpg" />
     <EmbeddedResource Include="Content\Images\Textures\hon.png" />

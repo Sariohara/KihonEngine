@@ -41,8 +41,8 @@
                 <DataTemplate>
                     <Grid Width="200">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="130"/>
-                            <ColumnDefinition Width="70"/>
+                            <ColumnDefinition Width="110"/>
+                            <ColumnDefinition Width="90"/>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition/>
@@ -50,8 +50,7 @@
                             <RowDefinition/>
                         </Grid.RowDefinitions>
                         <Grid Grid.RowSpan="3" Margin="0,0,12,0" Background="{Binding PreviewBrush}" Width="100" Height="100" HorizontalAlignment="Left" />
-                        <TextBlock Grid.Column="1" Grid.ColumnSpan="3" Text="{Binding Name}" FontSize="12" VerticalAlignment="Center"/>
-                        <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Text="{Binding Description}" TextWrapping="Wrap"/>
+                        <TextBlock Grid.Column="1" Grid.ColumnSpan="3" Text="{Binding ShortName}" TextWrapping="Wrap" FontSize="12" VerticalAlignment="Center"/>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
