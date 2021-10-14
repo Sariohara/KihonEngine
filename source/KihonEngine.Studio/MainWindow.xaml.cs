@@ -10,8 +10,6 @@ using KihonEngine.GameEngine.Graphics.Maps.Predefined;
 using KihonEngine.SampleMaps;
 using KihonEngine.GameEngine.Graphics;
 using System.Windows.Controls;
-using System.Windows.Media;
-using KihonEngine.GameEngine.Graphics.Content;
 
 namespace KihonEngine.Studio
 {
@@ -28,8 +26,6 @@ namespace KihonEngine.Studio
             => Container.Get<IGameEngineState>();
         private IWorldEngine WorldEngine 
             => Container.Get<IWorldEngine>();
-        private IContentService ContentService
-            => Container.Get<IContentService>();
 
         public MainWindow()
         {
@@ -171,6 +167,16 @@ namespace KihonEngine.Studio
             }.ShowDialog();
         }
 
+        private void MenuContentSources_Click(object sender, RoutedEventArgs e)
+        {
+            new ContentSourceWindow
+            {
+                Owner = this,
+                ShowInTaskbar = false,
+                WindowStartupLocation = WindowStartupLocation.CenterOwner,
+            }.ShowDialog();
+        }
+
         private void MenuHelp_Click(object sender, RoutedEventArgs e)
         {
             new HelpWindow
@@ -229,19 +235,6 @@ namespace KihonEngine.Studio
         private void mainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             GameEngineController.StopGameLogic();
-        }
-
-        private void MenuContentSources_Click(object sender, RoutedEventArgs e)
-        {
-            var dialog = new OpenFileDialog();
-            dialog.InitialDirectory = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop);
-            dialog.Title = "Add content source";
-            dialog.Filter = "Zip files (*.zip)|*.zip|PK3 files (*.pk3)|*.pk3|All files (*.*)|*.*";
-            if (dialog.ShowDialog() == true)
-            {
-                ContentService.RegisterSource(new ZipFileContentSource(dialog.FileName));
-                lblNotification.Text = $"Content source <{dialog.FileName}> succesfully added";
-            }
         }
     }
 }

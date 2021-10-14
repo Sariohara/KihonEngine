@@ -15,22 +15,22 @@ namespace KihonEngine.GameEngine.Graphics.Content
 
         public void RegisterSource(IContentSource source)
         {
-            if (!_sources.Contains(source))
+            if (!_sources.Any(x => x.Description.Type == source.Description.Type && x.Description.Path == source.Description.Path))
             {
                 _sources.Add(source);
             }
         }
 
-        public string[] GetSources()
+        public ContentSourceDescription[] GetSources()
         {
-            return _sources.Select(x => x.Name).ToArray();
+            return _sources.Select(x => x.Description).ToArray();
         }
 
-        public void RemoveSource(string sourceName)
+        public void RemoveSource(ContentSourceDescription sourceDescription)
         {
             for(int i = 0; i < _sources.Count(); i++)
             {
-                if (_sources[i].Name == sourceName)
+                if (_sources[i].Description.Type == sourceDescription.Type && _sources[i].Description.Path == sourceDescription.Path)
                 {
                     _sources.RemoveAt(i);
                     break;
@@ -47,7 +47,7 @@ namespace KihonEngine.GameEngine.Graphics.Content
                 result.AddRange(source.GetResources(contentType));
             }
 
-            return result.ToArray();
+            return result.Distinct().ToArray();
         }
 
         public BitmapImage Get(GraphicContentType contentType, string resourceName)

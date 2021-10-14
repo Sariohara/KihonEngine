@@ -22,7 +22,7 @@ namespace KihonEngine.Studio.Controls
             return (TAttribute)Attribute.GetCustomAttribute(assembly, typeof(TAttribute), false);
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        private void Synchronize()
         {
             // Assembly infos
             lblStudioProduct.Content = GetAttribute<AssemblyProductAttribute>(Assembly.GetExecutingAssembly()).Product;
@@ -43,6 +43,11 @@ namespace KihonEngine.Studio.Controls
                     tbLicense.Text = sr.ReadToEnd();
                 }
             }
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            Synchronize();
         }
 
         private void btClose_Click(object sender, RoutedEventArgs e)

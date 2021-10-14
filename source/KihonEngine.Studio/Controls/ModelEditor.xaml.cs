@@ -464,10 +464,10 @@ namespace KihonEngine.Studio.Controls
             if (layeredModel != null)
             {
                 var result = MessageBox.Show(
-                    $"Remove this {layeredModel.Type}?",
-                    "Game Engine Studio", 
+                    $"Do you really want to remove this selected {layeredModel.Type}?",
+                    "Remove selected model", 
                     MessageBoxButton.YesNo, 
-                    MessageBoxImage.Question, 
+                    MessageBoxImage.Warning, 
                     MessageBoxResult.No);
 
                 if (result == MessageBoxResult.Yes)

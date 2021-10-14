@@ -28,6 +28,7 @@ namespace KihonEngine
 
             var contentService = new ContentService();
             contentService.RegisterSource(new EmbeddedContentSource());
+            contentService.RegisterSource(new FolderContentSource("Content"));
             locator.Register<IContentService>(contentService);
 
             locator.Register<IWorldEngine>(new WorldEngine());

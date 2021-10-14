@@ -23,7 +23,8 @@ namespace KihonEngine.GameEngine.Graphics.Content
             _targetAssembly = type.Assembly;
         }
 
-        public string Name => $"embedded:{_targetAssembly.GetName().Name}";
+        public ContentSourceDescription Description
+            => new ContentSourceDescription { Type = "Embedded", Path = _targetAssembly.GetName().FullName };
 
         public string[] GetResources(GraphicContentType contentType)
         {

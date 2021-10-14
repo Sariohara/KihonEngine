@@ -19,7 +19,8 @@ namespace KihonEngine.GameEngine.Graphics.Content
             _zipFilename = filename;
         }
 
-        public string Name => $"zip:{_zipFilename}";
+        public ContentSourceDescription Description
+            => new ContentSourceDescription { Type = "File", Path = _zipFilename };
 
         public string[] GetResources(GraphicContentType contentType)
         {

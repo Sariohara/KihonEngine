@@ -7,28 +7,29 @@ using System.Windows.Media.Imaging;
 
 namespace KihonEngine.GameEngine.Graphics.Content
 {
-    public class FileSystemContentSource : IContentSource
+    public class FolderContentSource : IContentSource
     {
         private Dictionary<string, BitmapImage> _bitmapImageCache = new Dictionary<string, BitmapImage>();
         private Dictionary<string, Bitmap> _bitmapCache = new Dictionary<string, Bitmap>();
         private string _baseDirectory;
 
-        public FileSystemContentSource()
+        public FolderContentSource()
         {
             _baseDirectory = Environment.CurrentDirectory;
         }
 
-        public FileSystemContentSource(string baseDirectory)
+        public FolderContentSource(string baseDirectory)
         {
-            _baseDirectory = Path.GetFullPath(baseDirectory);
+            _baseDirectory = System.IO.Path.GetFullPath(baseDirectory);
         }
 
-        public string Name => $"file:{_baseDirectory}";
+        public ContentSourceDescription Description
+            => new ContentSourceDescription { Type = "Folder", Path = _baseDirectory };
 
         public string[] GetResources(GraphicContentType contentType)
         {
             string folder = GetResourceDirectory(contentType);
-            var targetDirectory = Path.Combine(_baseDirectory, folder);
+            var targetDirectory = System.IO.Path.Combine(_baseDirectory, folder);
             if (Directory.Exists(targetDirectory))
             {
                 return Directory.GetFiles(targetDirectory, "*.*", SearchOption.AllDirectories)
@@ -49,11 +50,11 @@ namespace KihonEngine.GameEngine.Graphics.Content
             BitmapImage bitmap = null;
 
             string folder = GetResourceDirectory(contentType);
-            var fullResourceName = Path.Combine(_baseDirectory, folder, resourceName.Replace("/", "\\"));
+            var fullResourceName = System.IO.Path.Combine(_baseDirectory, folder, resourceName.Replace("/", "\\"));
             if (!_bitmapImageCache.TryGetValue(fullResourceName, out bitmap))
             {
                 var directory = Environment.CurrentDirectory;
-                var path = Path.Combine(directory, fullResourceName);
+                var path = System.IO.Path.Combine(directory, fullResourceName);
                 if (File.Exists(path))
                 {
                     bitmap = new BitmapImage();
@@ -74,11 +75,11 @@ namespace KihonEngine.GameEngine.Graphics.Content
             Bitmap bitmap = null;
 
             string folder = GetResourceDirectory(contentType);
-            var fullResourceName = Path.Combine(_baseDirectory, folder, resourceName.Replace("/", "\\"));
+            var fullResourceName = System.IO.Path.Combine(_baseDirectory, folder, resourceName.Replace("/", "\\"));
             if (!_bitmapCache.TryGetValue(fullResourceName, out bitmap))
             {
                 var directory = Environment.CurrentDirectory;
-                var path = Path.Combine(directory, fullResourceName);
+                var path = System.IO.Path.Combine(directory, fullResourceName);
                 if (File.Exists(path))
                 {
                     bitmap = new Bitmap(path);

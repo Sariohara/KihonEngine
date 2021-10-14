@@ -45,7 +45,7 @@
                 <MenuItem Header="Map Properties" Click="MenuMapProperties_Click" />
             </MenuItem>
             <MenuItem Header="Tools">
-                <MenuItem Header="Add Content Sources..." x:Name="menuContentSources" Click="MenuContentSources_Click"/>
+                <MenuItem Header="Manage Content Sources..." x:Name="menuContentSources" Click="MenuContentSources_Click"/>
             </MenuItem>
             <MenuItem Header="Help">
                 <MenuItem Header="View Help" Click="MenuHelp_Click" />

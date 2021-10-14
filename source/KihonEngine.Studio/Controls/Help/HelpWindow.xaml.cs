@@ -16,21 +16,22 @@ namespace KihonEngine.Studio.Controls
             InitializeComponent();
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        private void Synchronize()
         {
-            var htmlContent = string.Empty;
-
             var targetAssembly = Assembly.GetExecutingAssembly();
             var assemblyName = targetAssembly.GetName().Name;
             using (var stream = targetAssembly.GetManifestResourceStream($"{assemblyName}.Content.Help.Manual.html"))
             {
                 using (var sr = new StreamReader(stream, Encoding.UTF8))
                 {
-                    htmlContent = sr.ReadToEnd();
+                    webBrowser.NavigateToString(sr.ReadToEnd());
                 }
-            }
+            }            
+        }
 
-            webBrowser.NavigateToString(htmlContent);
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            Synchronize();
         }
 
         private void btClose_Click(object sender, RoutedEventArgs e)

@@ -6,8 +6,8 @@ namespace KihonEngine.GameEngine.Graphics.Content
     public interface IContentService
     {
         void RegisterSource(IContentSource source);
-        string[] GetSources();
-        void RemoveSource(string sourceName);
+        ContentSourceDescription[] GetSources();
+        void RemoveSource(ContentSourceDescription sourceDescription);
 
         string[] GetResources(GraphicContentType contentType);
         BitmapImage Get(GraphicContentType contentType, string resourceName);
