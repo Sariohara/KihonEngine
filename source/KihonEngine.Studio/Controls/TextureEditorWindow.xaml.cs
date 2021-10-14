@@ -3,16 +3,10 @@ using KihonEngine.GameEngine.Graphics.ModelsBuilders;
 using System;
 using KihonEngine.GameEngine.Graphics.Content;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using KihonEngine.Services;
 using System.Collections.Generic;
 
@@ -179,6 +173,7 @@ namespace KihonEngine.Studio.Controls
                 if (((TreeViewItem)item).Header.ToString() == folderName)
                 {
                     ((TreeViewItem)item).IsSelected = true;
+                    ((TreeViewItem)item).BringIntoView();
                     match = true;
                     break;
                 }
@@ -189,6 +184,7 @@ namespace KihonEngine.Studio.Controls
                 var item = (TreeViewItem)treeView.Items.GetItemAt(0);
                 item.IsSelected = true;
                 folderName = item.Header.ToString();
+                item.BringIntoView();
             }
 
             LoadDirectory(folderName);

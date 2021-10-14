@@ -182,8 +182,6 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
             }
 
             return ImageHelper.ToBitmapImage(bm);
-            //return new ImageBrush(imageSource);
-            //return new SolidColorBrush(Colors.White);
         }
     }
 }

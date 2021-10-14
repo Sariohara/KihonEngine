@@ -41,22 +41,22 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Button x:Name="btTextureTop" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Stretch" Click="btTextureTop_Click">
+            <Button x:Name="btTextureTop" Grid.Row="0" Grid.Column="2" ToolTip="Top" HorizontalAlignment="Stretch" Click="btTextureTop_Click">
                 <TextBlock x:Name="tbTextureTopImg" Width="20" Height="20"/>
             </Button>
-            <Button x:Name="btTextureBack" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" Click="btTextureBack_Click">
+            <Button x:Name="btTextureBack" Grid.Row="1" Grid.Column="0" ToolTip="Back" HorizontalAlignment="Stretch" Click="btTextureBack_Click">
                 <TextBlock x:Name="btTextureBackImg" Width="20" Height="20"/>
             </Button>
-            <Button x:Name="btTextureLeft" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" Click="btTextureLeft_Click">
+            <Button x:Name="btTextureLeft" Grid.Row="1" Grid.Column="1" ToolTip="Left" HorizontalAlignment="Stretch" Click="btTextureLeft_Click">
                 <TextBlock x:Name="btTextureLeftImg" Width="20" Height="20"/>
             </Button>
-            <Button x:Name="btTextureFront" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Stretch" Click="btTextureFront_Click">
+            <Button x:Name="btTextureFront" Grid.Row="1" Grid.Column="2" ToolTip="Front" HorizontalAlignment="Stretch" Click="btTextureFront_Click">
                 <TextBlock x:Name="btTextureFrontImg" Width="20" Height="20"/>
             </Button>
-            <Button x:Name="btTextureRight" Grid.Row="1" Grid.Column="3" HorizontalAlignment="Stretch" Click="btTextureRight_Click">
+            <Button x:Name="btTextureRight" Grid.Row="1" Grid.Column="3" ToolTip="Right" HorizontalAlignment="Stretch" Click="btTextureRight_Click">
                 <TextBlock x:Name="btTextureRightImg" Width="20" Height="20"/>
             </Button>
-            <Button x:Name="btTextureBottom" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Stretch" Click="btTextureBottom_Click">
+            <Button x:Name="btTextureBottom" Grid.Row="2" Grid.Column="2" ToolTip="Bottom" HorizontalAlignment="Stretch" Click="btTextureBottom_Click">
                 <TextBlock x:Name="btTextureBottomImg" Width="20" Height="20"/>
             </Button>
         </Grid>
