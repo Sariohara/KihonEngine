@@ -42,6 +42,12 @@ namespace KihonEngine.Studio
 
         private void mainWindow_Loaded(object sender, RoutedEventArgs e)
         {
+            int argb = System.Convert.ToInt32("0xFF2E8B57", 16);
+
+            var c = System.Drawing.Color.FromArgb(argb);
+
+            string rgb = $"#{c.R:X2}{c.G:X2}{c.B:X2}";
+
             InitializeGameEngine();
 
             lblNotification.Text = $"Load map <{State.Graphics.LevelName}> succeeded";

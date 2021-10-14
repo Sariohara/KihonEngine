@@ -20,7 +20,7 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Canvas Grid.Row="0" Grid.Column="0">
-            <Image Name="imgLogo" Canvas.Left="0" Canvas.Top="0" Height="300" Width="200" Source="/Content/Images/Logo3.png" Stretch="Fill" />
+            <Image Name="imgLogo" Canvas.Left="0" Canvas.Top="0" Height="300" Width="200" Source="/Content/Images/Logo04.png" Stretch="UniformToFill" />
         </Canvas>
         <Grid Grid.Row="0" Grid.Column="1">
             <Grid.ColumnDefinitions>

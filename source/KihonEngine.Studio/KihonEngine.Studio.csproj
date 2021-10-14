@@ -24,6 +24,7 @@
   <ItemGroup>
     <None Remove="Content\Help\Manual.html" />
     <None Remove="Content\Help\Manual.txt" />
+    <None Remove="Content\Images\Logo04.png" />
     <None Remove="Content\LICENSE.TXT" />
     <None Remove="Controls\Help\Logo1.png" />
     <None Remove="Controls\Help\Logo2.png" />
@@ -55,13 +56,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Content\Images\Logo1.png">
+    <EmbeddedResource Include="Content\Images\Logo01.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
-    <Resource Include="Content\Images\Logo3.png">
+    <Resource Include="Content\Images\Logo04.png" />
+    <Resource Include="Content\Images\Logo03.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <EmbeddedResource Include="Content\Images\Logo2.png">
+    <EmbeddedResource Include="Content\Images\Logo02.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
