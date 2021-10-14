@@ -31,6 +31,7 @@
             <TextBox Canvas.Left="550" Canvas.Top="10" x:Name="tbRatioY" Width="50" KeyUp="tbRatioY_KeyUp" />
         </Canvas>
         <TreeView Grid.Row="1" Grid.Column="0" x:Name="treeView" SelectedItemChanged="treeView_SelectedItemChanged"/>
+        <ProgressBar Grid.Row="1" Grid.Column="1" x:Name="progressBar" Minimum="0" Maximum="100" IsIndeterminate="True"  HorizontalContentAlignment="Stretch" />
         <ListBox Grid.Row="1" Grid.Column="1"  x:Name="lbox" HorizontalContentAlignment="Stretch" SelectionChanged="lbox_SelectionChanged" >
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
@@ -62,6 +63,7 @@
             </ListBox.ItemContainerStyle>
         </ListBox>
         <Canvas Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+            <TextBlock Canvas.Left="10" Canvas.Bottom="10" x:Name="lblStatus" Foreground="White" />
             <Button Canvas.Right="10" Canvas.Bottom="10" x:Name="btClose" Content="Close" Width="100"  Click="btClose_Click" />
         </Canvas>
     </Grid>

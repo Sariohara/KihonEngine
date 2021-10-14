@@ -11,6 +11,7 @@ using KihonEngine.SampleMaps;
 using KihonEngine.GameEngine.Graphics;
 using System.Windows.Controls;
 using System.Windows.Media;
+using KihonEngine.GameEngine.Graphics.Content;
 
 namespace KihonEngine.Studio
 {
@@ -26,7 +27,9 @@ namespace KihonEngine.Studio
         private IGameEngineState State
             => Container.Get<IGameEngineState>();
         private IWorldEngine WorldEngine 
-            => Container.Get<IWorldEngine>();        
+            => Container.Get<IWorldEngine>();
+        private IContentService ContentService
+            => Container.Get<IContentService>();
 
         public MainWindow()
         {
@@ -230,7 +233,15 @@ namespace KihonEngine.Studio
 
         private void MenuContentSources_Click(object sender, RoutedEventArgs e)
         {
-            
+            var dialog = new OpenFileDialog();
+            dialog.InitialDirectory = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop);
+            dialog.Title = "Add content source";
+            dialog.Filter = "Zip files (*.zip)|*.zip|PK3 files (*.pk3)|*.pk3|All files (*.*)|*.*";
+            if (dialog.ShowDialog() == true)
+            {
+                ContentService.RegisterSource(new ZipFileContentSource(dialog.FileName));
+                lblNotification.Text = $"Content source <{dialog.FileName}> succesfully added";
+            }
         }
     }
 }

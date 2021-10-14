@@ -41,6 +41,18 @@ namespace KihonEngine.Studio.Controls
             LoadTextures();
         }
 
+        //private void ShowProgressBar()
+        //{
+        //    progressBar.Visibility = Visibility.Visible;
+        //    lbox.Visibility = Visibility.Hidden;
+        //}
+
+        //private void HideProgressBar()
+        //{
+        //    progressBar.Visibility = Visibility.Hidden;
+        //    lbox.Visibility = Visibility.Visible;
+        //}
+
         private void LoadTextures()
         {
             // Load textures
@@ -77,7 +89,7 @@ namespace KihonEngine.Studio.Controls
                 return string.Empty;
             }
 
-            var folderEndIndex = texture.LastIndexOf('\\');
+            var folderEndIndex = texture.LastIndexOf('/');
             if (folderEndIndex > 0)
             {
                 return texture.Substring(0, folderEndIndex);
@@ -122,7 +134,7 @@ namespace KihonEngine.Studio.Controls
             if (directory == string.Empty)
             {
                 
-                textures.AddRange(_textures.Where(x => x.IndexOf('\\') == -1));
+                textures.AddRange(_textures.Where(x => x.IndexOf('/') == -1));
             }
             else
             {
@@ -135,6 +147,7 @@ namespace KihonEngine.Studio.Controls
                 .ToArray();
             _synchronizing = false;
 
+            var matched = false;
             foreach (var item in lbox.Items)
             {
                 var viewModel = (TextureViewModel)item;
@@ -142,15 +155,18 @@ namespace KihonEngine.Studio.Controls
                 {
                     lbox.SelectedItem = viewModel;
                     lbox.ScrollIntoView(viewModel);
-                    return;
+                    matched = true;
+                    break;
                 }
             }
 
-            if (lbox.Items.Count > 0)
+            if (!matched && lbox.Items.Count > 0)
             {
                 lbox.ScrollIntoView(lbox.Items.GetItemAt(0));
                 lbox.ScrollIntoView(lbox.Items.GetItemAt(0));
             }
+
+            lblStatus.Text = $"{_textures.Count} texture(s) in total.{Environment.NewLine}{lbox.Items.Count} texture(s) loaded in selected folder";
         }
         
         private void TrySelectTexture()
@@ -174,16 +190,8 @@ namespace KihonEngine.Studio.Controls
                 item.IsSelected = true;
                 folderName = item.Header.ToString();
             }
-            
-            LoadDirectory(folderName);
-        }
 
-        private class TextureViewModel
-        {
-            public string Name { get; set; }
-            public string Directory { get; set; }
-            public string ShortName { get; set; }
-            public Brush PreviewBrush { get; set; }
+            LoadDirectory(folderName);
         }
 
         private TextureViewModel CreateTextureViewModel(string filename, string directory)
@@ -305,6 +313,14 @@ namespace KihonEngine.Studio.Controls
                 var node = (TreeViewItem)e.NewValue;
                 LoadDirectory(node.Header.ToString());
             }
+        }
+
+        private class TextureViewModel
+        {
+            public string Name { get; set; }
+            public string Directory { get; set; }
+            public string ShortName { get; set; }
+            public Brush PreviewBrush { get; set; }
         }
     }
 }
