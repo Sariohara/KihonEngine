@@ -19,7 +19,7 @@ namespace KihonEngine.GameEngine.Graphics.Content
             _zipFilename = filename;
         }
 
-        public string Name => $"pak:{_zipFilename}";
+        public string Name => $"zip:{_zipFilename}";
 
         public string[] GetResources(GraphicContentType contentType)
         {
