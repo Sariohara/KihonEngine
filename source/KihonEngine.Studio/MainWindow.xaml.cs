@@ -217,6 +217,7 @@ namespace KihonEngine.Studio
             WorldEngine.RegisterMap<DarkCastleM2MapBuilder>();
             WorldEngine.RegisterMap<RoofTopMapBuilder>();
             WorldEngine.RegisterMap<LogoMapBuilder>();
+            WorldEngine.RegisterMap<DarkCastleM3MapBuilder>();
 
             GameEngineController.RegisterIO(this);
             GameEngineController.RegisterIO(toolbox3d);
@@ -235,6 +236,11 @@ namespace KihonEngine.Studio
         private void mainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             GameEngineController.StopGameLogic();
+        }
+
+        private void menuExtractMapContent_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

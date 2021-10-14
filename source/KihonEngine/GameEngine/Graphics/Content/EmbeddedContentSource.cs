@@ -37,6 +37,7 @@ namespace KihonEngine.GameEngine.Graphics.Content
                 var results = resourceNames
                  .Where(x => x.StartsWith(prefixResourceName))
                  .Select(x => x.Substring(prefixResourceName.Length))
+                 .Select(x => FormatResourceName(x))
                  .ToList();
 
                 results.Sort();
@@ -47,11 +48,24 @@ namespace KihonEngine.GameEngine.Graphics.Content
             return new string[] { };
         }
 
+        private string FormatResourceName(string resourceName)
+        {
+            while(resourceName.Count(x => x == '.') > 1)
+            {
+                var index = resourceName.IndexOf(".");
+                char[] chars = resourceName.ToCharArray();
+                chars[index] = '/';
+                resourceName = new string(chars);
+            }
+
+            return resourceName;
+        }
+
         public BitmapImage Get(GraphicContentType contentType, string resourceName)
         {
             BitmapImage bitmap = null;
 
-            var shortResourceName = $"{GetResourceDirectory(contentType)}.{resourceName}";
+            var shortResourceName = $"{GetResourceDirectory(contentType)}.{resourceName.Replace('/', '.')}";
             if (!_bitmapImageCache.TryGetValue(shortResourceName, out bitmap))
             {
                 var assemblyName = _targetAssembly.GetName().Name;
@@ -76,7 +90,7 @@ namespace KihonEngine.GameEngine.Graphics.Content
         {
             Bitmap bitmap = null;
 
-            var shortResourceName = $"{GetResourceDirectory(contentType)}.{resourceName}";
+            var shortResourceName = $"{GetResourceDirectory(contentType)}.{resourceName.Replace('/', '.')}";
             if (!_bitmapCache.TryGetValue(shortResourceName, out bitmap))
             {
                 var assemblyName = _targetAssembly.GetName().Name;
