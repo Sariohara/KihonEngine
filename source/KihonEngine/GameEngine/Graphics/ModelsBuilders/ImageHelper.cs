@@ -139,6 +139,12 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
             var materiaGroup = new MaterialGroup();
 
             var imageSource = Get(GraphicContentType.Texture, filename);
+
+            if (imageSource == null)
+            {
+                imageSource = CreateNotFoundImage($"Not found :'({System.Environment.NewLine}{filename}");
+            }
+
             var brush = new ImageBrush(imageSource);
             brush.TileMode = tileMode;
             brush.Stretch = stretch;
@@ -157,6 +163,27 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
             }
 
             return new ImageBrush(Get(GraphicContentType.Texture, filename));
+        }
+
+        private static BitmapImage CreateNotFoundImage(string message)
+        {
+            var xSize = 101;
+            var ySize = 101;
+            var bm = new Bitmap(xSize, ySize);
+            using (var graphics = System.Drawing.Graphics.FromImage(bm))
+            {
+                StringFormat sf = new StringFormat();
+                sf.LineAlignment = StringAlignment.Center;
+                sf.Alignment = StringAlignment.Center;
+                var font = new Font(System.Drawing.FontFamily.GenericSansSerif, 10, System.Drawing.FontStyle.Regular);
+                graphics.FillRectangle(new SolidBrush(System.Drawing.Color.White), new Rectangle(0, 0, xSize, ySize));
+                graphics.DrawRectangle(new System.Drawing.Pen(System.Drawing.Color.Black, 2), new Rectangle(0, 0, xSize, ySize));
+                graphics.DrawString(message, font, new SolidBrush(System.Drawing.Color.Red), new RectangleF { X = 1, Y = 1, Width = xSize - 1, Height = ySize - 1 }, sf);
+            }
+
+            return ImageHelper.ToBitmapImage(bm);
+            //return new ImageBrush(imageSource);
+            //return new SolidColorBrush(Colors.White);
         }
     }
 }
