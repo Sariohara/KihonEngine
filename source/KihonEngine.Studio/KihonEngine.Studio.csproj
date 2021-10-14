@@ -58,9 +58,9 @@
     <EmbeddedResource Include="Content\Images\Logo1.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Content\Images\Logo3.png">
+    <Resource Include="Content\Images\Logo3.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </EmbeddedResource>
+    </Resource>
     <EmbeddedResource Include="Content\Images\Logo2.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
