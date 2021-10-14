@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Interop;
 
 namespace KihonEngine.Studio.Controls
 {
+    // http://www.pinvoke.net/default.aspx/shell32.shbrowseforfolder
     public class BrowseForFolder
     {
         // Constants for sending and receiving messages in BrowseCallBackProc
