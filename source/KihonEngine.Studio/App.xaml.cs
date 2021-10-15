@@ -19,8 +19,6 @@ namespace KihonEngine.Studio
             => Container.Get<IGameEngineController>();
         private IWorldEngine WorldEngine
             => Container.Get<IWorldEngine>();
-        private IContentService ContentService
-            => Container.Get<IContentService>();
 
         private SplashScreenWindow _splashScreen;
 
@@ -61,7 +59,7 @@ namespace KihonEngine.Studio
             //LogService.AddListener(new FileLogListener(".out.log"));
 
             DisplayMessage("Register content sources...");
-            ContentService.RegisterSource(new EmbeddedContentSource(typeof(E1M1MapBuilder)));
+            Engine.RegisterContentFromAssembly(typeof(E1M1MapBuilder));
 
             DisplayMessage("Register maps...");
             WorldEngine.RegisterMap<E1M1MapBuilder>();
