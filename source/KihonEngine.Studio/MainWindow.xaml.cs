@@ -105,7 +105,7 @@ namespace KihonEngine.Studio
             }
         }
 
-        private void MenuNew_Click(object sender, RoutedEventArgs e)
+        private void MenuNewMap_Click(object sender, RoutedEventArgs e)
         {
             GameEngineController.LoadMap(PredefinedMapNames.New);
             lblNotification.Text = $"Load map <{State.Graphics.LevelName}> succeeded";

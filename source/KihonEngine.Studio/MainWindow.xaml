@@ -22,17 +22,19 @@
         </Grid.RowDefinitions>
         <Menu>
             <MenuItem Header="File">
-                <MenuItem Header="New" Click="MenuNew_Click" />
-                <MenuItem Header="New maze..." Click="MenuNewMaze_Click" />
+                <MenuItem Header="New">
+                    <MenuItem Header="Map" Click="MenuNewMap_Click" />
+                    <MenuItem Header="Maze..." Click="MenuNewMaze_Click" />
+                </MenuItem>
                 <MenuItem Header="Open Map">
+                    <MenuItem Header="File..." Click="MenuOpenFromFile_Click" />
+                    <Separator />
                     <MenuItem Header="Demo : Empty" x:Name="menuOpen0" Click="MenuOpen_Click" />
                     <MenuItem Header="Demo : Empty" x:Name="menuOpen1" Click="MenuOpen_Click" />
                     <MenuItem Header="Demo : Empty" x:Name="menuOpen2" Click="MenuOpen_Click" />
                     <MenuItem Header="Demo : Empty" x:Name="menuOpen3" Click="MenuOpen_Click" />
                     <MenuItem Header="Demo : Empty" x:Name="menuOpen4" Click="MenuOpen_Click" />
                     <MenuItem Header="Demo : Empty" x:Name="menuOpen5" Click="MenuOpen_Click" />
-                    <Separator />
-                    <MenuItem Header="File..." Click="MenuOpenFromFile_Click" />
                 </MenuItem>
                 <Separator />
                 <MenuItem Header="Save Map As..." Click="MenuSaveAs_Click" />
