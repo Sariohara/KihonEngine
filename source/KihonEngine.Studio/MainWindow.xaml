@@ -51,6 +51,7 @@
             </MenuItem>
             <MenuItem Header="Help">
                 <MenuItem Header="View Help" Click="MenuHelp_Click" />
+                <MenuItem Header="View Quick Start" Click="MenuQuickStartHelp_Click" />
                 <Separator />
                 <MenuItem Header="About" Click="MenuAbout_Click" />
             </MenuItem>

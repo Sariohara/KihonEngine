@@ -1,6 +1,6 @@
 ﻿Minimal help :
 --------------
-This file explains how to start with Game Engine Studio
+This file explains how to start with Kihon Engine Studio
 
 Global comands
 --------------

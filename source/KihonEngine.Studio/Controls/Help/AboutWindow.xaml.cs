@@ -50,6 +50,16 @@ namespace KihonEngine.Studio.Controls
             Synchronize();
         }
 
+        private void btCopyInfo_Click(object sender, RoutedEventArgs e)
+        {
+            Clipboard.SetText(
+                $"{lblStudioProduct.Content}{Environment.NewLine}"
+                + $"{lblStudioVersion.Content}{Environment.NewLine}"
+                + $"{Environment.NewLine}"
+                + $"{lblEngineProduct.Content}{Environment.NewLine}"
+                + $"{lblEngineVersion.Content}{Environment.NewLine}");
+        }
+
         private void btClose_Click(object sender, RoutedEventArgs e)
         {
             Close();

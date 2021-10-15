@@ -185,6 +185,11 @@ namespace KihonEngine.Studio
 
         private void MenuHelp_Click(object sender, RoutedEventArgs e)
         {
+            ExternalResources.Navigate(ExternalResources.DocumentationUrl);
+        }
+
+        private void MenuQuickStartHelp_Click(object sender, RoutedEventArgs e)
+        {
             new HelpWindow
             {
                 Owner = this,

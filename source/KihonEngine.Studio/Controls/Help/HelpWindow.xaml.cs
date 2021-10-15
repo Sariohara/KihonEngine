@@ -1,8 +1,10 @@
-﻿using System.IO;
+﻿using System.Diagnostics;
+using System.IO;
 using System.Reflection;
 using System.Text;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Navigation;
 
 namespace KihonEngine.Studio.Controls
 {
@@ -18,6 +20,9 @@ namespace KihonEngine.Studio.Controls
 
         private void Synchronize()
         {
+            lnkDocumentation.NavigateUri = new System.Uri(ExternalResources.DocumentationUrl);
+            lnkDocumentation.ToolTip = ExternalResources.DocumentationUrl;
+
             var targetAssembly = Assembly.GetExecutingAssembly();
             var assemblyName = targetAssembly.GetName().Name;
             using (var stream = targetAssembly.GetManifestResourceStream($"{assemblyName}.Content.Help.Manual.html"))
@@ -32,6 +37,11 @@ namespace KihonEngine.Studio.Controls
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             Synchronize();
+        }
+
+        private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
+        {
+            ExternalResources.Navigate(e.Uri.AbsoluteUri);
         }
 
         private void btClose_Click(object sender, RoutedEventArgs e)
