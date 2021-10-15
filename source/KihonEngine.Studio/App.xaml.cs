@@ -1,5 +1,6 @@
 ﻿using KihonEngine.GameEngine;
 using KihonEngine.GameEngine.Graphics;
+using KihonEngine.GameEngine.Graphics.Content;
 using KihonEngine.GameEngine.Graphics.Maps.Predefined;
 using KihonEngine.SampleMaps;
 using KihonEngine.Services;
@@ -18,6 +19,8 @@ namespace KihonEngine.Studio
             => Container.Get<IGameEngineController>();
         private IWorldEngine WorldEngine
             => Container.Get<IWorldEngine>();
+        private IContentService ContentService
+            => Container.Get<IContentService>();
 
         private SplashScreenWindow _splashScreen;
 
@@ -56,6 +59,9 @@ namespace KihonEngine.Studio
             Engine.Configure();
 
             //LogService.AddListener(new FileLogListener(".out.log"));
+
+            DisplayMessage("Register content sources...");
+            ContentService.RegisterSource(new EmbeddedContentSource(typeof(E1M1MapBuilder)));
 
             DisplayMessage("Register maps...");
             WorldEngine.RegisterMap<E1M1MapBuilder>();

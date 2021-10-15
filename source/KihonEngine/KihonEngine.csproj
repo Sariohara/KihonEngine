@@ -17,10 +17,7 @@
     <PackageTags>csharp game-engine dotnetcore wpf video-game 3d</PackageTags>
   </PropertyGroup>
   <ItemGroup>
-    <None Remove="Content\Images\Skyboxes\sky0-full.png" />
     <None Remove="Content\Images\Skyboxes\sky1-full.png" />
-    <None Remove="Content\Images\Skyboxes\sky2-full.png" />
-    <None Remove="Content\Images\Skyboxes\sky3-full.png" />
     <None Remove="Content\Images\Textures\default.png" />
     <None Remove="Content\Images\Textures\floor0.jpg" />
     <None Remove="Content\Images\Textures\Hon.png" />
@@ -32,9 +29,6 @@
     <None Remove="Content\Images\Textures\steve-top.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Content\Images\Skyboxes\sky0-full.png" />
-    <EmbeddedResource Include="Content\Images\Skyboxes\sky2-full.png" />
-    <EmbeddedResource Include="Content\Images\Skyboxes\sky3-full.png" />
     <EmbeddedResource Include="Content\Images\Skyboxes\sky1-full.png" />
     <EmbeddedResource Include="Content\Images\Textures\default.png" />
     <EmbeddedResource Include="Content\Images\Textures\floor0.jpg" />

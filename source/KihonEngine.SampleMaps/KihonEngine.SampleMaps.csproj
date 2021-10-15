@@ -20,6 +20,9 @@
 
   <ItemGroup>
     <None Remove="AbstractCity.json" />
+    <None Remove="Content\Images\Skyboxes\sky0-full.png" />
+    <None Remove="Content\Images\Skyboxes\sky2-full.png" />
+    <None Remove="Content\Images\Skyboxes\sky3-full.png" />
     <None Remove="Content\Images\Textures\base_floor\clanggrate2.jpg" />
     <None Remove="Content\Images\Textures\base_floor\clang_floor3bstairtop2.jpg" />
     <None Remove="Content\Images\Textures\base_object\boxq3_3b.jpg" />
@@ -78,6 +81,9 @@
     <None Remove="E1M1.json" />
     <None Remove="packageIcon.png" />
     <None Remove="Q3DM1.json" />
+    <EmbeddedResource Include="Content\Images\Skyboxes\sky0-full.png" />
+    <EmbeddedResource Include="Content\Images\Skyboxes\sky2-full.png" />
+    <EmbeddedResource Include="Content\Images\Skyboxes\sky3-full.png" />
     <EmbeddedResource Include="Content\Images\Textures\base_floor\clanggrate2.jpg" />
     <EmbeddedResource Include="Content\Images\Textures\base_floor\clang_floor3bstairtop2.jpg" />
     <EmbeddedResource Include="Content\Images\Textures\base_object\boxq3_3b.jpg" />
