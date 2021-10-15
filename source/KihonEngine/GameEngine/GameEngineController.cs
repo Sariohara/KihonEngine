@@ -113,6 +113,11 @@ namespace KihonEngine.GameEngine
             return viewportControl;
         }
 
+        public UserControl GetDefaultGraphicOutput()
+        {
+            return (UserControl)_normalScreenGraphicProvider();
+        }
+
         public void RegisterGraphicOutput(Func<IGraphicOutput> normalScreenProvider, Func<IGraphicOutput> fullscreenProvider = null)
         {
             if (normalScreenProvider == null || fullscreenProvider == null)

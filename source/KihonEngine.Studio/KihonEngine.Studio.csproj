@@ -24,6 +24,7 @@
   <ItemGroup>
     <None Remove="Content\Help\Manual.html" />
     <None Remove="Content\Help\Manual.txt" />
+    <None Remove="Content\Images\logo04-kana-transparent.png" />
     <None Remove="Content\Images\logo04-kana.png" />
     <None Remove="Content\LICENSE.TXT" />
     <None Remove="Controls\Help\Logo1.png" />
@@ -59,6 +60,7 @@
     <EmbeddedResource Include="Content\Images\Logo01.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
+    <Resource Include="Content\Images\logo04-kana-transparent.png" />
     <Resource Include="Content\Images\logo04-kana.png" />
     <Resource Include="Content\Images\Logo03.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>

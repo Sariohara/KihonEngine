@@ -1,0 +1,26 @@
+﻿<Window x:Class="KihonEngine.Studio.SplashScreenWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KihonEngine.Studio"
+        Style="{DynamicResource ResourceKey=WindowDefaultStyle}"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown"
+        AllowsTransparency="True"
+        Title="Kihon Engine" Height="250" Width="440">
+    <Grid Margin="15">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="125"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <Image Name="imgLogo" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="120" Width="120"  Source="/Content/Images/Logo04-kana-transparent.png" Stretch="Uniform" />
+        <TextBlock Grid.Row="0" Text="Kihon Engine Studio" VerticalAlignment="Bottom" HorizontalAlignment="Center" Foreground="White" FontSize="24" />
+        <!--<ProgressBar Grid.Row="1" x:Name="progressBar" VerticalAlignment="Top"  Height="10" Minimum="0" Maximum="100" IsIndeterminate="True"/>-->
+        <TextBlock x:Name="lblStatus" Grid.Row="2" Text="Starting..." Foreground="White"/>
+    </Grid>
+</Window>

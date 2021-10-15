@@ -28,6 +28,7 @@ namespace KihonEngine.Studio
         private IWorldEngine WorldEngine 
             => Container.Get<IWorldEngine>();
 
+
         public MainWindow()
         {
             InitializeComponent();
@@ -43,13 +44,7 @@ namespace KihonEngine.Studio
 
         private void mainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            int argb = System.Convert.ToInt32("0xFF2E8B57", 16);
-
-            var c = System.Drawing.Color.FromArgb(argb);
-
-            string rgb = $"#{c.R:X2}{c.G:X2}{c.B:X2}";
-
-            InitializeGameEngine();
+            AttachToGameEngine();
 
             lblNotification.Text = $"Load map <{State.Graphics.LevelName}> succeeded";
 
@@ -214,22 +209,9 @@ namespace KihonEngine.Studio
             Close();
         }
 
-        private void InitializeGameEngine()
-        {
-            // Load game
-            Engine.Configure();
-            
+        private void AttachToGameEngine()
+        {           
             LogService.AddListener(this.outputWindow);
-            //LogService.AddListener(new FileLogListener(".out.log"));
-
-            WorldEngine.RegisterMap<E1M1MapBuilder>();
-            WorldEngine.RegisterMap<Q3DM1MapBuilder>();
-            //WorldEngine.RegisterMap<MazeMapBuilder>();
-            //            WorldEngine.RegisterMap<DarkCastleMapBuilder>();
-            WorldEngine.RegisterMap<DarkCastleM2MapBuilder>();
-            WorldEngine.RegisterMap<RoofTopMapBuilder>();
-            WorldEngine.RegisterMap<LogoMapBuilder>();
-            WorldEngine.RegisterMap<DarkCastleM3MapBuilder>();
 
             GameEngineController.RegisterIO(this);
             GameEngineController.RegisterIO(toolbox3d);
@@ -237,12 +219,8 @@ namespace KihonEngine.Studio
             GameEngineController.RegisterIO(stateProperties);
             GameEngineController.RegisterIO(modelExplorer);
             GameEngineController.RegisterIO(sourceCodeViewer);
-            
-            viewportHost.AttachViewport(GameEngineController.RegisterDefaultGraphicOutput());
 
-            GameEngineController.SwitchToNormalScreen();
-            GameEngineController.SwitchToEditorMode();
-            GameEngineController.LoadMap(PredefinedMapNames.New);
+            viewportHost.AttachViewport(GameEngineController.GetDefaultGraphicOutput());
         }
 
         private void mainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
