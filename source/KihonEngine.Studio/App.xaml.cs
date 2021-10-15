@@ -39,7 +39,12 @@ namespace KihonEngine.Studio
 
         private void DisplaySplashScreen()
         {
-            _splashScreen = new SplashScreenWindow { ShowInTaskbar = false };
+            _splashScreen = new SplashScreenWindow
+            {
+                ShowInTaskbar = false,
+                DisplayProgressBar = false,
+            };
+
             this.MainWindow = _splashScreen;
             _splashScreen.Show();
         }

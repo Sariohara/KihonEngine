@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KihonEngine.Studio"
-        Style="{DynamicResource ResourceKey=WindowDefaultStyle}"
+        Background="#252526"
         mc:Ignorable="d"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
@@ -20,7 +20,7 @@
         </Grid.RowDefinitions>
         <Image Name="imgLogo" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="120" Width="120"  Source="/Content/Images/Logo04-kana-transparent.png" Stretch="Uniform" />
         <TextBlock Grid.Row="0" Text="Kihon Engine Studio" VerticalAlignment="Bottom" HorizontalAlignment="Center" Foreground="White" FontSize="24" />
-        <!--<ProgressBar Grid.Row="1" x:Name="progressBar" VerticalAlignment="Top"  Height="10" Minimum="0" Maximum="100" IsIndeterminate="True"/>-->
+        <ProgressBar Grid.Row="1" x:Name="progressBar" VerticalAlignment="Top"  Height="10" Minimum="0" Maximum="100" IsIndeterminate="True"/>
         <TextBlock x:Name="lblStatus" Grid.Row="2" Text="Starting..." Foreground="White"/>
     </Grid>
 </Window>

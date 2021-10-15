@@ -17,6 +17,12 @@ namespace KihonEngine.Studio
             InitializeComponent();
         }
 
+        public bool DisplayProgressBar
+        {
+            get { return progressBar.Visibility == Visibility.Visible; }
+            set { progressBar.Visibility = value ? Visibility.Visible : Visibility.Hidden; }
+        }
+
         public string Message
         {
             get { return lblStatus.Text; }
