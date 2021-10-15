@@ -47,6 +47,29 @@ namespace KihonEngine.GameEngine.Graphics.Content
             return new string[] { };
         }
 
+        public Stream GetStream(GraphicContentType contentType, string resourceName)
+        {
+            string folder = GetResourceDirectory(contentType);
+            var fullResourceName = $"{folder}/{resourceName}";
+            
+            using (var archive = ZipFile.OpenRead(_zipFilename))
+            {
+                var entry = archive.GetEntry(fullResourceName);
+                if (entry != null)
+                {
+                    using (var zipStream = entry.Open())
+                    {
+                        var memoryStream = new MemoryStream();
+                        zipStream.CopyTo(memoryStream);
+                        memoryStream.Position = 0;
+                        return memoryStream;
+                    }
+                }
+
+                return null;
+            }
+        }
+
         public BitmapImage Get(GraphicContentType contentType, string resourceName)
         {
             if (!File.Exists(_zipFilename))

@@ -14,7 +14,7 @@ namespace KihonEngine.SampleMaps
             System.Reflection.Assembly.GetExecutingAssembly(),
             "KihonEngine.SampleMaps.DarkCastleM3.json")
         {
-            ContentService.RegisterSource(new EmbeddedContentSource(this.GetType()));
+            //ContentService.RegisterSource(new EmbeddedContentSource(this.GetType()));
         }
     }
 }

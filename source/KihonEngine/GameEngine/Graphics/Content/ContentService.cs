@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Drawing;
 using System.Windows.Media.Imaging;
+using System.IO;
 
 namespace KihonEngine.GameEngine.Graphics.Content
 {
@@ -48,6 +49,20 @@ namespace KihonEngine.GameEngine.Graphics.Content
             }
 
             return result.Distinct().ToArray();
+        }
+
+        public Stream GetStream(GraphicContentType contentType, string resourceName)
+        {
+            foreach (var source in _sources)
+            {
+                var result = source.GetStream(contentType, resourceName);
+                if (result != null)
+                {
+                    return result;
+                }
+            }
+
+            return null;
         }
 
         public BitmapImage Get(GraphicContentType contentType, string resourceName)

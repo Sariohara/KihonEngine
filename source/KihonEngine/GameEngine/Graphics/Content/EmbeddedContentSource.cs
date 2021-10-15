@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Reflection;
 using System.Windows.Media.Imaging;
+using System.IO;
 
 namespace KihonEngine.GameEngine.Graphics.Content
 {
@@ -59,6 +60,13 @@ namespace KihonEngine.GameEngine.Graphics.Content
             }
 
             return resourceName;
+        }
+
+        public Stream GetStream(GraphicContentType contentType, string resourceName)
+        {
+            var shortResourceName = $"{GetResourceDirectory(contentType)}.{resourceName.Replace('/', '.')}";
+            var assemblyName = _targetAssembly.GetName().Name;
+            return _targetAssembly.GetManifestResourceStream($"{assemblyName}.Content.Images.{shortResourceName}");
         }
 
         public BitmapImage Get(GraphicContentType contentType, string resourceName)

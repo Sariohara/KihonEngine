@@ -11,6 +11,8 @@ using KihonEngine.SampleMaps;
 using KihonEngine.GameEngine.Graphics;
 using System.Windows.Controls;
 using KihonEngine.Studio.Helpers;
+using KihonEngine.Studio.Services;
+using KihonEngine.GameEngine.Graphics.ModelDefinitions;
 
 namespace KihonEngine.Studio
 {
@@ -147,6 +149,26 @@ namespace KihonEngine.Studio
             {
                 GameEngineController.SaveMapToFile(dialog.FileName);
                 lblNotification.Text = $"Saved successfully to file: <{dialog.FileName}>";
+            }
+        }
+
+        private void MenuSaveMapContentAs_Click(object sender, RoutedEventArgs e)
+        {
+            var dialog = new SaveFileDialog();
+            dialog.InitialDirectory = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop);
+            dialog.Filter = "Zip files (*.zip)|*.zip|All files (*.*)|*.*";
+
+            if (dialog.ShowDialog() == true)
+            {
+                var builder = new ModelDefinitionBuilder();
+                var mapDefinition = builder.CreateMapDefinition(
+                    State.Graphics.LevelName,
+                    State.Graphics.RespawnPosition,
+                    State.Graphics.RespawnLookDirection,
+                    State.Graphics.Level);
+
+                new FileContentSourceBuilder().Create(dialog.FileName, mapDefinition);
+                lblNotification.Text = $"Map content successfully saved to file: <{dialog.FileName}>";
             }
         }
 

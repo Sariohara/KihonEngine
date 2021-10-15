@@ -8,11 +8,14 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid x:Name="propertyGrid">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="150" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="10" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -20,25 +23,27 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center">Name</Label>
+        <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left">Name</Label>
         <TextBox Grid.Row="0" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="tbName" KeyUp="tbName_KeyUp"></TextBox>
+        <Label Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left">Respawn</Label>
+        <Button Grid.Row="2" Grid.Column="1" Content="Use actual position" x:Name="btSetRespawn" Click="btSetRespawn_Click"/>
 
-        <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center">RespawnPosition.X</Label>
-        <TextBox Grid.Row="1" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="tbRespawnPositionX" KeyUp="tbRespawnPositionX_KeyUp"></TextBox>
+        <Label Grid.Row="4" Grid.Column="0" HorizontalAlignment="Left">RespawnPosition.X</Label>
+        <TextBox Grid.Row="4" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="tbRespawnPositionX" KeyUp="tbRespawnPositionX_KeyUp"></TextBox>
 
-        <Label Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center">RespawnPosition.Y</Label>
-        <TextBox Grid.Row="2" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="tbRespawnPositionY" KeyUp="tbRespawnPositionY_KeyUp"></TextBox>
+        <Label Grid.Row="5" Grid.Column="0" HorizontalAlignment="Left">RespawnPosition.Y</Label>
+        <TextBox Grid.Row="5" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="tbRespawnPositionY" KeyUp="tbRespawnPositionY_KeyUp"></TextBox>
 
-        <Label Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center">RespawnPosition.Z</Label>
-        <TextBox Grid.Row="3" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="tbRespawnPositionZ" KeyUp="tbRespawnPositionZ_KeyUp"></TextBox>
+        <Label Grid.Row="6" Grid.Column="0" HorizontalAlignment="Left">RespawnPosition.Z</Label>
+        <TextBox Grid.Row="6" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="tbRespawnPositionZ" KeyUp="tbRespawnPositionZ_KeyUp"></TextBox>
 
-        <Label Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center">RespawnLookDirection.X</Label>
-        <TextBox Grid.Row="4" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="tbRespawnLookDirectionX" KeyUp="tbRespawnLookDirectionX_KeyUp"></TextBox>
+        <Label Grid.Row="7" Grid.Column="0" HorizontalAlignment="Left">RespawnLookDirection.X</Label>
+        <TextBox Grid.Row="7" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="tbRespawnLookDirectionX" KeyUp="tbRespawnLookDirectionX_KeyUp"></TextBox>
 
-        <Label Grid.Row="5" Grid.Column="0" HorizontalAlignment="Center">RespawnLookDirection.Y</Label>
-        <TextBox Grid.Row="5" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="tbRespawnLookDirectionY" KeyUp="tbRespawnLookDirectionY_KeyUp"></TextBox>
+        <Label Grid.Row="8" Grid.Column="0" HorizontalAlignment="Left">RespawnLookDirection.Y</Label>
+        <TextBox Grid.Row="8" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="tbRespawnLookDirectionY" KeyUp="tbRespawnLookDirectionY_KeyUp"></TextBox>
 
-        <Label Grid.Row="6" Grid.Column="0" HorizontalAlignment="Center">RespawnLookDirection.Z</Label>
-        <TextBox Grid.Row="6" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="tbRespawnLookDirectionZ" KeyUp="tbRespawnLookDirectionZ_KeyUp"></TextBox>
+        <Label Grid.Row="9" Grid.Column="0" HorizontalAlignment="Left">RespawnLookDirection.Z</Label>
+        <TextBox Grid.Row="9" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="tbRespawnLookDirectionZ" KeyUp="tbRespawnLookDirectionZ_KeyUp"></TextBox>
     </Grid>
 </UserControl>

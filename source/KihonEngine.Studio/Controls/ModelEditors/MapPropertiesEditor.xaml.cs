@@ -143,5 +143,15 @@ namespace KihonEngine.Studio.Controls.ModelEditors
                 GameEngineController.NotifyIOs();
             }
         }
+
+        private void btSetRespawn_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            State.Graphics.RespawnLookDirection = State.Graphics.PlayerCamera.Camera.LookDirection;
+            State.Graphics.RespawnPosition = State.Graphics.PlayerCamera.Camera.Position;
+
+            Synchronize(State);
+
+            GameEngineController.NotifyIOs();
+        }
     }
 }

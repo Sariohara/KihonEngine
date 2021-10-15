@@ -36,6 +36,7 @@
                 </MenuItem>
                 <Separator />
                 <MenuItem Header="Save Map As..." Click="MenuSaveAs_Click" />
+                <MenuItem Header="Save Map Content As..." Click="MenuSaveMapContentAs_Click" />
                 <Separator />
                 <MenuItem Header="Exit" Click="MenuExit_Click" />
             </MenuItem>
