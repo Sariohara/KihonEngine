@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Interop;
 
-namespace KihonEngine.Studio.Controls
+namespace KihonEngine.Studio.Helpers
 {
     // http://www.pinvoke.net/default.aspx/shell32.shbrowseforfolder
     public class BrowseForFolder

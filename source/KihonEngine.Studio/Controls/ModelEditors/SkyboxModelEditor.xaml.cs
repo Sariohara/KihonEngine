@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Media3D;
 using System.Collections.Generic;
+using KihonEngine.Studio.Helpers;
 
 namespace KihonEngine.Studio.Controls.ModelEditors
 {

@@ -1,7 +1,7 @@
 ﻿
 using System.Diagnostics;
 
-namespace KihonEngine.Studio.Controls
+namespace KihonEngine.Studio.Helpers
 {
     public static class ExternalResources
     {

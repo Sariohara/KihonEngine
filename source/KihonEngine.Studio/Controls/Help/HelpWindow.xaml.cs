@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using KihonEngine.Studio.Helpers;
+using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 using System.Text;

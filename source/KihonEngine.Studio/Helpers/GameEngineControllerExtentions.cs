@@ -6,7 +6,7 @@ using KihonEngine.GameEngine.Graphics.ModelsBuilders;
 using KihonEngine.GameEngine.State;
 using KihonEngine.Services;
 
-namespace KihonEngine.Studio.Controls
+namespace KihonEngine.Studio.Helpers
 {
     public static class GameEngineControllerExtentions
     {

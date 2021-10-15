@@ -6,6 +6,7 @@ using KihonEngine.GameEngine.Graphics.ModelsBuilders;
 using KihonEngine.GameEngine.State;
 using KihonEngine.Services;
 using KihonEngine.Studio.Controls;
+using KihonEngine.Studio.Helpers;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;

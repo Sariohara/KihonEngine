@@ -10,6 +10,7 @@ using KihonEngine.GameEngine.Graphics.Maps.Predefined;
 using KihonEngine.SampleMaps;
 using KihonEngine.GameEngine.Graphics;
 using System.Windows.Controls;
+using KihonEngine.Studio.Helpers;
 
 namespace KihonEngine.Studio
 {

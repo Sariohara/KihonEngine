@@ -4,6 +4,7 @@ using KihonEngine.GameEngine.Graphics.ModelsBuilders;
 using KihonEngine.GameEngine.State;
 using KihonEngine.Services;
 using KihonEngine.Studio.Controls;
+using KihonEngine.Studio.Helpers;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media.Media3D;

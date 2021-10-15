@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace KihonEngine.Studio.Controls
+namespace KihonEngine.Studio.Helpers
 {
     public static class InputHelper
     {

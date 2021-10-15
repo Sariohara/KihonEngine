@@ -11,6 +11,7 @@ using System.Windows.Media.Media3D;
 using KihonEngine.Studio.Controls.ModelEditors;
 using KihonEngine.Services;
 using KihonEngine.GameEngine.Graphics;
+using KihonEngine.Studio.Helpers;
 
 namespace KihonEngine.Studio.Controls
 {

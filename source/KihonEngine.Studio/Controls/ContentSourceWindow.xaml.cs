@@ -1,5 +1,6 @@
 ﻿using KihonEngine.GameEngine.Graphics.Content;
 using KihonEngine.Services;
+using KihonEngine.Studio.Helpers;
 using Microsoft.Win32;
 using System.Windows;
 using System.Windows.Controls;
