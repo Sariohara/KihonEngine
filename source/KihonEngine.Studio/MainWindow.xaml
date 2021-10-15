@@ -27,7 +27,7 @@
                     <MenuItem Header="Maze..." Click="MenuNewMaze_Click" />
                 </MenuItem>
                 <MenuItem Header="Open Map">
-                    <MenuItem Header="File..." Click="MenuOpenFromFile_Click" />
+                    <MenuItem Header="From File..." Click="MenuOpenFromFile_Click" />
                     <Separator />
                     <MenuItem Header="Demo : Empty" x:Name="menuOpen0" Click="MenuOpen_Click" />
                     <MenuItem Header="Demo : Empty" x:Name="menuOpen1" Click="MenuOpen_Click" />
