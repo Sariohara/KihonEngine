@@ -56,6 +56,7 @@ namespace KihonEngine.Studio.Controls
             if (propertyGrid.IsEnabled)
             {
                 panelHelp.Visibility = Visibility.Hidden;
+                panelHelpPlayMode.Visibility = Visibility.Hidden;
                 gridPositionAndRotation.Visibility = Visibility.Visible;
                 gridGenericProperties.Visibility = Visibility.Visible;
                 panelActions.Visibility = Visibility.Visible;
@@ -140,10 +141,27 @@ namespace KihonEngine.Studio.Controls
 
                 cbColors.SelectedIndex = _transparentColorIndex;
                 lblModelTitle.Content = string.Empty;
-                panelHelp.Visibility = Visibility.Visible;
+
                 gridPositionAndRotation.Visibility = Visibility.Hidden;
                 gridGenericProperties.Visibility = Visibility.Hidden;
                 panelActions.Visibility = Visibility.Hidden;
+
+                if (state.EngineMode == EngineMode.EditorMode)
+                {
+                    panelHelpPlayMode.Visibility = Visibility.Hidden;
+                    panelHelp.Visibility = Visibility.Visible;
+                }
+                else if (state.EngineMode == EngineMode.PlayMode)
+                {
+                    panelHelp.Visibility = Visibility.Hidden;
+                    panelHelpPlayMode.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    panelHelp.Visibility = Visibility.Hidden;
+                    panelHelpPlayMode.Visibility = Visibility.Hidden;
+                }
+
                 imgModelType.Source = null;
                 lblCustomPropertiesTitle.Content = string.Empty;
                 panelCustomProperties.Children.Clear();

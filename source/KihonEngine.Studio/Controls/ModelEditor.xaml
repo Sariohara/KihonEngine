@@ -27,7 +27,11 @@
         </Label>
 
         <StackPanel Grid.Row="1" Orientation="Vertical" x:Name="panelHelp">
-            <Image x:Name="imgHelp" Height="160" Width="120" Stretch="UniformToFill" Source="/Content/Images/Icons/help-model-properties-transparent.png" />
+            <Image Height="160" Width="120" Stretch="UniformToFill" Source="/Content/Images/Icons/help-model-properties-transparent.png" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Orientation="Vertical" x:Name="panelHelpPlayMode">
+            <Image Height="240" Width="120" Stretch="UniformToFill" Source="/Content/Images/Icons/help-playmode-transparent.png" />
         </StackPanel>
 
         <Grid Grid.Row="1" x:Name="gridPositionAndRotation">
