@@ -28,7 +28,7 @@ namespace KihonEngine.Studio
 
             // Can not move initialization sequence in a background thread. Because
             // 3D WPF objects have to be displayed in the main UI thread. So, they
-            // have to born and live in the main UI thread.
+            // have to be born and live in the main UI thread.
 
             InitializeGameEngine();
 
