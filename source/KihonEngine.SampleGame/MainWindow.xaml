@@ -55,6 +55,12 @@
                VerticalAlignment="Center" HorizontalAlignment="Center"
                Grid.Column="2" Grid.ColumnSpan="7" Grid.Row="0" FontSize="24"/>
 
+        <Canvas Grid.Column="9" Grid.Row="0">
+            <Button Canvas.Top="15" Canvas.Right="10" x:Name="btnExit" ToolTip="Exit" Background="Transparent">
+                <Image Height="40" Width="40"  Source="/Images/icon-exit-transparent.png" Stretch="Uniform" />
+            </Button>
+        </Canvas>
+        
         <Button x:Name="btnStart1" 
                 Grid.Column="1" Grid.Row="1">
             <Grid>
@@ -127,7 +133,7 @@
                            Grid.Column="0" Grid.Row="0"/>
             </Grid>
         </Button>
-        <Button x:Name="btnExit"
+        <Button x:Name="btnStart5"
                 Grid.Column="9" Grid.Row="1">
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -137,10 +143,10 @@
                     <RowDefinition Height="40"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Image Source="Images/exit-preview.png" Stretch="UniformToFill" Margin="1"
+                <Image Source="Images/DarkCastleM3-preview.png" Stretch="UniformToFill" Margin="1"
                        VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
                        Grid.Column="0" Grid.Row="1"/>
-                <TextBlock Text="Exit" Margin="5"
+                <TextBlock Text="Relic Of Cthulhu" Margin="5"
                            HorizontalAlignment="Center" VerticalAlignment="Center"
                            Grid.Column="0" Grid.Row="0"/>
             </Grid>
