@@ -14,6 +14,7 @@ using KihonEngine.GameEngine.Graphics;
 using KihonEngine.Studio.Helpers;
 using System.Windows.Media.Imaging;
 using System;
+using KihonEngine.GameEngine.Graphics.ModelDefinitions;
 
 namespace KihonEngine.Studio.Controls
 {
@@ -178,9 +179,12 @@ namespace KihonEngine.Studio.Controls
                 PropertyInfo property = typeof(Colors).GetProperty(propertyName);
                 var color = (System.Windows.Media.Color)property.GetValue(null, null);
 
+                var definitionBuilder = new ModelDefinitionBuilder();
+                var definition = definitionBuilder.CreateModelDefinition(State.Editor.ActionSelect.SelectedModel);
+                definition.Color = color;
                 State.Editor.CurrentColor = color;
-                State.Editor.ActionSelect.SelectedModel.SetColor(color);
-                GameEngineController.NotifyIOs();
+                //State.Editor.ActionSelect.SelectedModel.SetColor(color);
+                GameEngineController.ReplaceModelAndNotify(State.Editor.ActionSelect.SelectedModel, definition);
             }
         }
 

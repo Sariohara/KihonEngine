@@ -25,7 +25,12 @@
         </Grid.RowDefinitions>
         <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left">Name</Label>
         <TextBox Grid.Row="0" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="tbName" KeyUp="tbName_KeyUp"></TextBox>
-        <Label Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left">Respawn</Label>
+        <StackPanel Grid.Row="2" Grid.RowSpan="2" Grid.Column="0" Orientation="Horizontal">
+            <Label Content="Respawn" VerticalAlignment="Center"/>
+            <Label Content="" Margin="10"/>
+            <Image Height="40" Width="40"  Source="/Content/Images/Icons/icon-camera-respawn-transparent.png" Stretch="Fill" />
+        </StackPanel>
+        
         <Button Grid.Row="2" Grid.Column="1" Content="Use actual position" x:Name="btSetRespawn" Click="btSetRespawn_Click"/>
 
         <Label Grid.Row="4" Grid.Column="0" HorizontalAlignment="Left">RespawnPosition.X</Label>
