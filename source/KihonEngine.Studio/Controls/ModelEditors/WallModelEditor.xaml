@@ -3,32 +3,44 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:KihonEngine.Studio.Controls.ModelEditors"
+             xmlns:local="clr-namespace:KihonEngine.Studio.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid x:Name="propertyGrid">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center">XSize</Label>
-        <TextBox Grid.Row="0" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="tbXSize" KeyUp="tbXSize_KeyUp"></TextBox>
 
-        <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center">YSize</Label>
-        <TextBox Grid.Row="1" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="tbYSize" KeyUp="tbYSize_KeyUp"></TextBox>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="60" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left">XSize</Label>
+            <local:NumericUpDown Grid.Row="0" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" x:Name="tbXSize" KeyUp="tbXSize_KeyUp" NumericUpDownBehavior="Double"/>
 
-        <Label Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center">Texture</Label>
-        <Button x:Name="btTexture" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" Click="btTexture_Click">
-            <TextBlock x:Name="btTextureImg" Width="20" Height="20"/>
-        </Button>
-        
-        <Label Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center">UseBackMaterial</Label>
-        <CheckBox Grid.Row="3" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="cbUseBackMaterial" Checked="cbUseBackMaterial_Checked" Unchecked="cbUseBackMaterial_Checked" ></CheckBox>
+            <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left">YSize</Label>
+            <local:NumericUpDown Grid.Row="1" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" x:Name="tbYSize" KeyUp="tbYSize_KeyUp" NumericUpDownBehavior="Double"/>
+
+            <Label Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left">Texture</Label>
+            <Button x:Name="btTexture" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" Click="btTexture_Click">
+                <TextBlock x:Name="btTextureImg" Width="20" Height="20"/>
+            </Button>
+        </Grid>
+        <WrapPanel Grid.Row="1" Orientation="Horizontal">
+            <Label Content="UseBackMaterial" Margin="5"/>
+            <CheckBox Margin="1" HorizontalAlignment="Stretch" Name="cbUseBackMaterial" Checked="cbUseBackMaterial_Checked" Unchecked="cbUseBackMaterial_Checked" ></CheckBox>
+        </WrapPanel>
     </Grid>
 </UserControl>
