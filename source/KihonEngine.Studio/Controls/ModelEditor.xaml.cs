@@ -79,7 +79,8 @@ namespace KihonEngine.Studio.Controls
                     panelCustomProperties.Children.Clear();
 
                     var index = state.Graphics.Level.IndexOf(_selectedModel);
-                    lblModelType.Content = $"#{index} ({_selectedModel.Type})";
+                    lblModelTitle.Content = $"Model #{index} ({_selectedModel.Type})";
+                    lblCustomPropertiesTitle.Content = $"{_selectedModel.Type} Properties";
                     if (_selectedModel.Type != ModelType.Group)
                     {
                         var assemblyName = this.GetType().Assembly.GetName().Name;
@@ -132,7 +133,8 @@ namespace KihonEngine.Studio.Controls
                 DisablePositionAndRotationGrids();
 
                 cbColors.SelectedIndex = _transparentColorIndex;
-                lblModelType.Content = string.Empty;
+                lblModelTitle.Content = string.Empty;
+                lblCustomPropertiesTitle.Content = string.Empty;
                 panelCustomProperties.Children.Clear();
             }
 
