@@ -6,12 +6,18 @@ using System.Windows.Input;
 
 namespace KihonEngine.Studio.Controls
 {
+    public enum NumericUpDownBehavior
+    {
+        Integer,
+        Double,
+    }
+
     /// <summary>
     /// Interaction logic for TemplateNumericUpDown.xaml
     /// </summary>
     public partial class NumericUpDown : UserControl
     {
-        private int _lastValue;
+        private double _lastValue;
         private bool _autoValidate;
 
         public NumericUpDown()
@@ -22,11 +28,15 @@ namespace KihonEngine.Studio.Controls
             UseBoundValues = false;
             MinValue = 0;
             MaxValue = 100;
+            Step = 1;
         }
 
         public int MinValue { get; set; }
         public int MaxValue { get; set; }
         public bool UseBoundValues { get; set; }
+
+        public double Step { get; set; }
+        public NumericUpDownBehavior NumericUpDownBehavior { get; set; }
 
         public string Text
         {
@@ -34,33 +44,35 @@ namespace KihonEngine.Studio.Controls
             set { tbWrapped.Text = value; }
         }
 
+        private bool IsInt32Mode => NumericUpDownBehavior == NumericUpDownBehavior.Integer;
+
         private void btnUp_Click(object sender, RoutedEventArgs e)
         {
-            var number = 0;
+            var number = 0.0;
             if (!string.IsNullOrEmpty(tbWrapped.Text))
             {
-                number = Convert.ToInt32(tbWrapped.Text);
+                number = IsInt32Mode? Convert.ToInt32(tbWrapped.Text) : Convert.ToDouble(tbWrapped.Text);
             }
 
             if (!UseBoundValues || (UseBoundValues && number < MaxValue))
             {
                 _autoValidate = true;
-                tbWrapped.Text = Convert.ToString(number + 1);
+                tbWrapped.Text = Convert.ToString(number + Step);
             }
         }
 
         private void btnDown_Click(object sender, RoutedEventArgs e)
         {
-            var number = 0;
+            var number = 0.0;
             if (!string.IsNullOrEmpty(tbWrapped.Text))
             {
-                number = Convert.ToInt32(tbWrapped.Text);
+                number = IsInt32Mode ? Convert.ToInt32(tbWrapped.Text) : Convert.ToDouble(tbWrapped.Text);
             }
 
             if (!UseBoundValues || (UseBoundValues && number > MinValue))
             {
                 _autoValidate = true;
-                tbWrapped.Text = Convert.ToString(number - 1);
+                tbWrapped.Text = Convert.ToString(number - Step);
             }
         }
 
@@ -94,16 +106,32 @@ namespace KihonEngine.Studio.Controls
 
         private void tbWrapped_TextChanged(object sender, TextChangedEventArgs e)
         {
-            int number = 0;
+            double number = 0;
             if (!string.IsNullOrEmpty(tbWrapped.Text))
             {
-                if (!int.TryParse(tbWrapped.Text, out number))
+                if (IsInt32Mode)
                 {
-                    tbWrapped.Text = _lastValue.ToString();
+                    if (!int.TryParse(tbWrapped.Text, out var numberInt32))
+                    {
+                        tbWrapped.Text = _lastValue.ToString();
+                    }
+                    else
+                    {
+                        _lastValue = numberInt32;
+                        number = numberInt32;
+                    }
                 }
                 else
                 {
-                    _lastValue = number;
+                    if (!double.TryParse(tbWrapped.Text, out var numberDouble))
+                    {
+                        tbWrapped.Text = _lastValue.ToString();
+                    }
+                    else
+                    {
+                        _lastValue = numberDouble;
+                        number = numberDouble;
+                    }
                 }
             }
 
