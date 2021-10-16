@@ -41,14 +41,16 @@ namespace KihonEngine.GameEngine.Graphics.Content
 
         public string[] GetResources(GraphicContentType contentType)
         {
-            var result = new List<string>();
+            var results = new List<string>();
 
             foreach(var source in _sources)
             {
-                result.AddRange(source.GetResources(contentType));
+                results.AddRange(source.GetResources(contentType));
             }
 
-            return result.Distinct().ToArray();
+            results.Sort();
+
+            return results.Distinct().ToArray();
         }
 
         public Stream GetStream(GraphicContentType contentType, string resourceName)
