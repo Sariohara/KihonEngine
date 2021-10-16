@@ -20,7 +20,7 @@
             <RowDefinition Height="50" />
         </Grid.RowDefinitions>
         <Canvas Grid.Row="0" Grid.Column="0" >
-            <Image Name="imgLogo" Canvas.Left="0" Canvas.Top="0" Height="150" Width="150"  Source="/Content/Images/Logo04-kana.png" Stretch="Uniform" />
+            <Image Name="imgLogo" Canvas.Left="0" Canvas.Top="0" Height="150" Width="150"  Source="/Content/Images/Logos/Logo04-kana.png" Stretch="Uniform" />
         </Canvas>
         <Canvas Grid.Row="0" Grid.Column="1">
             <TextBlock Canvas.Left="10" Canvas.Top="60" Foreground="White" FontSize="16">

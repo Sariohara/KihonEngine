@@ -51,9 +51,15 @@
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
-                        <Button Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="1"  x:Name="btnCameraFace" Content="Front top" Click="btnCameraFace_Click"/>
-                        <Button Grid.Row="1" Grid.Column="0" Margin="1"  x:Name="btnCameraRightSide" Content="Right side" Click="btnCameraRightSide_Click"/>
-                        <Button Grid.Row="1" Grid.Column="1" Margin="1"  x:Name="btnCameraLeftSide" Content="Left side" Click="btnCameraLeftSide_Click"/>
+                        <Button Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="1"  x:Name="btnCameraFace" ToolTip="Front top" Click="btnCameraFace_Click">
+                            <Image Height="50" Width="50"  Source="/Content/Images/Icons/icon-camera-front-transparent.png" Stretch="Fill" />
+                        </Button>
+                        <Button Grid.Row="1" Grid.Column="0" Margin="1"  x:Name="btnCameraLeftSide" ToolTip="Left side" Click="btnCameraLeftSide_Click">
+                            <Image Height="50" Width="50"  Source="/Content/Images/Icons/icon-camera-left-transparent.png" Stretch="Fill" />
+                        </Button>
+                        <Button Grid.Row="1" Grid.Column="1" Margin="1"  x:Name="btnCameraRightSide" ToolTip="Right side" Click="btnCameraRightSide_Click">
+                            <Image Height="50" Width="50"  Source="/Content/Images/Icons/icon-camera-right-transparent.png" Stretch="Fill" />
+                        </Button>
                     </Grid>
                     <Label HorizontalAlignment="Stretch" Height="23" VerticalAlignment="Top" Background="LightGray">Add Model</Label>
                     <Grid Margin="5">
@@ -66,12 +72,24 @@
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
-                        <Button Grid.Row="0" Grid.Column="0" Margin="1"  x:Name="btnAddCeiling" Content="Ceiling" Click="btnAddCeiling_Click"/>
-                        <Button Grid.Row="0" Grid.Column="1" Margin="1"  x:Name="btnAddFloor" Content="Floor" Click="btnAddFloor_Click"/>
-                        <Button Grid.Row="1" Grid.Column="0" Margin="1"  x:Name="btnAddWall" Content="Wall" Click="btnAddWall_Click"/>
-                        <Button Grid.Row="1" Grid.Column="2" Margin="1"  x:Name="btnAddVolume" Content="Volume" Click="btnAddVolume_Click"/>
-                        <Button Grid.Row="2" Grid.Column="0" Margin="1"  x:Name="btnAddSkybox" Content="Skybox" Click="btnAddSkybox_Click"/>
-                        <Button Grid.Row="2" Grid.Column="1" Margin="1"  x:Name="btnAddLight" Content="Light" Click="btnAddLight_Click"/>
+                        <Button Grid.Row="0" Grid.Column="0" Margin="1"  x:Name="btnAddCeiling" ToolTip="Ceiling" Click="btnAddCeiling_Click">
+                            <Image Height="50" Width="50"  Source="/Content/Images/Icons/icon-ceiling-transparent.png" Stretch="Fill" />
+                        </Button>
+                        <Button Grid.Row="0" Grid.Column="1" Margin="1"  x:Name="btnAddFloor" ToolTip="Floor" Click="btnAddFloor_Click">
+                            <Image Height="50" Width="50"  Source="/Content/Images/Icons/icon-floor-transparent.png" Stretch="Fill" />
+                        </Button>
+                        <Button Grid.Row="1" Grid.Column="0" Margin="1"  x:Name="btnAddWall" ToolTip="Wall" Click="btnAddWall_Click">
+                            <Image Height="50" Width="50"  Source="/Content/Images/Icons/icon-wall-transparent.png" Stretch="Fill" />
+                        </Button>
+                        <Button Grid.Row="1" Grid.Column="2" Margin="1"  x:Name="btnAddVolume" ToolTip="Volume" Click="btnAddVolume_Click">
+                            <Image Height="50" Width="50"  Source="/Content/Images/Icons/icon-volume-transparent.png" Stretch="Fill" />
+                        </Button>
+                        <Button Grid.Row="2" Grid.Column="0" Margin="1"  x:Name="btnAddSkybox" ToolTip="Skybox" Click="btnAddSkybox_Click">
+                            <Image Height="50" Width="50"  Source="/Content/Images/Icons/icon-skybox-transparent.png" Stretch="Fill" />
+                        </Button>
+                        <Button Grid.Row="2" Grid.Column="1" Margin="1"  x:Name="btnAddLight" ToolTip="Light" Click="btnAddLight_Click">
+                            <Image Height="50" Width="50"  Source="/Content/Images/Icons/icon-light-transparent.png" Stretch="Fill" />
+                        </Button>
                     </Grid>
                 </StackPanel>
             </StackPanel>

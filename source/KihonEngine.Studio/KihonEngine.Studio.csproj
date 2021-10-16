@@ -24,6 +24,15 @@
   <ItemGroup>
     <None Remove="Content\Help\Manual.html" />
     <None Remove="Content\Help\Manual.txt" />
+    <None Remove="Content\Images\Icons\icon-camera-front-transparent.png" />
+    <None Remove="Content\Images\Icons\icon-camera-left-transparent.png" />
+    <None Remove="Content\Images\Icons\icon-camera-right-transparent.png" />
+    <None Remove="Content\Images\Icons\icon-ceiling-transparent.png" />
+    <None Remove="Content\Images\Icons\icon-floor-transparent.png" />
+    <None Remove="Content\Images\Icons\icon-light-transparent.png" />
+    <None Remove="Content\Images\Icons\icon-skybox-transparent.png" />
+    <None Remove="Content\Images\Icons\icon-volume-transparent.png" />
+    <None Remove="Content\Images\Icons\icon-wall-transparent.png" />
     <None Remove="Content\Images\logo04-kana-transparent.png" />
     <None Remove="Content\Images\logo04-kana.png" />
     <None Remove="Content\LICENSE.TXT" />
@@ -39,6 +48,11 @@
     <EmbeddedResource Include="Content\Help\Manual.txt">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
+    <Resource Include="Content\Images\Icons\icon-camera-front-transparent.png" />
+    <Resource Include="Content\Images\Icons\icon-camera-left-transparent.png" />
+    <Resource Include="Content\Images\Icons\icon-camera-right-transparent.png" />
+    <Resource Include="Content\Images\Icons\icon-ceiling-transparent.png" />
+    <Resource Include="Content\Images\Icons\icon-floor-transparent.png" />
     <EmbeddedResource Include="Content\LICENSE.TXT">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -58,15 +72,19 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Content\Images\Logo01.png">
+    <EmbeddedResource Include="Content\Images\Logos\Logo01.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
-    <Resource Include="Content\Images\logo04-kana-transparent.png" />
-    <Resource Include="Content\Images\logo04-kana.png" />
-    <Resource Include="Content\Images\Logo03.png">
+    <Resource Include="Content\Images\Icons\icon-light-transparent.png" />
+    <Resource Include="Content\Images\Icons\icon-skybox-transparent.png" />
+    <Resource Include="Content\Images\Icons\icon-volume-transparent.png" />
+    <Resource Include="Content\Images\Icons\icon-wall-transparent.png" />
+    <Resource Include="Content\Images\Logos\logo04-kana-transparent.png" />
+    <Resource Include="Content\Images\Logos\logo04-kana.png" />
+    <Resource Include="Content\Images\Logos\Logo03.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <EmbeddedResource Include="Content\Images\Logo02.png">
+    <EmbeddedResource Include="Content\Images\Logos\Logo02.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>

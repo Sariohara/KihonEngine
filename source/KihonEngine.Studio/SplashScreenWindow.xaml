@@ -18,7 +18,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
-        <Image Name="imgLogo" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="120" Width="120"  Source="/Content/Images/Logo04-kana-transparent.png" Stretch="Uniform" />
+        <Image Name="imgLogo" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="120" Width="120"  Source="/Content/Images/Logos/Logo04-kana-transparent.png" Stretch="Uniform" />
         <TextBlock Grid.Row="0" Text="Kihon Engine Studio" VerticalAlignment="Bottom" HorizontalAlignment="Center" Foreground="White" FontSize="24" />
         <ProgressBar Grid.Row="1" x:Name="progressBar" VerticalAlignment="Top"  Height="10" Minimum="0" Maximum="100" IsIndeterminate="True"/>
         <TextBlock x:Name="lblStatus" Grid.Row="2" Text="Starting..." Foreground="White"/>
