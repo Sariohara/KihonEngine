@@ -64,12 +64,10 @@ namespace KihonEngine.Studio.Controls
                     tbPositionX.Text = position.X.ToString();
                     tbPositionY.Text = position.Y.ToString();
                     tbPositionZ.Text = position.Z.ToString();
-                    tbPositionStep.Text = state.Editor.TranslationStep.ToString();
 
                     tbRotationX.Text = _selectedModel.AxisXRotationAngle.ToString();
                     tbRotationY.Text = _selectedModel.AxisYRotationAngle.ToString();
                     tbRotationZ.Text = _selectedModel.AxisZRotationAngle.ToString();
-                    tbRotationStep.Text = state.Editor.RotationStep.ToString();
                 }
 
                 TrySelectColor(state.Editor.ActionSelect.SelectedModel.GetColor());
@@ -131,24 +129,20 @@ namespace KihonEngine.Studio.Controls
 
         private void EnablePositionAndRotationGrids()
         {
-            gridPosition.IsEnabled = true;
-            gridRotation.IsEnabled = true;
+            gridPositionAndRotation.IsEnabled = true;
         }
 
         private void DisablePositionAndRotationGrids()
         {
-            gridPosition.IsEnabled = false;
-            gridRotation.IsEnabled = false;
+            gridPositionAndRotation.IsEnabled = false;
 
             tbPositionX.Text = string.Empty;
             tbPositionY.Text = string.Empty;
             tbPositionZ.Text = string.Empty;
-            tbPositionStep.Text = string.Empty;
 
             tbRotationX.Text = string.Empty;
             tbRotationY.Text = string.Empty;
             tbRotationZ.Text = string.Empty;
-            tbRotationStep.Text = string.Empty;
         }
 
         private bool _disableColorChange;
@@ -189,72 +183,6 @@ namespace KihonEngine.Studio.Controls
             }
         }
 
-        private void btnPositionXPlus_Click(object sender, RoutedEventArgs e)
-        {
-            var layeredModel = State.Editor.ActionSelect.SelectedModel;
-            if (layeredModel != null)
-            {
-                var step = State.Editor.TranslationStep;
-                layeredModel.TranslateOnAxisX(step);
-                GameEngineController.NotifyIOs();
-            }
-        }
-
-        private void btnPositionYPlus_Click(object sender, RoutedEventArgs e)
-        {
-            var layeredModel = State.Editor.ActionSelect.SelectedModel;
-            if (layeredModel != null)
-            {
-                var step = State.Editor.TranslationStep;
-                layeredModel.TranslateOnAxisY(step);
-                GameEngineController.NotifyIOs();
-            }
-        }
-
-        private void btnPositionZPlus_Click(object sender, RoutedEventArgs e)
-        {
-            var layeredModel = State.Editor.ActionSelect.SelectedModel;
-            if (layeredModel != null)
-            {
-                var step = State.Editor.TranslationStep;
-                layeredModel.TranslateOnAxisZ(step);
-                GameEngineController.NotifyIOs();
-            }
-        }
-
-        private void btnPositionXMinus_Click(object sender, RoutedEventArgs e)
-        {
-            var layeredModel = State.Editor.ActionSelect.SelectedModel;
-            if (layeredModel != null)
-            {
-                var step = State.Editor.TranslationStep;
-                layeredModel.TranslateOnAxisX(-step);
-                GameEngineController.NotifyIOs();
-            }
-        }
-
-        private void btnPositionYMinus_Click(object sender, RoutedEventArgs e)
-        {
-            var layeredModel = State.Editor.ActionSelect.SelectedModel;
-            if (layeredModel != null)
-            {
-                var step = State.Editor.TranslationStep;
-                layeredModel.TranslateOnAxisY(-step);
-                GameEngineController.NotifyIOs();
-            }
-        }
-
-        private void btnPositionZMinus_Click(object sender, RoutedEventArgs e)
-        {
-            var layeredModel = State.Editor.ActionSelect.SelectedModel;
-            if (layeredModel != null)
-            {
-                var step = State.Editor.TranslationStep;
-                layeredModel.TranslateOnAxisZ(-step);
-                GameEngineController.NotifyIOs();
-            }
-        }
-
         private void tbPositionX_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.Key != Key.Enter)
@@ -274,8 +202,6 @@ namespace KihonEngine.Studio.Controls
                 GameEngineController.NotifyIOs();
             }
         }
-
-        
 
         private void tbPositionY_KeyUp(object sender, KeyEventArgs e)
         {
@@ -313,80 +239,6 @@ namespace KihonEngine.Studio.Controls
                     tbPositionZ.Text,
                     step => layeredModel.Translate(new Vector3D(position.X, position.Y, step)));
 
-                GameEngineController.NotifyIOs();
-            }
-        }
-
-        private void tbPositionStep_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.Key != Key.Enter)
-            {
-                return;
-            }
-
-            InputHelper.TryUpdate(
-                tbPositionStep.Text,
-                step => State.Editor.TranslationStep = step);
-
-            GameEngineController.NotifyIOs();
-        }
-
-        private void btnRotationXPlus_Click(object sender, RoutedEventArgs e)
-        {
-            var layeredModel = State.Editor.ActionSelect.SelectedModel;
-            if (layeredModel != null)
-            {
-                layeredModel.RotateByAxisX(layeredModel.AxisXRotationAngle + State.Editor.RotationStep);
-                GameEngineController.NotifyIOs();
-            }
-        }
-
-        private void btnRotationYPlus_Click(object sender, RoutedEventArgs e)
-        {
-            var layeredModel = State.Editor.ActionSelect.SelectedModel;
-            if (layeredModel != null)
-            {
-                layeredModel.RotateByAxisY(layeredModel.AxisYRotationAngle + State.Editor.RotationStep);
-                GameEngineController.NotifyIOs();
-            }
-        }
-
-        private void btnRotationZPlus_Click(object sender, RoutedEventArgs e)
-        {
-            var layeredModel = State.Editor.ActionSelect.SelectedModel;
-            if (layeredModel != null)
-            {
-                layeredModel.RotateByAxisZ(layeredModel.AxisZRotationAngle + State.Editor.RotationStep);
-                GameEngineController.NotifyIOs();
-            }
-        }
-
-        private void btnRotationXMinus_Click(object sender, RoutedEventArgs e)
-        {
-            var layeredModel = State.Editor.ActionSelect.SelectedModel;
-            if (layeredModel != null)
-            {
-                layeredModel.RotateByAxisX(layeredModel.AxisXRotationAngle - State.Editor.RotationStep);
-                GameEngineController.NotifyIOs();
-            }
-        }
-
-        private void btnRotationYMinus_Click(object sender, RoutedEventArgs e)
-        {
-            var layeredModel = State.Editor.ActionSelect.SelectedModel;
-            if (layeredModel != null)
-            {
-                layeredModel.RotateByAxisY(layeredModel.AxisYRotationAngle - State.Editor.RotationStep);
-                GameEngineController.NotifyIOs();
-            }
-        }
-
-        private void btnRotationZMinus_Click(object sender, RoutedEventArgs e)
-        {
-            var layeredModel = State.Editor.ActionSelect.SelectedModel;
-            if (layeredModel != null)
-            {
-                layeredModel.RotateByAxisZ(layeredModel.AxisZRotationAngle - State.Editor.RotationStep);
                 GameEngineController.NotifyIOs();
             }
         }
@@ -443,20 +295,6 @@ namespace KihonEngine.Studio.Controls
 
                 GameEngineController.NotifyIOs();
             }
-        }
-
-        private void tbRotationStep_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.Key != Key.Enter)
-            {
-                return;
-            }
-
-            InputHelper.TryUpdate(
-                tbRotationStep.Text,
-                step => State.Editor.RotationStep = step);
-
-            GameEngineController.NotifyIOs();
         }
 
         private void btnRemoveModel_Click(object sender, RoutedEventArgs e)
