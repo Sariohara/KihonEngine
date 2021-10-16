@@ -12,6 +12,8 @@ using KihonEngine.Studio.Controls.ModelEditors;
 using KihonEngine.Services;
 using KihonEngine.GameEngine.Graphics;
 using KihonEngine.Studio.Helpers;
+using System.Windows.Media.Imaging;
+using System;
 
 namespace KihonEngine.Studio.Controls
 {
@@ -78,6 +80,16 @@ namespace KihonEngine.Studio.Controls
 
                     var index = state.Graphics.Level.IndexOf(_selectedModel);
                     lblModelType.Content = $"#{index} ({_selectedModel.Type})";
+                    if (_selectedModel.Type != ModelType.Group)
+                    {
+                        var assemblyName = this.GetType().Assembly.GetName().Name;
+                        var sourceUri = $"pack://application:,,,/{assemblyName};component/Content/Images/Icons/icon-{_selectedModel.Type.ToString().ToLower()}-transparent.png";
+                        imgModelType.Source = new BitmapImage(new Uri(sourceUri));
+                    }
+                    else
+                    {
+                        imgModelType.Source = null;
+                    }
 
                     UserControl control = null;
                     if (_selectedModel.Type == ModelType.Ceiling)

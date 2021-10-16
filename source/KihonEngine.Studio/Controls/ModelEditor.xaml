@@ -83,8 +83,9 @@
 
             <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
                 <StackPanel Orientation="Horizontal">
-                    <Label Content="Model "/>
-                    <Label x:Name="lblModelType"></Label>
+                    <Image x:Name="imgModelType" Height="20" Width="20" Stretch="Fill" />
+                    <Label Content="Model " Margin="5"/>
+                    <Label x:Name="lblModelType" Margin="5"/>
                 </StackPanel>
             </Label>
         </Grid>

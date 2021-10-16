@@ -175,6 +175,11 @@ namespace KihonEngine.Studio.Controls
             new CameraPositionService().MovetoRespawnPosition();
         }
 
+        private void btnCameraBack_Click(object sender, RoutedEventArgs e)
+        {
+            new CameraPositionService().MoveToBack();
+        }
+
         private void btnCameraFace_Click(object sender, RoutedEventArgs e)
         {
             new CameraPositionService().MoveToFront();
