@@ -24,6 +24,7 @@
   <ItemGroup>
     <None Remove="Content\Help\Manual.html" />
     <None Remove="Content\Help\Manual.txt" />
+    <None Remove="Content\Images\Icons\help-model-properties-transparent.png" />
     <None Remove="Content\Images\Icons\icon-camera-back-transparent.png" />
     <None Remove="Content\Images\Icons\icon-camera-front-transparent.png" />
     <None Remove="Content\Images\Icons\icon-camera-left-transparent.png" />
@@ -50,6 +51,7 @@
     <EmbeddedResource Include="Content\Help\Manual.txt">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
+    <Resource Include="Content\Images\Icons\help-model-properties-transparent.png" />
     <Resource Include="Content\Images\Icons\icon-camera-back-transparent.png" />
     <Resource Include="Content\Images\Icons\icon-camera-front-transparent.png" />
     <Resource Include="Content\Images\Icons\icon-camera-left-transparent.png" />

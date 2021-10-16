@@ -243,6 +243,8 @@ namespace KihonEngine.Studio
             GameEngineController.RegisterIO(sourceCodeViewer);
 
             viewportHost.AttachViewport(GameEngineController.GetDefaultGraphicOutput());
+
+            GameEngineController.NotifyIOs();
         }
 
         private void mainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)

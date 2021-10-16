@@ -18,12 +18,18 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
+
         <Label Grid.Row="0" Grid.Column="0">
             <StackPanel Orientation="Horizontal">
-                <Image x:Name="imgModelType" Height="20" Width="20" Stretch="Fill" />
+                <Image x:Name="imgModelType" Height="20" Width="20" Stretch="UniformToFill" />
                 <Label x:Name="lblModelTitle" Margin="5"/>
             </StackPanel>
         </Label>
+
+        <StackPanel Grid.Row="1" Orientation="Vertical" x:Name="panelHelp">
+            <Image x:Name="imgHelp" Height="160" Width="120" Stretch="UniformToFill" Source="/Content/Images/Icons/help-model-properties-transparent.png" />
+        </StackPanel>
+
         <Grid Grid.Row="1" x:Name="gridPositionAndRotation">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="60" />
@@ -98,8 +104,10 @@
         <ScrollViewer Grid.Row="3" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
             <DockPanel Name="panelCustomProperties" />
         </ScrollViewer>
-        
-        <Label Grid.Row="4" >Actions</Label>
-        <Button Grid.Row="5" Margin="1" HorizontalAlignment="Stretch" Name="btnRemoveModel" Click="btnRemoveModel_Click">Delete</Button>
+
+        <StackPanel Grid.Row="4" Orientation="Vertical" x:Name="panelActions">
+            <Label >Actions</Label>
+            <Button Margin="1" HorizontalAlignment="Stretch" Name="btnRemoveModel" Click="btnRemoveModel_Click">Delete</Button>
+        </StackPanel>
     </Grid>
 </UserControl>
