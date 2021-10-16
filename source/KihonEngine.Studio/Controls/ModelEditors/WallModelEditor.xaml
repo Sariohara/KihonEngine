@@ -26,15 +26,18 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
-            <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left">XSize</Label>
-            <local:NumericUpDown Grid.Row="0" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" x:Name="tbXSize" KeyUp="tbXSize_KeyUp" NumericUpDownBehavior="Double"/>
+            <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left">Face</Label>
+            <ComboBox Name="cbFaces" Grid.Row="0" Grid.Column="1" Margin="0,0,0,10" HorizontalAlignment="Stretch"  SelectionChanged="cbFaces_SelectionChanged"/>
+            <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left">XSize</Label>
+            <local:NumericUpDown Grid.Row="1" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" x:Name="tbXSize" KeyUp="tbXSize_KeyUp" NumericUpDownBehavior="Double"/>
 
-            <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left">YSize</Label>
-            <local:NumericUpDown Grid.Row="1" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" x:Name="tbYSize" KeyUp="tbYSize_KeyUp" NumericUpDownBehavior="Double"/>
+            <Label Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left">YSize</Label>
+            <local:NumericUpDown Grid.Row="2" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" x:Name="tbYSize" KeyUp="tbYSize_KeyUp" NumericUpDownBehavior="Double"/>
 
-            <Label Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left">Texture</Label>
-            <Button x:Name="btTexture" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" Click="btTexture_Click">
+            <Label Grid.Row="3" Grid.Column="0" HorizontalAlignment="Left">Texture</Label>
+            <Button x:Name="btTexture" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch" Click="btTexture_Click">
                 <TextBlock x:Name="btTextureImg" Width="20" Height="20"/>
             </Button>
         </Grid>

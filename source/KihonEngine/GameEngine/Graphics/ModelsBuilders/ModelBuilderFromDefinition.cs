@@ -137,6 +137,7 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
             var builder = new WallBuilder(definition.Color, level);
             builder.UseBackMaterial = definition.Metadata.UseBackMaterial;
             var model = builder.Create((int)definition.Position.X, (int)definition.Position.Y, (int)definition.Position.Z, (int)definition.Metadata.XSize, (int)definition.Metadata.YSize);
+            builder.SetFace(model, definition.Metadata.Face);
             if (!string.IsNullOrEmpty(definition.Metadata.Texture?.Name))
             {
                 var texture = definition.Metadata.Texture;

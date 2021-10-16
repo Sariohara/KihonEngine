@@ -6,6 +6,7 @@ using KihonEngine.Services;
 using KihonEngine.Studio.Controls;
 using KihonEngine.Studio.Helpers;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows;
 using System.Windows.Controls;
@@ -26,9 +27,14 @@ namespace KihonEngine.Studio.Controls.ModelEditors
         private IGameEngineState State
             => Container.Get<IGameEngineState>();
 
-        public WallModelEditor()
+        private List<VolumeFace> _wallFaces;
+    public WallModelEditor()
         {
             InitializeComponent();
+
+            _wallFaces = new List<VolumeFace>();
+            _wallFaces.AddRange(new[] { VolumeFace.Front, VolumeFace.Back, VolumeFace.Left, VolumeFace.Right });
+            cbFaces.ItemsSource = _wallFaces;
         }
 
         private bool synchronizing;
@@ -44,9 +50,11 @@ namespace KihonEngine.Studio.Controls.ModelEditors
                 tbYSize.Text = metadata.YSize.ToString();
                 btTextureImg.Background = ImageHelper.CreateTextureBrush(metadata.Texture?.Name);
                 cbUseBackMaterial.IsChecked = metadata.UseBackMaterial;
+                cbFaces.SelectedIndex = _wallFaces.IndexOf(metadata.Face);
             }
             else
             {
+                cbFaces.SelectedIndex = 0;
                 tbXSize.Text = string.Empty;
                 tbYSize.Text = string.Empty;
                 btTextureImg.Background = ImageHelper.CreateTextureBrush(string.Empty);
@@ -54,6 +62,21 @@ namespace KihonEngine.Studio.Controls.ModelEditors
             }
 
             synchronizing = false;
+        }
+
+        private void cbFaces_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (!synchronizing)
+            {
+                var layeredModel = State.Editor.ActionSelect.SelectedModel;
+                if (layeredModel != null)
+                {
+                    var definition = GameEngineController.GetDefinition<WallDefinition>(layeredModel);
+                    var selectedFace = (VolumeFace)cbFaces.SelectedItem;
+                    definition.Metadata.Face = selectedFace;
+                    GameEngineController.ReplaceModelAndNotify(layeredModel, definition);
+                }
+            }
         }
 
         private void tbXSize_KeyUp(object sender, KeyEventArgs e)
