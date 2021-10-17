@@ -465,7 +465,13 @@
           "RatioX": 1.0,
           "RatioY": 0.2
         },
-        "TextureTop": null,
+        "TextureTop": {
+          "Name": "gothic_wall/iron01_e.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
         "TextureBottom": null,
         "UseBackMaterial": true,
         "Opacity": null
@@ -615,7 +621,13 @@
           "RatioY": 0.25
         },
         "TextureRight": null,
-        "TextureTop": null,
+        "TextureTop": {
+          "Name": "gothic_wall/iron01_e.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
         "TextureBottom": null,
         "UseBackMaterial": true,
         "Opacity": null
@@ -1551,7 +1563,13 @@
           "RatioX": 0.5,
           "RatioY": 1.0
         },
-        "TextureTop": null,
+        "TextureTop": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
         "TextureBottom": {
           "Name": "base_wall/archpipe2_ifin.jpg",
           "TileMode": 3,
@@ -1988,21 +2006,21 @@
     },
     {
       "Metadata": {
-        "XSize": 10.0,
-        "YSize": 70.0,
+        "XSize": 20.0,
+        "YSize": 80.0,
         "ZSize": 20.0,
         "TextureFront": {
           "Name": "base_wall/c_met7_2.jpg",
           "TileMode": 4,
           "Stretch": 1,
-          "RatioX": 1.0,
+          "RatioX": 0.5,
           "RatioY": 0.1
         },
         "TextureBack": {
           "Name": "base_wall/c_met7_2.jpg",
           "TileMode": 4,
           "Stretch": 1,
-          "RatioX": 1.0,
+          "RatioX": 0.5,
           "RatioY": 0.1
         },
         "TextureLeft": {
@@ -2019,14 +2037,20 @@
           "RatioX": 0.5,
           "RatioY": 0.1
         },
-        "TextureTop": null,
+        "TextureTop": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
         "TextureBottom": null,
         "UseBackMaterial": true,
         "Opacity": null
       },
       "Index": 50,
       "Color": "#FFFFFFFF",
-      "Position": "51,0,25",
+      "Position": "41,0,25",
       "RotationAxisX": 0.0,
       "RotationAxisY": 0.0,
       "RotationAxisZ": 0.0
@@ -2157,10 +2181,16 @@
           "Name": "gothic_block/blocks18c_1a.jpg",
           "TileMode": 4,
           "Stretch": 1,
-          "RatioX": 1.0,
+          "RatioX": 0.33,
           "RatioY": 1.0
         },
-        "TextureTop": null,
+        "TextureTop": {
+          "Name": "gothic_block/blocks18b.jpg",
+          "TileMode": 4,
+          "Stretch": 1,
+          "RatioX": 1.0,
+          "RatioY": 0.33
+        },
         "TextureBottom": null,
         "UseBackMaterial": true,
         "Opacity": null
@@ -2174,9 +2204,9 @@
     },
     {
       "Metadata": {
-        "XSize": 20.0,
+        "XSize": 40.0,
         "YSize": 10.0,
-        "ZSize": 10.0,
+        "ZSize": 20.0,
         "TextureFront": {
           "Name": "organics/dirt.jpg",
           "TileMode": 4,
@@ -2209,8 +2239,8 @@
           "Name": "organics/grass3.jpg",
           "TileMode": 4,
           "Stretch": 1,
-          "RatioX": 0.5,
-          "RatioY": 1.0
+          "RatioX": 0.25,
+          "RatioY": 0.5
         },
         "TextureBottom": {
           "Name": "organics/dirt.jpg",
@@ -2224,7 +2254,7 @@
       },
       "Index": 54,
       "Color": "#FFFFFFFF",
-      "Position": "32,-11,125",
+      "Position": "0,-11,125",
       "RotationAxisX": 0.0,
       "RotationAxisY": 0.0,
       "RotationAxisZ": 0.0
@@ -2307,7 +2337,13 @@
           "RatioY": 0.5
         },
         "TextureRight": null,
-        "TextureTop": null,
+        "TextureTop": {
+          "Name": "gothic_block/blocks11b.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
         "TextureBottom": null,
         "UseBackMaterial": true,
         "Opacity": null
@@ -2323,7 +2359,7 @@
       "Metadata": {
         "XSize": 20.0,
         "YSize": 70.0,
-        "ZSize": 5.0,
+        "ZSize": 10.0,
         "TextureFront": null,
         "TextureBack": {
           "Name": "gothic_block/killblock.jpg",
@@ -2340,7 +2376,13 @@
           "RatioX": 1.0,
           "RatioY": 0.14
         },
-        "TextureTop": null,
+        "TextureTop": {
+          "Name": "gothic_block/blocks11b.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
         "TextureBottom": null,
         "UseBackMaterial": true,
         "Opacity": null
@@ -2652,7 +2694,13 @@
           "RatioX": 1.0,
           "RatioY": 0.5
         },
-        "TextureTop": null,
+        "TextureTop": {
+          "Name": "gothic_block/blocks11b.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
         "TextureBottom": null,
         "UseBackMaterial": true,
         "Opacity": null
@@ -2693,24 +2741,30 @@
     },
     {
       "Metadata": {
-        "XSize": 10.0,
-        "YSize": 70.0,
+        "XSize": 20.0,
+        "YSize": 80.0,
         "ZSize": 20.0,
         "TextureFront": {
           "Name": "base_wall/c_met7_2.jpg",
           "TileMode": 4,
           "Stretch": 1,
-          "RatioX": 1.0,
+          "RatioX": 0.5,
           "RatioY": 0.1
         },
         "TextureBack": {
           "Name": "base_wall/c_met7_2.jpg",
           "TileMode": 4,
           "Stretch": 1,
-          "RatioX": 1.0,
+          "RatioX": 0.5,
           "RatioY": 0.1
         },
-        "TextureLeft": null,
+        "TextureLeft": {
+          "Name": "base_wall/c_met7_2.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 0.5,
+          "RatioY": 0.1
+        },
         "TextureRight": {
           "Name": "base_wall/c_met7_2.jpg",
           "TileMode": 4,
@@ -2718,14 +2772,20 @@
           "RatioX": 0.5,
           "RatioY": 0.1
         },
-        "TextureTop": null,
+        "TextureTop": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
         "TextureBottom": null,
         "UseBackMaterial": true,
         "Opacity": null
       },
       "Index": 65,
       "Color": "#FFFFFFFF",
-      "Position": "51,-0,65",
+      "Position": "41,-0,65",
       "RotationAxisX": 0.0,
       "RotationAxisY": 0.0,
       "RotationAxisZ": 0.0
@@ -2745,7 +2805,13 @@
           "RatioX": 0.5,
           "RatioY": 0.25
         },
-        "TextureTop": null,
+        "TextureTop": {
+          "Name": "gothic_wall/iron01_e.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
         "TextureBottom": null,
         "UseBackMaterial": true,
         "Opacity": null
@@ -3828,39 +3894,36 @@
     {
       "Metadata": {
         "XSize": 10.0,
-        "YSize": 60.0,
-        "ZSize": 30.0,
+        "YSize": 10.0,
+        "ZSize": 20.0,
         "TextureFront": null,
         "TextureBack": null,
-        "TextureLeft": null,
-        "TextureRight": null,
-        "TextureTop": null,
+        "TextureLeft": {
+          "Name": "gothic_wall/purptileb.jpg",
+          "TileMode": 4,
+          "Stretch": 1,
+          "RatioX": 0.5,
+          "RatioY": 1.0
+        },
+        "TextureRight": {
+          "Name": "gothic_wall/purptileb.jpg",
+          "TileMode": 4,
+          "Stretch": 1,
+          "RatioX": 0.5,
+          "RatioY": 1.0
+        },
+        "TextureTop": {
+          "Name": "gothic_wall/iron01_e.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
         "TextureBottom": null,
         "UseBackMaterial": true,
         "Opacity": null
       },
       "Index": 91,
-      "Color": "#FFFFFFFF",
-      "Position": "42,10,120",
-      "RotationAxisX": 0.0,
-      "RotationAxisY": 0.0,
-      "RotationAxisZ": 0.0
-    },
-    {
-      "Metadata": {
-        "XSize": 10.0,
-        "YSize": 20.0,
-        "ZSize": 20.0,
-        "TextureFront": null,
-        "TextureBack": null,
-        "TextureLeft": null,
-        "TextureRight": null,
-        "TextureTop": null,
-        "TextureBottom": null,
-        "UseBackMaterial": true,
-        "Opacity": null
-      },
-      "Index": 92,
       "Color": "#FFFFFFFF",
       "Position": "42,50,90",
       "RotationAxisX": 0.0,
