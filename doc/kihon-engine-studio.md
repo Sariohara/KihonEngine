@@ -15,8 +15,32 @@ Some generic features
 You can now create maps using your own textures and skyboxes. 
 ![Screenshot - Edit 3D map](kihonEngine-studio-editMap-texture-003.png)
 
+### Manage content sources
+Use the content source manager in `Tools > Manage Content Sources...`. 
+
+Content source scan the following subfolders:
+* textures : for locating textures
+* skyboxes : for locating skyboxes
+
+By defaut, the following content source are available.
+
+| Sources | Description |
+| ----------| ------------| 
+| Embedded resources of KihonEngine | Contains skybox 1 and very few textures
+| Embedded resource of KihonEngine.SampleMaps |Contains some textures from Quake3 file `PAK0.PK3`. And contains few skyboxes 
+| folder `Content/Images` of execution directory | you can put some files here if you want
+
+You can add the following content sources
+| Sources types | Description |
+| ----------| ------------| 
+| Zip files or PK3 files | only subfolders `textures` and `syboxes` will be scanned
+| Folder | only subfolders `textures` and `syboxes` will be scanned
+
+### Extract content of current map
+You can extract textures and skyboxes used in current map by using `File > Save Map Content As...`
+
 ## Maze generator
-The maze generator available in `File > New maze` can be used as a starter for quickly create maps
+The maze generator available in `File > New > Maze...` can be used as a starter for quickly create maps
 
 ![Screenshot - Maze editor](kihonEngine-studio-mazeEditor-02.png)
 
