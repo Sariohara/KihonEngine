@@ -14,16 +14,16 @@ Some generic features
 ## Maze generator
 The maze generator available in `File > New maze` can be used as a starter for quickly create maps
 
-![Screenshot - Maze editor](kihonEngine-studio-mazeEditor-01.png)
+![Screenshot - Maze editor](kihonEngine-studio-mazeEditor-02.png)
 
 ## Play mode
 Play mode allows to test the map directly into the editor, in order to verify if gameplay is as expected
 
-![Screenshot - Play on 3D map](kihonEngine-studio-playMap-01.png)
+![Screenshot - Play on 3D map](kihonEngine-studio-playMap-003.png)
 
 ## Edit mode
 Edit mode is the default mode of the editor
-![Screenshot - Edit 3D map](kihonEngine-studio-editMap-01.png)
+![Screenshot - Edit 3D map](kihonEngine-studio-editMap-003.png)
 
 ### Adding 3D models to maps
 
