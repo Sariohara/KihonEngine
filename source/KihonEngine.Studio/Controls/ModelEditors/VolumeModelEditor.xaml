@@ -3,30 +3,145 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:KihonEngine.Studio.Controls.ModelEditors"
+             xmlns:local="clr-namespace:KihonEngine.Studio.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid x:Name="propertyGrid">
+    <Grid x:Name="propertyGrid" >
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center">XSize</Label>
-        <TextBox Grid.Row="0" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="tbXSize" KeyUp="tbXSize_KeyUp"></TextBox>
+        
+        <Grid Grid.Row="0" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="60" />
+                <ColumnDefinition  />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left">XSize</Label>
+            <local:NumericUpDown Grid.Row="0" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" x:Name="tbXSize" KeyUp="tbXSize_KeyUp" NumericUpDownBehavior="Double"/>
 
-        <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center">YSize</Label>
-        <TextBox Grid.Row="1" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="tbYSize" KeyUp="tbYSize_KeyUp"></TextBox>
+            <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left">YSize</Label>
+            <local:NumericUpDown Grid.Row="1" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" x:Name="tbYSize" KeyUp="tbYSize_KeyUp" NumericUpDownBehavior="Double"/>
 
-        <Label Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center">ZSize</Label>
-        <TextBox Grid.Row="2" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="tbZSize" KeyUp="tbZSize_KeyUp"></TextBox>
+            <Label Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left">ZSize</Label>
+            <local:NumericUpDown Grid.Row="2" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" x:Name="tbZSize" KeyUp="tbZSize_KeyUp" NumericUpDownBehavior="Double"/>
 
-        <Label Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center">UseBackMaterial</Label>
-        <CheckBox Grid.Row="3" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="cbUseBackMaterial" Checked="cbUseBackMaterial_Checked" Unchecked="cbUseBackMaterial_Checked" ></CheckBox>
+            <Label Grid.Row="3" Grid.Column="0" HorizontalAlignment="Left">Texture</Label>
+        </Grid>
+        
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button x:Name="btTextureTop" Grid.Row="0" Grid.Column="2" ToolTip="Top" HorizontalAlignment="Stretch" Click="btTextureTop_Click"
+                    ContextMenuService.Placement="Bottom">
+                <TextBlock x:Name="tbTextureTopImg" Width="20" Height="20"/>
+                <Button.ContextMenu>
+                    <ContextMenu PlacementRectangle="{Binding RelativeSource={RelativeSource Self}}">
+                        <MenuItem x:Name="menuTopEdit" Header="Edit texture..." Click="menuTopEdit_Click"/>
+                        <Separator/>
+                        <MenuItem x:Name="menuTopApplyToAll" Header="Apply texture to all faces" Click="MenuItemApplyTextureToAllFaces_Click"/>
+                        <MenuItem x:Name="menuTopApplyToBottom" Header="Apply texture to bottom face" Click="menuTopApplyToBottom_Click"/>
+                        <Separator/>
+                        <MenuItem x:Name="menuTopRemove" Header="Remove texture" Click="menuItemRemove_Click"/>
+                    </ContextMenu>
+                </Button.ContextMenu>
+            </Button>
+            <Button x:Name="btTextureBack" Grid.Row="1" Grid.Column="0" ToolTip="Back" HorizontalAlignment="Stretch" Click="btTextureBack_Click"
+                    ContextMenuService.Placement="Bottom">
+                <TextBlock x:Name="btTextureBackImg" Width="20" Height="20"/>
+                <Button.ContextMenu>
+                    <ContextMenu PlacementRectangle="{Binding RelativeSource={RelativeSource Self}}">
+                        <MenuItem x:Name="menuBackEdit" Header="Edit texture..." Click="menuBackEdit_Click"/>
+                        <Separator/>
+                        <MenuItem x:Name="menuBackApplyToAll" Header="Apply texture to all faces" Click="MenuItemApplyTextureToAllFaces_Click"/>
+                        <MenuItem x:Name="menuBackApplyToLaterals" Header="Apply texture to lateral faces" Click="menuApplyToLateralFaces_Click"/>
+                        <Separator/>
+                        <MenuItem x:Name="menuBackRemove" Header="Remove texture" Click="menuItemRemove_Click"/>
+                    </ContextMenu>
+                </Button.ContextMenu>
+            </Button>
+            <Button x:Name="btTextureLeft" Grid.Row="1" Grid.Column="1" ToolTip="Left" HorizontalAlignment="Stretch" Click="btTextureLeft_Click"
+                    ContextMenuService.Placement="Bottom">
+                <TextBlock x:Name="btTextureLeftImg" Width="20" Height="20"/>
+                <Button.ContextMenu>
+                    <ContextMenu PlacementRectangle="{Binding RelativeSource={RelativeSource Self}}">
+                        <MenuItem x:Name="menuLeftEdit" Header="Edit texture..." Click="menuLeftEdit_Click"/>
+                        <Separator/>
+                        <MenuItem x:Name="menuLeftApplyToAll" Header="Apply texture to all faces" Click="MenuItemApplyTextureToAllFaces_Click"/>
+                        <MenuItem x:Name="menuLeftApplyToLaterals" Header="Apply texture to lateral faces" Click="menuApplyToLateralFaces_Click"/>
+                        <Separator/>
+                        <MenuItem x:Name="menuLeftRemove" Header="Remove texture" Click="menuItemRemove_Click"/>
+                    </ContextMenu>
+                </Button.ContextMenu>
+            </Button>
+            <Button x:Name="btTextureFront" Grid.Row="1" Grid.Column="2" ToolTip="Front" HorizontalAlignment="Stretch" Click="btTextureFront_Click"
+                    ContextMenuService.Placement="Bottom">
+                <TextBlock x:Name="btTextureFrontImg" Width="20" Height="20"/>
+                <Button.ContextMenu>
+                    <ContextMenu PlacementRectangle="{Binding RelativeSource={RelativeSource Self}}">
+                        <MenuItem x:Name="menuFrontEdit" Header="Edit texture..." Click="menuFrontEdit_Click"/>
+                        <Separator/>
+                        <MenuItem x:Name="menuFrontApplyToAll" Header="Apply texture to all faces" Click="MenuItemApplyTextureToAllFaces_Click"/>
+                        <MenuItem x:Name="menuFrontApplyToLaterals" Header="Apply texture to lateral faces" Click="menuApplyToLateralFaces_Click"/>
+                        <Separator/>
+                        <MenuItem x:Name="menuFrontRemove" Header="Remove texture" Click="menuItemRemove_Click"/>
+                    </ContextMenu>
+                </Button.ContextMenu>
+            </Button>
+            <Button x:Name="btTextureRight" Grid.Row="1" Grid.Column="3" ToolTip="Right" HorizontalAlignment="Stretch" Click="btTextureRight_Click"
+                    ContextMenuService.Placement="Bottom">
+                <TextBlock x:Name="btTextureRightImg" Width="20" Height="20"/>
+                <Button.ContextMenu>
+                    <ContextMenu PlacementRectangle="{Binding RelativeSource={RelativeSource Self}}">
+                        <MenuItem x:Name="menuRightEdit" Header="Edit texture..." Click="menuRightEdit_Click"/>
+                        <Separator/>
+                        <MenuItem x:Name="menuRightApplyToAll" Header="Apply texture to all faces" Click="MenuItemApplyTextureToAllFaces_Click"/>
+                        <MenuItem x:Name="menuRightApplyToLaterals" Header="Apply texture to lateral faces" Click="menuApplyToLateralFaces_Click"/>
+                        <Separator/>
+                        <MenuItem x:Name="menuRightRemove" Header="Remove texture" Click="menuItemRemove_Click"/>
+                    </ContextMenu>
+                </Button.ContextMenu>
+            </Button>
+            <Button x:Name="btTextureBottom" Grid.Row="2" Grid.Column="2" ToolTip="Bottom" HorizontalAlignment="Stretch" Click="btTextureBottom_Click"
+                    ContextMenuService.Placement="Bottom">
+                <TextBlock x:Name="btTextureBottomImg" Width="20" Height="20"/>
+                <Button.ContextMenu>
+                    <ContextMenu PlacementRectangle="{Binding RelativeSource={RelativeSource Self}}">
+                        <MenuItem x:Name="menuBottomEdit" Header="Edit texture..." Click="menuBottomEdit_Click"/>
+                        <Separator/>
+                        <MenuItem x:Name="menuBottomApplyToAll" Header="Apply texture to all faces" Click="MenuItemApplyTextureToAllFaces_Click"/>
+                        <MenuItem x:Name="menuBottomApplyToTop" Header="Apply texture to top face" Click="menuBottomApplyToTop_Click"/>
+                        <Separator/>
+                        <MenuItem x:Name="menuBottomRemove" Header="Remove texture" Click="menuItemRemove_Click"/>
+                    </ContextMenu>
+                </Button.ContextMenu>
+            </Button>
+        </Grid>
+
+        <WrapPanel Grid.Row="2" Orientation="Horizontal">
+            <Label Content="UseBackMaterial" Margin="5"/>
+            <CheckBox Margin="1" Name="cbUseBackMaterial" Checked="cbUseBackMaterial_Checked" Unchecked="cbUseBackMaterial_Checked" ></CheckBox>
+        </WrapPanel>
     </Grid>
 </UserControl>

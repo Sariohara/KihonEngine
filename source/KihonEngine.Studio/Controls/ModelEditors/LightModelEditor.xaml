@@ -3,12 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:KihonEngine.Studio.Controls.ModelEditors"
+             xmlns:local="clr-namespace:KihonEngine.Studio.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid x:Name="propertyGrid">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="60" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -17,13 +17,13 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center">Direction.X</Label>
-        <TextBox Grid.Row="0" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="tbX" KeyUp="tbX_KeyUp"></TextBox>
+        <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left">Direction.X</Label>
+        <local:NumericUpDown Grid.Row="0" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" x:Name="tbX" KeyUp="tbX_KeyUp" NumericUpDownBehavior="Double"/>
 
-        <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center">Direction.Y</Label>
-        <TextBox Grid.Row="1" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="tbY" KeyUp="tbY_KeyUp"></TextBox>
+        <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left">Direction.Y</Label>
+        <local:NumericUpDown Grid.Row="1" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" x:Name="tbY" KeyUp="tbY_KeyUp" NumericUpDownBehavior="Double"/>
 
-        <Label Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center">Direction.Z</Label>
-        <TextBox Grid.Row="2" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="tbZ" KeyUp="tbZ_KeyUp"></TextBox>
+        <Label Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left">Direction.Z</Label>
+        <local:NumericUpDown Grid.Row="2" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" x:Name="tbZ" KeyUp="tbZ_KeyUp" NumericUpDownBehavior="Double"/>
     </Grid>
 </UserControl>

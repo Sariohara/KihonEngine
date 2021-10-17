@@ -50,6 +50,12 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
             var builder = new CeilingBuilder(definition.Color, level);
             builder.UseBackMaterial = definition.Metadata.UseBackMaterial;
             var model = builder.Create((int)definition.Position.X, (int)definition.Position.Y, (int)definition.Position.Z, definition.Metadata.XSize, definition.Metadata.ZSize);
+            if (!string.IsNullOrEmpty(definition.Metadata.Texture?.Name))
+            {
+                var texture = definition.Metadata.Texture;
+                builder.ApplyTexture(model, texture.Name, texture.TileMode, texture.Stretch, texture.RatioX, texture.RatioY);
+            }
+
             model.RotateByAxisX(definition.RotationAxisX);
             model.RotateByAxisY(definition.RotationAxisY);
             model.RotateByAxisZ(definition.RotationAxisZ);
@@ -59,7 +65,13 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
         {
             var builder = new FloorBuilder(definition.Color, level);
             builder.UseBackMaterial = definition.Metadata.UseBackMaterial;
-            var model = builder.Create(definition.Position.X, definition.Position.Y, definition.Position.Z, definition.Metadata.XSize, definition.Metadata.ZSize, definition.Metadata.Texture);
+            var model = builder.Create(definition.Position.X, definition.Position.Y, definition.Position.Z, definition.Metadata.XSize, definition.Metadata.ZSize);
+            if (!string.IsNullOrEmpty(definition.Metadata.Texture?.Name))
+            {
+                var texture = definition.Metadata.Texture;
+                builder.ApplyTexture(model, texture.Name, texture.TileMode, texture.Stretch, texture.RatioX, texture.RatioY);
+            }
+
             model.RotateByAxisX(definition.RotationAxisX);
             model.RotateByAxisY(definition.RotationAxisY);
             model.RotateByAxisZ(definition.RotationAxisZ);
@@ -81,6 +93,14 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
             model.RotateByAxisZ(definition.RotationAxisZ);
         }
 
+        private void ApplyVolumeTexture(VolumeBuilder builder, LayeredModel3D model, VolumeFace face, TextureMetadata texture)
+        {
+            if (!string.IsNullOrEmpty(texture?.Name))
+            {
+                builder.ApplyTexture(model, face, texture.Name, texture.TileMode, texture.Stretch, texture.RatioX, texture.RatioY);
+            }
+        }
+
         private void BuildVolume(VolumeDefinition definition, List<LayeredModel3D> level)
         {
             var builder = new VolumeBuilder(definition.Color, level);
@@ -100,6 +120,13 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
                 model = builder.Create(definition.Position.X, definition.Position.Y, definition.Position.Z, definition.Metadata.XSize, definition.Metadata.YSize, definition.Metadata.ZSize);
             }
 
+            ApplyVolumeTexture(builder, model, VolumeFace.Front, definition.Metadata.TextureFront);
+            ApplyVolumeTexture(builder, model, VolumeFace.Back, definition.Metadata.TextureBack);
+            ApplyVolumeTexture(builder, model, VolumeFace.Top, definition.Metadata.TextureTop);
+            ApplyVolumeTexture(builder, model, VolumeFace.Bottom, definition.Metadata.TextureBottom);
+            ApplyVolumeTexture(builder, model, VolumeFace.Left, definition.Metadata.TextureLeft);
+            ApplyVolumeTexture(builder, model, VolumeFace.Right, definition.Metadata.TextureRight);
+
             model.RotateByAxisX(definition.RotationAxisX);
             model.RotateByAxisY(definition.RotationAxisY);
             model.RotateByAxisZ(definition.RotationAxisZ);
@@ -110,6 +137,13 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
             var builder = new WallBuilder(definition.Color, level);
             builder.UseBackMaterial = definition.Metadata.UseBackMaterial;
             var model = builder.Create((int)definition.Position.X, (int)definition.Position.Y, (int)definition.Position.Z, (int)definition.Metadata.XSize, (int)definition.Metadata.YSize);
+            builder.SetFace(model, definition.Metadata.Face);
+            if (!string.IsNullOrEmpty(definition.Metadata.Texture?.Name))
+            {
+                var texture = definition.Metadata.Texture;
+                builder.ApplyTexture(model, texture.Name, texture.TileMode, texture.Stretch, texture.RatioX, texture.RatioY);
+            }
+
             model.RotateByAxisX(definition.RotationAxisX);
             model.RotateByAxisY(definition.RotationAxisY);
             model.RotateByAxisZ(definition.RotationAxisZ);

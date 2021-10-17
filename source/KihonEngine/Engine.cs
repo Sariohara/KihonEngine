@@ -1,4 +1,5 @@
 ﻿using KihonEngine.GameEngine;
+using KihonEngine.GameEngine.Graphics.Content;
 using KihonEngine.GameEngine.Graphics.Maps;
 using KihonEngine.Services;
 using System;
@@ -13,6 +14,34 @@ namespace KihonEngine
         public static bool IsInitialized => _initialized;
 
         public static IGameEngineController Controller => Container.Get<IGameEngineController>();
+        private static IContentService ContentService => Container.Get<IContentService>();
+
+        /// <summary>
+        /// Register map content from assembly (textures, skyboxes)
+        /// </summary>
+        /// <param name="typeFromAssembly">type from the target assembly</param>
+        public static void RegisterContentFromAssembly(Type typeFromAssembly)
+        {
+            ContentService.RegisterSource(new EmbeddedContentSource(typeFromAssembly));
+        }
+
+        /// <summary>
+        /// register map content from a folder (textures, skyboxes)
+        /// </summary>
+        /// <param name="path">folder path</param>
+        public static void RegisterContentFromFolder(string path)
+        {
+            ContentService.RegisterSource(new FolderContentSource(path));
+        }
+
+        /// <summary>
+        /// register map content from a zip file (textures, skyboxes)
+        /// </summary>
+        /// <param name="path">zip file path</param>
+        public static void RegisterContentFromFile(string path)
+        {
+            ContentService.RegisterSource(new ZipFileContentSource(path));
+        }
 
         /// <summary>
         /// Start game

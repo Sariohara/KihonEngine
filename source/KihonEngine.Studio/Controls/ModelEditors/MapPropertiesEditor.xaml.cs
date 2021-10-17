@@ -1,6 +1,7 @@
 ﻿using KihonEngine.GameEngine;
 using KihonEngine.GameEngine.State;
 using KihonEngine.Services;
+using KihonEngine.Studio.Helpers;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media.Media3D;
@@ -141,6 +142,16 @@ namespace KihonEngine.Studio.Controls.ModelEditors
 
                 GameEngineController.NotifyIOs();
             }
+        }
+
+        private void btSetRespawn_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            State.Graphics.RespawnLookDirection = State.Graphics.PlayerCamera.Camera.LookDirection;
+            State.Graphics.RespawnPosition = State.Graphics.PlayerCamera.Camera.Position;
+
+            Synchronize(State);
+
+            GameEngineController.NotifyIOs();
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using KihonEngine.GameEngine.Graphics.ModelDefinitions;
 using System;
 using System.Collections.Generic;
+using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Media3D;
 
@@ -31,7 +32,8 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
             zSize = Math.Round(zSize, 2);
 
             var layeredModel = LayeredModel3D.Create(ModelType.Volume);
-            layeredModel.Metadata.Add(ModelType.Volume.ToString(), new VolumeMetadata { XSize = xSize, YSize = ySize, ZSize = zSize, UseBackMaterial = UseBackMaterial });
+            SetGenericMetadata(layeredModel);
+            SetSpecificMetadata(layeredModel, new VolumeMetadata { XSize = xSize, YSize = ySize, ZSize = zSize, UseBackMaterial = UseBackMaterial });
             layeredModel.Translate(new Vector3D(x, y, z));
             //layeredModel.Translation = TransformHelper.TransformByTranslation(x, y, z);
 
@@ -69,21 +71,53 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
             layeredModel.Children.Add(CreateTriangle(p2, p0, p1, material));
 
             // Metadata
-            layeredModel.Metadata.Add("Front1", layeredModel.Children[0]);
-            layeredModel.Metadata.Add("Front2", layeredModel.Children[1]);
-            layeredModel.Metadata.Add("Right1", layeredModel.Children[2]);
-            layeredModel.Metadata.Add("Right2", layeredModel.Children[3]);
-            layeredModel.Metadata.Add("Back1", layeredModel.Children[4]);
-            layeredModel.Metadata.Add("Back2", layeredModel.Children[5]);
-            layeredModel.Metadata.Add("Left1", layeredModel.Children[6]);
-            layeredModel.Metadata.Add("Left2", layeredModel.Children[7]);
-            layeredModel.Metadata.Add("Top1", layeredModel.Children[8]);
-            layeredModel.Metadata.Add("Top2", layeredModel.Children[9]);
-            layeredModel.Metadata.Add("Bottom1", layeredModel.Children[10]);
-            layeredModel.Metadata.Add("Bottom2", layeredModel.Children[11]);
+            layeredModel.Metadata.Add($"{VolumeFace.Front}1", layeredModel.Children[0]);
+            layeredModel.Metadata.Add($"{VolumeFace.Front}2", layeredModel.Children[1]);
+            layeredModel.Metadata.Add($"{VolumeFace.Right}1", layeredModel.Children[2]);
+            layeredModel.Metadata.Add($"{VolumeFace.Right}2", layeredModel.Children[3]);
+            layeredModel.Metadata.Add($"{VolumeFace.Back}1", layeredModel.Children[4]);
+            layeredModel.Metadata.Add($"{VolumeFace.Back}2", layeredModel.Children[5]);
+            layeredModel.Metadata.Add($"{VolumeFace.Left}1", layeredModel.Children[6]);
+            layeredModel.Metadata.Add($"{VolumeFace.Left}2", layeredModel.Children[7]);
+            layeredModel.Metadata.Add($"{VolumeFace.Top}1", layeredModel.Children[8]);
+            layeredModel.Metadata.Add($"{VolumeFace.Top}2", layeredModel.Children[9]);
+            layeredModel.Metadata.Add($"{VolumeFace.Bottom}1", layeredModel.Children[10]);
+            layeredModel.Metadata.Add($"{VolumeFace.Bottom}2", layeredModel.Children[11]);
 
             models.Add(layeredModel);
             return layeredModel;
+        }
+
+        public void ApplyTexture(LayeredModel3D layeredModel, VolumeFace face, string filename, TileMode tileMode = TileMode.Tile, Stretch stretch = Stretch.Uniform, double ratioX = 1, double ratioY = 1)
+        {
+            var metadata = (VolumeMetadata)layeredModel.Metadata[ModelType.Volume.ToString()];
+            var textureMetadata = new TextureMetadata { Name = filename, TileMode = tileMode, Stretch = stretch, RatioX = ratioX, RatioY = ratioY };
+
+            switch (face)
+            {
+                case VolumeFace.Front:
+                    metadata.TextureFront = textureMetadata;
+                    break;
+                case VolumeFace.Back:
+                    metadata.TextureBack = textureMetadata;
+                    break;
+                case VolumeFace.Top:
+                    metadata.TextureTop = textureMetadata;
+                    break;
+                case VolumeFace.Bottom:
+                    metadata.TextureBottom = textureMetadata;
+                    break;
+                case VolumeFace.Left:
+                    metadata.TextureLeft = textureMetadata;
+                    break;
+                case VolumeFace.Right:
+                    metadata.TextureRight = textureMetadata;
+                    break;
+            }
+
+            var material = CreateMaterial(filename, tileMode, stretch, ratioX, ratioY);
+            ApplyTextureToVolume(layeredModel, $"{face}1", material, TextureCoordinates1);
+            ApplyTextureToVolume(layeredModel, $"{face}2", material, TextureCoordinates2);
         }
     }
 }

@@ -22,20 +22,23 @@
         </Grid.RowDefinitions>
         <Menu>
             <MenuItem Header="File">
-                <MenuItem Header="New" Click="MenuNew_Click" />
-                <MenuItem Header="New maze..." Click="MenuNewMaze_Click" />
+                <MenuItem Header="New">
+                    <MenuItem Header="Map" Click="MenuNewMap_Click" />
+                    <MenuItem Header="Maze..." Click="MenuNewMaze_Click" />
+                </MenuItem>
                 <MenuItem Header="Open Map">
+                    <MenuItem Header="From File..." Click="MenuOpenFromFile_Click" />
+                    <Separator />
                     <MenuItem Header="Demo : Empty" x:Name="menuOpen0" Click="MenuOpen_Click" />
                     <MenuItem Header="Demo : Empty" x:Name="menuOpen1" Click="MenuOpen_Click" />
                     <MenuItem Header="Demo : Empty" x:Name="menuOpen2" Click="MenuOpen_Click" />
                     <MenuItem Header="Demo : Empty" x:Name="menuOpen3" Click="MenuOpen_Click" />
                     <MenuItem Header="Demo : Empty" x:Name="menuOpen4" Click="MenuOpen_Click" />
                     <MenuItem Header="Demo : Empty" x:Name="menuOpen5" Click="MenuOpen_Click" />
-                    <Separator />
-                    <MenuItem Header="File..." Click="MenuOpenFromFile_Click" />
                 </MenuItem>
                 <Separator />
                 <MenuItem Header="Save Map As..." Click="MenuSaveAs_Click" />
+                <MenuItem Header="Save Map Content As..." Click="MenuSaveMapContentAs_Click" />
                 <Separator />
                 <MenuItem Header="Exit" Click="MenuExit_Click" />
             </MenuItem>
@@ -44,8 +47,14 @@
                 <Separator />
                 <MenuItem Header="Map Properties" Click="MenuMapProperties_Click" />
             </MenuItem>
+            <MenuItem Header="Tools">
+                <!--<MenuItem Header="Extract map content..." x:Name="menuExtractMapContent" Click="menuExtractMapContent_Click"/>
+                <Separator />-->
+                <MenuItem Header="Manage Content Sources..." x:Name="menuContentSources" Click="MenuContentSources_Click"/>
+            </MenuItem>
             <MenuItem Header="Help">
                 <MenuItem Header="View Help" Click="MenuHelp_Click" />
+                <MenuItem Header="View Quick Start" Click="MenuQuickStartHelp_Click" />
                 <Separator />
                 <MenuItem Header="About" Click="MenuAbout_Click" />
             </MenuItem>

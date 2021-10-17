@@ -1,58 +1,29 @@
-﻿using System.Collections.Generic;
+﻿using KihonEngine.GameEngine.Graphics.Content;
+using KihonEngine.Services;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Windows;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Media.Media3D;
 
 namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
 {
     public static class ImageHelper
     {
-        private static Dictionary<string, BitmapImage> _bitmapImageCache = new Dictionary<string, BitmapImage>();
-        private static Dictionary<string, Bitmap> _bitmapCache = new Dictionary<string, Bitmap>();
+        private static Dictionary<string, BitmapImage> _skyboxCache = new Dictionary<string, BitmapImage>();
+        private static IContentService _source = Container.Get<IContentService>();
 
-        public static BitmapImage Get(string shortResourceName)
+        public static BitmapImage Get(GraphicContentType contentType, string resourceName)
         {
-            BitmapImage bitmap = null;
-            
-            if (!_bitmapImageCache.TryGetValue(shortResourceName, out bitmap))
-            {
-                var assembly = System.Reflection.Assembly.GetExecutingAssembly();
-                bitmap = new BitmapImage();
-
-                var assemblyName = typeof(ImageHelper).Assembly.GetName().Name;
-                using (var stream = assembly.GetManifestResourceStream($"{assemblyName}.Content.Images.{shortResourceName}"))
-                {
-                    bitmap.BeginInit();
-                    bitmap.StreamSource = stream;
-                    bitmap.CacheOption = BitmapCacheOption.OnLoad;
-                    bitmap.EndInit();
-                }
-
-                _bitmapImageCache.Add(shortResourceName, bitmap);
-            }
-
-            return bitmap;
+            return _source.Get(contentType, resourceName);
         }
 
-        public static Bitmap GetBitmap(string shortResourceName)
+        public static Bitmap GetBitmap(GraphicContentType contentType, string resourceName)
         {
-            Bitmap bitmap = null;
-
-            if (!_bitmapCache.TryGetValue(shortResourceName, out bitmap))
-            {
-                var assembly = System.Reflection.Assembly.GetExecutingAssembly();
-
-                var assemblyName = typeof(ImageHelper).Assembly.GetName().Name;
-                using (var stream = assembly.GetManifestResourceStream($"{assemblyName}.Content.Images.{shortResourceName}"))
-                {
-                    bitmap = new Bitmap(stream);
-                }
-
-                _bitmapCache.Add(shortResourceName, bitmap);
-            }
-
-            return bitmap;
+            return _source.GetBitmap(contentType, resourceName);
         }
 
         public static BitmapImage ToBitmapImage(Bitmap bitmap)
@@ -80,23 +51,28 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
         /// <param name="column">column in skybox image</param>
         /// <param name="row">row in skybox image</param>
         /// <returns></returns>
-        public static BitmapImage GetSkyboxPart(string shortResourceName, SkyboxFace face)
+        public static BitmapImage GetSkyboxPart(string resourceName, SkyboxFace face)
         {
             BitmapImage bitmap = null;
 
-            var key = $"{shortResourceName}|{face}";
-            if (!_bitmapImageCache.TryGetValue(key, out bitmap))
+            var key = $"{resourceName}|{face}";
+            if (!_skyboxCache.TryGetValue(key, out bitmap))
             {
-                bitmap = BuildSkyboxPart(shortResourceName, face);
-                _bitmapImageCache.Add(key, bitmap);
+                bitmap = BuildSkyboxPart(resourceName, face);
+                _skyboxCache.Add(key, bitmap);
             }
 
             return bitmap;
         }
         
-        private static BitmapImage BuildSkyboxPart(string shortResourceName, SkyboxFace face)
+        private static BitmapImage BuildSkyboxPart(string resourceName, SkyboxFace face)
         {
-            var imageSource = GetBitmap(shortResourceName);
+            var imageSource = GetBitmap(GraphicContentType.Skybox, resourceName);
+            if (imageSource == null)
+            {
+                return null;
+            }
+
             var sizeX = imageSource.Size.Width / 4;
             var sizeY = imageSource.Size.Height / 3;
             int x = 0;
@@ -146,6 +122,66 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
             Bitmap partialImage = imageSource.Clone(cloneRect, imageSource.PixelFormat);
 
             return ToBitmapImage(partialImage);
+        }
+
+        public static MaterialGroup CreateMaterial(string filename)
+        {
+            return CreateMaterial(filename, TileMode.Tile, Stretch.UniformToFill, 1);
+        }
+
+        public static MaterialGroup CreateMaterial(string filename, TileMode tileMode = TileMode.Tile, Stretch stretch = Stretch.UniformToFill)
+        {
+            return CreateMaterial(filename, tileMode, stretch, 1);
+        }
+
+        public static MaterialGroup CreateMaterial(string filename, TileMode tileMode = TileMode.Tile, Stretch stretch = Stretch.UniformToFill, double ratioX = 1, double ratioY = 1)
+        {
+            var materiaGroup = new MaterialGroup();
+
+            var imageSource = Get(GraphicContentType.Texture, filename);
+
+            if (imageSource == null)
+            {
+                imageSource = CreateNotFoundImage($"Not found :'({System.Environment.NewLine}{filename}");
+            }
+
+            var brush = new ImageBrush(imageSource);
+            brush.TileMode = tileMode;
+            brush.Stretch = stretch;
+            brush.Viewport = new Rect(new System.Windows.Point(0, 0), new System.Windows.Point(ratioX, ratioY));
+            brush.ViewboxUnits = BrushMappingMode.RelativeToBoundingBox;
+            materiaGroup.Children.Add(new DiffuseMaterial(brush));
+
+            return materiaGroup;
+        }
+
+        public static System.Windows.Media.Brush CreateTextureBrush(string filename)
+        {
+            if (string.IsNullOrEmpty(filename))
+            {
+                return new SolidColorBrush(Colors.Transparent);
+            }
+
+            return new ImageBrush(Get(GraphicContentType.Texture, filename));
+        }
+
+        private static BitmapImage CreateNotFoundImage(string message)
+        {
+            var xSize = 101;
+            var ySize = 101;
+            var bm = new Bitmap(xSize, ySize);
+            using (var graphics = System.Drawing.Graphics.FromImage(bm))
+            {
+                StringFormat sf = new StringFormat();
+                sf.LineAlignment = StringAlignment.Center;
+                sf.Alignment = StringAlignment.Center;
+                var font = new Font(System.Drawing.FontFamily.GenericSansSerif, 10, System.Drawing.FontStyle.Regular);
+                graphics.FillRectangle(new SolidBrush(System.Drawing.Color.White), new Rectangle(0, 0, xSize, ySize));
+                graphics.DrawRectangle(new System.Drawing.Pen(System.Drawing.Color.Black, 2), new Rectangle(0, 0, xSize, ySize));
+                graphics.DrawString(message, font, new SolidBrush(System.Drawing.Color.Red), new RectangleF { X = 1, Y = 1, Width = xSize - 1, Height = ySize - 1 }, sf);
+            }
+
+            return ImageHelper.ToBitmapImage(bm);
         }
     }
 }

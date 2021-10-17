@@ -12,11 +12,15 @@
             // Configure game
             StandardStartups.BuildStandaloneFullScreenGame();
 
+            // Register additional textures and skyboxes
+            Engine.RegisterContentFromAssembly(typeof(SampleMaps.E1M1MapBuilder));
+
             // When click a Start button
             btnStart1.Click += (sender, e) => Engine.Play<SampleMaps.E1M1MapBuilder>();
             btnStart2.Click += (sender, e) => Engine.Play<SampleMaps.Q3DM1MapBuilder>();
             btnStart3.Click += (sender, e) => Engine.Play<SampleMaps.DarkCastleM2MapBuilder>();
             btnStart4.Click += (sender, e) => Engine.Play<SampleMaps.Maze.MazeMapBuilder>();
+            btnStart5.Click += (sender, e) => Engine.Play<SampleMaps.DarkCastleM3MapBuilder>();
 
             // When click Exit button
             btnExit.Click += (sender, e) => Close();

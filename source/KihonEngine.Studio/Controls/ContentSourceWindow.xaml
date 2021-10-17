@@ -1,0 +1,50 @@
+﻿<Window x:Class="KihonEngine.Studio.Controls.ContentSourceWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KihonEngine.Studio.Controls"
+        mc:Ignorable="d"
+        Loaded="Window_Loaded"
+        KeyDown="Window_KeyDown"
+        Title="Manage content sources" 
+        Style="{DynamicResource ResourceKey=WindowDefaultStyle}"
+        ResizeMode="NoResize" Height="420" Width="800">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="120" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <Canvas Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+            <TextBlock Canvas.Left="10" Canvas.Top="10" Text="Content sources on Kihon Engine Studio" FontWeight="Bold" Foreground="White"/>
+            <TextBlock Canvas.Left="10" Canvas.Top="35" Text="Click 'Add' to add a new content source and provides additional textures and skyboxes." Foreground="White"/>
+            <TextBlock Canvas.Left="10" Canvas.Top="50" Text="Click 'Remove' to remove the hightlighted content source." Foreground="White"/>
+        </Canvas>
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+        </Grid>
+        <ListView Grid.Row="1" Grid.Column="0" Margin="10" Name="lvSources" SelectionMode="Single" SelectionChanged="lvModels_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Source Type" Width="100" DisplayMemberBinding="{Binding Type}" />
+                    <GridViewColumn Header="Path" Width="500" DisplayMemberBinding="{Binding Path}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Canvas Grid.Row="1" Grid.Column="1">
+            <Button Canvas.Right="10" Canvas.Top="10" x:Name="btAddFile" Content="Add File..." Width="100"  Click="btAddFile_Click" />
+            <Button Canvas.Right="10" Canvas.Top="50" x:Name="btAddFolder" Content="Add Folder..." Width="100"  Click="btAddFolder_Click" />
+            <Button Canvas.Right="10" Canvas.Top="90" x:Name="btRemove" Content="Remove..." Width="100"  Click="btRemove_Click" />
+        </Canvas>
+        <Canvas Grid.Row="2" Grid.Column="0"  Grid.ColumnSpan="2">
+            <Button Canvas.Right="10" Canvas.Bottom="10" x:Name="btClose" Content="Close" Width="100"  Click="btClose_Click" />
+        </Canvas>
+    </Grid>
+</Window>

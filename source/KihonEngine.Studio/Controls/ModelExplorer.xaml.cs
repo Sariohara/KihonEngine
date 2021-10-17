@@ -8,6 +8,7 @@ using System.Linq;
 using System.Timers;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace KihonEngine.Studio.Controls
 {
@@ -83,12 +84,7 @@ namespace KihonEngine.Studio.Controls
                 var index = 0;
                 foreach (var layeredModel in level)
                 {
-                    var viewModel = new ModelViewModel();
-                    viewModel.Index = (index++).ToString();
-                    viewModel.Type = layeredModel.Type.ToString();
-                    viewModel.Model = layeredModel;
-
-                    list.Add(viewModel);
+                    list.Add(CreateViewModel(index++, layeredModel));
                 }
 
                 var lvSelectedIndex = lvModels.SelectedIndex;
@@ -115,14 +111,6 @@ namespace KihonEngine.Studio.Controls
             }
         }
 
-        public class ModelViewModel
-        {
-            public string Index { get; set; }
-            public string Type { get; set; }
-            public Color Color { get; set; }
-            public LayeredModel3D Model { get; set; }
-        }
-
         private void lvModels_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (lvModels.SelectedItem != null && !_processing)
@@ -131,6 +119,39 @@ namespace KihonEngine.Studio.Controls
                 State.Editor.ActionSelect.SelectedModel = viewModel.Model;
                 GameEngineController.NotifyIOs();
             }
+        }
+
+        private ModelViewModel CreateViewModel(int index, LayeredModel3D model)
+        {
+            var viewModel = new ModelViewModel();
+            viewModel.Index = index.ToString();
+            viewModel.Type = model.Type.ToString();
+            viewModel.Color = model.GetColorFromMetadata().ToString();
+            viewModel.Model = model;
+            viewModel.Tags = string.Join(",", model.Tags.ToArray());
+
+            if (model.Type != ModelType.Group)
+            {
+                var assemblyName = this.GetType().Assembly.GetName().Name;
+                var sourceUri = $"pack://application:,,,/{assemblyName};component/Content/Images/Icons/icon-{model.Type.ToString().ToLower()}-transparent.png";
+                viewModel.Icon = new BitmapImage(new Uri(sourceUri));
+            }
+            else
+            {
+                viewModel.Icon = null;
+            }
+
+            return viewModel;
+        }
+
+        public class ModelViewModel
+        {
+            public string Index { get; set; }
+            public string Type { get; set; }
+            public string Tags { get; set; }
+            public string Color { get; set; }
+            public ImageSource Icon { get; set; } 
+            public LayeredModel3D Model { get; set; }
         }
     }
 }

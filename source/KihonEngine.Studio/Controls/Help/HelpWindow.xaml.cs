@@ -1,6 +1,11 @@
-﻿using System.Reflection;
+﻿using KihonEngine.Studio.Helpers;
+using System.Diagnostics;
+using System.IO;
+using System.Reflection;
+using System.Text;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Navigation;
 
 namespace KihonEngine.Studio.Controls
 {
@@ -9,57 +14,35 @@ namespace KihonEngine.Studio.Controls
     /// </summary>
     public partial class HelpWindow : Window
     {
-        private const string MinimalContent =
-@"
-Minimal help \r\n
-----------------\r\n
-This file explains how to start with Game Engine Studio\r\n
-\r\n
-Global comands \r\n
-----------------\r\n
-F11 to swith with full screen mode\r\n
-\r\n
-Edit mode\r\n
-----------------\r\n
- Select by left click, \r\n
-Move by press X, Y or Z when left click pressed\r\n
-\r\n
-Game mode  \r\n
-----------------\r\n
-Move with E, S, D, F. \r\n
-View by using mouse,\r\n
-ESC for quit and back to edit mode\r\n";
-
-        private const string MinimalStyle = @"
-<style>
-	body {
-		background-color: #252525;
-		color:lightgray;
-		font-family:arial
-	}
-</style/>
-";
         public HelpWindow()
         {
             InitializeComponent();
         }
 
+        private void Synchronize()
+        {
+            lnkDocumentation.NavigateUri = new System.Uri(ExternalResources.DocumentationUrl);
+            lnkDocumentation.ToolTip = ExternalResources.DocumentationUrl;
+
+            var targetAssembly = Assembly.GetExecutingAssembly();
+            var assemblyName = targetAssembly.GetName().Name;
+            using (var stream = targetAssembly.GetManifestResourceStream($"{assemblyName}.Content.Help.Manual.html"))
+            {
+                using (var sr = new StreamReader(stream, Encoding.UTF8))
+                {
+                    webBrowser.NavigateToString(sr.ReadToEnd());
+                }
+            }            
+        }
+
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            var htmlContent = MinimalStyle + MinimalContent
-                .Replace("\\r\\n", "<br/>")
-                .Replace("----------------", "<hr/>");
+            Synchronize();
+        }
 
-            var filepath = System.IO.Path.Combine(
-                System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
-                @"Content\Help\Manual.html");
-
-            if (System.IO.File.Exists(filepath))
-            {
-                htmlContent = System.IO.File.ReadAllText(filepath);
-            }
-
-            webBrowser.NavigateToString(htmlContent);
+        private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
+        {
+            ExternalResources.Navigate(e.Uri.AbsoluteUri);
         }
 
         private void btClose_Click(object sender, RoutedEventArgs e)

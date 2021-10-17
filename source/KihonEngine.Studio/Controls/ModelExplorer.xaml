@@ -10,8 +10,28 @@
         <ListView Margin="10" Name="lvModels" SelectionMode="Single" SelectionChanged="lvModels_SelectionChanged">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Index" Width="100" DisplayMemberBinding="{Binding Index}" />
+                    <GridViewColumn Header="Index" Width="100">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image x:Name="imgModelType" Height="20" Width="20" Stretch="Fill" Source="{Binding Icon}" />
+                                    <Label x:Name="lblModelType" Margin="5" Content="{Binding Index}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
                     <GridViewColumn Header="Type" Width="100" DisplayMemberBinding="{Binding Type}" />
+                    <GridViewColumn Header="Color" Width="100">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Height="10" Width="10" Background="{Binding Color}" />
+                                    <Label Margin="5" Content="{Binding Color}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Tags" Width="300" DisplayMemberBinding="{Binding Tags}" />
                 </GridView>
             </ListView.View>
         </ListView>

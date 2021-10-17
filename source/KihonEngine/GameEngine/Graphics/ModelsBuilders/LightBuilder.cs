@@ -5,13 +5,11 @@ using System.Windows.Media.Media3D;
 
 namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
 {
-    public class LightBuilder
+    public class LightBuilder : ModelBuilder
     {
-        public Color Color { get; set; }
-
         private List<LayeredModel3D> models;
 
-        public LightBuilder(Color color, List<LayeredModel3D> models)
+        public LightBuilder(Color color, List<LayeredModel3D> models) : base(color)
         {
             Color = color;
             this.models = models;
@@ -20,7 +18,8 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
         public LayeredModel3D Create(Vector3D direction)
         {
             var layeredModel = LayeredModel3D.Create(ModelType.Light);
-            layeredModel.Metadata.Add(ModelType.Light.ToString(), new LightMetadata { Direction = direction });
+            SetGenericMetadata(layeredModel);
+            SetSpecificMetadata(layeredModel, new LightMetadata { Direction = direction });
 
             var light = new DirectionalLight();
             light.Color = Color;

@@ -28,28 +28,42 @@ namespace KihonEngine.GameEngine.Graphics.Maps.Predefined
             lightBuilder.Create(new Vector3D(3, 4, 5));
 
             // Sky box
-            skyboxBuilder.Create(-5000, -5000, -5000, 10000, new Vector3D(-3, -4, -5), "sky1");
+            skyboxBuilder.Create(-5000, -5000, -5000, 10000, new Vector3D(-3, -4, -5), "sky1-full.png");
 
             // Origin
-            volumeBuilder.Color = Colors.White;
-            volumeBuilder.Create(0, 0, 0, 0.5);
-
-            volumeBuilder.Color = Colors.LightGreen;
-            volumeBuilder.Create(0, 0.5, 0, 0.5, 15, 0.5);
-
-            volumeBuilder.Color = Colors.Red;
-            volumeBuilder.Create(0.5, 0, 0, 15, 0.5, 0.5);
-
-            volumeBuilder.Color = Colors.Blue;
-            volumeBuilder.Create(0, 0, 0.5, 0.5, 0.5, 15);
+            CreateOrigin(volumeBuilder);
 
             // Floor : central
             var midFloorSize = 100;
             floorBuilder.UseBackMaterial = true;
             floorBuilder.Color = Colors.LightGray;
-            floorBuilder.Create(-100, 0, -midFloorSize, midFloorSize * 2, "default.png");
+            var model = floorBuilder.Create(-100, 0, -midFloorSize, midFloorSize * 2);
+            floorBuilder.ApplyTexture(model, "default.png", TileMode.Tile, Stretch.Uniform, 0.05, 0.05);
 
             return level;
+        }
+
+        private void CreateOrigin(VolumeBuilder volumeBuilder)
+        {
+            volumeBuilder.Color = Colors.White;
+            var model = volumeBuilder.Create(0, 0, 0, 0.5);
+            model.Tags.Add("origin");
+            model.Tags.Add("point");
+
+            volumeBuilder.Color = Colors.LightGreen;
+            model = volumeBuilder.Create(0, 0.5, 0, 0.5, 15, 0.5);
+            model.Tags.Add("origin");
+            model.Tags.Add("axisY");
+
+            volumeBuilder.Color = Colors.Red;
+            model = volumeBuilder.Create(0.5, 0, 0, 15, 0.5, 0.5);
+            model.Tags.Add("origin");
+            model.Tags.Add("axisX");
+
+            volumeBuilder.Color = Colors.Blue;
+            model = volumeBuilder.Create(0, 0, 0.5, 0.5, 0.5, 15);
+            model.Tags.Add("origin");
+            model.Tags.Add("axisZ");
         }
     }
 }

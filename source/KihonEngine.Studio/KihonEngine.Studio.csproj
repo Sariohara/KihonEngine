@@ -22,9 +22,48 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Content\Help\Manual.html" />
+    <None Remove="Content\Help\Manual.txt" />
+    <None Remove="Content\Images\Icons\help-model-properties-transparent.png" />
+    <None Remove="Content\Images\Icons\help-playmode-transparent.png" />
+    <None Remove="Content\Images\Icons\icon-camera-back-transparent.png" />
+    <None Remove="Content\Images\Icons\icon-camera-front-transparent.png" />
+    <None Remove="Content\Images\Icons\icon-camera-left-transparent.png" />
+    <None Remove="Content\Images\Icons\icon-camera-respawn-transparent.png" />
+    <None Remove="Content\Images\Icons\icon-camera-right-transparent.png" />
+    <None Remove="Content\Images\Icons\icon-ceiling-transparent.png" />
+    <None Remove="Content\Images\Icons\icon-floor-transparent.png" />
+    <None Remove="Content\Images\Icons\icon-light-transparent.png" />
+    <None Remove="Content\Images\Icons\icon-skybox-transparent.png" />
+    <None Remove="Content\Images\Icons\icon-volume-transparent.png" />
+    <None Remove="Content\Images\Icons\icon-wall-transparent.png" />
+    <None Remove="Content\Images\logo04-kana-transparent.png" />
+    <None Remove="Content\Images\logo04-kana.png" />
+    <None Remove="Content\LICENSE.TXT" />
     <None Remove="Controls\Help\Logo1.png" />
     <None Remove="Controls\Help\Logo2.png" />
     <None Remove="Controls\Help\Logo3.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Content\Help\Manual.html">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\Help\Manual.txt">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <Resource Include="Content\Images\Icons\help-model-properties-transparent.png" />
+    <Resource Include="Content\Images\Icons\help-playmode-transparent.png" />
+    <Resource Include="Content\Images\Icons\icon-camera-back-transparent.png" />
+    <Resource Include="Content\Images\Icons\icon-camera-front-transparent.png" />
+    <Resource Include="Content\Images\Icons\icon-camera-left-transparent.png" />
+    <Resource Include="Content\Images\Icons\icon-camera-respawn-transparent.png" />
+    <Resource Include="Content\Images\Icons\icon-camera-right-transparent.png" />
+    <Resource Include="Content\Images\Icons\icon-ceiling-transparent.png" />
+    <Resource Include="Content\Images\Icons\icon-floor-transparent.png" />
+    <EmbeddedResource Include="Content\LICENSE.TXT">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>
@@ -32,6 +71,7 @@
     <PackageReference Include="Dirkster.AvalonDock.Themes.VS2013" Version="4.50.3" />
     <PackageReference Include="Dirkster.MLib" Version="1.3.1.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="System.Collections" Version="4.3.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -40,13 +80,21 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Controls\Help\Logo1.png" />
-    <Resource Include="Controls\Help\Logo3.png">
+    <EmbeddedResource Include="Content\Images\Logos\Logo01.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <Resource Include="Content\Images\Icons\icon-light-transparent.png" />
+    <Resource Include="Content\Images\Icons\icon-skybox-transparent.png" />
+    <Resource Include="Content\Images\Icons\icon-volume-transparent.png" />
+    <Resource Include="Content\Images\Icons\icon-wall-transparent.png" />
+    <Resource Include="Content\Images\Logos\logo04-kana-transparent.png" />
+    <Resource Include="Content\Images\Logos\logo04-kana.png" />
+    <Resource Include="Content\Images\Logos\Logo03.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Controls\Help\Logo2.png">
+    <EmbeddedResource Include="Content\Images\Logos\Logo02.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
+    </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>
@@ -68,18 +116,6 @@
     <Compile Update="Controls\ModelEditors\LightModelEditor.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="Content\Help\Manual.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Content\Help\Manual.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Content\LICENSE.TXT">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
 
   <ItemGroup>

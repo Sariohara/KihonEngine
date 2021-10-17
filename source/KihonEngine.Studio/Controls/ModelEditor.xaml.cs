@@ -11,6 +11,10 @@ using System.Windows.Media.Media3D;
 using KihonEngine.Studio.Controls.ModelEditors;
 using KihonEngine.Services;
 using KihonEngine.GameEngine.Graphics;
+using KihonEngine.Studio.Helpers;
+using System.Windows.Media.Imaging;
+using System;
+using KihonEngine.GameEngine.Graphics.ModelDefinitions;
 
 namespace KihonEngine.Studio.Controls
 {
@@ -51,6 +55,12 @@ namespace KihonEngine.Studio.Controls
 
             if (propertyGrid.IsEnabled)
             {
+                panelHelp.Visibility = Visibility.Hidden;
+                panelHelpPlayMode.Visibility = Visibility.Hidden;
+                gridPositionAndRotation.Visibility = Visibility.Visible;
+                gridGenericProperties.Visibility = Visibility.Visible;
+                panelActions.Visibility = Visibility.Visible;
+
                 if (_selectedModel.Type == ModelType.Light)
                 {
                     DisablePositionAndRotationGrids();
@@ -59,26 +69,35 @@ namespace KihonEngine.Studio.Controls
                 {
                     EnablePositionAndRotationGrids();
 
-                    var position = GetPosition(_selectedModel);
+                    var position = _selectedModel.GetPosition();
                     tbPositionX.Text = position.X.ToString();
                     tbPositionY.Text = position.Y.ToString();
                     tbPositionZ.Text = position.Z.ToString();
-                    tbPositionStep.Text = state.Editor.TranslationStep.ToString();
 
                     tbRotationX.Text = _selectedModel.AxisXRotationAngle.ToString();
                     tbRotationY.Text = _selectedModel.AxisYRotationAngle.ToString();
                     tbRotationZ.Text = _selectedModel.AxisZRotationAngle.ToString();
-                    tbRotationStep.Text = state.Editor.RotationStep.ToString();
                 }
 
-                TrySelectColor(state.Editor.ActionSelect.SelectedModel.GetColor());
+                TrySelectColor(_selectedModel.GetColorFromMetadata());
 
                 if (selectionChanged)
                 {
                     panelCustomProperties.Children.Clear();
 
                     var index = state.Graphics.Level.IndexOf(_selectedModel);
-                    lblModelType.Content = $"#{index} ({_selectedModel.Type})";
+                    lblModelTitle.Content = $"Model #{index} ({_selectedModel.Type})";
+                    lblCustomPropertiesTitle.Content = $"{_selectedModel.Type} Properties";
+                    if (_selectedModel.Type != ModelType.Group)
+                    {
+                        var assemblyName = this.GetType().Assembly.GetName().Name;
+                        var sourceUri = $"pack://application:,,,/{assemblyName};component/Content/Images/Icons/icon-{_selectedModel.Type.ToString().ToLower()}-transparent.png";
+                        imgModelType.Source = new BitmapImage(new Uri(sourceUri));
+                    }
+                    else
+                    {
+                        imgModelType.Source = null;
+                    }
 
                     UserControl control = null;
                     if (_selectedModel.Type == ModelType.Ceiling)
@@ -121,7 +140,30 @@ namespace KihonEngine.Studio.Controls
                 DisablePositionAndRotationGrids();
 
                 cbColors.SelectedIndex = _transparentColorIndex;
-                lblModelType.Content = string.Empty;
+                lblModelTitle.Content = string.Empty;
+
+                gridPositionAndRotation.Visibility = Visibility.Hidden;
+                gridGenericProperties.Visibility = Visibility.Hidden;
+                panelActions.Visibility = Visibility.Hidden;
+
+                if (state.EngineMode == EngineMode.EditorMode)
+                {
+                    panelHelpPlayMode.Visibility = Visibility.Hidden;
+                    panelHelp.Visibility = Visibility.Visible;
+                }
+                else if (state.EngineMode == EngineMode.PlayMode)
+                {
+                    panelHelp.Visibility = Visibility.Hidden;
+                    panelHelpPlayMode.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    panelHelp.Visibility = Visibility.Hidden;
+                    panelHelpPlayMode.Visibility = Visibility.Hidden;
+                }
+
+                imgModelType.Source = null;
+                lblCustomPropertiesTitle.Content = string.Empty;
                 panelCustomProperties.Children.Clear();
             }
 
@@ -130,24 +172,20 @@ namespace KihonEngine.Studio.Controls
 
         private void EnablePositionAndRotationGrids()
         {
-            gridPosition.IsEnabled = true;
-            gridRotation.IsEnabled = true;
+            gridPositionAndRotation.IsEnabled = true;
         }
 
         private void DisablePositionAndRotationGrids()
         {
-            gridPosition.IsEnabled = false;
-            gridRotation.IsEnabled = false;
+            gridPositionAndRotation.IsEnabled = false;
 
             tbPositionX.Text = string.Empty;
             tbPositionY.Text = string.Empty;
             tbPositionZ.Text = string.Empty;
-            tbPositionStep.Text = string.Empty;
 
             tbRotationX.Text = string.Empty;
             tbRotationY.Text = string.Empty;
             tbRotationZ.Text = string.Empty;
-            tbRotationStep.Text = string.Empty;
         }
 
         private bool _disableColorChange;
@@ -159,15 +197,24 @@ namespace KihonEngine.Studio.Controls
                 PropertyInfo property = typeof(Colors).GetProperty(propertyName);
                 var color = (System.Windows.Media.Color)property.GetValue(null, null);
 
+                var definitionBuilder = new ModelDefinitionBuilder();
+                var definition = definitionBuilder.CreateModelDefinition(State.Editor.ActionSelect.SelectedModel);
+                definition.Color = color;
                 State.Editor.CurrentColor = color;
-                State.Editor.ActionSelect.SelectedModel.SetColor(color);
-                GameEngineController.NotifyIOs();
+                //State.Editor.ActionSelect.SelectedModel.SetColor(color);
+                GameEngineController.ReplaceModelAndNotify(State.Editor.ActionSelect.SelectedModel, definition);
+                //var modelBuilder = new ModelBuilderFromDefinition();
+                //var model = modelBuilder.Build(definition);
+
+                //Container.Get<IWorldEngine>().ReplaceModel(State.Editor.ActionSelect.SelectedModel, model);
+                //Container.Get<IGameEngineState>().Editor.ActionSelect.SelectedModel = model;
             }
         }
 
         private void TrySelectColor(Color target)
         {
-            PropertyInfo[] properties = typeof(Colors).GetProperties();
+            var colorNames = (string[])cbColors.ItemsSource;
+            var properties = colorNames.Select(x => typeof(Colors).GetProperty(x));
             int i = 0;
             foreach (PropertyInfo property in properties)
             {
@@ -188,78 +235,6 @@ namespace KihonEngine.Studio.Controls
             }
         }
 
-        private Point3D GetPosition(LayeredModel3D layeredModel)
-        {
-            var matrix = layeredModel.Translation.Value;
-            return new Point3D(matrix.OffsetX, matrix.OffsetY, matrix.OffsetZ);
-        }
-
-        private void btnPositionXPlus_Click(object sender, RoutedEventArgs e)
-        {
-            var layeredModel = State.Editor.ActionSelect.SelectedModel;
-            if (layeredModel != null)
-            {
-                var step = State.Editor.TranslationStep;
-                layeredModel.TranslateOnAxisX(step);
-                GameEngineController.NotifyIOs();
-            }
-        }
-
-        private void btnPositionYPlus_Click(object sender, RoutedEventArgs e)
-        {
-            var layeredModel = State.Editor.ActionSelect.SelectedModel;
-            if (layeredModel != null)
-            {
-                var step = State.Editor.TranslationStep;
-                layeredModel.TranslateOnAxisY(step);
-                GameEngineController.NotifyIOs();
-            }
-        }
-
-        private void btnPositionZPlus_Click(object sender, RoutedEventArgs e)
-        {
-            var layeredModel = State.Editor.ActionSelect.SelectedModel;
-            if (layeredModel != null)
-            {
-                var step = State.Editor.TranslationStep;
-                layeredModel.TranslateOnAxisZ(step);
-                GameEngineController.NotifyIOs();
-            }
-        }
-
-        private void btnPositionXMinus_Click(object sender, RoutedEventArgs e)
-        {
-            var layeredModel = State.Editor.ActionSelect.SelectedModel;
-            if (layeredModel != null)
-            {
-                var step = State.Editor.TranslationStep;
-                layeredModel.TranslateOnAxisX(-step);
-                GameEngineController.NotifyIOs();
-            }
-        }
-
-        private void btnPositionYMinus_Click(object sender, RoutedEventArgs e)
-        {
-            var layeredModel = State.Editor.ActionSelect.SelectedModel;
-            if (layeredModel != null)
-            {
-                var step = State.Editor.TranslationStep;
-                layeredModel.TranslateOnAxisY(-step);
-                GameEngineController.NotifyIOs();
-            }
-        }
-
-        private void btnPositionZMinus_Click(object sender, RoutedEventArgs e)
-        {
-            var layeredModel = State.Editor.ActionSelect.SelectedModel;
-            if (layeredModel != null)
-            {
-                var step = State.Editor.TranslationStep;
-                layeredModel.TranslateOnAxisZ(-step);
-                GameEngineController.NotifyIOs();
-            }
-        }
-
         private void tbPositionX_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.Key != Key.Enter)
@@ -270,7 +245,7 @@ namespace KihonEngine.Studio.Controls
             var layeredModel = State.Editor.ActionSelect.SelectedModel;
             if (layeredModel != null)
             {
-                var position = GetPosition(layeredModel);
+                var position = layeredModel.GetPosition();
 
                 InputHelper.TryUpdate(
                     tbPositionX.Text, 
@@ -279,8 +254,6 @@ namespace KihonEngine.Studio.Controls
                 GameEngineController.NotifyIOs();
             }
         }
-
-        
 
         private void tbPositionY_KeyUp(object sender, KeyEventArgs e)
         {
@@ -292,7 +265,7 @@ namespace KihonEngine.Studio.Controls
             var layeredModel = State.Editor.ActionSelect.SelectedModel;
             if (layeredModel != null)
             {
-                var position = GetPosition(layeredModel);
+                var position = layeredModel.GetPosition();
 
                 InputHelper.TryUpdate(
                     tbPositionY.Text,
@@ -312,86 +285,12 @@ namespace KihonEngine.Studio.Controls
             var layeredModel = State.Editor.ActionSelect.SelectedModel;
             if (layeredModel != null)
             {
-                var position = GetPosition(layeredModel);
+                var position = layeredModel.GetPosition();
 
                 InputHelper.TryUpdate(
                     tbPositionZ.Text,
                     step => layeredModel.Translate(new Vector3D(position.X, position.Y, step)));
 
-                GameEngineController.NotifyIOs();
-            }
-        }
-
-        private void tbPositionStep_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.Key != Key.Enter)
-            {
-                return;
-            }
-
-            InputHelper.TryUpdate(
-                tbPositionStep.Text,
-                step => State.Editor.TranslationStep = step);
-
-            GameEngineController.NotifyIOs();
-        }
-
-        private void btnRotationXPlus_Click(object sender, RoutedEventArgs e)
-        {
-            var layeredModel = State.Editor.ActionSelect.SelectedModel;
-            if (layeredModel != null)
-            {
-                layeredModel.RotateByAxisX(layeredModel.AxisXRotationAngle + State.Editor.RotationStep);
-                GameEngineController.NotifyIOs();
-            }
-        }
-
-        private void btnRotationYPlus_Click(object sender, RoutedEventArgs e)
-        {
-            var layeredModel = State.Editor.ActionSelect.SelectedModel;
-            if (layeredModel != null)
-            {
-                layeredModel.RotateByAxisY(layeredModel.AxisYRotationAngle + State.Editor.RotationStep);
-                GameEngineController.NotifyIOs();
-            }
-        }
-
-        private void btnRotationZPlus_Click(object sender, RoutedEventArgs e)
-        {
-            var layeredModel = State.Editor.ActionSelect.SelectedModel;
-            if (layeredModel != null)
-            {
-                layeredModel.RotateByAxisZ(layeredModel.AxisZRotationAngle + State.Editor.RotationStep);
-                GameEngineController.NotifyIOs();
-            }
-        }
-
-        private void btnRotationXMinus_Click(object sender, RoutedEventArgs e)
-        {
-            var layeredModel = State.Editor.ActionSelect.SelectedModel;
-            if (layeredModel != null)
-            {
-                layeredModel.RotateByAxisX(layeredModel.AxisXRotationAngle - State.Editor.RotationStep);
-                GameEngineController.NotifyIOs();
-            }
-        }
-
-        private void btnRotationYMinus_Click(object sender, RoutedEventArgs e)
-        {
-            var layeredModel = State.Editor.ActionSelect.SelectedModel;
-            if (layeredModel != null)
-            {
-                layeredModel.RotateByAxisY(layeredModel.AxisYRotationAngle - State.Editor.RotationStep);
-                GameEngineController.NotifyIOs();
-            }
-        }
-
-        private void btnRotationZMinus_Click(object sender, RoutedEventArgs e)
-        {
-            var layeredModel = State.Editor.ActionSelect.SelectedModel;
-            if (layeredModel != null)
-            {
-                layeredModel.RotateByAxisZ(layeredModel.AxisZRotationAngle - State.Editor.RotationStep);
                 GameEngineController.NotifyIOs();
             }
         }
@@ -450,30 +349,16 @@ namespace KihonEngine.Studio.Controls
             }
         }
 
-        private void tbRotationStep_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.Key != Key.Enter)
-            {
-                return;
-            }
-
-            InputHelper.TryUpdate(
-                tbRotationStep.Text,
-                step => State.Editor.RotationStep = step);
-
-            GameEngineController.NotifyIOs();
-        }
-
         private void btnRemoveModel_Click(object sender, RoutedEventArgs e)
         {
             var layeredModel = State.Editor.ActionSelect.SelectedModel;
             if (layeredModel != null)
             {
                 var result = MessageBox.Show(
-                    $"Remove this {layeredModel.Type}?",
-                    "Game Engine Studio", 
+                    $"Do you really want to remove this selected {layeredModel.Type}?",
+                    "Remove selected model", 
                     MessageBoxButton.YesNo, 
-                    MessageBoxImage.Question, 
+                    MessageBoxImage.Warning, 
                     MessageBoxResult.No);
 
                 if (result == MessageBoxResult.Yes)

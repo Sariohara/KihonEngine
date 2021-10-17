@@ -10,5 +10,6 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
         Ceiling,
         Wall,
         Volume,
+        Group,
     }
 }

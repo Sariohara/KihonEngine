@@ -1,5 +1,7 @@
 ﻿using System;
+using System.IO;
 using System.Reflection;
+using System.Text;
 using System.Windows;
 using System.Windows.Input;
 
@@ -10,12 +12,6 @@ namespace KihonEngine.Studio.Controls
     /// </summary>
     public partial class AboutWindow : Window
     {
-        private const string MinimalContent =
-@"
-MIT License\r\n
-\r\n
-Copyright (c) 2021 Nicolas VIEL\r\n";
-
         public AboutWindow()
         {
             InitializeComponent();
@@ -26,7 +22,7 @@ Copyright (c) 2021 Nicolas VIEL\r\n";
             return (TAttribute)Attribute.GetCustomAttribute(assembly, typeof(TAttribute), false);
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        private void Synchronize()
         {
             // Assembly infos
             lblStudioProduct.Content = GetAttribute<AssemblyProductAttribute>(Assembly.GetExecutingAssembly()).Product;
@@ -38,18 +34,31 @@ Copyright (c) 2021 Nicolas VIEL\r\n";
             lblEngineCopyright.Content = GetAttribute<AssemblyCopyrightAttribute>(typeof(Engine).Assembly).Copyright;
 
             // License
-            tbLicense.Text = MinimalContent;
-
-            var filepath = System.IO.Path.Combine(
-                System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
-                @"Content\LICENSE.TXT");
-
-            if (System.IO.File.Exists(filepath))
+            var targetAssembly = Assembly.GetExecutingAssembly();
+            var assemblyName = targetAssembly.GetName().Name;
+            using (var stream = targetAssembly.GetManifestResourceStream($"{assemblyName}.Content.LICENSE.TXT"))
             {
-                tbLicense.Text = System.IO.File.ReadAllText(filepath);
+                using (var sr = new StreamReader(stream, Encoding.UTF8))
+                {
+                    tbLicense.Text = sr.ReadToEnd();
+                }
             }
         }
 
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            Synchronize();
+        }
+
+        private void btCopyInfo_Click(object sender, RoutedEventArgs e)
+        {
+            Clipboard.SetText(
+                $"{lblStudioProduct.Content}{Environment.NewLine}"
+                + $"{lblStudioVersion.Content}{Environment.NewLine}"
+                + $"{Environment.NewLine}"
+                + $"{lblEngineProduct.Content}{Environment.NewLine}"
+                + $"{lblEngineVersion.Content}{Environment.NewLine}");
+        }
 
         private void btClose_Click(object sender, RoutedEventArgs e)
         {

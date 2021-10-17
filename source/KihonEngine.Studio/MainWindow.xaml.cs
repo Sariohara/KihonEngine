@@ -10,7 +10,9 @@ using KihonEngine.GameEngine.Graphics.Maps.Predefined;
 using KihonEngine.SampleMaps;
 using KihonEngine.GameEngine.Graphics;
 using System.Windows.Controls;
-using System.Windows.Media;
+using KihonEngine.Studio.Helpers;
+using KihonEngine.Studio.Services;
+using KihonEngine.GameEngine.Graphics.ModelDefinitions;
 
 namespace KihonEngine.Studio
 {
@@ -26,7 +28,8 @@ namespace KihonEngine.Studio
         private IGameEngineState State
             => Container.Get<IGameEngineState>();
         private IWorldEngine WorldEngine 
-            => Container.Get<IWorldEngine>();        
+            => Container.Get<IWorldEngine>();
+
 
         public MainWindow()
         {
@@ -43,7 +46,7 @@ namespace KihonEngine.Studio
 
         private void mainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            InitializeGameEngine();
+            AttachToGameEngine();
 
             lblNotification.Text = $"Load map <{State.Graphics.LevelName}> succeeded";
 
@@ -102,7 +105,7 @@ namespace KihonEngine.Studio
             }
         }
 
-        private void MenuNew_Click(object sender, RoutedEventArgs e)
+        private void MenuNewMap_Click(object sender, RoutedEventArgs e)
         {
             GameEngineController.LoadMap(PredefinedMapNames.New);
             lblNotification.Text = $"Load map <{State.Graphics.LevelName}> succeeded";
@@ -149,6 +152,26 @@ namespace KihonEngine.Studio
             }
         }
 
+        private void MenuSaveMapContentAs_Click(object sender, RoutedEventArgs e)
+        {
+            var dialog = new SaveFileDialog();
+            dialog.InitialDirectory = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop);
+            dialog.Filter = "Zip files (*.zip)|*.zip|All files (*.*)|*.*";
+
+            if (dialog.ShowDialog() == true)
+            {
+                var builder = new ModelDefinitionBuilder();
+                var mapDefinition = builder.CreateMapDefinition(
+                    State.Graphics.LevelName,
+                    State.Graphics.RespawnPosition,
+                    State.Graphics.RespawnLookDirection,
+                    State.Graphics.Level);
+
+                new FileContentSourceBuilder().Create(dialog.FileName, mapDefinition);
+                lblNotification.Text = $"Map content successfully saved to file: <{dialog.FileName}>";
+            }
+        }
+
         private void MenuShowMeterWall_Click(object sender, RoutedEventArgs e)
         {
             var show = menuShowMeterWall.IsChecked;
@@ -168,7 +191,22 @@ namespace KihonEngine.Studio
             }.ShowDialog();
         }
 
+        private void MenuContentSources_Click(object sender, RoutedEventArgs e)
+        {
+            new ContentSourceWindow
+            {
+                Owner = this,
+                ShowInTaskbar = false,
+                WindowStartupLocation = WindowStartupLocation.CenterOwner,
+            }.ShowDialog();
+        }
+
         private void MenuHelp_Click(object sender, RoutedEventArgs e)
+        {
+            ExternalResources.Navigate(ExternalResources.DocumentationUrl);
+        }
+
+        private void MenuQuickStartHelp_Click(object sender, RoutedEventArgs e)
         {
             new HelpWindow
             {
@@ -193,21 +231,9 @@ namespace KihonEngine.Studio
             Close();
         }
 
-        private void InitializeGameEngine()
-        {
-            // Load game
-            Engine.Configure();
-            
+        private void AttachToGameEngine()
+        {           
             LogService.AddListener(this.outputWindow);
-            //LogService.AddListener(new FileLogListener(".out.log"));
-
-            WorldEngine.RegisterMap<E1M1MapBuilder>();
-            WorldEngine.RegisterMap<Q3DM1MapBuilder>();
-            //WorldEngine.RegisterMap<MazeMapBuilder>();
-            //            WorldEngine.RegisterMap<DarkCastleMapBuilder>();
-            WorldEngine.RegisterMap<DarkCastleM2MapBuilder>();
-            WorldEngine.RegisterMap<RoofTopMapBuilder>();
-            WorldEngine.RegisterMap<LogoMapBuilder>();
 
             GameEngineController.RegisterIO(this);
             GameEngineController.RegisterIO(toolbox3d);
@@ -215,17 +241,20 @@ namespace KihonEngine.Studio
             GameEngineController.RegisterIO(stateProperties);
             GameEngineController.RegisterIO(modelExplorer);
             GameEngineController.RegisterIO(sourceCodeViewer);
-            
-            viewportHost.AttachViewport(GameEngineController.RegisterDefaultGraphicOutput());
 
-            GameEngineController.SwitchToNormalScreen();
-            GameEngineController.SwitchToEditorMode();
-            GameEngineController.LoadMap(PredefinedMapNames.New);
+            viewportHost.AttachViewport(GameEngineController.GetDefaultGraphicOutput());
+
+            GameEngineController.NotifyIOs();
         }
 
         private void mainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             GameEngineController.StopGameLogic();
+        }
+
+        private void menuExtractMapContent_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

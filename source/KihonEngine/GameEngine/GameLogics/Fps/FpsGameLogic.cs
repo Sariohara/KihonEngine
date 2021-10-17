@@ -305,6 +305,13 @@ namespace KihonEngine.GameEngine.GameLogics.Fps
             }
         }
 
+        private void DrawCaracter(GraphicUpdateContext ctx)
+        {
+            var camera = State.Graphics.PlayerCamera.Camera;
+            var model = new Character(LogService).Draw(camera.Position, camera.LookDirection);
+            WorldEngine.AddModel(model);
+        }
+
         private void CalculateMovesOfPlayer(List<Action<GraphicUpdateContext>> graphicUpdates)
         {
             var keyboardSettings = Configuration.GetKeyboardSettings();
@@ -313,7 +320,11 @@ namespace KihonEngine.GameEngine.GameLogics.Fps
             graphicUpdates.Add(ctx => SetNewPosition(ctx));
             foreach (var key in keys)
             {
-                if (key == keyboardSettings.Jump)
+                if (key == System.Windows.Input.Key.P)
+                {
+                    graphicUpdates.Add(ctx => DrawCaracter(ctx));
+                }
+                else if (key == keyboardSettings.Jump)
                 {
                     graphicUpdates.Add(ctx => BeginToJump(ctx));
                 }

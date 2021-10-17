@@ -1,6 +1,7 @@
 ﻿using KihonEngine.GameEngine.Graphics.Maps;
 using KihonEngine.GameEngine.Graphics.ModelsBuilders;
 using KihonEngine.SampleMaps.Maze;
+using KihonEngine.Studio.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Drawing;

@@ -3,12 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:KihonEngine.Studio.Controls.ModelEditors"
+             xmlns:local="clr-namespace:KihonEngine.Studio.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid x:Name="propertyGrid">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -16,11 +15,10 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center">Name</Label>
-        <ComboBox Name="cbName" Grid.Row="0" Grid.Column="1" Margin="0,0,0,10" HorizontalAlignment="Stretch"  SelectionChanged="cbName_SelectionChanged">
+
+        <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left">Name</Label>
+        <ComboBox Name="cbName" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,0,0,10" HorizontalAlignment="Stretch"  SelectionChanged="cbName_SelectionChanged">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -30,20 +28,35 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
+        
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="60" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
 
-        <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center">Width</Label>
-        <TextBox Grid.Row="1" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="tbSize" KeyUp="tbSize_KeyUp"></TextBox>
+            <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left">Size</Label>
+            <local:NumericUpDown Grid.Row="0" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" x:Name="tbSize" KeyUp="tbSize_KeyUp"/>
 
-        <Label Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center">Normal.X</Label>
-        <TextBox Grid.Row="2" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="tbNormalX" KeyUp="tbNormalX_KeyUp"></TextBox>
+            <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left">Normal.X</Label>
+            <local:NumericUpDown Grid.Row="1" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" x:Name="tbNormalX" KeyUp="tbNormalX_KeyUp"/>
 
-        <Label Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center">Normal.Y</Label>
-        <TextBox Grid.Row="3" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="tbNormalY" KeyUp="tbNormalY_KeyUp"></TextBox>
+            <Label Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left">Normal.Y</Label>
+            <local:NumericUpDown Grid.Row="2" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" x:Name="tbNormalY" KeyUp="tbNormalY_KeyUp"/>
 
-        <Label Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center">Normal.Z</Label>
-        <TextBox Grid.Row="4" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="tbNormalZ" KeyUp="tbNormalZ_KeyUp"></TextBox>
+            <Label Grid.Row="3" Grid.Column="0" HorizontalAlignment="Left">Normal.Z</Label>
+            <local:NumericUpDown Grid.Row="3" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" x:Name="tbNormalZ" KeyUp="tbNormalZ_KeyUp"/>
+        </Grid>
 
-        <Label Grid.Row="5" Grid.Column="0" HorizontalAlignment="Center">UseBackMaterial</Label>
-        <CheckBox Grid.Row="5" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" Name="cbUseBackMaterial" Checked="cbUseBackMaterial_Checked" Unchecked="cbUseBackMaterial_Checked" ></CheckBox>
+        <WrapPanel Grid.Row="3" Orientation="Horizontal">
+            <Label Content="UseBackMaterial" Margin="5"/>
+            <CheckBox Margin="1" HorizontalAlignment="Stretch" Name="cbUseBackMaterial" Checked="cbUseBackMaterial_Checked" Unchecked="cbUseBackMaterial_Checked" ></CheckBox>
+        </WrapPanel>
     </Grid>
 </UserControl>

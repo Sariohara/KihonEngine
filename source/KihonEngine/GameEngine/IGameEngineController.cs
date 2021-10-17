@@ -19,6 +19,7 @@ namespace KihonEngine.GameEngine
         void NotifyIOs();
 
         UserControl RegisterDefaultGraphicOutput();
+        UserControl GetDefaultGraphicOutput();
         void RegisterGraphicOutput(Func<IGraphicOutput> normalScreenProvider, Func<IGraphicOutput> fullscreenProvider = null);
 
         void SwitchToNormalScreen();

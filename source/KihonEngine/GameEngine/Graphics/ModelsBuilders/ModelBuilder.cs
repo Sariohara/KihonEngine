@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using KihonEngine.GameEngine.Graphics.ModelDefinitions;
+using System.Linq;
+using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Media3D;
 
@@ -6,6 +8,9 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
 {
     public class ModelBuilder
     {
+        protected Point[] TextureCoordinates1 = new[] { new Point(0, 1), new Point(1, 1), new Point(1, 0) };
+        protected Point[] TextureCoordinates2 = new[] { new Point(0, 1), new Point(1, 0), new Point(0, 0) };
+
         public Color Color { get; set; }
         public bool UseBackMaterial { get; set; }
 
@@ -89,6 +94,51 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
             { 
                 Points = new[] { p0, p1, p2} 
             });
+        }
+
+        protected MaterialGroup CreateMaterial(string filename, TileMode tileMode = TileMode.Tile, Stretch stretch = Stretch.Uniform, double ratioX = 1, double ratioY = 1)
+        {
+            MaterialGroup material;
+            if (!string.IsNullOrEmpty(filename))
+            {
+                material = ImageHelper.CreateMaterial(filename, tileMode, stretch, ratioX, ratioY);
+            }
+            else
+            {
+                material = new MaterialGroup();
+                material.Children.Add(new DiffuseMaterial(new SolidColorBrush(Color)));
+            }
+
+            return material;
+        }
+
+        protected void SetGenericMetadata(LayeredModel3D layeredModel)
+        {
+            layeredModel.Metadata.Add("Generic", new ModelMetadata { Color = Color, UseBackMaterial = UseBackMaterial });
+        }
+
+        protected void SetSpecificMetadata(LayeredModel3D layeredModel, object metadata)
+        {
+            layeredModel.Metadata.Add(layeredModel.Type.ToString(), metadata);
+        }
+
+        protected void ApplyTextureToVolume(LayeredModel3D layeredModel, string face, MaterialGroup material, Point[] textureCoordinates)
+        {
+            var model3DGroup = (Model3DGroup)layeredModel.Metadata[face];
+            var geometry = (GeometryModel3D)model3DGroup.Children[0];
+            geometry.Material = material;
+
+            if (UseBackMaterial)
+            {
+                geometry.BackMaterial = material;
+            }
+
+            var mesh = (MeshGeometry3D)geometry.Geometry;
+
+            foreach (var point in textureCoordinates)
+            {
+                mesh.TextureCoordinates.Add(point);
+            }
         }
     }
 }

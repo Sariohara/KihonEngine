@@ -10,8 +10,8 @@
         KeyDown="Window_KeyDown"
         Title="Map Properties" 
         Style="{DynamicResource ResourceKey=WindowDefaultStyle}"
-        ResizeMode="NoResize" Height="280" Width="350">
-    <Grid>
+        ResizeMode="NoResize" Height="340" Width="450">
+    <Grid Margin="10">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10" />
             <ColumnDefinition Width="*" />
@@ -23,7 +23,7 @@
         </Grid.RowDefinitions>
         <ModelEditors:MapPropertiesEditor Grid.Row="0" Grid.Column="1" x:Name="mapPropertiesEditor"/>
         <Canvas Grid.Row="2" Grid.Column="1">
-            <Button Canvas.Right="10" Canvas.Bottom="10" x:Name="btClose" Content="Close" Width="100" Click="btClose_Click" />
+            <Button Canvas.Right="0" Canvas.Bottom="0" x:Name="btClose" Content="Close" Width="100" Click="btClose_Click" />
         </Canvas>
     </Grid>
 </Window>

@@ -6,6 +6,8 @@ using KihonEngine.GameEngine.Graphics.ModelsBuilders;
 using KihonEngine.GameEngine.State;
 using KihonEngine.Services;
 using KihonEngine.Studio.Controls;
+using KihonEngine.Studio.Helpers;
+using KihonEngine.Studio.Services;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -24,8 +26,6 @@ namespace KihonEngine.Studio.Controls
             => Container.Get<IGameEngineController>();
         private IGameEngineState State
             => Container.Get<IGameEngineState>();
-        private ICameraController CameraController
-            => Container.Get<ICameraController>();
         private INewModelManager NewModelManager
             => Container.Get<INewModelManager>();
 
@@ -73,12 +73,6 @@ namespace KihonEngine.Studio.Controls
             {
                 GameEngineController.SwitchToEditorMode();
             }
-        }
-
-        private void btnRespawn_Click(object sender, RoutedEventArgs e)
-        {
-            CameraController.Respawn();
-            GameEngineController.NotifyIOs();
         }
 
         private void btnStopGameLogic_Click(object sender, RoutedEventArgs e)
@@ -176,31 +170,29 @@ namespace KihonEngine.Studio.Controls
             });
         }
 
+        private void btnRespawn_Click(object sender, RoutedEventArgs e)
+        {
+            new CameraPositionService().MovetoRespawnPosition();
+        }
+
+        private void btnCameraBack_Click(object sender, RoutedEventArgs e)
+        {
+            new CameraPositionService().MoveToBack();
+        }
+
         private void btnCameraFace_Click(object sender, RoutedEventArgs e)
         {
-            CameraController.Respawn();
-            CameraController.RotateFromOriginOnAxisX(-25);
-            CameraController.RotateFromOriginOnAxisY(0);
-            CameraController.RotateFromOriginOnAxisZ(0);
-            CameraController.ZoomFromOrigin(250);
+            new CameraPositionService().MoveToFront();
         }
 
         private void btnCameraRightSide_Click(object sender, RoutedEventArgs e)
         {
-            CameraController.Respawn();
-            CameraController.RotateFromOriginOnAxisX(-25);
-            CameraController.RotateFromOriginOnAxisY(45);
-            CameraController.RotateFromOriginOnAxisZ(0);
-            CameraController.ZoomFromOrigin(250);
+            new CameraPositionService().MoveToRightSide();
         }
 
         private void btnCameraLeftSide_Click(object sender, RoutedEventArgs e)
         {
-            CameraController.Respawn();
-            CameraController.RotateFromOriginOnAxisX(-25);
-            CameraController.RotateFromOriginOnAxisY(-45);
-            CameraController.RotateFromOriginOnAxisZ(0);
-            CameraController.ZoomFromOrigin(250);
+            new CameraPositionService().MoveToLeftSide();
         }
     }
 }
