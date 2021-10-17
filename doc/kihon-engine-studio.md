@@ -11,6 +11,10 @@ Some generic features
 * Game state viewer to analyse game state at any time
 * Possibility to switch between edit mode and game mode in order to vizualise how map is rendered at play time
 
+## Texture support
+You can now create maps using your own textures and skyboxes. 
+![Screenshot - Edit 3D map](kihonEngine-studio-editMap-texture-003.png)
+
 ## Maze generator
 The maze generator available in `File > New maze` can be used as a starter for quickly create maps
 
