@@ -78,7 +78,7 @@ Diferent kind of 3D models can be added to a map
 ### Possibility to edit the 3D models
 * By dimentions
 * By colors
-* As proof of concept, actually only four textures are available for floors
+* By textures
 
 ### Possibility to move 3D models on the map
 * By rotation on axis X, Y and Z
