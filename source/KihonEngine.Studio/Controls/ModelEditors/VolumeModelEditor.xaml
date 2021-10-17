@@ -53,23 +53,59 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Button x:Name="btTextureTop" Grid.Row="0" Grid.Column="2" ToolTip="Top" HorizontalAlignment="Stretch" Click="btTextureTop_Click">
+            <Button x:Name="btTextureTop" Grid.Row="0" Grid.Column="2" ToolTip="Top" HorizontalAlignment="Stretch" Click="btTextureTop_Click"
+                    ContextMenuService.Placement="Bottom">
                 <TextBlock x:Name="tbTextureTopImg" Width="20" Height="20"/>
+                <Button.ContextMenu>
+                    <ContextMenu PlacementRectangle="{Binding RelativeSource={RelativeSource Self}}">
+                        <MenuItem x:Name="menuTopApplyToAll" Header="Apply texture to all faces" Click="MenuItemApplyTextureToAllFaces_Click"/>
+                    </ContextMenu>
+                </Button.ContextMenu>
             </Button>
-            <Button x:Name="btTextureBack" Grid.Row="1" Grid.Column="0" ToolTip="Back" HorizontalAlignment="Stretch" Click="btTextureBack_Click">
+            <Button x:Name="btTextureBack" Grid.Row="1" Grid.Column="0" ToolTip="Back" HorizontalAlignment="Stretch" Click="btTextureBack_Click"
+                    ContextMenuService.Placement="Bottom">
                 <TextBlock x:Name="btTextureBackImg" Width="20" Height="20"/>
+                <Button.ContextMenu>
+                    <ContextMenu PlacementRectangle="{Binding RelativeSource={RelativeSource Self}}">
+                        <MenuItem x:Name="menuBackApplyToAll" Header="Apply texture to all faces" Click="MenuItemApplyTextureToAllFaces_Click"/>
+                    </ContextMenu>
+                </Button.ContextMenu>
             </Button>
-            <Button x:Name="btTextureLeft" Grid.Row="1" Grid.Column="1" ToolTip="Left" HorizontalAlignment="Stretch" Click="btTextureLeft_Click">
+            <Button x:Name="btTextureLeft" Grid.Row="1" Grid.Column="1" ToolTip="Left" HorizontalAlignment="Stretch" Click="btTextureLeft_Click"
+                    ContextMenuService.Placement="Bottom">
                 <TextBlock x:Name="btTextureLeftImg" Width="20" Height="20"/>
+                <Button.ContextMenu>
+                    <ContextMenu PlacementRectangle="{Binding RelativeSource={RelativeSource Self}}">
+                        <MenuItem x:Name="menuLeftApplyToAll" Header="Apply texture to all faces" Click="MenuItemApplyTextureToAllFaces_Click"/>
+                    </ContextMenu>
+                </Button.ContextMenu>
             </Button>
-            <Button x:Name="btTextureFront" Grid.Row="1" Grid.Column="2" ToolTip="Front" HorizontalAlignment="Stretch" Click="btTextureFront_Click">
+            <Button x:Name="btTextureFront" Grid.Row="1" Grid.Column="2" ToolTip="Front" HorizontalAlignment="Stretch" Click="btTextureFront_Click"
+                    ContextMenuService.Placement="Bottom">
                 <TextBlock x:Name="btTextureFrontImg" Width="20" Height="20"/>
+                <Button.ContextMenu>
+                    <ContextMenu PlacementRectangle="{Binding RelativeSource={RelativeSource Self}}">
+                        <MenuItem x:Name="menuFrontApplyToAll" Header="Apply texture to all faces" Click="MenuItemApplyTextureToAllFaces_Click"/>
+                    </ContextMenu>
+                </Button.ContextMenu>
             </Button>
-            <Button x:Name="btTextureRight" Grid.Row="1" Grid.Column="3" ToolTip="Right" HorizontalAlignment="Stretch" Click="btTextureRight_Click">
+            <Button x:Name="btTextureRight" Grid.Row="1" Grid.Column="3" ToolTip="Right" HorizontalAlignment="Stretch" Click="btTextureRight_Click"
+                    ContextMenuService.Placement="Bottom">
                 <TextBlock x:Name="btTextureRightImg" Width="20" Height="20"/>
+                <Button.ContextMenu>
+                    <ContextMenu PlacementRectangle="{Binding RelativeSource={RelativeSource Self}}">
+                        <MenuItem x:Name="menuRightApplyToAll" Header="Apply texture to all faces" Click="MenuItemApplyTextureToAllFaces_Click"/>
+                    </ContextMenu>
+                </Button.ContextMenu>
             </Button>
-            <Button x:Name="btTextureBottom" Grid.Row="2" Grid.Column="2" ToolTip="Bottom" HorizontalAlignment="Stretch" Click="btTextureBottom_Click">
+            <Button x:Name="btTextureBottom" Grid.Row="2" Grid.Column="2" ToolTip="Bottom" HorizontalAlignment="Stretch" Click="btTextureBottom_Click"
+                    ContextMenuService.Placement="Bottom">
                 <TextBlock x:Name="btTextureBottomImg" Width="20" Height="20"/>
+                <Button.ContextMenu>
+                    <ContextMenu PlacementRectangle="{Binding RelativeSource={RelativeSource Self}}">
+                        <MenuItem x:Name="menuBottomApplyToAll" Header="Apply texture to all faces" Click="MenuItemApplyTextureToAllFaces_Click"/>
+                    </ContextMenu>
+                </Button.ContextMenu>
             </Button>
         </Grid>
 

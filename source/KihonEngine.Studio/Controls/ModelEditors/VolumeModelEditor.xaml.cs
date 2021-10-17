@@ -199,5 +199,52 @@ namespace KihonEngine.Studio.Controls.ModelEditors
                 GameEngineController.ReplaceModelAndNotify(layeredModel, definition);
             }
         }
+
+        private void MenuItemApplyTextureToAllFaces_Click(object sender, RoutedEventArgs e)
+        {
+            var layeredModel = State.Editor.ActionSelect.SelectedModel;
+            if (layeredModel != null)
+            {
+                var definition = GameEngineController.GetDefinition<VolumeDefinition>(layeredModel);
+                TextureMetadata texture = null;
+                if (e.Source == menuFrontApplyToAll)
+                {
+                    texture = definition.Metadata.TextureFront;
+                }
+
+                if (e.Source == menuBackApplyToAll)
+                {
+                    texture = definition.Metadata.TextureBack;
+                }
+
+                if (e.Source == menuTopApplyToAll)
+                {
+                    texture = definition.Metadata.TextureTop;
+                }
+
+                if (e.Source == menuBottomApplyToAll)
+                {
+                    texture = definition.Metadata.TextureBottom;
+                }
+
+                if (e.Source == menuLeftApplyToAll)
+                {
+                    texture = definition.Metadata.TextureLeft;
+                }
+
+                if (e.Source == menuRightApplyToAll)
+                {
+                    texture = definition.Metadata.TextureRight;
+                }
+
+                definition.Metadata.TextureFront = texture;
+                definition.Metadata.TextureBack = texture;
+                definition.Metadata.TextureTop = texture;
+                definition.Metadata.TextureBottom = texture;
+                definition.Metadata.TextureLeft = texture;
+                definition.Metadata.TextureRight = texture;
+                GameEngineController.ReplaceModelAndNotify(layeredModel, definition);
+            }
+        }
     }
 }
