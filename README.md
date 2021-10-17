@@ -8,7 +8,7 @@
 |--------------------|----------------|
 | [![Generic badge](https://img.shields.io/badge/Download-2021.10.17-Green.svg)](https://github.com/nico65535/KihonEngine/releases/download/2021.10.17/Binaries-KihonEngine.SampleGame-2021.10.17.zip) |KihonEngine Sample Game        | 
 | [![Generic badge](https://img.shields.io/badge/Download-2021.10.17-Green.svg)](https://github.com/nico65535/KihonEngine/releases/download/2021.10.17/Binaries-KihonEngine.Studio-2021.10.17.zip) |KihonEngine Studio        | 
-| [![Generic badge](https://img.shields.io/badge/Download-2021.10.17-Green.svg)](https://github.com/nico65535/KihonEngine/releases/download/2021.10.17/Binaries-KihonEngine-2021.10.17.zip) |Full package        | 
+| [![Generic badge](https://img.shields.io/badge/Download-2021.10.17-Green.svg)](https://github.com/nico65535/KihonEngine/releases/download/2021.10.17/Binaries-KihonEngine-Full-Package-2021.10.17.zip) |Full package        | 
 
 ![Net5](https://badgen.net/badge/Framework/.NET&nbsp;5/blue)
 
