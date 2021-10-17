@@ -60,8 +60,8 @@ Kihon Engine contains 4 components
 |----------|-------------|
 |KihonEngine nuget package | This is the 3D Game Engine |
 |KihonEngine.SampleMaps nuget package | This package contains differents kinds of maps in order to demonstrate how to create maps |
-|KihonEngine.SampleGame | This is the demo game |
-|KihonEngine.Studio | Kihon Engine Studio is the IDE for map edition |
+|KihonEngine.SampleGame application | This is the demo game |
+|KihonEngine.Studio application | Kihon Engine Studio is the IDE for map edition |
 
 ## Applications Overview
 
