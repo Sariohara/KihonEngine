@@ -6,6 +6,8 @@ The actual basic features are the following
 
 Some generic features 
 * Save and load maps from files based on a json format
+* Predefined set of textures and skyboxes. 
+* Use your owns textures or skyboxes by setting your content sources
 * Possibility to change map global properties like map name, respawn player camera (position and direction)
 * Source viewer for the currently edited map, in order to visualize the json format
 * Game state viewer to analyse game state at any time
@@ -64,7 +66,7 @@ Edit mode is the default mode of the editor
 
 ### Adding 3D models to maps
 
-Diferent kind of 3D models can be added to a map
+Diferent kinds of 3D models can be added to a map
 
 | Mode type | Description |
 | ----------| ------------| 
