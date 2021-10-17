@@ -58,7 +58,7 @@ namespace KihonEngine.SampleGame
             // Step 1 : Configure game engine
             StandardStartups.BuildStandaloneFullScreenGame();
 
-            // Step 2 : Precise were your textures and skyboxes are located (with KihonEngine 2021.10.17 or upper)
+            // Step 2 : Precise were your textures and skyboxes are located (with KihonEngine 2021.10.17 or later)
             Engine.RegisterContentFromAssembly(typeof(KihonEngine.SampleMaps.DarkCastleM2MapBuilder));
 
             // Step 3 : When click Start button, launch game
