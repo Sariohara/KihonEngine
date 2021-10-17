@@ -12,7 +12,11 @@
 
 ![Net5](https://badgen.net/badge/Framework/.NET&nbsp;5/blue)
 
+# What's News?
+
 A new release incoming! [Check changelogs](https://github.com/nico65535/KihonEngine/releases/tag/2021.10.17)
+
+Nuget packages will be available soon
 
 | Download application           | Packages |
 |--------------------|----------------|
