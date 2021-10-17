@@ -7,7 +7,7 @@ The actual basic features are the following
 Some generic features 
 * Save and load maps from files based on a json format
 * Predefined set of textures and skyboxes. 
-* Use your owns textures or skyboxes by setting your content sources
+* Use your owns textures or skyboxes by setting custom content sources
 * Possibility to change map global properties like map name, respawn player camera (position and direction)
 * Source viewer for the currently edited map, in order to visualize the json format
 * Game state viewer to analyse game state at any time
@@ -24,19 +24,21 @@ A Content Source scans the following subfolders:
 * textures : for locating textures
 * skyboxes : for locating skyboxes
 
-By defaut, the following content source are available.
+By defaut, when Kihon engine Studio starts, the following content source are available.
 
 | Sources | Description |
 | ----------| ------------| 
-| Embedded resources of KihonEngine | Contains skybox 1 and very few textures
-| Embedded resources of KihonEngine.SampleMaps |Contains some textures from Quake3 file `PAK0.PK3`. And contains few skyboxes 
+| Embedded resources of KihonEngine.dll | Contains skybox 1 and very few textures
+| Embedded resources of KihonEngine.SampleMaps.dll |Contains some textures from Quake3 file `PAK0.PK3`. And contains few skyboxes 
 | Folder `Content/Images` of execution directory | you can put some files here if you want
 
-You can add the following content sources
+You can add the following content sources. 
 | Sources types | Description |
 | ----------| ------------| 
 | Zip files or PK3 files | only subfolders `textures` and `syboxes` will be scanned
 | Folder | only subfolders `textures` and `syboxes` will be scanned
+
+Content sources manage an internal cache. So, if you edit textures or skyboxes, remove content source and register it again to clear the cache.
 
 ### Extract content of current map
 You can extract textures and skyboxes used in current map by using `File > Save Map Content As...`
