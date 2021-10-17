@@ -58,7 +58,12 @@
                 <TextBlock x:Name="tbTextureTopImg" Width="20" Height="20"/>
                 <Button.ContextMenu>
                     <ContextMenu PlacementRectangle="{Binding RelativeSource={RelativeSource Self}}">
+                        <MenuItem x:Name="menuTopEdit" Header="Edit texture..." Click="menuTopEdit_Click"/>
+                        <Separator/>
                         <MenuItem x:Name="menuTopApplyToAll" Header="Apply texture to all faces" Click="MenuItemApplyTextureToAllFaces_Click"/>
+                        <MenuItem x:Name="menuTopApplyToBottom" Header="Apply texture to bottom face" Click="menuTopApplyToBottom_Click"/>
+                        <Separator/>
+                        <MenuItem x:Name="menuTopRemove" Header="Remove texture" Click="menuItemRemove_Click"/>
                     </ContextMenu>
                 </Button.ContextMenu>
             </Button>
@@ -67,7 +72,12 @@
                 <TextBlock x:Name="btTextureBackImg" Width="20" Height="20"/>
                 <Button.ContextMenu>
                     <ContextMenu PlacementRectangle="{Binding RelativeSource={RelativeSource Self}}">
+                        <MenuItem x:Name="menuBackEdit" Header="Edit texture..." Click="menuBackEdit_Click"/>
+                        <Separator/>
                         <MenuItem x:Name="menuBackApplyToAll" Header="Apply texture to all faces" Click="MenuItemApplyTextureToAllFaces_Click"/>
+                        <MenuItem x:Name="menuBackApplyToLaterals" Header="Apply texture to lateral faces" Click="menuApplyToLateralFaces_Click"/>
+                        <Separator/>
+                        <MenuItem x:Name="menuBackRemove" Header="Remove texture" Click="menuItemRemove_Click"/>
                     </ContextMenu>
                 </Button.ContextMenu>
             </Button>
@@ -76,7 +86,12 @@
                 <TextBlock x:Name="btTextureLeftImg" Width="20" Height="20"/>
                 <Button.ContextMenu>
                     <ContextMenu PlacementRectangle="{Binding RelativeSource={RelativeSource Self}}">
+                        <MenuItem x:Name="menuLeftEdit" Header="Edit texture..." Click="menuLeftEdit_Click"/>
+                        <Separator/>
                         <MenuItem x:Name="menuLeftApplyToAll" Header="Apply texture to all faces" Click="MenuItemApplyTextureToAllFaces_Click"/>
+                        <MenuItem x:Name="menuLeftApplyToLaterals" Header="Apply texture to lateral faces" Click="menuApplyToLateralFaces_Click"/>
+                        <Separator/>
+                        <MenuItem x:Name="menuLeftRemove" Header="Remove texture" Click="menuItemRemove_Click"/>
                     </ContextMenu>
                 </Button.ContextMenu>
             </Button>
@@ -85,7 +100,12 @@
                 <TextBlock x:Name="btTextureFrontImg" Width="20" Height="20"/>
                 <Button.ContextMenu>
                     <ContextMenu PlacementRectangle="{Binding RelativeSource={RelativeSource Self}}">
+                        <MenuItem x:Name="menuFrontEdit" Header="Edit texture..." Click="menuFrontEdit_Click"/>
+                        <Separator/>
                         <MenuItem x:Name="menuFrontApplyToAll" Header="Apply texture to all faces" Click="MenuItemApplyTextureToAllFaces_Click"/>
+                        <MenuItem x:Name="menuFrontApplyToLaterals" Header="Apply texture to lateral faces" Click="menuApplyToLateralFaces_Click"/>
+                        <Separator/>
+                        <MenuItem x:Name="menuFrontRemove" Header="Remove texture" Click="menuItemRemove_Click"/>
                     </ContextMenu>
                 </Button.ContextMenu>
             </Button>
@@ -94,7 +114,12 @@
                 <TextBlock x:Name="btTextureRightImg" Width="20" Height="20"/>
                 <Button.ContextMenu>
                     <ContextMenu PlacementRectangle="{Binding RelativeSource={RelativeSource Self}}">
+                        <MenuItem x:Name="menuRightEdit" Header="Edit texture..." Click="menuRightEdit_Click"/>
+                        <Separator/>
                         <MenuItem x:Name="menuRightApplyToAll" Header="Apply texture to all faces" Click="MenuItemApplyTextureToAllFaces_Click"/>
+                        <MenuItem x:Name="menuRightApplyToLaterals" Header="Apply texture to lateral faces" Click="menuApplyToLateralFaces_Click"/>
+                        <Separator/>
+                        <MenuItem x:Name="menuRightRemove" Header="Remove texture" Click="menuItemRemove_Click"/>
                     </ContextMenu>
                 </Button.ContextMenu>
             </Button>
@@ -103,7 +128,12 @@
                 <TextBlock x:Name="btTextureBottomImg" Width="20" Height="20"/>
                 <Button.ContextMenu>
                     <ContextMenu PlacementRectangle="{Binding RelativeSource={RelativeSource Self}}">
+                        <MenuItem x:Name="menuBottomEdit" Header="Edit texture..." Click="menuBottomEdit_Click"/>
+                        <Separator/>
                         <MenuItem x:Name="menuBottomApplyToAll" Header="Apply texture to all faces" Click="MenuItemApplyTextureToAllFaces_Click"/>
+                        <MenuItem x:Name="menuBottomApplyToTop" Header="Apply texture to top face" Click="menuBottomApplyToTop_Click"/>
+                        <Separator/>
+                        <MenuItem x:Name="menuBottomRemove" Header="Remove texture" Click="menuItemRemove_Click"/>
                     </ContextMenu>
                 </Button.ContextMenu>
             </Button>

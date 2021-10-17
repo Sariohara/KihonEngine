@@ -75,7 +75,7 @@ namespace KihonEngine.Studio.Controls.ModelEditors
                 if (layeredModel != null)
                 {
                     var definition = GameEngineController.GetDefinition<VolumeDefinition>(layeredModel);
-                    
+
                     InputHelper.TryUpdate(
                         tbXSize.Text,
                         width => definition.Metadata.XSize = width);
@@ -245,6 +245,134 @@ namespace KihonEngine.Studio.Controls.ModelEditors
                 definition.Metadata.TextureRight = texture;
                 GameEngineController.ReplaceModelAndNotify(layeredModel, definition);
             }
+        }
+
+        private void menuTopApplyToBottom_Click(object sender, RoutedEventArgs e)
+        {
+            var layeredModel = State.Editor.ActionSelect.SelectedModel;
+            if (layeredModel != null)
+            {
+                var definition = GameEngineController.GetDefinition<VolumeDefinition>(layeredModel);
+                definition.Metadata.TextureBottom = definition.Metadata.TextureTop;
+                GameEngineController.ReplaceModelAndNotify(layeredModel, definition);
+            }
+        }
+
+        private void menuBottomApplyToTop_Click(object sender, RoutedEventArgs e)
+        {
+            var layeredModel = State.Editor.ActionSelect.SelectedModel;
+            if (layeredModel != null)
+            {
+                var definition = GameEngineController.GetDefinition<VolumeDefinition>(layeredModel);
+                definition.Metadata.TextureTop = definition.Metadata.TextureBottom;
+                GameEngineController.ReplaceModelAndNotify(layeredModel, definition);
+            }
+        }
+
+        private void menuApplyToLateralFaces_Click(object sender, RoutedEventArgs e)
+        {
+            var layeredModel = State.Editor.ActionSelect.SelectedModel;
+            if (layeredModel != null)
+            {
+                var definition = GameEngineController.GetDefinition<VolumeDefinition>(layeredModel);
+                TextureMetadata texture = null;
+                if (e.Source == menuFrontApplyToLaterals)
+                {
+                    texture = definition.Metadata.TextureFront;
+                }
+
+                if (e.Source == menuBackApplyToLaterals)
+                {
+                    texture = definition.Metadata.TextureBack;
+                }
+
+                if (e.Source == menuLeftApplyToLaterals)
+                {
+                    texture = definition.Metadata.TextureLeft;
+                }
+
+                if (e.Source == menuRightApplyToLaterals)
+                {
+                    texture = definition.Metadata.TextureRight;
+                }
+
+                definition.Metadata.TextureFront = texture;
+                definition.Metadata.TextureBack = texture;
+                definition.Metadata.TextureLeft = texture;
+                definition.Metadata.TextureRight = texture;
+                GameEngineController.ReplaceModelAndNotify(layeredModel, definition);
+            }
+        }
+
+        private void menuItemRemove_Click(object sender, RoutedEventArgs e)
+        {
+            var layeredModel = State.Editor.ActionSelect.SelectedModel;
+            if (layeredModel != null)
+            {
+                var definition = GameEngineController.GetDefinition<VolumeDefinition>(layeredModel);
+
+                if (e.Source == menuFrontRemove)
+                {
+                    definition.Metadata.TextureFront = null;
+                }
+
+                if (e.Source == menuBackRemove)
+                {
+                    definition.Metadata.TextureBack = null;
+                }
+
+                if (e.Source == menuTopRemove)
+                {
+                    definition.Metadata.TextureTop = null;
+                }
+
+                if (e.Source == menuBottomRemove)
+                {
+                    definition.Metadata.TextureBottom = null;
+                }
+
+                if (e.Source == menuLeftRemove)
+                {
+                    definition.Metadata.TextureLeft = null;
+                }
+
+                if (e.Source == menuRightRemove)
+                {
+                    definition.Metadata.TextureRight = null;
+                }
+
+                GameEngineController.ReplaceModelAndNotify(layeredModel, definition);
+            }
+        }
+
+        private void menuBottomEdit_Click(object sender, RoutedEventArgs e)
+        {
+            OnEditTexture(def => def.Metadata.TextureBottom, (def, e) => def.Metadata.TextureBottom = e);
+        }
+
+        private void menuRightEdit_Click(object sender, RoutedEventArgs e)
+        {
+            OnEditTexture(def => def.Metadata.TextureRight, (def, e) => def.Metadata.TextureRight = e);
+        }
+
+        private void menuFrontEdit_Click(object sender, RoutedEventArgs e)
+        {
+            OnEditTexture(def => def.Metadata.TextureFront, (def, e) => def.Metadata.TextureFront = e);
+        }
+
+        private void menuLeftEdit_Click(object sender, RoutedEventArgs e)
+        {
+            OnEditTexture(def => def.Metadata.TextureLeft, (def, e) => def.Metadata.TextureLeft = e);
+        }
+
+        private void menuBackEdit_Click(object sender, RoutedEventArgs e)
+        {
+            OnEditTexture(def => def.Metadata.TextureBack, (def, e) => def.Metadata.TextureBack = e);
+        }
+
+        private void menuTopEdit_Click(object sender, RoutedEventArgs e)
+        {
+            OnEditTexture(def => def.Metadata.TextureTop, (def, e) => def.Metadata.TextureTop = e);
         }
     }
 }
