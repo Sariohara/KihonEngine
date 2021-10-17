@@ -1199,7 +1199,7 @@
     },
     {
       "Metadata": {
-        "XSize": 150.0,
+        "XSize": 151.0,
         "YSize": 10.0,
         "ZSize": 127.0,
         "TextureFront": {
@@ -1866,35 +1866,35 @@
     {
       "Metadata": {
         "XSize": 10.0,
-        "YSize": 100.0,
+        "YSize": 40.0,
         "ZSize": 10.0,
         "TextureFront": {
           "Name": "base_wall/basewall02.jpg",
           "TileMode": 2,
           "Stretch": 1,
           "RatioX": 1.0,
-          "RatioY": 0.1
+          "RatioY": 0.25
         },
         "TextureBack": {
           "Name": "base_wall/basewall02.jpg",
           "TileMode": 2,
           "Stretch": 1,
           "RatioX": 1.0,
-          "RatioY": 0.1
+          "RatioY": 0.25
         },
         "TextureLeft": {
           "Name": "base_wall/basewallbobbin.jpg",
           "TileMode": 2,
           "Stretch": 1,
           "RatioX": 1.0,
-          "RatioY": 0.1
+          "RatioY": 0.25
         },
         "TextureRight": {
           "Name": "base_wall/basewall02.jpg",
           "TileMode": 2,
           "Stretch": 1,
           "RatioX": 1.0,
-          "RatioY": 0.1
+          "RatioY": 0.25
         },
         "TextureTop": {
           "Name": "base_wall/xbasewall04.jpg",
@@ -2262,35 +2262,35 @@
     {
       "Metadata": {
         "XSize": 10.0,
-        "YSize": 100.0,
+        "YSize": 40.0,
         "ZSize": 10.0,
         "TextureFront": {
           "Name": "base_wall/basewall02.jpg",
           "TileMode": 2,
           "Stretch": 1,
           "RatioX": 1.0,
-          "RatioY": 0.1
+          "RatioY": 0.25
         },
         "TextureBack": {
           "Name": "base_wall/basewall02.jpg",
           "TileMode": 2,
           "Stretch": 1,
           "RatioX": 1.0,
-          "RatioY": 0.1
+          "RatioY": 0.25
         },
         "TextureLeft": {
           "Name": "base_wall/basewall02.jpg",
           "TileMode": 2,
           "Stretch": 1,
           "RatioX": 1.0,
-          "RatioY": 0.1
+          "RatioY": 0.25
         },
         "TextureRight": {
           "Name": "base_wall/basewall02.jpg",
           "TileMode": 2,
           "Stretch": 1,
           "RatioX": 1.0,
-          "RatioY": 0.1
+          "RatioY": 0.25
         },
         "TextureTop": {
           "Name": "base_wall/xbasewall04.jpg",
@@ -2397,35 +2397,35 @@
     {
       "Metadata": {
         "XSize": 10.0,
-        "YSize": 100.0,
+        "YSize": 40.0,
         "ZSize": 10.0,
         "TextureFront": {
           "Name": "base_wall/basewall02.jpg",
           "TileMode": 2,
           "Stretch": 1,
           "RatioX": 1.0,
-          "RatioY": 0.1
+          "RatioY": 0.25
         },
         "TextureBack": {
           "Name": "base_wall/basewall02.jpg",
           "TileMode": 2,
           "Stretch": 1,
           "RatioX": 1.0,
-          "RatioY": 0.1
+          "RatioY": 0.25
         },
         "TextureLeft": {
           "Name": "base_wall/basewall02.jpg",
           "TileMode": 2,
           "Stretch": 1,
           "RatioX": 1.0,
-          "RatioY": 0.1
+          "RatioY": 0.25
         },
         "TextureRight": {
           "Name": "base_wall/basewall02.jpg",
           "TileMode": 2,
           "Stretch": 1,
           "RatioX": 1.0,
-          "RatioY": 0.1
+          "RatioY": 0.25
         },
         "TextureTop": {
           "Name": "base_wall/xbasewall04.jpg",
@@ -2448,35 +2448,35 @@
     {
       "Metadata": {
         "XSize": 10.0,
-        "YSize": 100.0,
+        "YSize": 40.0,
         "ZSize": 10.0,
         "TextureFront": {
           "Name": "base_wall/basewall02.jpg",
           "TileMode": 2,
           "Stretch": 1,
           "RatioX": 1.0,
-          "RatioY": 0.1
+          "RatioY": 0.25
         },
         "TextureBack": {
           "Name": "base_wall/basewall02.jpg",
           "TileMode": 2,
           "Stretch": 1,
           "RatioX": 1.0,
-          "RatioY": 0.1
+          "RatioY": 0.25
         },
         "TextureLeft": {
           "Name": "base_wall/basewall02.jpg",
           "TileMode": 2,
           "Stretch": 1,
           "RatioX": 1.0,
-          "RatioY": 0.1
+          "RatioY": 0.25
         },
         "TextureRight": {
           "Name": "base_wall/basewall02.jpg",
           "TileMode": 2,
           "Stretch": 1,
           "RatioX": 1.0,
-          "RatioY": 0.1
+          "RatioY": 0.25
         },
         "TextureTop": {
           "Name": "base_wall/xbasewall04.jpg",
@@ -2865,7 +2865,7 @@
     {
       "Metadata": {
         "XSize": 10.0,
-        "YSize": 30.0,
+        "YSize": 40.0,
         "ZSize": 10.0,
         "TextureFront": {
           "Name": "base_wall/atech2_c.jpg",
@@ -2895,14 +2895,20 @@
           "RatioX": 1.0,
           "RatioY": 1.0
         },
-        "TextureTop": null,
+        "TextureTop": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
         "TextureBottom": null,
         "UseBackMaterial": true,
         "Opacity": null
       },
       "Index": 68,
       "Color": "#FFFFFFFF",
-      "Position": "80,110,32",
+      "Position": "80,50,32",
       "RotationAxisX": 0.0,
       "RotationAxisY": 0.0,
       "RotationAxisZ": 0.0
@@ -2910,7 +2916,7 @@
     {
       "Metadata": {
         "XSize": 10.0,
-        "YSize": 30.0,
+        "YSize": 40.0,
         "ZSize": 10.0,
         "TextureFront": {
           "Name": "base_wall/atech2_c.jpg",
@@ -2940,14 +2946,20 @@
           "RatioX": 1.0,
           "RatioY": 1.0
         },
-        "TextureTop": null,
+        "TextureTop": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
         "TextureBottom": null,
         "UseBackMaterial": true,
         "Opacity": null
       },
       "Index": 69,
       "Color": "#FFFFFFFF",
-      "Position": "130,110,32",
+      "Position": "130,50,32",
       "RotationAxisX": 0.0,
       "RotationAxisY": 0.0,
       "RotationAxisZ": 0.0
@@ -2985,7 +2997,13 @@
           "RatioX": 1.0,
           "RatioY": 1.0
         },
-        "TextureTop": null,
+        "TextureTop": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
         "TextureBottom": {
           "Name": "base_wall/atech2_c.jpg",
           "TileMode": 4,
@@ -2998,7 +3016,7 @@
       },
       "Index": 70,
       "Color": "#FFFFFFFF",
-      "Position": "97,144,32",
+      "Position": "97,74,32",
       "RotationAxisX": 0.0,
       "RotationAxisY": 0.0,
       "RotationAxisZ": 0.0
@@ -3023,8 +3041,20 @@
           "RatioY": 1.0
         },
         "TextureLeft": null,
-        "TextureRight": null,
-        "TextureTop": null,
+        "TextureRight": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureTop": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
         "TextureBottom": {
           "Name": "base_wall/atech2_c.jpg",
           "TileMode": 4,
@@ -3037,7 +3067,7 @@
       },
       "Index": 71,
       "Color": "#FFFFFFFF",
-      "Position": "83,138,32",
+      "Position": "83,68,32",
       "RotationAxisX": 0.0,
       "RotationAxisY": 0.0,
       "RotationAxisZ": 45.0
@@ -3075,7 +3105,13 @@
           "RatioX": 1.0,
           "RatioY": 1.0
         },
-        "TextureTop": null,
+        "TextureTop": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
         "TextureBottom": {
           "Name": "base_wall/atech2_c.jpg",
           "TileMode": 4,
@@ -3088,7 +3124,7 @@
       },
       "Index": 72,
       "Color": "#FFFFFFFF",
-      "Position": "117,138,32",
+      "Position": "117,68,32",
       "RotationAxisX": 0.0,
       "RotationAxisY": 0.0,
       "RotationAxisZ": -45.0
@@ -3096,7 +3132,7 @@
     {
       "Metadata": {
         "XSize": 10.0,
-        "YSize": 30.0,
+        "YSize": 40.0,
         "ZSize": 10.0,
         "TextureFront": {
           "Name": "base_wall/atech2_c.jpg",
@@ -3126,14 +3162,20 @@
           "RatioX": 1.0,
           "RatioY": 1.0
         },
-        "TextureTop": null,
+        "TextureTop": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
         "TextureBottom": null,
         "UseBackMaterial": true,
         "Opacity": null
       },
       "Index": 73,
       "Color": "#FFFFFFFF",
-      "Position": "80,110,81",
+      "Position": "80,50,81",
       "RotationAxisX": 0.0,
       "RotationAxisY": 0.0,
       "RotationAxisZ": 0.0
@@ -3141,7 +3183,7 @@
     {
       "Metadata": {
         "XSize": 10.0,
-        "YSize": 30.0,
+        "YSize": 40.0,
         "ZSize": 10.0,
         "TextureFront": {
           "Name": "base_wall/atech2_c.jpg",
@@ -3171,14 +3213,20 @@
           "RatioX": 1.0,
           "RatioY": 1.0
         },
-        "TextureTop": null,
+        "TextureTop": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
         "TextureBottom": null,
         "UseBackMaterial": true,
         "Opacity": null
       },
       "Index": 74,
       "Color": "#FFFFFFFF",
-      "Position": "130,110,81",
+      "Position": "130,50,81",
       "RotationAxisX": 0.0,
       "RotationAxisY": 0.0,
       "RotationAxisZ": 0.0
@@ -3216,7 +3264,13 @@
           "RatioX": 1.0,
           "RatioY": 1.0
         },
-        "TextureTop": null,
+        "TextureTop": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
         "TextureBottom": {
           "Name": "base_wall/atech2_c.jpg",
           "TileMode": 4,
@@ -3229,7 +3283,7 @@
       },
       "Index": 75,
       "Color": "#FFFFFFFF",
-      "Position": "97,144,81",
+      "Position": "97,74,81",
       "RotationAxisX": 0.0,
       "RotationAxisY": 0.0,
       "RotationAxisZ": 0.0
@@ -3254,8 +3308,20 @@
           "RatioY": 1.0
         },
         "TextureLeft": null,
-        "TextureRight": null,
-        "TextureTop": null,
+        "TextureRight": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureTop": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
         "TextureBottom": {
           "Name": "base_wall/atech2_c.jpg",
           "TileMode": 4,
@@ -3268,7 +3334,7 @@
       },
       "Index": 76,
       "Color": "#FFFFFFFF",
-      "Position": "83,138,81",
+      "Position": "83,68,81",
       "RotationAxisX": 0.0,
       "RotationAxisY": 0.0,
       "RotationAxisZ": 45.0
@@ -3300,7 +3366,13 @@
           "RatioX": 1.0,
           "RatioY": 1.0
         },
-        "TextureTop": null,
+        "TextureTop": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
         "TextureBottom": {
           "Name": "base_wall/atech2_c.jpg",
           "TileMode": 4,
@@ -3313,7 +3385,7 @@
       },
       "Index": 77,
       "Color": "#FFFFFFFF",
-      "Position": "117,138,81",
+      "Position": "117,68,81",
       "RotationAxisX": 0.0,
       "RotationAxisY": 0.0,
       "RotationAxisZ": -45.0
@@ -3402,7 +3474,13 @@
           "RatioX": 1.0,
           "RatioY": 1.0
         },
-        "TextureTop": null,
+        "TextureTop": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
         "TextureBottom": {
           "Name": "base_wall/atech2_c.jpg",
           "TileMode": 4,
@@ -3415,7 +3493,7 @@
       },
       "Index": 79,
       "Color": "#FFFFFFFF",
-      "Position": "80,144,48",
+      "Position": "80,74,48",
       "RotationAxisX": 0.0,
       "RotationAxisY": 0.0,
       "RotationAxisZ": 0.0
@@ -3441,7 +3519,13 @@
           "RatioX": 1.0,
           "RatioY": 1.0
         },
-        "TextureTop": null,
+        "TextureTop": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
         "TextureBottom": {
           "Name": "base_wall/atech2_c.jpg",
           "TileMode": 4,
@@ -3454,7 +3538,7 @@
       },
       "Index": 80,
       "Color": "#FFFFFFFF",
-      "Position": "80,138,35",
+      "Position": "80,68,35",
       "RotationAxisX": -45.0,
       "RotationAxisY": 0.0,
       "RotationAxisZ": 0.0
@@ -3480,7 +3564,13 @@
           "RatioX": 1.0,
           "RatioY": 1.0
         },
-        "TextureTop": null,
+        "TextureTop": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
         "TextureBottom": {
           "Name": "base_wall/atech2_c.jpg",
           "TileMode": 4,
@@ -3493,7 +3583,7 @@
       },
       "Index": 81,
       "Color": "#FFFFFFFF",
-      "Position": "80,138,68",
+      "Position": "80,68,68",
       "RotationAxisX": 45.0,
       "RotationAxisY": 0.0,
       "RotationAxisZ": 0.0
@@ -3531,7 +3621,13 @@
           "RatioX": 1.0,
           "RatioY": 1.0
         },
-        "TextureTop": null,
+        "TextureTop": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
         "TextureBottom": {
           "Name": "base_wall/atech2_c.jpg",
           "TileMode": 4,
@@ -3544,7 +3640,7 @@
       },
       "Index": 82,
       "Color": "#FFFFFFFF",
-      "Position": "130,144,48",
+      "Position": "130,74,48",
       "RotationAxisX": 0.0,
       "RotationAxisY": 0.0,
       "RotationAxisZ": 0.0
@@ -3570,7 +3666,13 @@
           "RatioX": 1.0,
           "RatioY": 1.0
         },
-        "TextureTop": null,
+        "TextureTop": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
         "TextureBottom": {
           "Name": "base_wall/atech2_c.jpg",
           "TileMode": 4,
@@ -3583,7 +3685,7 @@
       },
       "Index": 83,
       "Color": "#FFFFFFFF",
-      "Position": "130,138,35",
+      "Position": "130,68,35",
       "RotationAxisX": -45.0,
       "RotationAxisY": 0.0,
       "RotationAxisZ": 0.0
@@ -3609,7 +3711,13 @@
           "RatioX": 1.0,
           "RatioY": 1.0
         },
-        "TextureTop": null,
+        "TextureTop": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
         "TextureBottom": {
           "Name": "base_wall/atech2_c.jpg",
           "TileMode": 4,
@@ -3622,7 +3730,7 @@
       },
       "Index": 84,
       "Color": "#FFFFFFFF",
-      "Position": "130,138,68",
+      "Position": "130,68,68",
       "RotationAxisX": 45.0,
       "RotationAxisY": 0.0,
       "RotationAxisZ": 0.0
@@ -3660,7 +3768,13 @@
           "RatioX": 1.0,
           "RatioY": 1.0
         },
-        "TextureTop": null,
+        "TextureTop": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
         "TextureBottom": {
           "Name": "base_wall/atech2_c.jpg",
           "TileMode": 4,
@@ -3673,7 +3787,7 @@
       },
       "Index": 85,
       "Color": "#FFFFFFFF",
-      "Position": "130,144,97",
+      "Position": "130,74,97",
       "RotationAxisX": 0.0,
       "RotationAxisY": 0.0,
       "RotationAxisZ": 0.0
@@ -3699,7 +3813,13 @@
           "RatioX": 1.0,
           "RatioY": 1.0
         },
-        "TextureTop": null,
+        "TextureTop": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
         "TextureBottom": {
           "Name": "base_wall/atech2_c.jpg",
           "TileMode": 4,
@@ -3712,7 +3832,7 @@
       },
       "Index": 86,
       "Color": "#FFFFFFFF",
-      "Position": "130,138,84",
+      "Position": "130,68,84",
       "RotationAxisX": -45.0,
       "RotationAxisY": 0.0,
       "RotationAxisZ": 0.0
@@ -3738,7 +3858,13 @@
           "RatioX": 1.0,
           "RatioY": 1.0
         },
-        "TextureTop": null,
+        "TextureTop": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
         "TextureBottom": {
           "Name": "base_wall/atech2_c.jpg",
           "TileMode": 4,
@@ -3751,7 +3877,7 @@
       },
       "Index": 87,
       "Color": "#FFFFFFFF",
-      "Position": "130,138,117",
+      "Position": "130,68,117",
       "RotationAxisX": 45.0,
       "RotationAxisY": 0.0,
       "RotationAxisZ": 0.0
@@ -3804,35 +3930,35 @@
     {
       "Metadata": {
         "XSize": 10.0,
-        "YSize": 100.0,
+        "YSize": 40.0,
         "ZSize": 10.0,
         "TextureFront": {
           "Name": "base_wall/basewall02.jpg",
           "TileMode": 2,
           "Stretch": 1,
           "RatioX": 1.0,
-          "RatioY": 0.1
+          "RatioY": 0.25
         },
         "TextureBack": {
           "Name": "base_wall/basewall02.jpg",
           "TileMode": 2,
           "Stretch": 1,
           "RatioX": 1.0,
-          "RatioY": 0.1
+          "RatioY": 0.25
         },
         "TextureLeft": {
           "Name": "base_wall/basewallbobbin.jpg",
           "TileMode": 2,
           "Stretch": 1,
           "RatioX": 1.0,
-          "RatioY": 0.1
+          "RatioY": 0.25
         },
         "TextureRight": {
           "Name": "base_wall/basewall02.jpg",
           "TileMode": 2,
           "Stretch": 1,
           "RatioX": 1.0,
-          "RatioY": 0.1
+          "RatioY": 0.25
         },
         "TextureTop": null,
         "TextureBottom": null,
@@ -3849,7 +3975,7 @@
     {
       "Metadata": {
         "XSize": 10.0,
-        "YSize": 30.0,
+        "YSize": 40.0,
         "ZSize": 10.0,
         "TextureFront": {
           "Name": "base_wall/atech2_c.jpg",
@@ -3879,14 +4005,20 @@
           "RatioX": 1.0,
           "RatioY": 1.0
         },
-        "TextureTop": null,
+        "TextureTop": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
         "TextureBottom": null,
         "UseBackMaterial": true,
         "Opacity": null
       },
       "Index": 90,
       "Color": "#FFFFFFFF",
-      "Position": "130,110,130",
+      "Position": "130,50,130",
       "RotationAxisX": 0.0,
       "RotationAxisY": 0.0,
       "RotationAxisZ": 0.0
@@ -3927,6 +4059,1284 @@
       "Color": "#FFFFFFFF",
       "Position": "42,50,90",
       "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 10.0,
+        "YSize": 10.0,
+        "ZSize": 10.0,
+        "TextureFront": {
+          "Name": "base_wall/basewallbobbin.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureBack": {
+          "Name": "base_wall/basewallbobbin.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureLeft": {
+          "Name": "base_wall/basewallbobbin.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureRight": {
+          "Name": "base_wall/basewallbobbin.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureTop": null,
+        "TextureBottom": null,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 92,
+      "Color": "#FFFFFFFF",
+      "Position": "180,0,130",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 10.0,
+        "YSize": 10.0,
+        "ZSize": 10.0,
+        "TextureFront": {
+          "Name": "base_wall/basewallbobbin.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureBack": {
+          "Name": "base_wall/basewallbobbin.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureLeft": {
+          "Name": "base_wall/basewallbobbin.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureRight": {
+          "Name": "base_wall/basewallbobbin.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureTop": null,
+        "TextureBottom": null,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 93,
+      "Color": "#FFFFFFFF",
+      "Position": "180,0,81",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 10.0,
+        "YSize": 10.0,
+        "ZSize": 10.0,
+        "TextureFront": {
+          "Name": "base_wall/basewallbobbin.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureBack": {
+          "Name": "base_wall/basewallbobbin.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureLeft": {
+          "Name": "base_wall/basewallbobbin.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureRight": {
+          "Name": "base_wall/basewallbobbin.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureTop": null,
+        "TextureBottom": null,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 94,
+      "Color": "#FFFFFFFF",
+      "Position": "180,0,31",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 10.0,
+        "YSize": 40.0,
+        "ZSize": 10.0,
+        "TextureFront": {
+          "Name": "base_wall/basewall02.jpg",
+          "TileMode": 2,
+          "Stretch": 1,
+          "RatioX": 1.0,
+          "RatioY": 0.25
+        },
+        "TextureBack": {
+          "Name": "base_wall/basewall02.jpg",
+          "TileMode": 2,
+          "Stretch": 1,
+          "RatioX": 1.0,
+          "RatioY": 0.25
+        },
+        "TextureLeft": {
+          "Name": "base_wall/basewall02.jpg",
+          "TileMode": 2,
+          "Stretch": 1,
+          "RatioX": 1.0,
+          "RatioY": 0.25
+        },
+        "TextureRight": {
+          "Name": "base_wall/basewall02.jpg",
+          "TileMode": 2,
+          "Stretch": 1,
+          "RatioX": 1.0,
+          "RatioY": 0.25
+        },
+        "TextureTop": null,
+        "TextureBottom": null,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 95,
+      "Color": "#FFFFFFFF",
+      "Position": "180,10,130",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 10.0,
+        "YSize": 40.0,
+        "ZSize": 10.0,
+        "TextureFront": {
+          "Name": "base_wall/basewall02.jpg",
+          "TileMode": 2,
+          "Stretch": 1,
+          "RatioX": 1.0,
+          "RatioY": 0.25
+        },
+        "TextureBack": {
+          "Name": "base_wall/basewall02.jpg",
+          "TileMode": 2,
+          "Stretch": 1,
+          "RatioX": 1.0,
+          "RatioY": 0.25
+        },
+        "TextureLeft": {
+          "Name": "base_wall/basewall02.jpg",
+          "TileMode": 2,
+          "Stretch": 1,
+          "RatioX": 1.0,
+          "RatioY": 0.25
+        },
+        "TextureRight": {
+          "Name": "base_wall/basewall02.jpg",
+          "TileMode": 2,
+          "Stretch": 1,
+          "RatioX": 1.0,
+          "RatioY": 0.25
+        },
+        "TextureTop": null,
+        "TextureBottom": null,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 96,
+      "Color": "#FFFFFFFF",
+      "Position": "180,10,81",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 10.0,
+        "YSize": 40.0,
+        "ZSize": 10.0,
+        "TextureFront": {
+          "Name": "base_wall/basewall02.jpg",
+          "TileMode": 2,
+          "Stretch": 1,
+          "RatioX": 1.0,
+          "RatioY": 0.25
+        },
+        "TextureBack": {
+          "Name": "base_wall/basewall02.jpg",
+          "TileMode": 2,
+          "Stretch": 1,
+          "RatioX": 1.0,
+          "RatioY": 0.25
+        },
+        "TextureLeft": {
+          "Name": "base_wall/basewall02.jpg",
+          "TileMode": 2,
+          "Stretch": 1,
+          "RatioX": 1.0,
+          "RatioY": 0.25
+        },
+        "TextureRight": {
+          "Name": "base_wall/basewall02.jpg",
+          "TileMode": 2,
+          "Stretch": 1,
+          "RatioX": 1.0,
+          "RatioY": 0.25
+        },
+        "TextureTop": null,
+        "TextureBottom": null,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 97,
+      "Color": "#FFFFFFFF",
+      "Position": "180,10,31",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 10.0,
+        "YSize": 40.0,
+        "ZSize": 10.0,
+        "TextureFront": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureBack": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureLeft": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureRight": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureTop": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureBottom": null,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 98,
+      "Color": "#FFFFFFFF",
+      "Position": "180,50,130",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 10.0,
+        "YSize": 40.0,
+        "ZSize": 10.0,
+        "TextureFront": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureBack": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureLeft": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureRight": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureTop": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureBottom": null,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 99,
+      "Color": "#FFFFFFFF",
+      "Position": "180,50,81",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 10.0,
+        "YSize": 40.0,
+        "ZSize": 10.0,
+        "TextureFront": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureBack": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureLeft": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureRight": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureTop": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureBottom": null,
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 100,
+      "Color": "#FFFFFFFF",
+      "Position": "180,50,31",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 27.0,
+        "YSize": 10.0,
+        "ZSize": 10.0,
+        "TextureFront": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureBack": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureLeft": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureRight": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureTop": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureBottom": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 101,
+      "Color": "#FFFFFFFF",
+      "Position": "146,74,130",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 27.0,
+        "YSize": 10.0,
+        "ZSize": 10.0,
+        "TextureFront": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureBack": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureLeft": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureRight": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureTop": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureBottom": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 102,
+      "Color": "#FFFFFFFF",
+      "Position": "146,74,31",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 27.0,
+        "YSize": 10.0,
+        "ZSize": 10.0,
+        "TextureFront": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureBack": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureLeft": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureRight": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureTop": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureBottom": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 103,
+      "Color": "#FFFFFFFF",
+      "Position": "146,74,81",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 20.0,
+        "YSize": 10.0,
+        "ZSize": 10.0,
+        "TextureFront": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureBack": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureLeft": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureRight": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureTop": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureBottom": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 104,
+      "Color": "#FFFFFFFF",
+      "Position": "133,68,130",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 45.0
+    },
+    {
+      "Metadata": {
+        "XSize": 20.0,
+        "YSize": 10.0,
+        "ZSize": 10.0,
+        "TextureFront": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureBack": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureLeft": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureRight": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureTop": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureBottom": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 105,
+      "Color": "#FFFFFFFF",
+      "Position": "167,68,130",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": -45.0
+    },
+    {
+      "Metadata": {
+        "XSize": 20.0,
+        "YSize": 10.0,
+        "ZSize": 10.0,
+        "TextureFront": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureBack": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureLeft": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureRight": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureTop": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureBottom": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 106,
+      "Color": "#FFFFFFFF",
+      "Position": "133,68,81",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 45.0
+    },
+    {
+      "Metadata": {
+        "XSize": 20.0,
+        "YSize": 10.0,
+        "ZSize": 10.0,
+        "TextureFront": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureBack": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureLeft": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureRight": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureTop": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureBottom": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 107,
+      "Color": "#FFFFFFFF",
+      "Position": "167,68,81",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": -45.0
+    },
+    {
+      "Metadata": {
+        "XSize": 20.0,
+        "YSize": 10.0,
+        "ZSize": 10.0,
+        "TextureFront": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureBack": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureLeft": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureRight": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureTop": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureBottom": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 108,
+      "Color": "#FFFFFFFF",
+      "Position": "133,68,31",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 45.0
+    },
+    {
+      "Metadata": {
+        "XSize": 20.0,
+        "YSize": 10.0,
+        "ZSize": 10.0,
+        "TextureFront": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureBack": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureLeft": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureRight": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureTop": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureBottom": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 109,
+      "Color": "#FFFFFFFF",
+      "Position": "167,68,31",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": -45.0
+    },
+    {
+      "Metadata": {
+        "XSize": 10.0,
+        "YSize": 10.0,
+        "ZSize": 27.0,
+        "TextureFront": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureBack": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureLeft": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureRight": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureTop": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureBottom": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 110,
+      "Color": "#FFFFFFFF",
+      "Position": "180,74,97",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 10.0,
+        "YSize": 10.0,
+        "ZSize": 27.0,
+        "TextureFront": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureBack": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureLeft": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureRight": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureTop": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureBottom": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 111,
+      "Color": "#FFFFFFFF",
+      "Position": "180,74,48",
+      "RotationAxisX": 0.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 10.0,
+        "YSize": 10.0,
+        "ZSize": 20.0,
+        "TextureFront": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureBack": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureLeft": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureRight": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureTop": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureBottom": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 112,
+      "Color": "#FFFFFFFF",
+      "Position": "180,68,117",
+      "RotationAxisX": 45.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 10.0,
+        "YSize": 10.0,
+        "ZSize": 20.0,
+        "TextureFront": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureBack": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureLeft": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureRight": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureTop": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureBottom": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 113,
+      "Color": "#FFFFFFFF",
+      "Position": "180,68,84",
+      "RotationAxisX": -45.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 10.0,
+        "YSize": 10.0,
+        "ZSize": 20.0,
+        "TextureFront": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureBack": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureLeft": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureRight": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureTop": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureBottom": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 114,
+      "Color": "#FFFFFFFF",
+      "Position": "180,68,68",
+      "RotationAxisX": 45.0,
+      "RotationAxisY": 0.0,
+      "RotationAxisZ": 0.0
+    },
+    {
+      "Metadata": {
+        "XSize": 10.0,
+        "YSize": 10.0,
+        "ZSize": 20.0,
+        "TextureFront": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureBack": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureLeft": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureRight": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureTop": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "TextureBottom": {
+          "Name": "base_wall/atech2_c.jpg",
+          "TileMode": 4,
+          "Stretch": 3,
+          "RatioX": 1.0,
+          "RatioY": 1.0
+        },
+        "UseBackMaterial": true,
+        "Opacity": null
+      },
+      "Index": 115,
+      "Color": "#FFFFFFFF",
+      "Position": "180,68,35",
+      "RotationAxisX": -45.0,
       "RotationAxisY": 0.0,
       "RotationAxisZ": 0.0
     }
