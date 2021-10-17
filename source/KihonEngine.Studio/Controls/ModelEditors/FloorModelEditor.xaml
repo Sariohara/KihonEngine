@@ -34,8 +34,16 @@
             <local:NumericUpDown Grid.Row="1" Grid.Column="1" Margin="1" HorizontalAlignment="Stretch" x:Name="tbZSize" KeyUp="tbZSize_KeyUp" NumericUpDownBehavior="Double"/>
 
             <Label Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left">Texture</Label>
-            <Button x:Name="btTexture" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" Click="btTexture_Click">
+            <Button x:Name="btTexture" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" Click="btTexture_Click"
+                    ContextMenuService.Placement="Bottom">
                 <TextBlock x:Name="btTextureImg" Width="20" Height="20"/>
+                <Button.ContextMenu>
+                    <ContextMenu PlacementRectangle="{Binding RelativeSource={RelativeSource Self}}">
+                        <MenuItem x:Name="menuEdit" Header="Edit texture..." Click="menuEdit_Click"/>
+                        <Separator/>
+                        <MenuItem x:Name="menuRemove" Header="Remove texture" Click="menuRemove_Click"/>
+                    </ContextMenu>
+                </Button.ContextMenu>
             </Button>
         </Grid>
 

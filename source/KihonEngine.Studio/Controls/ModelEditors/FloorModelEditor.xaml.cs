@@ -106,6 +106,11 @@ namespace KihonEngine.Studio.Controls.ModelEditors
 
         private void btTexture_Click(object sender, RoutedEventArgs e)
         {
+            EditTexture();
+        }
+
+        private void EditTexture()
+        {
             var layeredModel = State.Editor.ActionSelect.SelectedModel;
 
             if (layeredModel != null)
@@ -122,7 +127,7 @@ namespace KihonEngine.Studio.Controls.ModelEditors
 
                 dialog.OnTextureChanged += (sender, e)
                     => OnChangeTexture<FloorDefinition>(def => def.Metadata.Texture = e);
-                
+
                 dialog.ShowDialog();
             }
         }
@@ -135,6 +140,23 @@ namespace KihonEngine.Studio.Controls.ModelEditors
             {
                 var definition = GameEngineController.GetDefinition<TDefinition>(layeredModel);
                 changeTextureAction(definition);
+                GameEngineController.ReplaceModelAndNotify(layeredModel, definition);
+            }
+        }
+
+        private void menuEdit_Click(object sender, RoutedEventArgs e)
+        {
+            EditTexture();
+        }
+
+        private void menuRemove_Click(object sender, RoutedEventArgs e)
+        {
+            var layeredModel = State.Editor.ActionSelect.SelectedModel;
+
+            if (layeredModel != null)
+            {
+                var definition = GameEngineController.GetDefinition<FloorDefinition>(layeredModel);
+                definition.Metadata.Texture = null;
                 GameEngineController.ReplaceModelAndNotify(layeredModel, definition);
             }
         }

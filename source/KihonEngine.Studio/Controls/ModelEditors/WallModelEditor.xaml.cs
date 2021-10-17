@@ -28,7 +28,7 @@ namespace KihonEngine.Studio.Controls.ModelEditors
             => Container.Get<IGameEngineState>();
 
         private List<VolumeFace> _wallFaces;
-    public WallModelEditor()
+        public WallModelEditor()
         {
             InitializeComponent();
 
@@ -87,7 +87,7 @@ namespace KihonEngine.Studio.Controls.ModelEditors
                 if (layeredModel != null)
                 {
                     var definition = GameEngineController.GetDefinition<WallDefinition>(layeredModel);
-                    
+
                     InputHelper.TryUpdate(
                         tbXSize.Text,
                         width => definition.Metadata.XSize = width);
@@ -131,6 +131,11 @@ namespace KihonEngine.Studio.Controls.ModelEditors
 
         private void btTexture_Click(object sender, RoutedEventArgs e)
         {
+            EditTexture();
+        }
+
+        private void EditTexture()
+        {
             var layeredModel = State.Editor.ActionSelect.SelectedModel;
 
             if (layeredModel != null)
@@ -160,6 +165,23 @@ namespace KihonEngine.Studio.Controls.ModelEditors
             {
                 var definition = GameEngineController.GetDefinition<TDefinition>(layeredModel);
                 changeTextureAction(definition);
+                GameEngineController.ReplaceModelAndNotify(layeredModel, definition);
+            }
+        }
+
+        private void menuEdit_Click(object sender, RoutedEventArgs e)
+        {
+            EditTexture();
+        }
+
+        private void menuRemove_Click(object sender, RoutedEventArgs e)
+        {
+            var layeredModel = State.Editor.ActionSelect.SelectedModel;
+
+            if (layeredModel != null)
+            {
+                var definition = GameEngineController.GetDefinition<WallDefinition>(layeredModel);
+                definition.Metadata.Texture = null;
                 GameEngineController.ReplaceModelAndNotify(layeredModel, definition);
             }
         }
