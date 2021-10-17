@@ -117,7 +117,7 @@ namespace KihonEngine.GameEngine.Graphics.ModelDefinitions
                 definition.RotationAxisZ = layeredModel3D.AxisZRotationAngle;
             }
 
-            definition.Color = layeredModel3D.GetColor();
+            definition.Color = layeredModel3D.GetColorFromMetadata();
 
             return definition;
         }

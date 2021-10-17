@@ -17,7 +17,8 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
         {
             var layeredModel = LayeredModel3D.Create(ModelType.Wall);
             layeredModel.Translate(new Vector3D(x, y, z));
-            layeredModel.Metadata.Add(ModelType.Wall.ToString(), new WallMetadata { Face = VolumeFace.Front, XSize = xSize, YSize = ySize, UseBackMaterial = UseBackMaterial });
+            SetGenericMetadata(layeredModel);
+            SetSpecificMetadata(layeredModel, new WallMetadata { Face = VolumeFace.Front, XSize = xSize, YSize = ySize, UseBackMaterial = UseBackMaterial });
 
             SetFace(layeredModel, VolumeFace.Front, material);
             //Point3D p0 = new Point3D(0, 0, 0);

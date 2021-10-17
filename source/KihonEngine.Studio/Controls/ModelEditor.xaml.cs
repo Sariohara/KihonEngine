@@ -79,7 +79,7 @@ namespace KihonEngine.Studio.Controls
                     tbRotationZ.Text = _selectedModel.AxisZRotationAngle.ToString();
                 }
 
-                TrySelectColor(state.Editor.ActionSelect.SelectedModel.GetColor());
+                TrySelectColor(_selectedModel.GetColorFromMetadata());
 
                 if (selectionChanged)
                 {
@@ -203,12 +203,18 @@ namespace KihonEngine.Studio.Controls
                 State.Editor.CurrentColor = color;
                 //State.Editor.ActionSelect.SelectedModel.SetColor(color);
                 GameEngineController.ReplaceModelAndNotify(State.Editor.ActionSelect.SelectedModel, definition);
+                //var modelBuilder = new ModelBuilderFromDefinition();
+                //var model = modelBuilder.Build(definition);
+
+                //Container.Get<IWorldEngine>().ReplaceModel(State.Editor.ActionSelect.SelectedModel, model);
+                //Container.Get<IGameEngineState>().Editor.ActionSelect.SelectedModel = model;
             }
         }
 
         private void TrySelectColor(Color target)
         {
-            PropertyInfo[] properties = typeof(Colors).GetProperties();
+            var colorNames = (string[])cbColors.ItemsSource;
+            var properties = colorNames.Select(x => typeof(Colors).GetProperty(x));
             int i = 0;
             foreach (PropertyInfo property in properties)
             {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KihonEngine.GameEngine.Graphics.ModelDefinitions;
+using System;
 using System.Collections.Generic;
 using System.Windows.Media;
 using System.Windows.Media.Media3D;
@@ -59,7 +60,21 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
             return new LayeredModel3D(type, model, model3DLayer, axisXRotationLayer, axisYRotationLayer, axisZRotationLayer, translationLayer);
         }
 
-        public Color GetColor()
+        public Color GetColorFromMetadata()
+        {
+            Color color = Colors.Transparent;
+
+            var key = "Generic";
+            if (Metadata.ContainsKey(key))
+            {
+                var metadata = (ModelMetadata)Metadata[key];
+                color = metadata.Color;
+            }
+
+            return color;
+        }
+
+        public Color GetColorFromModel3D()
         {
             Color selectedColor = Colors.Transparent;
             foreach (var children in Children)

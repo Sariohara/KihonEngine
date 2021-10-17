@@ -17,7 +17,8 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
         public LayeredModel3D Create(int x, int y, int z, int xSize, int zSize)
         {
             var layeredModel = LayeredModel3D.Create(ModelType.Ceiling);
-            layeredModel.Metadata.Add(ModelType.Ceiling.ToString(), new CeilingMetadata { XSize = xSize, ZSize = zSize, UseBackMaterial = UseBackMaterial });
+            SetGenericMetadata(layeredModel);
+            SetSpecificMetadata(layeredModel, new CeilingMetadata { XSize = xSize, ZSize = zSize, UseBackMaterial = UseBackMaterial });
             layeredModel.Translate(new Vector3D(x, y, z));
 
             Point3D p0 = new Point3D(0, 0, 0);

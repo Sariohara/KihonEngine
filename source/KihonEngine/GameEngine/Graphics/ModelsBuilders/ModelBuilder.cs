@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using KihonEngine.GameEngine.Graphics.ModelDefinitions;
+using System.Linq;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Media3D;
@@ -109,6 +110,16 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
             }
 
             return material;
+        }
+
+        protected void SetGenericMetadata(LayeredModel3D layeredModel)
+        {
+            layeredModel.Metadata.Add("Generic", new ModelMetadata { Color = Color, UseBackMaterial = UseBackMaterial });
+        }
+
+        protected void SetSpecificMetadata(LayeredModel3D layeredModel, object metadata)
+        {
+            layeredModel.Metadata.Add(layeredModel.Type.ToString(), metadata);
         }
 
         protected void ApplyTextureToVolume(LayeredModel3D layeredModel, string face, MaterialGroup material, Point[] textureCoordinates)

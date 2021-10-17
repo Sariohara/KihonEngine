@@ -32,7 +32,8 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
             zSize = Math.Round(zSize, 2);
 
             var layeredModel = LayeredModel3D.Create(ModelType.Volume);
-            layeredModel.Metadata.Add(ModelType.Volume.ToString(), new VolumeMetadata { XSize = xSize, YSize = ySize, ZSize = zSize, UseBackMaterial = UseBackMaterial });
+            SetGenericMetadata(layeredModel);
+            SetSpecificMetadata(layeredModel, new VolumeMetadata { XSize = xSize, YSize = ySize, ZSize = zSize, UseBackMaterial = UseBackMaterial });
             layeredModel.Translate(new Vector3D(x, y, z));
             //layeredModel.Translation = TransformHelper.TransformByTranslation(x, y, z);
 

@@ -18,7 +18,8 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
         public LayeredModel3D Create(Vector3D direction)
         {
             var layeredModel = LayeredModel3D.Create(ModelType.Light);
-            layeredModel.Metadata.Add(ModelType.Light.ToString(), new LightMetadata { Direction = direction });
+            SetGenericMetadata(layeredModel);
+            SetSpecificMetadata(layeredModel, new LightMetadata { Direction = direction });
 
             var light = new DirectionalLight();
             light.Color = Color;

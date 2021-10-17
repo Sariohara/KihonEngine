@@ -148,7 +148,7 @@ namespace KihonEngine.Studio.Controls
                 textInfos += $"AxisXRotationAngle:{layeredModel3D.AxisXRotationAngle}\r\n";
                 textInfos += $"AxisYRotationAngle:{layeredModel3D.AxisYRotationAngle}\r\n";
                 textInfos += $"AxisZRotationAngle:{layeredModel3D.AxisZRotationAngle}\r\n";
-                textInfos += $"Color:{layeredModel3D.GetColor()}\r\n";
+                textInfos += $"Color:{layeredModel3D.GetColorFromMetadata()}\r\n";
             }
 
             Color selectedColor = Colors.Transparent;

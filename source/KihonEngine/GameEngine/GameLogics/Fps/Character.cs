@@ -104,7 +104,7 @@ namespace KihonEngine.GameEngine.GameLogics.Fps
             rightLeg.RotateByAxisX(45, rightLegRotationOrigin);
 
             // Group body parts
-            var groupBuilder = new GroupBuilder();
+            var groupBuilder = new GroupBuilder(Colors.White);
             var group = groupBuilder.Create(new[] { head, torso, leftArm, rightArm, leftLeg, rightLeg });
             group.Tags.Add(CharacterMetadata.Character);
 

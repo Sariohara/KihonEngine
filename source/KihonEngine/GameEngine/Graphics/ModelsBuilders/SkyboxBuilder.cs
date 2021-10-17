@@ -23,7 +23,8 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
         public LayeredModel3D Create(int x, int y, int z, int size, Vector3D normal, string skyboxName = null)
         {
             var layeredModel = LayeredModel3D.Create(ModelType.Skybox);
-            layeredModel.Metadata.Add(ModelType.Skybox.ToString(), new SkyboxMetadata { Name = skyboxName, Size = size, Normal = normal, UseBackMaterial = UseBackMaterial });
+            SetGenericMetadata(layeredModel);
+            SetSpecificMetadata(layeredModel, new SkyboxMetadata { Name = skyboxName, Size = size, Normal = normal, UseBackMaterial = UseBackMaterial });
             layeredModel.Translate(new Vector3D(x, y, z));
             //layeredModel.Translation = TransformHelper.TransformByTranslation(x, y, z);
 
