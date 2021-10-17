@@ -58,7 +58,10 @@ namespace KihonEngine.SampleGame
             // Step 1 : Configure game engine
             StandardStartups.BuildStandaloneFullScreenGame();
 
-            // Step 2 : When click Start button, launch game
+            // Step 2 : Precise were are your textures and skyboxes
+            Engine.RegisterContentFromAssembly(typeof(KihonEngine.SampleMaps.DarkCastleM2MapBuilder));
+
+            // Step 3 : When click Start button, launch game
             btnStart.Click += (sender, e) => Engine.Play<KihonEngine.SampleMaps.DarkCastleM2MapBuilder>();
 
             // And then, manage how application ends

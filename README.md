@@ -12,6 +12,14 @@
 
 ![Net5](https://badgen.net/badge/Framework/.NET&nbsp;5/blue)
 
+A new release incoming! [Check changelogs](https://github.com/nico65535/KihonEngine/releases/tag/2021.10.17)
+
+| Download application           | Packages |
+|--------------------|----------------|
+| [![Generic badge](https://img.shields.io/badge/Download-2021.10.17-Green.svg)](https://github.com/nico65535/KihonEngine/releases/download/2021.10.17/Binaries-KihonEngine.SampleGame-2021.10.17.zip) |KihonEngine Sample Game        | 
+| [![Generic badge](https://img.shields.io/badge/Download-2021.10.17-Green.svg)](https://github.com/nico65535/KihonEngine/releases/download/2021.10.17/Binaries-KihonEngine.Studio-2021.10.17.zip) |KihonEngine Studio        | 
+| [![Generic badge](https://img.shields.io/badge/Download-2021.10.17-Green.svg)](https://github.com/nico65535/KihonEngine/releases/download/2021.10.17/Binaries-KihonEngine-2021.10.17.zip) |Full package        | 
+
 # KihonEngine
 
 <!--
@@ -56,12 +64,12 @@ Kihon Engine contains 4 components
 ### The Demo Game
 The sample game `KihonEngine.SampleGame` is available for test Kihon Engine on demo maps contained in `KihonEngine.SampleMaps`
 
-![Screenshot - Splash Screen](https://raw.github.com/nico65535/kihonengine/main/doc/kihonEngine-sampleGame-splashScreen-01.png)
+![Screenshot - Splash Screen](https://raw.github.com/nico65535/kihonengine/main/doc/kihonEngine-sampleGame-splashScreen-02.png)
 
 ### Kihon Engine Studio
 
 Kihon Engine Studio (`KihonEngine.Studio`) is the map editor who offers a set of features for create or edit maps
 
-![Screenshot - Splash Screen](https://raw.github.com/nico65535/kihonengine/main/doc/kihonEngine-studio-editMap-002.png)
+![Screenshot - Splash Screen](https://raw.github.com/nico65535/kihonengine/main/doc/kihonEngine-studio-editMap-003.png)
 
 
