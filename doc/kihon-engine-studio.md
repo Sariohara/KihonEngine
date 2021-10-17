@@ -18,7 +18,7 @@ You can now create maps using your own textures and skyboxes.
 ### Manage content sources
 Use the content source manager in `Tools > Manage Content Sources...`. 
 
-Content source scan the following subfolders:
+A Content Source scans the following subfolders:
 * textures : for locating textures
 * skyboxes : for locating skyboxes
 
@@ -27,8 +27,8 @@ By defaut, the following content source are available.
 | Sources | Description |
 | ----------| ------------| 
 | Embedded resources of KihonEngine | Contains skybox 1 and very few textures
-| Embedded resource of KihonEngine.SampleMaps |Contains some textures from Quake3 file `PAK0.PK3`. And contains few skyboxes 
-| folder `Content/Images` of execution directory | you can put some files here if you want
+| Embedded resources of KihonEngine.SampleMaps |Contains some textures from Quake3 file `PAK0.PK3`. And contains few skyboxes 
+| Folder `Content/Images` of execution directory | you can put some files here if you want
 
 You can add the following content sources
 | Sources types | Description |
@@ -38,6 +38,15 @@ You can add the following content sources
 
 ### Extract content of current map
 You can extract textures and skyboxes used in current map by using `File > Save Map Content As...`
+
+### Register your content source in your game source code
+`KihonEngine.Engine` provides the following methods to register your custom content source at startup:
+
+| Methods | Description |
+| ----------| ------------| 
+| RegisterContentFromAssembly | Register embedded content of a custom assemlby
+| RegisterContentFromFolder | Register content from a directory
+| RegisterContentFromFile | Register content from a Zip file, or a PK3 file
 
 ## Maze generator
 The maze generator available in `File > New > Maze...` can be used as a starter for quickly create maps
