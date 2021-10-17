@@ -70,7 +70,7 @@ namespace KihonEngine.GameEngine.Graphics.ModelsBuilders
             var imageSource = GetBitmap(GraphicContentType.Skybox, resourceName);
             if (imageSource == null)
             {
-                return CreateNotFoundImage($"Not found :'({System.Environment.NewLine}{resourceName}"); ;
+                return CreateNotFoundImage($"Not found :'({System.Environment.NewLine}{resourceName}");
             }
 
             var sizeX = imageSource.Size.Width / 4;
