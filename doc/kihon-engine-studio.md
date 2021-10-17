@@ -24,7 +24,7 @@ A Content Source scans the following subfolders:
 * textures : for locating textures
 * skyboxes : for locating skyboxes
 
-By defaut, when Kihon engine Studio starts, the following content source are available.
+By defaut, when Kihon Engine Studio starts, the following content source are available.
 
 | Sources | Description |
 | ----------| ------------| 
@@ -32,13 +32,13 @@ By defaut, when Kihon engine Studio starts, the following content source are ava
 | Embedded resources of KihonEngine.SampleMaps.dll |Contains some textures from Quake3 file `PAK0.PK3`. And contains few skyboxes 
 | Folder `Content/Images` of execution directory | you can put some files here if you want
 
-You can add the following content sources. 
+You can add the following content source types. 
 | Sources types | Description |
 | ----------| ------------| 
 | Zip files or PK3 files | only subfolders `textures` and `syboxes` will be scanned
 | Folder | only subfolders `textures` and `syboxes` will be scanned
 
-Content sources manage an internal cache. So, if you edit textures or skyboxes, remove content source and register it again to clear the cache.
+Content sources manage an internal cache. So, if you make changes on texture files or skyboxe files, you will not get the new version of file. You will get the cached version. To clear cache, just remove content source and register it again by using the content source manager.
 
 ### Extract content of current map
 You can extract textures and skyboxes used in current map by using `File > Save Map Content As...`
