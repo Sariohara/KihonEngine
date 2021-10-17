@@ -126,6 +126,7 @@ namespace KihonEngine.Studio.Controls
             var viewModel = new ModelViewModel();
             viewModel.Index = index.ToString();
             viewModel.Type = model.Type.ToString();
+            viewModel.Color = model.GetColorFromMetadata().ToString();
             viewModel.Model = model;
             viewModel.Tags = string.Join(",", model.Tags.ToArray());
 
@@ -148,6 +149,7 @@ namespace KihonEngine.Studio.Controls
             public string Index { get; set; }
             public string Type { get; set; }
             public string Tags { get; set; }
+            public string Color { get; set; }
             public ImageSource Icon { get; set; } 
             public LayeredModel3D Model { get; set; }
         }

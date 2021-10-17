@@ -21,6 +21,16 @@
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     <GridViewColumn Header="Type" Width="100" DisplayMemberBinding="{Binding Type}" />
+                    <GridViewColumn Header="Color" Width="100">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Height="10" Width="10" Background="{Binding Color}" />
+                                    <Label Margin="5" Content="{Binding Color}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
                     <GridViewColumn Header="Tags" Width="300" DisplayMemberBinding="{Binding Tags}" />
                 </GridView>
             </ListView.View>
