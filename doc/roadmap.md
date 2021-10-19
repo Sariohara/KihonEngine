@@ -1,6 +1,8 @@
 # KihonEngine Roadmap
 
-The next major steps are the following :
+Future releases will take more time to deliver. Maybe few months.
+
+The next major planned steps are the following.
 
 ## Game Engine planned enhancements
 
