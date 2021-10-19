@@ -15,3 +15,5 @@ The next major steps are the following :
 ## Kihon Engine Studio planned enhancements
 * Simplify drag, rotation and stretch operations on 3D objects
 * UX enhancements
+
+Go back to [ documentation home page](../README.md)
