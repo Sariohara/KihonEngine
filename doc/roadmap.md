@@ -12,5 +12,5 @@ The next major steps are the following :
 
 * Game Engine : In parralele of all theses points, I will start studies for a complete rewrite to use a multi-Threading approache. As described in [Vulkan guide here](https://vkguide.dev/docs/extra-chapter/multithreading/)
 
-## Kihon engine planned enhancements
+## Kihon Engine Studio planned enhancements
 * Kihon Engine Studio : UX enhancements
