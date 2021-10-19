@@ -40,6 +40,8 @@ Actually, with Kihon Engine, you can:
 * [Technical documentation](https://github.com/nico65535/KihonEngine/blob/main/doc/architecture-overview.md)
 * [Create maps with Kihon Engine Studio](https://github.com/nico65535/KihonEngine/blob/main/doc/kihon-engine-studio.md)
 
+Roadmap of future versions
+* [Development Roadmap](https://github.com/nico65535/KihonEngine/blob/main/doc/roadmap.md)
 ## Components Overview
 
 Kihon Engine contains 4 components
