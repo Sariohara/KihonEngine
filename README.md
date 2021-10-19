@@ -13,7 +13,7 @@
 ![Net5](https://badgen.net/badge/Framework/.NET&nbsp;5/blue)
 
 
-[Roadmap of future versions](https://github.com/nico65535/KihonEngine/blob/main/doc/roadmap.md)
+:package: [Roadmap of future versions](https://github.com/nico65535/KihonEngine/blob/main/doc/roadmap.md)
 
 # KihonEngine
 
