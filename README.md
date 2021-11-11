@@ -15,6 +15,8 @@
 
 :package: [Roadmap of future versions](https://github.com/nico65535/KihonEngine/blob/main/doc/roadmap.md)
 
+:sparkles: :sparkles: :sparkles: Research projects for future enhancements [here](https://github.com/nico65535/Research.KihonEngineRewriteGameLogic).
+
 # KihonEngine
 
 <!--
